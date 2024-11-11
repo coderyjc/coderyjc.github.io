@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="笔记 | Vue-Router" />
+    <meta name="hexo-theme-A4" content="v1.9.6" />
+    <link rel="alternate icon" type="image/webp" href="/img/avatar.png">
+    <title>Jingcun Yan</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+    
+    
+        <style>
+            .index-main{
+                max-width:  880px;
+            }
+        </style>
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            <div class="left-toc-container">
+                <nav id="toc" class="bs-docs-sidebar"></nav>
+            </div>
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/avatar.png" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">Jingcun Yan</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    笔记 | Vue-Router
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                
+                    
+                     <span>字数总计：3.2k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：12分钟</span>
+                
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+        <div class=".article-gallery"><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><h3 id="后端路由阶段"><a href="#后端路由阶段" class="headerlink" title="后端路由阶段"></a>后端路由阶段</h3><p>早期的网站开发整个HTML页面是由服务器来渲染的. 服务器直接生产渲染好对应的HTML页面, 返回给客户端进行展示.</p>
+<p>但是, 一个网站, 这么多页面服务器如何处理呢?</p>
+<ul>
+<li>一个页面有自己对应的网址, 也就是URL；</li>
+<li>URL会发送到服务器, 服务器会通过正则对该URL进行匹配, 并且最后交给一个Controller进行处理；</li>
+<li>Controller进行各种处理, 最终生成HTML或者数据, 返回给前端.</li>
+</ul>
+<p>上面的这种操作, 就是后端路由：</p>
+<ul>
+<li>当我们页面中需要请求不同的路径内容时, 交给服务器来进行处理, 服务器渲染好整个页面, 并且将页面返回给客户端.</li>
+<li>这种情况下渲染好的页面, 不需要单独加载任何的js和css, 可以直接交给浏览器展示, 这样也有利于SEO的优化.</li>
+</ul>
+<p>后端路由的缺点:</p>
+<ul>
+<li>一种情况是整个页面的模块由后端人员来编写和维护的；</li>
+<li>另一种情况是前端开发人员如果要开发页面, 需要通过PHP和Java等语言来编写页面代码；</li>
+<li>而且通常情况下HTML代码和数据以及对应的逻辑会混在一起, 编写和维护都是非常糟糕的事情；</li>
+</ul>
+<h3 id="前后端分离阶段"><a href="#前后端分离阶段" class="headerlink" title="前后端分离阶段"></a>前后端分离阶段</h3><p>前端渲染的理解：</p>
+<ul>
+<li>每次请求涉及到的静态资源都会从静态资源服务器获取，这些资源包括HTML+CSS+JS，然后在前端对这些请求回来的资源进行渲染；</li>
+<li>需要注意的是，客户端的每一次请求，都会从静态资源服务器请求文件；</li>
+<li>同时可以看到，和之前的后端路由不同，这时后端只是负责提供API了；</li>
+</ul>
+<p>前后端分离阶段：</p>
+<ul>
+<li>随着Ajax的出现, 有了前后端分离的开发模式；</li>
+<li>后端只提供API来返回数据，前端通过Ajax获取数据，并且可以通过JavaScript将数据渲染到页面中；</li>
+<li>这样做最大的优点就是前后端责任的清晰，后端专注于数据上，前端专注于交互和可视化上；</li>
+<li>并且当移动端(iOS&#x2F;Android)出现后，后端不需要进行任何处理，依然使用之前的一套API即可；</li>
+<li>目前比较少的网站采用这种模式开发；</li>
+</ul>
+<p>单页面富应用阶段:</p>
+<ul>
+<li>其实SPA最主要的特点就是在前后端分离的基础上加了一层前端路由.</li>
+<li>也就是前端来维护一套路由规则.</li>
+</ul>
+<p>前端路由的核心是什么呢？改变URL，但是页面不进行整体的刷新。</p>
+<p>前端路由是如何做到URL和内容进行映射呢？监听URL的改变。</p>
+<h3 id="两种路由模式"><a href="#两种路由模式" class="headerlink" title="两种路由模式"></a>两种路由模式</h3><p>URL的hash也就是锚点(#), 本质上是改变window.location的href属性， 我们可以通过直接赋值location.hash来改变href, 但是页面不发生刷新；</p>
+<p>hash的优势就是兼容性更好，在老版IE中都可以运行，但是**缺陷是有一个#**，显得不像一个真实的路径。</p>
+<p><a href="/img/image-20230308132326.png" title="image-20230308132326.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230308132326.png" alt="image-20230308132326.png"></a></p>
+<p>history接口是HTML5新增的, 它有六种模式改变URL而不刷新页面：</p>
+<ul>
+<li>replaceState：替换原来的路径；</li>
+<li>pushState：使用新的路径；</li>
+<li>popState：路径的回退；</li>
+<li>go：向前或向后改变路径；</li>
+<li>forward：向前改变路径；</li>
+<li>back：向后改变路径</li>
+</ul>
+<p>history模式不显示路径</p>
+<p><a href="/img/image-20230308134752.png" title="image-20230308134752.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230308134752.png" alt="image-20230308134752.png"></a></p>
+<h3 id="认识vue-router"><a href="#认识vue-router" class="headerlink" title="认识vue-router"></a>认识vue-router</h3><p>目前前端流行的三大框架, 都有自己的路由实现:</p>
+<ul>
+<li>Angular的ngRouter</li>
+<li>React的ReactRouter</li>
+<li>Vue的vue-router</li>
+</ul>
+<p>Vue Router 是 Vue.js 的官方路由：</p>
+<ul>
+<li>它与 Vue.js 核心深度集成，让用 Vue.js 构建单页应用（SPA）变得非常容易；</li>
+<li>目前Vue路由最新的版本是4.x版本，我们上课会基于最新的版本讲解；</li>
+</ul>
+<p>vue-router是基于路由和组件的</p>
+<ul>
+<li>路由用于设定访问路径, 将路径和组件映射起来；</li>
+<li>在vue-router的单页面应用中, 页面的路径的改变就是组件的切换；</li>
+</ul>
+<p>安装vue-router</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-router</span><br></pre></td></tr></table></figure>
+
+<h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><h3 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h3><ol>
+<li>安装vue-router <code>npm install vue-router</code></li>
+<li>创建路由需要映射的组件（打算显示的页面）</li>
+<li>通过createRouter创建路由对象，并且传入routes和history模式<ul>
+<li>配置路由映射: 组件和路径映射关系的routes数组</li>
+<li>创建基于hash或者history的模式</li>
+</ul>
+</li>
+<li>使用app注册路由对象（use方法）</li>
+<li>路由使用: 通过<code>&lt;router-link&gt;</code>和<code>&lt;router-view&gt;</code></li>
+</ol>
+<p>在<code>src/router/index.js</code>中维护映射关系</p>
+<p>index.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createRouter, createWebHashHistory &#125; <span class="keyword">from</span> <span class="string">&#x27;vue-router&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Home</span> <span class="keyword">from</span> <span class="string">&#x27;../Views/Home.vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">About</span> <span class="keyword">from</span> <span class="string">&#x27;../Views/About.vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建映射关系</span></span><br><span class="line"><span class="keyword">const</span> routes = [</span><br><span class="line">    &#123; <span class="attr">path</span>: <span class="string">&quot;/home&quot;</span>, <span class="attr">component</span>: <span class="title class_">Home</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">path</span>: <span class="string">&quot;/about&quot;</span>, <span class="attr">component</span>: <span class="title class_">About</span> &#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> router = <span class="title function_">createRouter</span>(&#123;</span><br><span class="line">  <span class="attr">history</span>: <span class="title function_">createWebHashHistory</span>(),</span><br><span class="line">  routes</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 导出模块</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> router</span><br></pre></td></tr></table></figure>
+
+<p>main.js 注册</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">&#x27;./router&#x27;</span></span><br><span class="line"></span><br><span class="line">app.<span class="title function_">use</span>(router)</span><br></pre></td></tr></table></figure>
+
+<p>app.vue 使用router-view</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;app&quot;&gt;</span><br><span class="line">    &lt;h2&gt;App Content&lt;/h2&gt;</span><br><span class="line">    &lt;router-view&gt;&lt;/router-view&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="router-link"><a href="#router-link" class="headerlink" title="router-link"></a>router-link</h2><h3 id="默认路径"><a href="#默认路径" class="headerlink" title="默认路径"></a>默认路径</h3><p>默认情况下, 进入网站的首页, 我们希望<code>&lt;router-view&gt;</code>渲染首页的内容，但是我们的实现中, 默认没有显示首页组件, 必须让用户点击才可以</p>
+<p>如何可以让路径默认跳到到首页, 并且<code>&lt;router-view&gt;</code>渲染首页组件呢?</p>
+<p><a href="/img/image-20230308134633.png" title="image-20230308134633.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230308134633.png" alt="image-20230308134633.png"></a></p>
+<p>path配置的是根路径: &#x2F;，redirect是重定向, 也就是我们将根路径重定向到&#x2F;home的路径下</p>
+<h3 id="router-link的属性"><a href="#router-link的属性" class="headerlink" title="router-link的属性"></a>router-link的属性</h3><p>to属性：</p>
+<ul>
+<li>是一个字符串，或者是一个对象</li>
+</ul>
+<p>replace属性：</p>
+<ul>
+<li>设置 replace 属性的话，当点击时，会调用 router.replace()，而不是 router.push()；</li>
+</ul>
+<p>active-class属性：</p>
+<ul>
+<li>设置激活a元素后应用的class，默认是router-link-active</li>
+</ul>
+<p>exact-active-class属性：</p>
+<ul>
+<li>链接精准激活时，应用于渲染的 <code>&lt;a&gt;</code> 的 class，默认是router-link-exact-active</li>
+</ul>
+<h2 id="路由懒加载"><a href="#路由懒加载" class="headerlink" title="路由懒加载"></a>路由懒加载</h2><p>当打包构建应用时，JavaScript 包会变得非常大，影响页面加载，如果我们能把不同路由对应的组件分割成不同的代码块，然后当路由被访问的时候才加载对应组件，这样就会更加高效，也可以提高首屏的渲染效率；</p>
+<p>这里还是我们前面讲到过的webpack的分包知识，而Vue Router默认就支持动态来导入组件：<br>因为component可以传入一个组件，也可以接收一个函数，该函数需要返回一个Promise，而import函数就是返回一个Promise；</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 路由的懒加载</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">Home</span> = (<span class="params"></span>) =&gt; <span class="keyword">import</span>(<span class="string">&quot;../Views/Home.vue&quot;</span>)</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">About</span> = (<span class="params"></span>) =&gt; <span class="keyword">import</span>(<span class="string">&quot;../Views/About.vue&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 也可以这样写</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> routes = [</span><br><span class="line">    &#123; <span class="attr">path</span>: <span class="string">&quot;/home&quot;</span>, <span class="attr">component</span>: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&quot;../Views/Home.vue&quot;</span>) &#125;,</span><br><span class="line">    &#123; <span class="attr">path</span>: <span class="string">&quot;/about&quot;</span>, <span class="attr">component</span>: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&quot;../Views/About.vue&quot;</span>) &#125;,</span><br><span class="line">]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="动态路由和路由嵌套"><a href="#动态路由和路由嵌套" class="headerlink" title="动态路由和路由嵌套"></a>动态路由和路由嵌套</h2><h3 id="动态路由基本匹配"><a href="#动态路由基本匹配" class="headerlink" title="动态路由基本匹配"></a>动态路由基本匹配</h3><p>渲染用户id</p>
+<p>Vue Router中，我们可以在路径中使用一个动态字段来实现，我们称之为 <strong>路径参数</strong>；</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">path</span>: <span class="string">&#x27;/user/:id&#x27;</span>,</span><br><span class="line">	<span class="attr">component</span>: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&#x27;../pages/User.vue&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在router&#x2F;link中实现跳转</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">&quot;/user/123&quot;</span>&gt;</span>用户123<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="获取动态路由的值"><a href="#获取动态路由的值" class="headerlink" title="获取动态路由的值"></a>获取动态路由的值</h3><p>在template中，直接通过 <code>$route.params</code> 获取值；是route，不是router，router是大对象，route是小对象</p>
+<p>在created中，通过 <code>this.$route.params</code> 获取值；</p>
+<p>在setup中，我们要使用 vue-router库给我们提供的一个hook useRoute；该Hook会返回一个Route对象，对象中保存着当前路由相关的值；</p>
+<p><strong>如何在跳转的时候同时获取到跳转之前和跳转之后的值动态路由的值？</strong></p>
+<p>使用<code>onBeforeRouteUpdate</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">import</span> &#123; useRoute, onBeforeRouteUpdate &#125; <span class="keyword">from</span> <span class="string">&#x27;vue-router&#x27;</span></span><br><span class="line">  </span><br><span class="line"><span class="comment">// 获取route跳转id</span></span><br><span class="line"><span class="title function_">onBeforeRouteUpdate</span>(<span class="function">(<span class="params">to, <span class="keyword">from</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;from:&quot;</span>, <span class="keyword">from</span>.<span class="property">params</span>.<span class="property">id</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;to:&quot;</span>, to.<span class="property">params</span>.<span class="property">id</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="NotFound"><a href="#NotFound" class="headerlink" title="NotFound"></a>NotFound</h3><p>对于哪些没有匹配到的路由，我们通常会匹配到固定的某个页面，比如NotFound的错误页面中，这个时候我们可编写一个动态路由用于匹配所有的页面；</p>
+<p>在路由表的最后添加</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">path</span>: <span class="string">&quot;/:pathMatch(.*)*&quot;</span>,</span><br><span class="line">  <span class="attr">component</span>: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&quot;../Views/NotFound.vue&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>表示当匹配以上匹配不到的所有url</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">注意：我在/:pathMatch(.*)后面又加了一个 *；</span><br><span class="line">它们的区别在于解析的时候，是否解析 / </span><br><span class="line">加上会转化为数组，不加就是url格式</span><br><span class="line"></span><br><span class="line">![image-20230308142319.png](img/image-20230308142319.png)</span><br></pre></td></tr></table></figure>
+
+<p>在404组件中可以通过 <code>$route.params.pathMatch</code>获取到传入的参数：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>NotFound: 您当前的路径&#123;&#123; $route.params.pathMatch &#125;&#125;不正确, 请输入正确的路径!<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="编程式导航"><a href="#编程式导航" class="headerlink" title="编程式导航"></a>编程式导航</h2><p>获取router</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useRoute &#125; <span class="keyword">from</span> <span class="string">&#x27;vue-router&#x27;</span></span><br><span class="line"></span><br><span class="line">route = <span class="title function_">useRoute</span>()</span><br></pre></td></tr></table></figure>
+
+
+<p>使用函数控制跳转关系</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 监听元素的点击</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">homeSpanClick</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 跳转到首页</span></span><br><span class="line">  <span class="comment">// router.push(&quot;/home&quot;)</span></span><br><span class="line">  router.<span class="title function_">push</span>(&#123;</span><br><span class="line">    <span class="comment">// name: &quot;home&quot;</span></span><br><span class="line">    <span class="attr">path</span>: <span class="string">&quot;/home&quot;</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">aboutBtnClick</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 跳转到关于</span></span><br><span class="line">  router.<span class="title function_">push</span>(&#123;</span><br><span class="line">    <span class="attr">path</span>: <span class="string">&quot;/about&quot;</span>,</span><br><span class="line">    <span class="attr">query</span>: &#123;</span><br><span class="line">      <span class="attr">name</span>: <span class="string">&quot;why&quot;</span>,</span><br><span class="line">      <span class="attr">age</span>: <span class="number">18</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>query是进行跳转的时候进行参数传递的方式。</p>
+<p>在页面中通过 <code>$route.query</code> 来获取参数：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>query &#123;&#123; $route.query.name &#125;&#125;<span class="tag">&lt;<span class="name">h2</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="路由替换"><a href="#路由替换" class="headerlink" title="路由替换"></a>路由替换</h3><p>使用push的特点是压入一个新的页面，那么在用户点击返回时，上一个页面还可以回退，但是如果我们希望当前页面是一个替换操作，那么可以使用replace</p>
+<p><a href="/img/image-20230308143243.png" title="image-20230308143243.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230308143243.png" alt="image-20230308143243.png"></a></p>
+<h3 id="页面的前进后退"><a href="#页面的前进后退" class="headerlink" title="页面的前进后退"></a>页面的前进后退</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 向前移动一条记录，和router.forward()相同</span></span><br><span class="line">router.<span class="title function_">go</span>(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 向后移动一条记录，和router.back()相同</span></span><br><span class="line">router.<span class="title function_">go</span>(-<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果传递的参数过大或者过小，不会按照最大或者最小的进行路由，而是直接显示失败。</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="动态管理路由对象"><a href="#动态管理路由对象" class="headerlink" title="动态管理路由对象"></a>动态管理路由对象</h2><h3 id="动态添加路由对象"><a href="#动态添加路由对象" class="headerlink" title="动态添加路由对象"></a>动态添加路由对象</h3><p>某些情况下我们可能需要动态的来添加路由：比如根据用户不同的权限，注册不同的路由；这个时候我们可以使用一个方法 addRoute；</p>
+<p>根据用户角色判断是否添加路由：</p>
+<p>router&#x2F;index.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (isAdmin) &#123;</span><br><span class="line">  <span class="comment">// 一级路由</span></span><br><span class="line">  router.<span class="title function_">addRoute</span>(&#123;</span><br><span class="line">    <span class="attr">path</span>: <span class="string">&quot;/admin&quot;</span>,</span><br><span class="line">    <span class="attr">component</span>: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&quot;../Views/Admin.vue&quot;</span>)</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 添加vip页面</span></span><br><span class="line">  router.<span class="title function_">addRoute</span>(<span class="string">&quot;home&quot;</span>, &#123;</span><br><span class="line">    <span class="attr">path</span>: <span class="string">&quot;vip&quot;</span>,</span><br><span class="line">    <span class="attr">component</span>: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&quot;../Views/HomeVip.vue&quot;</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="二级路由"><a href="#二级路由" class="headerlink" title="二级路由"></a>二级路由</h3><p>router&#x2F;index.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> routes = [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">path</span>: <span class="string">&#x27;/user/:id&#x27;</span>,</span><br><span class="line">    <span class="attr">component</span>: <span class="title class_">User</span>,</span><br><span class="line">    <span class="attr">children</span>: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">// 当 /user/:id/profile 匹配成功</span></span><br><span class="line">        <span class="comment">// UserProfile 将被渲染到 User 的 &lt;router-view&gt; 内部</span></span><br><span class="line">        <span class="attr">path</span>: <span class="string">&#x27;profile&#x27;</span>,</span><br><span class="line">        <span class="attr">component</span>: <span class="title class_">UserProfile</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">// 当 /user/:id/posts 匹配成功</span></span><br><span class="line">        <span class="comment">// UserPosts 将被渲染到 User 的 &lt;router-view&gt; 内部</span></span><br><span class="line">        <span class="attr">path</span>: <span class="string">&#x27;posts&#x27;</span>,</span><br><span class="line">        <span class="attr">component</span>: <span class="title class_">UserPosts</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    ],</span><br><span class="line">  &#125;,</span><br><span class="line">]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="其他方法"><a href="#其他方法" class="headerlink" title="其他方法"></a>其他方法</h3><p>删除路由有以下三种方式：</p>
+<ul>
+<li>方式一：添加一个name相同的路由；</li>
+<li>方式二：通过removeRoute方法，传入路由的名称；</li>
+<li>方式三：通过addRoute方法的返回值回调；</li>
+</ul>
+<p><a href="/img/image-20230308150709.png" title="image-20230308150709.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230308150709.png" alt="image-20230308150709.png"></a></p>
+<p><a href="/img/image-20230308150712.png" title="image-20230308150712.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230308150712.png" alt="image-20230308150712.png"></a></p>
+<p><a href="/img/image-20230308150719.png" title="image-20230308150719.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230308150719.png" alt="image-20230308150719.png"></a></p>
+<p>路由的其他方法补充：</p>
+<ul>
+<li>router.hasRoute()：检查路由是否存在。</li>
+<li>router.getRoutes()：获取一个包含所有路由记录的数组。</li>
+</ul>
+<h2 id="路由导航守卫钩子"><a href="#路由导航守卫钩子" class="headerlink" title="路由导航守卫钩子"></a>路由导航守卫钩子</h2><h3 id="路由导航守卫"><a href="#路由导航守卫" class="headerlink" title="路由导航守卫"></a>路由导航守卫</h3><p>vue-router 提供的导航守卫主要用来通过跳转或取消的方式守卫导航。<br>全局的前置守卫beforeEach是在导航触发时会被回调的：<br>它有两个参数：</p>
+<ul>
+<li>to：即将进入的路由Route对象；</li>
+<li>from：即将离开的路由Route对象；</li>
+</ul>
+<p>它有返回值：</p>
+<ul>
+<li>false：取消当前导航；</li>
+<li>不返回或者undefined：进行默认导航；</li>
+<li>返回一个路由地址：<ul>
+<li>可以是一个string类型的路径；</li>
+<li>可以是一个对象，对象中包含path、query、params等信息；</li>
+</ul>
+</li>
+<li>可选的第三个参数：next（不推荐使用）</li>
+<li>在Vue2中我们是通过next函数来决定如何进行跳转的；</li>
+<li>但是在Vue3中我们是通过返回值来控制的，不再推荐使用next函数，这是因为开发中很容易调用多次next；</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">router.<span class="title function_">beforeEach</span>(<span class="function">(<span class="params">to, <span class="keyword">from</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(to);</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">from</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="登录的路由导航守卫"><a href="#登录的路由导航守卫" class="headerlink" title="登录的路由导航守卫"></a>登录的路由导航守卫</h3><p>只有用户登录之后才能看到其他页面</p>
+<p>router&#x2F;index.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 2.路由导航守卫</span></span><br><span class="line"><span class="comment">// 进行任何的路由跳转之前, 传入的beforeEach中的函数都会被回调</span></span><br><span class="line"><span class="comment">// 需求: 进入到订单(order)页面时, 判断用户是否登录(isLogin -&gt; localStorage保存token)</span></span><br><span class="line"><span class="comment">// 情况一: 用户没有登录, 那么跳转到登录页面, 进行登录的操作</span></span><br><span class="line"><span class="comment">// 情况二: 用户已经登录, 那么直接进入到订单页面</span></span><br><span class="line">router.<span class="title function_">beforeEach</span>(<span class="function">(<span class="params">to, <span class="keyword">from</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 1.进入到任何别的页面时, 都跳转到login页面</span></span><br><span class="line">  <span class="comment">// if (to.path !== &quot;/login&quot;) &#123;</span></span><br><span class="line">  <span class="comment">//   return &quot;/login&quot;</span></span><br><span class="line">  <span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 2.进入到订单页面时, 判断用户是否登录</span></span><br><span class="line">  <span class="keyword">const</span> token = <span class="variable language_">localStorage</span>.<span class="title function_">getItem</span>(<span class="string">&quot;token&quot;</span>)</span><br><span class="line">  <span class="keyword">if</span> (to.<span class="property">path</span> === <span class="string">&quot;/order&quot;</span> &amp;&amp; !token) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;/login&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2023-03-18</span>
+            
+            
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2023/04/06/Vuex/'>笔记 | VueX</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2023/03/08/Vue2/">笔记 | Vue2.x</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+             
+
+            
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>Change And Challenge</span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>

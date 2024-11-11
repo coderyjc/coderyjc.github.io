@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="笔记 | Matlab" />
+    <meta name="hexo-theme-A4" content="v1.9.6" />
+    <link rel="alternate icon" type="image/webp" href="/img/avatar.png">
+    <title>Jingcun Yan</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+    
+    
+        <style>
+            .index-main{
+                max-width:  880px;
+            }
+        </style>
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            <div class="left-toc-container">
+                <nav id="toc" class="bs-docs-sidebar"></nav>
+            </div>
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/avatar.png" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">Jingcun Yan</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    笔记 | Matlab
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                
+                    
+                     <span>字数总计：7.8k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：33分钟</span>
+                
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+        <div class=".article-gallery"><h1 id="MATLAB"><a href="#MATLAB" class="headerlink" title="MATLAB"></a>MATLAB</h1><h2 id="Matlab基础知识"><a href="#Matlab基础知识" class="headerlink" title="Matlab基础知识"></a>Matlab基础知识</h2><blockquote>
+<p>科学计算软件</p>
+</blockquote>
+<h3 id="常识"><a href="#常识" class="headerlink" title="常识"></a>常识</h3><p>变量命名：</p>
+<ul>
+<li>大小写敏感</li>
+<li>第一个字母必须是英文字母</li>
+<li>可以有英文字母、下划线、数字</li>
+<li>变量名最多63个字符</li>
+</ul>
+<h3 id="常见的通用命令"><a href="#常见的通用命令" class="headerlink" title="常见的通用命令"></a>常见的通用命令</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>clc</td>
+<td>清除命令行窗口的内容</td>
+</tr>
+<tr>
+<td>clear</td>
+<td>清除workspace中的所有变量</td>
+</tr>
+<tr>
+<td>clear x y z…</td>
+<td>清除workspace中的变量x, y, z等</td>
+</tr>
+<tr>
+<td>who、whos</td>
+<td>显示workspace中的变量信息</td>
+</tr>
+<tr>
+<td>help、doc</td>
+<td>在线帮助文档</td>
+</tr>
+</tbody></table>
+<ul>
+<li>一行中可以写多个命令，用分号隔开</li>
+<li>用分号隔开的命令不会显示变量的值</li>
+<li>较长的表达式可以在行尾加上三点（ … ）省略号进行续行输入</li>
+</ul>
+<p>路径相关问题</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">path <span class="comment">% 查看搜索路径</span></span><br><span class="line">cd <span class="comment">% 当前工作目录</span></span><br><span class="line"></span><br><span class="line">userpath(<span class="string">&#x27;Path&#x27;</span>) <span class="comment">% 修改当前工作路径</span></span><br><span class="line">savepath <span class="comment">% 保存路径修改</span></span><br><span class="line"></span><br><span class="line">pathtool <span class="comment">% 打开路径管理工具的图形化窗口</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>精度控制</strong></p>
+<p>默认数据类型为 <code>double</code></p>
+<p>默认是4位小数精度 <code>short</code> 格式精度，可以改为15位精度 <code>format long</code>，或者四舍五入保留两位小数<code>format bank</code>, 用指数形式表示并且精确到4位&#x2F;15位小数: <code>format short e</code> 、<code>format long e</code></p>
+<p><strong>逻辑表达式</strong></p>
+<p>&amp; 与，| 或，~ 非，xor 异或</p>
+<p><strong>比较</strong></p>
+<p>&lt;  &gt; &lt;&#x3D; &gt;&#x3D; &#x3D;&#x3D;  ~&#x3D; (不等于)</p>
+<p>关系运算符的运算方式</p>
+<ul>
+<li>两个标量直接比较</li>
+<li>位数相等的矩阵进行比较，生成 01 矩阵</li>
+<li>标量和矩阵比较，一对多比较，生成01矩阵</li>
+</ul>
+<h3 id="一些数学函数和变量"><a href="#一些数学函数和变量" class="headerlink" title="一些数学函数和变量"></a>一些数学函数和变量</h3><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>exp(a)</td>
+<td>e的a次方</td>
+</tr>
+<tr>
+<td>rem(A, 3)</td>
+<td>返回A矩阵除 3 的余数（变量或者矩阵）</td>
+</tr>
+<tr>
+<td>log10(x)</td>
+<td>以10为底的x的对数</td>
+</tr>
+<tr>
+<td>log(x)</td>
+<td>x的自然对数</td>
+</tr>
+<tr>
+<td>sin(x) ; cos(x) ; tan(x)</td>
+<td>三角函数（弧度）</td>
+</tr>
+<tr>
+<td>asin(s); acos(x); atan(x)</td>
+<td>反三角函数（弧度）</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ans</td>
+<td>最近计算的结果</td>
+</tr>
+<tr>
+<td>eps</td>
+<td>正数的极小值 &#x3D; 2.2204e-16</td>
+</tr>
+<tr>
+<td>pi</td>
+<td>Π</td>
+</tr>
+<tr>
+<td>inf</td>
+<td>∞</td>
+</tr>
+<tr>
+<td>i、j</td>
+<td>虚数单位</td>
+</tr>
+<tr>
+<td>NaN</td>
+<td>not a number</td>
+</tr>
+</tbody></table>
+<ul>
+<li>matlab启动时加载这些变量</li>
+<li>被0除不会引起程序中断</li>
+<li>用户可以临时覆盖这些变量， 但是在重启matlab或者clear之后会重新加载</li>
+</ul>
+<p>左除和右除是不一样的， <code>a/b</code> 是右除，表示a&#x2F;b, <code>a\b</code> 是左除，表示 b&#x2F;a</p>
+<h3 id="复数运算"><a href="#复数运算" class="headerlink" title="复数运算"></a>复数运算</h3><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>real(z)</td>
+<td>实部（笛卡尔坐标表示）</td>
+</tr>
+<tr>
+<td>imag(z)</td>
+<td>虚部（笛卡尔坐标表示）</td>
+</tr>
+<tr>
+<td>angle(z)</td>
+<td>幅角（极坐标表示）</td>
+</tr>
+<tr>
+<td>abs(z)</td>
+<td>模（极坐标表示）</td>
+</tr>
+</tbody></table>
+<h2 id="向量与矩阵"><a href="#向量与矩阵" class="headerlink" title="向量与矩阵"></a>向量与矩阵</h2><table>
+<thead>
+<tr>
+<th>语句</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>x = [1 2 3] 、 x = [1, 2, 3]</code></td>
+<td>创建行向量</td>
+</tr>
+<tr>
+<td><code>x = [1; 2; 3]</code></td>
+<td>创建列向量</td>
+</tr>
+<tr>
+<td>x’ (单引号)</td>
+<td>转置</td>
+</tr>
+<tr>
+<td>x &#x3D; [1 2 3]’</td>
+<td>创建列向量</td>
+</tr>
+<tr>
+<td>x(a, b)</td>
+<td>取出x向量的第a行第b列的数值</td>
+</tr>
+</tbody></table>
+<p>从已有变量创建新变量 <code>a = [1 2 3]; b = [2 3 4] c = [a; b];</code> 用空格链接表示并排组合，用分号连接表示上下组合排列</p>
+<p><strong>创建等差元素的向量</strong></p>
+<p>首元素为x1，跨度为q，q默认为1，末尾元素为x2，左闭右闭。</p>
+<p><code>x = [x1: q: x2]</code></p>
+<p>注意：向量的乘方应该在运算符前面加上句号（.）</p>
+<table>
+<thead>
+<tr>
+<th>语句</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>linspace(a, b)</td>
+<td>创建a和b之间含有100个元素的向量</td>
+</tr>
+<tr>
+<td>linspace(a, b, n)</td>
+<td>创建a和b之间含有n个元素的向量</td>
+</tr>
+<tr>
+<td>logspace(a, b, n)</td>
+<td>创建n个对数值相隔相同的向量</td>
+</tr>
+</tbody></table>
+<p><strong>函数创建向量</strong></p>
+<p><code>help elmat</code> 获取的矩阵生成和操作函数列表</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ones(n)， ones(m,n)</td>
+<td>生成全是1的矩阵</td>
+</tr>
+<tr>
+<td>zeros(n)，zeros(m,n)</td>
+<td>生成全是0的矩阵</td>
+</tr>
+<tr>
+<td>reshape(n), reshape(m, n)</td>
+<td>重塑矩阵</td>
+</tr>
+<tr>
+<td>eye(n)</td>
+<td>生成单位矩阵</td>
+</tr>
+</tbody></table>
+<p>reshape：</p>
+<ul>
+<li>数组元素的排列顺序从上到下按列排列</li>
+<li>数组的元素总数不变</li>
+</ul>
+<p><strong>向量的访问</strong></p>
+<table>
+<thead>
+<tr>
+<th>语句</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>a(n)</td>
+<td>寻访第n个元素</td>
+</tr>
+<tr>
+<td>a(:)</td>
+<td>a的所有元素按列组合组成的向量</td>
+</tr>
+<tr>
+<td>a(n) &#x3D; m</td>
+<td>m的值赋给a(n)</td>
+</tr>
+<tr>
+<td>a([n m]) &#x3D; [p q]</td>
+<td>p赋值n，p赋值给m</td>
+</tr>
+<tr>
+<td>a([n1 n2 n5])</td>
+<td>寻访第1，2，5个元素组成的子数组</td>
+</tr>
+<tr>
+<td>a(n: m)</td>
+<td>寻访第n到m个元素组成的子数组 [n, m]</td>
+</tr>
+<tr>
+<td>a(n : d: m)</td>
+<td>从n到m，按照下表递增d的方式组成子数组，d可以为负数</td>
+</tr>
+<tr>
+<td>a(n: end)</td>
+<td>返第3个(包括)到最后的子数组，end表示最后一个，不是具体值，end可以参与表达式</td>
+</tr>
+</tbody></table>
+<p>注意：</p>
+<ul>
+<li>数组元素可以被任意重复访问，构成长度大于原数组的新数组<ul>
+<li><code>a([1 1 1 2 3 4 5 5 5])</code> 像这样，是可以的</li>
+</ul>
+</li>
+<li>下标值不可以越界，且只能取正整数或者逻辑值，下标从1开始</li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span>; <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span>];</span><br><span class="line">a(:,[<span class="number">2</span> <span class="number">3</span>]);  <span class="comment">% 第一个下表表示对于变量a中【所有的列】，第二个变量表示第2列和第3列</span></span><br><span class="line">	<span class="number">1</span> (<span class="number">2</span> <span class="number">3</span>) <span class="number">4</span> <span class="number">5</span></span><br><span class="line">	<span class="number">1</span> (<span class="number">2</span> <span class="number">3</span>) <span class="number">4</span> <span class="number">5</span></span><br><span class="line"><span class="comment">% 也就是括号括起来的部分</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>双下标和单下标的转换</strong></p>
+<p>sub2ind() 函数</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span>; <span class="number">4</span> <span class="number">3</span> <span class="number">3</span> <span class="number">3</span>; <span class="number">5</span> <span class="number">6</span> <span class="number">6</span> <span class="number">6</span>];</span><br><span class="line">a(:, :, <span class="number">2</span>) = a - <span class="number">10</span>; <span class="comment">% 用赋值的方式把二维数组变为三维数组，排列方式为“从前到后”</span></span><br><span class="line"><span class="comment">%a(所有行，所有行的所有列，第二页的值) = a - 10</span></span><br><span class="line"><span class="comment">% 也就是把第二页的所有元素赋值为 第一页-10</span></span><br><span class="line"><span class="comment">% 这时候，从前到后看数组为：</span></span><br></pre></td></tr></table></figure>
+
+<p>$$<br>第一页：<br>\begin{bmatrix}<br>1 &amp; 2 &amp;3 &amp; 4 \<br>4 &amp; 3 &amp; 3 &amp; 3 \<br>5 &amp; 6 &amp; 6 &amp;6 \<br>\end{bmatrix}<br>第二页：<br>\begin{bmatrix}<br>-9 &amp; -8 &amp; -7 &amp; -6 \<br>-6 &amp; -7 &amp; -7 &amp; -7 \<br>-5 &amp; -4 &amp; -4 &amp; -4 \<br>\end{bmatrix}<br>$$</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a(<span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>); <span class="comment">% 第2行第1列第2页，也就是 -6</span></span><br><span class="line"><span class="built_in">sub2ind</span>(<span class="built_in">size</span>(a), <span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>); <span class="comment">% 用单下标访问变量a中(2, 1, 2)位置的数据，返回这个单下标的大小</span></span><br><span class="line">a(<span class="number">14</span>); <span class="comment">% 单下标14也就对应三维下标的 (2, 1, 2)</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>单下标到双下标</strong></p>
+<p>ind2sub() 函数</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">b = <span class="built_in">zeros</span>(<span class="number">3</span>);</span><br><span class="line">b(:) = <span class="number">1</span>:<span class="number">9</span>;</span><br><span class="line">ind = [<span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span>];</span><br><span class="line">[x, y] = <span class="built_in">ind2sub</span>(<span class="built_in">size</span>(b), ind);</span><br></pre></td></tr></table></figure>
+
+<p>$$<br>结果为：<br>\ x &#x3D;<br>\begin{bmatrix}<br>3&amp;1&amp;2&amp;3<br>\end{bmatrix}<br>\y &#x3D;<br>\begin{bmatrix}<br>1&amp;2&amp;2&amp;2<br>\end{bmatrix}<br>$$</p>
+<p>$$<br>解读：ind为索引，其值为 [3\ 4\ 5\ 6]意为在单下标表示中第 3\ 4\ 5\ 6个下标对应的数据。\<br>原数据为：<br>\begin{bmatrix}<br>1 &amp; 4 &amp; 7\<br>2 &amp; 5 &amp; 8\<br>3 &amp; 6 &amp; 9<br>\end{bmatrix}\也就是说，第 3\ 4\ 5\ 6个下标对应的数据，他们的二维索引分别为(列优先)：\<br>\begin{bmatrix}3&amp;1\end{bmatrix}\<br>\begin{bmatrix}1&amp;2\end{bmatrix}\<br>\begin{bmatrix}2&amp;2\end{bmatrix}\<br>\begin{bmatrix}3&amp;2\end{bmatrix}\<br>也就是：\<br>\begin{bmatrix}3\1\end{bmatrix}\<br>\begin{bmatrix}1\2\end{bmatrix}\<br>\begin{bmatrix}2\2\end{bmatrix}\<br>\begin{bmatrix}3\2\end{bmatrix}\<br>亦即：\<br>\begin{bmatrix}<br>3 &amp; 1 &amp; 2 &amp; 3\<br>1 &amp; 2 &amp; 2 &amp;2<br>\end{bmatrix}<br>$$</p>
+<p><strong>找到指定区间内的向量的位置</strong></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A = [<span class="number">4</span>, <span class="number">15</span>, <span class="number">-45</span>, <span class="number">10</span>, <span class="number">6</span>; <span class="number">56</span>, <span class="number">0</span>, <span class="number">17</span>, <span class="number">-45</span>, <span class="number">0</span>];</span><br><span class="line"><span class="built_in">find</span>(A &gt;= <span class="number">10</span> &amp; A &lt; <span class="number">20</span>) <span class="comment">%找到非0元素的位置</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：元素是按列排的</strong></p>
+<h3 id="特征化向量"><a href="#特征化向量" class="headerlink" title="特征化向量"></a><strong>特征化向量</strong></h3><p>向量的*操作前面要加上点号</p>
+<table>
+<thead>
+<tr>
+<th>语句</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>length(A)</td>
+<td>返回向量的最大维数</td>
+</tr>
+<tr>
+<td>size(A)</td>
+<td>返回向量的大小（行和列数）</td>
+</tr>
+<tr>
+<td>max(A)&#x2F;min(A)</td>
+<td>向量中最大最小的元素</td>
+</tr>
+</tbody></table>
+<p>如果变量中有复数，在用（.*）计算模的时候必须计算其共轭复数，用原向量 .*共轭向量</p>
+<p><code>conj(A)</code> 计算A向量的共轭复数向量</p>
+<p><code>abs(A)</code> A向量的绝对值</p>
+<h3 id="向量的点乘和叉乘"><a href="#向量的点乘和叉乘" class="headerlink" title="向量的点乘和叉乘"></a><strong>向量的点乘和叉乘</strong></h3><table>
+<thead>
+<tr>
+<th>语句</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>dot(a, b)</td>
+<td>a和b的点乘（数量积）</td>
+</tr>
+</tbody></table>
+<p>dot(a, a) 计算向量的模，适用于复数向量</p>
+<h3 id="空向量"><a href="#空向量" class="headerlink" title="空向量"></a>空向量</h3><ul>
+<li>有一维是0的数组</li>
+<li>不占存储空间</li>
+<li>最简单的空数组 0*0 的矩阵</li>
+<li>复杂的空数组：有一位是0的矩阵（0 * 7 * 8的矩阵）</li>
+<li>空数组不是全0数组</li>
+</ul>
+<p><strong>数组降维</strong></p>
+<h3 id="字符矩阵"><a href="#字符矩阵" class="headerlink" title="字符矩阵"></a>字符矩阵</h3><ul>
+<li>单引号界定一个字符串</li>
+<li>方括号直接连接多个字符串变量</li>
+<li>字符串中的单引号要用两个单引号（但是计算的时候按照一个单引号计算）</li>
+<li>length(A) 计算字符串长度</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>double(string)</td>
+<td>查看ASCII码</td>
+</tr>
+<tr>
+<td>char(A)</td>
+<td>将ASCII码数组恢复成字符串的形式</td>
+</tr>
+<tr>
+<td>class(A)</td>
+<td>判断A变量的类型</td>
+</tr>
+<tr>
+<td>char(X)</td>
+<td>判断X是不是char型</td>
+</tr>
+</tbody></table>
+<p><strong>一个变量存储多个字符串</strong></p>
+<ol>
+<li>可以用二位字符数组 <code>str = [&#39;asd&#39;; &#39;a  &#39;; &#39; b &#39;]</code><ul>
+<li>这个时候应该保证每个字符串的长度一样</li>
+<li>否则应该补齐短的</li>
+</ul>
+</li>
+<li>可以使用 <code>char()</code><ul>
+<li>这个时候不用保证长度一样，因为函数会自动帮我们补齐</li>
+<li><code>str = char(&#39;asd&#39;, &#39;a&#39;, &#39; b&#39;)</code></li>
+</ul>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>deblank(str)</td>
+<td>清除尾部空格</td>
+</tr>
+</tbody></table>
+<p><code>str(1, :)</code> 第一行的全部元素，也就是第一个字符串</p>
+<p>访问二维字符串的时候别忘了清楚尾部空格</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>strcmp(str1, str2)</td>
+<td>比较字符串，相同返回1，不同返回0</td>
+</tr>
+</tbody></table>
+<h2 id="数据分析和统计"><a href="#数据分析和统计" class="headerlink" title="数据分析和统计"></a>数据分析和统计</h2><p><strong>对于一维数组</strong></p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>y &#x3D; max(X)</td>
+<td>X最大值赋给y，复数应取模</td>
+</tr>
+<tr>
+<td>[y, I] &#x3D; max(X)</td>
+<td>X最大值赋给y，最大值的下表给I，按照模取最大值</td>
+</tr>
+<tr>
+<td>min 和以上同理</td>
+<td></td>
+</tr>
+<tr>
+<td>sum(X)</td>
+<td>向量的所有元素的和</td>
+</tr>
+<tr>
+<td>prod(X)</td>
+<td>向量的所有元素的乘积</td>
+</tr>
+<tr>
+<td>mean(X)</td>
+<td>向量的所有元素的算数平均值</td>
+</tr>
+<tr>
+<td>median(X)</td>
+<td>向量的所有元素的算数中间值</td>
+</tr>
+</tbody></table>
+<p><strong>对于矩阵</strong></p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>X &#x3D; max(A)</td>
+<td>返回每一列上的最大值组成的行向量</td>
+</tr>
+<tr>
+<td>[Y, U]</td>
+<td>返回每一列上的最大值组成的行向量，和他们的行号</td>
+</tr>
+<tr>
+<td>max(A, [], dim)</td>
+<td>dim 取 1或2. 取1的时候等效于max(A); 取2的时候，返回一个列向量，其中第i个元素是A矩阵的第i行上的最大值</td>
+</tr>
+<tr>
+<td>min同理</td>
+<td></td>
+</tr>
+<tr>
+<td>sum(A)</td>
+<td>返回每一列的所有元素的和组成的行向量</td>
+</tr>
+<tr>
+<td>prod(A)</td>
+<td>返回每一列的所有元素的积组成的行向量</td>
+</tr>
+<tr>
+<td>mean(A)</td>
+<td>返回每一列的所有元素的平均值组成的行向量</td>
+</tr>
+<tr>
+<td>median(A)</td>
+<td>返回每一列的所有元素的中位数组成的行向量</td>
+</tr>
+<tr>
+<td>sum(A, dim)</td>
+<td>求和，同理</td>
+</tr>
+<tr>
+<td>prod(A, dim)</td>
+<td>求积，同理</td>
+</tr>
+<tr>
+<td>mean(A, dim)</td>
+<td>平均值，同理</td>
+</tr>
+<tr>
+<td>median(A, dim)</td>
+<td>中位数，同理</td>
+</tr>
+</tbody></table>
+<h2 id="数据可视化"><a href="#数据可视化" class="headerlink" title="数据可视化"></a>数据可视化</h2><h3 id="plot"><a href="#plot" class="headerlink" title="plot"></a>plot</h3><p><strong>plot(x)</strong></p>
+<ul>
+<li><p>x为向量时，以该元素的下标为横坐标、元素值为纵坐标绘出曲线</p>
+</li>
+<li><p>x为实数二维数组时，则按列绘制每列元素值相对其下标的曲线，曲线数等于x数组的列数。</p>
+</li>
+<li><p>x为复数二维数组时，则按列分别以数组的实部和虚部为横、纵坐标绘制多条曲线</p>
+</li>
+</ul>
+<p><strong>plot(x, y)</strong></p>
+<ul>
+<li><p>x、y为同维数组时，绘制以x、y元素为横纵坐标的曲线</p>
+</li>
+<li><p>x为向量，y为二维数组、且其列数或行数等于x的元素数时，绘制多条不同颜色的曲线</p>
+</li>
+<li><p>x为二维数组，y为向量时，情况与上相同，只是y仍为纵坐标。</p>
+</li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">0</span>:<span class="built_in">pi</span>/<span class="number">100</span>:<span class="number">2</span>*<span class="built_in">pi</span>;</span><br><span class="line">y = <span class="number">2</span>*<span class="built_in">exp</span>(<span class="number">-0.5</span>*x).*<span class="built_in">sin</span>(<span class="number">2</span>*<span class="built_in">pi</span>*x);</span><br><span class="line"><span class="built_in">plot</span>(x, y)</span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210322161050827.png" title="image-20210322161050827" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210322161050827.png" alt="image-20210322161050827"></a><br>参数方程的绘制：<br>$$<br>\begin{cases}<br>x &#x3D; tcos(3t)\<br>t &#x3D; tsin^2(t)<br>\end{cases}, -\pi \le t \le \pi<br>$$</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">t = -<span class="built_in">pi</span>:<span class="built_in">pi</span>/<span class="number">100</span>:<span class="built_in">pi</span>;</span><br><span class="line">x = t.*<span class="built_in">cos</span>(<span class="number">3</span>*t);</span><br><span class="line">y = t.*<span class="built_in">sin</span>(t).^<span class="number">2</span>;</span><br><span class="line"><span class="built_in">plot</span>(x, y);</span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210322161309782.png" title="image-20210322161309782" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210322161309782.png" alt="image-20210322161309782"></a><br>调制波形的绘制</p>
+<p>调制波形：低频信号 * 高频信号 的过过程 </p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">t = (<span class="number">0</span>:<span class="built_in">pi</span>/<span class="number">100</span>:<span class="built_in">pi</span>)&#x27;;</span><br><span class="line">y1 = <span class="built_in">sin</span>(t) * [<span class="number">1</span>, <span class="number">-1</span>];</span><br><span class="line">y2 = <span class="built_in">sin</span>(t) .* <span class="built_in">sin</span>(<span class="number">9</span>*t);</span><br><span class="line">t3 = <span class="built_in">pi</span>*(<span class="number">0</span>:<span class="number">9</span>)/<span class="number">9</span>;</span><br><span class="line">y3 = <span class="built_in">sin</span>(t3) .* <span class="built_in">sin</span>(<span class="number">9</span>*t3);</span><br><span class="line"><span class="built_in">plot</span>(t, y1, <span class="string">&#x27;r:&#x27;</span>, t, y2, <span class="string">&#x27;b&#x27;</span>, t3, y3, <span class="string">&#x27;bo&#x27;</span>);</span><br><span class="line">axis([<span class="number">0</span>, <span class="built_in">pi</span>, <span class="number">-1</span>, <span class="number">1</span>]);</span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210322161928024.png" title="image-20210322161928024" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210322161928024.png" alt="image-20210322161928024"></a></p>
+<h4 id="多次叠绘"><a href="#多次叠绘" class="headerlink" title="多次叠绘"></a>多次叠绘</h4><p>多次调用plot命令在一幅图上绘制多条曲线；需要hold指令的配合。</p>
+<ul>
+<li><p>hold on 保持当前坐标轴和图形，并可以接受下一次绘制。</p>
+</li>
+<li><p>hold off 取消当前坐标轴和图形保持，这种状态下，调用plot绘制完全新的图形，不保留以前的坐标格式、曲线。</p>
+</li>
+</ul>
+<p><strong>绘制离散的波形</strong></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">t = <span class="number">2</span> * <span class="built_in">pi</span> * (<span class="number">0</span> : <span class="number">20</span>) / <span class="number">20</span>;</span><br><span class="line">y = <span class="built_in">cos</span>(t) .* <span class="built_in">exp</span>(<span class="number">-0.4</span>*t);</span><br><span class="line">stem(t, y, <span class="string">&#x27;g&#x27;</span>);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">stairs(t, y, <span class="string">&#x27;r&#x27;</span>);</span><br><span class="line"><span class="built_in">hold</span> off;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><a href="/imgs/image-20210322163505937.png" title="image-20210322163505937" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210322163505937.png" alt="image-20210322163505937"></a></p>
+<h4 id="双纵坐标-plotyy-x1-y1-x2-y2"><a href="#双纵坐标-plotyy-x1-y1-x2-y2" class="headerlink" title="双纵坐标 plotyy(x1. y1, x2, y2)"></a>双纵坐标 plotyy(x1. y1, x2, y2)</h4><p>x1,y1在左，x2,y2在右边</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">0</span>:<span class="number">0.01</span>:<span class="number">20</span>;</span><br><span class="line">y1 = <span class="number">200</span>*<span class="built_in">exp</span>(<span class="number">-0.05</span>*x).*<span class="built_in">sin</span>(x);</span><br><span class="line">y2 = <span class="number">0.8</span>*<span class="built_in">exp</span>(<span class="number">-0.5</span>*x).*<span class="built_in">sin</span>(<span class="number">10</span>*x);</span><br><span class="line">plotyy(x, y1, x, y2);</span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210322164456442.png" title="image-20210322164456442" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210322164456442.png" alt="image-20210322164456442"></a></p>
+<h4 id="多子图"><a href="#多子图" class="headerlink" title="多子图"></a>多子图</h4><p>subplot(,m, n, k)</p>
+<ul>
+<li><p>图形窗口包含（mxn）个子图，k为要指定的当前子图的编号。</p>
+</li>
+<li><p>其编号原则：左上方为第1子图，然后向右向下依次排序。该指令按缺省值分割子图区域。</p>
+</li>
+<li><p>使（mxn）幅子图中第k个子图成为当前图</p>
+</li>
+</ul>
+<p>subplot(‘postion’，[left，bottom，width，height])</p>
+<ul>
+<li>在指定的位置上开辟子圈，并成为当前图</li>
+</ul>
+<p>subplot（“postion’，[left，bottom，width，height]）用于手工指定子图位置.</p>
+<ul>
+<li><p>指定位置的四元组采用归一化的标称单位，即认为整个圈形窗口绘图区域的高、宽的取值范围都是[0，1]，而左下角为（0，0）坐标。</p>
+</li>
+<li><p>产生的子图彼此独立。</p>
+</li>
+<li><p>所有的绘图指令均可以在子图中使用。</p>
+</li>
+</ul>
+<p>举例：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">t = (<span class="built_in">pi</span>*(<span class="number">0</span>:<span class="number">1000</span>)/<span class="number">1000</span>)&#x27;;</span><br><span class="line">y1 = <span class="built_in">sin</span>(t);</span><br><span class="line">y2 = <span class="built_in">sin</span>(<span class="number">10</span>*t);</span><br><span class="line">y12 = <span class="built_in">sin</span>(t).*<span class="built_in">sin</span>(<span class="number">10</span>*t);</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>),<span class="built_in">plot</span>(t,y1);axis([<span class="number">0</span>,<span class="built_in">pi</span>,<span class="number">-1</span>,<span class="number">1</span>]);</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>),<span class="built_in">plot</span>(t,y2);axis([<span class="number">0</span>,<span class="built_in">pi</span>,<span class="number">-1</span>,<span class="number">1</span>]);</span><br><span class="line">subplot(<span class="string">&#x27;position&#x27;</span>,[<span class="number">0.2</span>,<span class="number">0.05</span>,<span class="number">0.6</span>,<span class="number">0.45</span>]);</span><br><span class="line"><span class="built_in">plot</span>(t,y12,<span class="string">&#x27;b-&#x27;</span>,t,[y1,-y1],<span class="string">&#x27;r:&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210322165902728.png" title="image-20210322165902728" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210322165902728.png" alt="image-20210322165902728"></a></p>
+<h3 id="绘制图形的辅助操作"><a href="#绘制图形的辅助操作" class="headerlink" title="绘制图形的辅助操作"></a>绘制图形的辅助操作</h3><h4 id="曲线形状控制"><a href="#曲线形状控制" class="headerlink" title="曲线形状控制"></a><strong>曲线形状控制</strong></h4><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>-</th>
+<th>：</th>
+<th>-.</th>
+<th>–</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>含义</strong></td>
+<td>实线</td>
+<td>虚线</td>
+<td>电话线</td>
+<td>双划线</td>
+</tr>
+</tbody></table>
+<h4 id="颜色控制"><a href="#颜色控制" class="headerlink" title="颜色控制"></a><strong>颜色控制</strong></h4><p>b: 蓝</p>
+<p>r：红</p>
+<p>g：绿</p>
+<p>c：青</p>
+<p>m：品红</p>
+<p>y：黄</p>
+<p>k：黑</p>
+<p>w：白</p>
+<h4 id="数据点的控制"><a href="#数据点的控制" class="headerlink" title="数据点的控制"></a><strong>数据点的控制</strong></h4><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>.</th>
+<th>+</th>
+<th>*</th>
+<th>&lt;</th>
+<th>&gt;</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>含义</td>
+<td>实心黑点</td>
+<td>十字符</td>
+<td>八线符</td>
+<td>左三角</td>
+<td>右三角</td>
+</tr>
+<tr>
+<td></td>
+<td>^</td>
+<td>v</td>
+<td>d</td>
+<td>h</td>
+<td>o</td>
+</tr>
+<tr>
+<td></td>
+<td>上三角</td>
+<td>下三角</td>
+<td>菱形符号</td>
+<td>六角形</td>
+<td>空心圆</td>
+</tr>
+<tr>
+<td></td>
+<td>p</td>
+<td>s</td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>五角星</td>
+<td>方块符</td>
+<td>叉字符</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="刻度"><a href="#刻度" class="headerlink" title="刻度"></a><strong>刻度</strong></h4><ul>
+<li>grid on 开启</li>
+<li>grid off 关闭</li>
+</ul>
+<h4 id="坐标"><a href="#坐标" class="headerlink" title="坐标"></a><strong>坐标</strong></h4><p><strong>坐标框</strong></p>
+<ul>
+<li>box on 开启</li>
+<li>box off 关闭</li>
+</ul>
+<p><strong>坐标轴</strong></p>
+<p>xlabel、ylabel</p>
+<p>图中的坐标的表示形式</p>
+<ul>
+<li>所有的希腊字符都可以转义</li>
+</ul>
+<h4 id="刻度设置"><a href="#刻度设置" class="headerlink" title="刻度设置"></a><strong>刻度设置</strong></h4><p>set(gca, ‘xtick’, xs, ‘ytick’, ys)</p>
+<ul>
+<li>xs、ys是任何合法的师叔向量，用来设定x、y轴的刻度</li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">t = <span class="number">6</span> * <span class="built_in">pi</span> * (<span class="number">0</span>:<span class="number">100</span>)/<span class="number">100</span>;</span><br><span class="line">y = <span class="number">1</span> - <span class="built_in">exp</span>(<span class="number">-0.3</span>*t).*<span class="built_in">cos</span>(<span class="number">0.7</span>*t);</span><br><span class="line">tt = t(<span class="built_in">abs</span>(y - <span class="number">1</span>)&gt;<span class="number">0.05</span>);</span><br><span class="line">ts = <span class="built_in">max</span>(tt);</span><br><span class="line"><span class="built_in">plot</span>(t,y,<span class="string">&#x27;r-&#x27;</span>);</span><br><span class="line">grid on;</span><br><span class="line">axis([<span class="number">0</span>, <span class="number">6</span>*<span class="built_in">pi</span>, <span class="number">0.6</span>, <span class="built_in">max</span>(y)]);</span><br><span class="line">title(<span class="string">&#x27;y=1-exp(-\alpha*t*cos(\omega*t))&#x27;</span>);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line"><span class="built_in">plot</span>(ts, <span class="number">0.95</span>, <span class="string">&#x27;bo&#x27;</span>);</span><br><span class="line"><span class="built_in">hold</span> off;</span><br><span class="line">set(gca, <span class="string">&#x27;xtick&#x27;</span>, [<span class="number">2</span>*<span class="built_in">pi</span>, <span class="number">4</span>*<span class="built_in">pi</span>, <span class="number">6</span>*<span class="built_in">pi</span>], <span class="string">&#x27;ytick&#x27;</span>, [<span class="number">0.95</span>, <span class="number">1</span>, <span class="number">1.05</span>, <span class="built_in">max</span>(y)]);</span><br><span class="line">grid on;</span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210322171403108.png" title="image-20210322171403108" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210322171403108.png" alt="image-20210322171403108"></a><br>（图中的点为ts）</p>
+<h3 id="特殊二维图形"><a href="#特殊二维图形" class="headerlink" title="特殊二维图形"></a>特殊二维图形</h3><h4 id="直方图"><a href="#直方图" class="headerlink" title="直方图"></a>直方图</h4><table>
+<thead>
+<tr>
+<th>图形</th>
+<th>指令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>柱状图</td>
+<td>bar(x, y, args[])</td>
+</tr>
+<tr>
+<td>累计式直方图</td>
+<td>bar(x, y, ‘stack’, args[])</td>
+</tr>
+<tr>
+<td>分组式直方图</td>
+<td>bar(x, y, ‘group’, args[])、barh(x, y, ‘group’, args[])</td>
+</tr>
+</tbody></table>
+<h4 id="饼图"><a href="#饼图" class="headerlink" title="饼图"></a>饼图</h4><p>pie(x, y, args[])</p>
+<h4 id="离散杆图"><a href="#离散杆图" class="headerlink" title="离散杆图"></a>离散杆图</h4><p>stem(x, y, args[])</p>
+<h4 id="极坐标图"><a href="#极坐标图" class="headerlink" title="极坐标图"></a>极坐标图</h4><p>$$<br>\rho &#x3D; sin(2\theta)cos(2\theta) \<br>polar(\theta, \rho, args[])<br>$$</p>
+<p>polar(theta, tho, args[])</p>
+<h3 id="三维图形"><a href="#三维图形" class="headerlink" title="三维图形"></a>三维图形</h3><h4 id="三维线图"><a href="#三维线图" class="headerlink" title="三维线图"></a>三维线图</h4><p>plot3(x, y, z, args[])</p>
+<h4 id="三维网线图、曲面图"><a href="#三维网线图、曲面图" class="headerlink" title="三维网线图、曲面图"></a>三维网线图、曲面图</h4><p>步骤：</p>
+<ol>
+<li>确定取值范围和取值间隔</li>
+<li>构建格点矩阵</li>
+<li>计算格点上的函数值</li>
+</ol>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> x = <span class="number">-4</span>: <span class="number">0.01</span>; <span class="number">4</span>;</span><br><span class="line"> y = x;</span><br><span class="line"> [x, y] = <span class="built_in">meshgrid</span>(x, y);</span><br><span class="line"> z = x.^<span class="number">2</span> + y.^<span class="number">2</span>;</span><br><span class="line"> subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>), mesh(x,y,z);  <span class="comment">%三维网格图</span></span><br><span class="line">subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>), surf(x,y,z);    <span class="comment">%三维曲面图</span></span><br><span class="line">colormap(cool); </span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210324201735451.png" title="image-20210324201735451" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210324201735451.png" alt="image-20210324201735451"></a></p>
+<h3 id="图像处理"><a href="#图像处理" class="headerlink" title="图像处理"></a>图像处理</h3><table>
+<thead>
+<tr>
+<th>指令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>imread(filePath)</td>
+<td>读取图像文件</td>
+</tr>
+<tr>
+<td>imshow(var)</td>
+<td>显示图像</td>
+</tr>
+<tr>
+<td>imwrite(var, filePath)</td>
+<td>保存图像</td>
+</tr>
+</tbody></table>
+<h2 id="Matlab-程序设计"><a href="#Matlab-程序设计" class="headerlink" title="Matlab 程序设计"></a>Matlab 程序设计</h2><p>命令文件没有输入参数，也不返回输出参数；函数文件可以带输入参数，也可以返回输出参数。</p>
+<p>命令文件对工作空间中的变量进行操作，文件中所有命令的执行结果也返回工作空间中；函数文件中定义的变量为局部变量，当函数文件执行完毕时，这些变量也被清除。</p>
+<p>命令文件可以直接运行；函数文件不能直接运行，要以函数调用的方式来调用它。</p>
+<p><strong>输入数据</strong></p>
+<p><code>A = input(提示信息, 选项)</code></p>
+<p><strong>输出数据</strong></p>
+<p><code>disp(a)</code></p>
+<p><strong>程序暂停</strong></p>
+<p><code>pause(暂停的秒数)</code></p>
+<p><code>Ctrl + C 强行停止</code></p>
+<h3 id="函数、选择、循环"><a href="#函数、选择、循环" class="headerlink" title="函数、选择、循环"></a>函数、选择、循环</h3><p>函数单独写在一个文件中</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">格式：</span><br><span class="line">	<span class="keyword">for</span> 循环变量=表达式<span class="number">1</span>：表达式<span class="number">2</span>：表达式<span class="number">3</span></span><br><span class="line">		循环体</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">【注】：表达式<span class="number">1</span>：循环变量初值，表达式<span class="number">2</span>：步长，为<span class="number">1</span>时，可省略；表达式<span class="number">3</span>：循环变量终值。</span><br><span class="line"></span><br><span class="line">或：</span><br><span class="line">     <span class="keyword">for</span>循环变量 = 矩阵表达式</span><br><span class="line">               循环体</span><br><span class="line">     <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">【注】：执行过程是依次将矩阵的各列元素赋给循环变量，</span><br><span class="line">             然后执行循环体语句，直至各列元素处理完毕。</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>语句：</span><br><span class="line">格式：</span><br><span class="line">     <span class="keyword">while</span>（条件）</span><br><span class="line">           循环体</span><br><span class="line">     <span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> 表达式</span><br><span class="line">		程序模块<span class="number">1</span></span><br><span class="line">     <span class="keyword">elseif</span></span><br><span class="line">		程序模块<span class="number">2</span></span><br><span class="line">     <span class="keyword">else</span></span><br><span class="line">     	程序模块<span class="number">2</span></span><br><span class="line">     <span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>语句：</span><br><span class="line"></span><br><span class="line">格式：</span><br><span class="line">     <span class="keyword">switch</span> 表达式</span><br><span class="line">     <span class="keyword">case</span> 数值<span class="number">1</span></span><br><span class="line">       程序模块<span class="number">1</span></span><br><span class="line">     <span class="keyword">case</span> 数值<span class="number">2</span></span><br><span class="line">       程序模块<span class="number">2</span></span><br><span class="line">     <span class="keyword">case</span> &#123;数值<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;</span><br><span class="line">       程序模块<span class="number">3</span></span><br><span class="line">     <span class="keyword">otherwise</span></span><br><span class="line">       程序模块 n</span><br><span class="line">     <span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>基本结构</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 输出形参表 = 函数名（输入形参表）</span></span><br><span class="line">	注释</span><br><span class="line">	函数体</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>输出形参多于一个应该用方括号括起来</li>
+</ul>
+<p>1.关于函数文件名</p>
+<p>函数文件名通常由函数名再加上扩展名.m组成。</p>
+<p>当函数文件名与函数名不同时，Matlab将忽略函数名而确认文件名因此调用时使用函数文件名。</p>
+<p>2.关于注释说明部分</p>
+<p>注释说明包括3部分：</p>
+<p>①紧随引导行之后以%开头的第一注释行。这一行一般包括<strong>大写的函数文件名</strong>和<strong>函数功能简要描述</strong>，供lookfor关键词查询和help在线帮助时使用。</p>
+<p>②第一注释行及之后连续的注释行。通常包括函数输入&#x2F;输出参数的含义及调用格式说明等信息，构成全部在线帮助文本。</p>
+<p>③与在线帮助文本相隔一空行的注释行。包括函数文件编写和修改的信息，如作者和版本等。</p>
+<p>3、关子return语句</p>
+<p>如果在函数文件中插入了return语句，则执行到该语句就结束函教的执行，流程转至调用该函数的位置。通常也不使用return语句。</p>
+<p>全局变量与局部变量</p>
+<p>Matlab中，函数文件中的变量是局部变量。了如在若干函数中，都把某一变量定义为全局变量，那么这些函数将共用这个变量。</p>
+<p>全局变量的作用域是整个Matlab的工作空间，所有函数都可以对它进行存取和修改。</p>
+<p>全局变量用global命令定义，格式为：global变量名</p>
+<h3 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h3><p><strong>例题1</strong></p>
+<p>建立文件函数交换两个参数的值，返回执行后的结果</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%f_exchange.m</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[a,b]</span> = <span class="title">exch</span><span class="params">(a,b)</span></span></span><br><span class="line">c = a; a = b; b = c;</span><br><span class="line"></span><br><span class="line"><span class="comment">%命令行</span></span><br><span class="line">x = <span class="number">23</span>;</span><br><span class="line">y = [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line">[p, q] = f_exchange(x, y);</span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210330110315924.png" title="image-20210330110315924" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210330110315924.png" alt="image-20210330110315924"></a><br><strong>例题2</strong><br>$$<br>求方程 ax^2+bx+c&#x3D;0的根<br>$$<br>程序如下</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">&#x27;a = &#x27;</span>);</span><br><span class="line">b = input(<span class="string">&#x27;b = &#x27;</span>);</span><br><span class="line">c = input(<span class="string">&#x27;c = &#x27;</span>);</span><br><span class="line">d = b*b - <span class="number">4</span>*a*c;</span><br><span class="line">x = [(-b+<span class="built_in">sqrt</span>(d))/(<span class="number">2</span>*a),(-b-<span class="built_in">sqrt</span>(d))/(<span class="number">2</span>*a)];</span><br><span class="line"><span class="built_in">disp</span>([<span class="string">&#x27;x1 = &#x27;</span>, num2str(x(<span class="number">1</span>)), <span class="string">&#x27; x2 = &#x27;</span>, num2str(x(<span class="number">2</span>))]);</span><br></pre></td></tr></table></figure>
+
+<p>运行截图为：</p>
+<p><a href="/imgs/image-20210330102725081.png" title="image-20210330102725081" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210330102725081.png" alt="image-20210330102725081"></a><br><strong>例题3</strong><br>$$<br>计算分段函数<br>\begin{cases}<br>    cos(x+1)+\sqrt{x^2 + 1},x&#x3D;10\<br>    x\sqrt{x+\sqrt{x}},x \ne 10<br>\end{cases}<br>$$<br>代码如下：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">x = input(<span class="string">&#x27;请输入x的值：&#x27;</span>);</span><br><span class="line"><span class="keyword">if</span> x == <span class="number">10</span></span><br><span class="line">    y = <span class="built_in">cos</span>(x+<span class="number">1</span>)+<span class="built_in">sqrt</span>(x*x+<span class="number">1</span>);</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    y = x*<span class="built_in">sqrt</span>(x + <span class="built_in">sqrt</span>(x));</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="built_in">disp</span>(y);</span><br></pre></td></tr></table></figure>
+
+<p>运行截图如下：</p>
+<p><a href="/imgs/image-20210330103408934.png" title="image-20210330103408934" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210330103408934.png" alt="image-20210330103408934"></a><br><strong>例题4</strong></p>
+<p>输入一个字符，若为大写字母，则输出其对应的小写字母；若为小写字母，则输出其对应的大写字母；若为数字字符则输出其对应的数值，若为其他字符则原样输出</p>
+<p>代码如下：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">c = input(<span class="string">&#x27;请输入一个字符&#x27;</span>, <span class="string">&#x27;s&#x27;</span>);</span><br><span class="line"><span class="keyword">if</span> c &gt;=<span class="string">&#x27;A&#x27;</span> &amp;&amp; c&lt;=<span class="string">&#x27;Z&#x27;</span></span><br><span class="line">    <span class="built_in">disp</span>(char(<span class="built_in">abs</span>(c) + <span class="built_in">abs</span>(<span class="string">&#x27;a&#x27;</span>)-<span class="built_in">abs</span>(<span class="string">&#x27;A&#x27;</span>)));</span><br><span class="line"><span class="keyword">elseif</span> c&gt;=<span class="string">&#x27;a&#x27;</span> &amp;&amp; c&lt;=<span class="string">&#x27;z&#x27;</span></span><br><span class="line">    <span class="built_in">disp</span>(char(<span class="built_in">abs</span>(c)- <span class="built_in">abs</span>(<span class="string">&#x27;a&#x27;</span>) + <span class="built_in">abs</span>(<span class="string">&#x27;A&#x27;</span>)));</span><br><span class="line"><span class="keyword">elseif</span> c&gt;=<span class="string">&#x27;0&#x27;</span> &amp;&amp; c&lt;=<span class="string">&#x27;9&#x27;</span></span><br><span class="line">    <span class="built_in">disp</span>(<span class="built_in">abs</span>(c)-<span class="built_in">abs</span>(<span class="string">&#x27;0&#x27;</span>));</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">disp</span>(c);</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210330103718784.png" title="image-20210330103718784" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210330103718784.png" alt="image-20210330103718784"></a><br><strong>例题5</strong></p>
+<p>某商场对顾客所购买的商品实行打折销售，标准如下：</p>
+<p>price&lt;200         没有折扣</p>
+<p>200&lt;&#x3D;price&lt;500    3%折扣</p>
+<p>500&lt;&#x3D;price&lt;1000   5%折扣</p>
+<p>1000&lt;&#x3D;price&lt;2500  8%折扣</p>
+<p>2500&lt;&#x3D;price&lt;5000  10%折扣</p>
+<p>5000&lt;&#x3D;price       14%折扣</p>
+<p>输入所售商品的价格，求其实际销售价格。</p>
+<p>代码如下：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">price = input(<span class="string">&#x27;请输入商品价格&#x27;</span>);</span><br><span class="line"><span class="keyword">switch</span> <span class="built_in">fix</span>(price/<span class="number">100</span>)</span><br><span class="line">    <span class="keyword">case</span>&#123;<span class="number">0</span>,<span class="number">1</span>&#125; </span><br><span class="line">        rate = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">case</span>&#123;<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;</span><br><span class="line">        rate = <span class="number">3</span>/<span class="number">100</span>; </span><br><span class="line">    <span class="keyword">case</span> <span class="built_in">num2cell</span>(<span class="number">5</span>:<span class="number">9</span>)</span><br><span class="line">        rate = <span class="number">5</span>/<span class="number">100</span>; </span><br><span class="line">     <span class="keyword">case</span> <span class="built_in">num2cell</span>(<span class="number">10</span>:<span class="number">24</span>)</span><br><span class="line">        rate = <span class="number">8</span>/<span class="number">100</span>;</span><br><span class="line">     <span class="keyword">case</span> <span class="built_in">num2cell</span>(<span class="number">25</span>:<span class="number">49</span>)</span><br><span class="line">        rate = <span class="number">10</span>/<span class="number">100</span>; </span><br><span class="line">      <span class="keyword">otherwise</span></span><br><span class="line">         rate = <span class="number">14</span>/<span class="number">100</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">price = price*(<span class="number">1</span>-rate) </span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210330104519216.png" title="image-20210330104519216" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210330104519216.png" alt="image-20210330104519216"></a></p>
+<p><strong>例题6</strong></p>
+<p>矩阵乘法运算要求两矩阵的维数相容，否则会出错。先求两矩阵的乘积，若出错则自动转去求两矩阵的点乘。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">A = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</span><br><span class="line">B = [<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>;<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>];</span><br><span class="line"><span class="keyword">try</span> </span><br><span class="line">    C = A*B;</span><br><span class="line"><span class="keyword">catch</span></span><br><span class="line">    C = A.*B;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">C</span><br><span class="line">lasterr</span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210330104654187.png" title="image-20210330104654187" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210330104654187.png" alt="image-20210330104654187"></a></p>
+<p><strong>例题7</strong><br>$$<br>已知 y&#x3D;\frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} +…\frac{1}{n^2} , 当n&#x3D;100时，求y的值。<br>$$</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">y = <span class="number">0</span>;n = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:n</span><br><span class="line">    y = y+<span class="number">1</span>/<span class="built_in">i</span>^<span class="number">2</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">y</span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210330105535098.png" title="image-20210330105535098" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210330105535098.png" alt="image-20210330105535098"></a></p>
+<p><strong>例题8</strong></p>
+<p>从键盘输入若干个数，当输入0时结束输入，求这些数的平均值和它们的和。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">sum = <span class="number">0</span>;</span><br><span class="line">n = <span class="number">0</span>;</span><br><span class="line">x = input(<span class="string">&#x27;Enter a number(end in 0):&#x27;</span>);</span><br><span class="line"><span class="keyword">while</span>(x~=<span class="number">0</span>)</span><br><span class="line">    sum = sum+x;</span><br><span class="line">    n = n+<span class="number">1</span>;</span><br><span class="line">    x = input(<span class="string">&#x27;Enter a number(end in 0):&#x27;</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">if</span>(n&gt;<span class="number">0</span>)</span><br><span class="line">    sum</span><br><span class="line">    <span class="built_in">mean</span>=sum/n</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p>结果截图：</p>
+<p><a href="/imgs/image-20210330105856563.png" title="image-20210330105856563" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210330105856563.png" alt="image-20210330105856563"></a></p>
+<p><strong>例题9</strong></p>
+<p>求[100,200]之间第一个能被21整除的整数。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> n = <span class="number">100</span>:<span class="number">200</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">rem</span>(n,<span class="number">21</span>)~=<span class="number">0</span>;</span><br><span class="line">       <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">n</span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210330110004611.png" title="image-20210330110004611" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210330110004611.png" alt="image-20210330110004611"></a></p>
+<p><strong>例题10</strong></p>
+<p>求半径为r的圆的面积和周长</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% getCircleInfo.m</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[s, p]</span> = <span class="title">getCircleInfo</span><span class="params">(r)</span></span></span><br><span class="line"><span class="comment">% getCircleInfo calculate the area and perimeter of a circle of radir</span></span><br><span class="line"><span class="comment">% r 半径</span></span><br><span class="line"><span class="comment">% s 面积</span></span><br><span class="line"><span class="comment">% p 周长</span></span><br><span class="line">s = <span class="built_in">pi</span> * r * r;</span><br><span class="line">p = <span class="number">2</span> * <span class="built_in">pi</span> * r;</span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210405160624369.png" title="image-20210405160624369" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210405160624369.png" alt="image-20210405160624369"></a></p>
+<p><strong>例题11</strong></p>
+<p>利用函数文件实现直角坐标和极坐标之间的转换</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% tranDicarerPolar.m</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[tho, theta]</span> = <span class="title">tranDicarerPolar</span><span class="params">(x, y)</span></span></span><br><span class="line">tho = <span class="built_in">sqrt</span>(x * x + y * y);</span><br><span class="line">theta = <span class="built_in">atan</span>(y / x);</span><br><span class="line"></span><br><span class="line"><span class="comment">% test.m</span></span><br><span class="line">x = input(<span class="string">&#x27;input x : &#x27;</span>);</span><br><span class="line">y = input(<span class="string">&#x27;input y : &#x27;</span>);</span><br><span class="line">[rho, the] = tranDicarerPolar(x, y);</span><br><span class="line">rho</span><br><span class="line">the</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>例题12</strong></p>
+<p>算n！</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span> = <span class="title">myFactor</span><span class="params">(n)</span></span></span><br><span class="line"><span class="comment">% 计算 n 的阶乘</span></span><br><span class="line"><span class="keyword">if</span> n &lt;= <span class="number">1</span></span><br><span class="line">    f = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    f = myFactor(n - <span class="number">1</span>) * n;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>例题13</strong></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 参数的数量可以改变</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">out</span> = <span class="title">charAry</span><span class="params">(a, b, c)</span></span></span><br><span class="line"><span class="keyword">if</span> nargin == <span class="number">1</span></span><br><span class="line">    out = a;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">if</span> nargin == <span class="number">2</span></span><br><span class="line">    out = a + b;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">if</span> nargin == <span class="number">3</span></span><br><span class="line">    out = (a * b * c) / <span class="number">2</span>;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>例题14</strong></p>
+<p>全局变量的使用</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span> = <span class="title">weightAdd</span><span class="params">(x, y)</span></span></span><br><span class="line"><span class="keyword">global</span> ALPHA BETA</span><br><span class="line">f = ALPHA*x + BETA * y</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="MATLAB数值计算"><a href="#MATLAB数值计算" class="headerlink" title="MATLAB数值计算"></a>MATLAB数值计算</h2><h3 id="多项式"><a href="#多项式" class="headerlink" title="多项式"></a>多项式</h3><p>表达：</p>
+<ul>
+<li><p>由行向量表示</p>
+<ul>
+<li><p>元素是多项式的系数</p>
+</li>
+<li><p>按照降幂次序排列</p>
+</li>
+<li><p>$$<br>x^4-12x^3+25x+116 \<br>$$</p>
+<p><code>p = [1 -12 0 25 116]</code> （没有的用0表示）</p>
+</li>
+</ul>
+</li>
+<li><p>多项式是行向量，根是列向量</p>
+</li>
+</ul>
+<p><strong>求解多项式的根 <code>roots()</code></strong> </p>
+  <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p = [<span class="number">1</span> <span class="number">-12</span> <span class="number">0</span> <span class="number">25</span> <span class="number">116</span>];</span><br><span class="line">roots(p)</span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210412160318955.png" title="image-20210412160318955" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210412160318955.png" alt="image-20210412160318955"></a></p>
+<p><strong>已知根，求解多项式 ：<code>poly()</code></strong></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p = [<span class="number">1</span> <span class="number">-12</span> <span class="number">0</span> <span class="number">25</span> <span class="number">116</span>];</span><br><span class="line">r = roots(p);</span><br><span class="line">poly(r)</span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210412160553945.png" title="image-20210412160553945" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210412160553945.png" alt="image-20210412160553945"></a></p>
+<p><strong>多项式乘法<code>conv()</code></strong></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a =[ <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> ];</span><br><span class="line">b = [<span class="number">1</span> <span class="number">4</span> <span class="number">9</span> <span class="number">16</span>];</span><br><span class="line">c = conv(a, b);</span><br><span class="line">c</span><br></pre></td></tr></table></figure>
+
+
+
+<p><a href="/imgs/image-20210412160841520.png" title="image-20210412160841520" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210412160841520.png" alt="image-20210412160841520"></a></p>
+<p><strong>多项式加法：<code>直接加，不够的补上 0 </code></strong></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a =[ <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> ];</span><br><span class="line">b = [<span class="number">1</span> <span class="number">4</span> <span class="number">9</span> <span class="number">16</span>];</span><br><span class="line">c = [<span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span>]</span><br><span class="line">d = a + b;</span><br><span class="line">e = d + [<span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210412161044941.png" title="image-20210412161044941" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210412161044941.png" alt="image-20210412161044941"></a><br><strong>实现任意长度多项式相加函数：</strong></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">rst</span> =  <span class="title">poly_add</span><span class="params">(a, b)</span></span></span><br><span class="line"><span class="comment">% 任意长度多项式相加</span></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">length</span>(a) == <span class="built_in">length</span>(b)</span><br><span class="line">    rst = a + b;</span><br><span class="line"><span class="keyword">elseif</span> <span class="built_in">length</span>(a) &gt; <span class="built_in">length</span>(b)</span><br><span class="line">    rst = a + [<span class="built_in">zeros</span>(<span class="number">1</span>, <span class="built_in">length</span>(a) - <span class="built_in">length</span>(b)), b]; <span class="comment">% zeros 产生1行多少列的0矩阵</span></span><br><span class="line"><span class="keyword">else</span>   </span><br><span class="line">    rst = b + [<span class="built_in">zeros</span>(<span class="number">1</span>, <span class="built_in">length</span>(b) - <span class="built_in">length</span>(a)), a];</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><a href="/imgs/image-20210412161739535.png" title="image-20210412161739535" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210412161739535.png" alt="image-20210412161739535"></a></p>
+<p><strong>多项式除法<code>deconv()</code></strong></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">c = [<span class="number">0</span> <span class="number">6</span> <span class="number">20</span> <span class="number">50</span> <span class="number">75</span> <span class="number">84</span> <span class="number">64</span>];</span><br><span class="line">b = [<span class="number">1</span> <span class="number">4</span> <span class="number">9</span> <span class="number">16</span>];</span><br><span class="line">[q, r] = deconv(c, b);</span><br><span class="line"><span class="comment">% q 商</span></span><br><span class="line"><span class="comment">% r 余数</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210412162053853.png" title="image-20210412162053853" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210412162053853.png" alt="image-20210412162053853"></a><br><strong>多项式的导数 <code>polyder()</code></strong></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">b = [<span class="number">1</span> <span class="number">4</span> <span class="number">9</span> <span class="number">16</span>];</span><br><span class="line">d = polyder(b)</span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210412162643883.png" title="image-20210412162643883" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210412162643883.png" alt="image-20210412162643883"></a><br><strong>多项式的估值<code>polyval()</code></strong><br>$$<br>绘制 p(x)&#x3D;x^3+4x^2-7x-10在[-1, 3]上的曲线<br>$$</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x =  <span class="built_in">linspace</span>(<span class="number">-1</span>, <span class="number">3</span>); <span class="comment">% x轴上的点</span></span><br><span class="line">p = [<span class="number">1</span> <span class="number">4</span> <span class="number">-7</span> <span class="number">-10</span>];</span><br><span class="line">v = polyval(p, x); <span class="comment">% x轴上的点对应的y值</span></span><br><span class="line"><span class="built_in">plot</span>(x, v) <span class="comment">% 两个行向量</span></span><br><span class="line">title(<span class="string">&#x27;x^&#123;3&#125;+4x^&#123;2&#125;-7x-10&#x27;</span>);</span><br><span class="line">xlabel(<span class="string">&#x27;x&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<p><a href="/imgs/image-20210412163046190.png" title="image-20210412163046190" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210412163046190.png" alt="image-20210412163046190"></a></p>
+<h3 id="函数的数值导数"><a href="#函数的数值导数" class="headerlink" title="函数的数值导数"></a>函数的数值导数</h3><p>matlab中没有直接求导的函数，只有计算向前差分的函数<code>diff()</code></p>
+<p><code>DX=diff(x) % 计算向量X的向前差分</code></p>
+<p><code>DX=diff(X, n) %X的n阶向前差分</code></p>
+<p>设x由[0, 2pi]间均匀分布的10个点组成，求sin(x)的1-3阶差分</p>
+<p>一阶差分：<code>f(x+1)-f(x)</code></p>
+<p>2阶差分：<code>f(x+2)-f(x)</code></p>
+<p>n阶差分：<code>f(x+n)-f(x)</code></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="built_in">linspace</span>(<span class="number">0</span>, <span class="number">2</span>*<span class="built_in">pi</span>, <span class="number">10</span>);</span><br><span class="line">y = <span class="built_in">sin</span>(x);</span><br><span class="line">dy = diff(y)</span><br><span class="line">d2y = diff(y, <span class="number">2</span>)</span><br><span class="line">d3y = diff(y, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210412165007007.png" title="image-20210412165007007" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210412165007007.png" alt="image-20210412165007007"></a></p>
+<p>$$<br>设f(x) &#x3D; \sqrt{x^2+2x^2-x+12} + （x + 5）^{1&#x2F;6} + 5x + 2 在[-3,3]内以0.01为步长求数值导数，并画图<br>$$</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">f = inline(<span class="string">&#x27;sqrt(x.^3+2*x.^2-x+12)+(x+6).^(1/6)+5*x+2&#x27;</span>); <span class="comment">% 内联函数</span></span><br><span class="line">x = <span class="number">-3</span>:<span class="number">0.01</span>:<span class="number">3</span>;</span><br><span class="line">dx = diff(f([x, <span class="number">3.01</span>]))/<span class="number">0.01</span>; <span class="comment">% 根据定义求导数</span></span><br><span class="line"><span class="comment">% 求一阶差分之后少了一个点，所以应该补上一个3.01</span></span><br><span class="line"><span class="comment">% 这样计算之后x和dx 的长度是相等的</span></span><br><span class="line"><span class="built_in">plot</span>(x, dx)</span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210412165740650.png" title="image-20210412165740650" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210412165740650.png" alt="image-20210412165740650"></a></p>
+<h3 id="数值定积分"><a href="#数值定积分" class="headerlink" title="数值定积分"></a>数值定积分</h3><p>一元函数的数值积分</p>
+<p>常用积分指令 <code>quad</code>、<code>quadl</code></p>
+<p>调用格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">q = quadl(fun, a, b); <span class="comment">% 被积函数， 上限， 下限</span></span><br><span class="line"><span class="comment">% 被基函数应该是用引号引起来的字符形式的函数</span></span><br><span class="line"><span class="comment">% 缺省参数 tol ： 控制绝对误差</span></span><br><span class="line"><span class="comment">% 缺省参数 </span></span><br></pre></td></tr></table></figure>
+
+
+<p>$$<br>求定积分 I&#x3D;\begin{equation*}<br>\int_{0}^{1} xe^{-x}dx<br>\end{equation*}<br>$$</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fun = inline(<span class="string">&#x27;exp(-x.*x)&#x27;</span>, <span class="string">&#x27;x&#x27;</span>); <span class="comment">% 第二个参数x表示这个函数的变量为x</span></span><br><span class="line">Isim = quad(fun, <span class="number">0</span>, <span class="number">1</span>), I8 = quadl(fun, <span class="number">0</span>, <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210412171051058.png" title="image-20210412171051058" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210412171051058.png" alt="image-20210412171051058"></a></p>
+<p>$$<br>\begin{equation*}<br>\int_{0}^{1} \sqrt{ln(\frac{1}{x})}, dz<br>\end{equation*}<br>$$</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fun = inline(<span class="string">&#x27;sqrt(log(1./x))&#x27;</span>, <span class="string">&#x27;x&#x27;</span>);</span><br><span class="line">Isim = quad(fun, <span class="number">0</span>, <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210412170900672.png" title="image-20210412170900672" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210412170900672.png" alt="image-20210412170900672"></a></p>
+<h3 id="元素排序"><a href="#元素排序" class="headerlink" title="元素排序"></a>元素排序</h3><p><code>sort(X)</code> 返回一个对X中元素按照<strong>每列升序</strong>排列的新向量</p>
+<p>也可以对矩阵A的各行或者各列重新排序：<code>[Y, I] = sort(A, dim)</code> <strong>dim&#x3D;1按列排序，&#x3D;2，按行排序</strong>，Y是排序后的矩阵，I记录Y中的元素在A中的位置。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A = [<span class="number">1</span> <span class="number">-8</span> <span class="number">5</span>; <span class="number">4</span> <span class="number">12</span> <span class="number">6</span>; <span class="number">13</span> <span class="number">7</span> <span class="number">-13</span>];</span><br><span class="line"><span class="built_in">sort</span>(A) <span class="comment">% 每列升序排列的新向量</span></span><br><span class="line">-<span class="built_in">sort</span>(-A,<span class="number">2</span>) <span class="comment">% 每行降序排列 ，即：按行排列，升序排列A的相反数，排列之后再取相反数</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210412172032704.png" title="image-20210412172032704" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210412172032704.png" alt="image-20210412172032704"></a></p>
+<h3 id="数据插值"><a href="#数据插值" class="headerlink" title="数据插值"></a>数据插值</h3><p>一维数据插值：被插的函数只有一个单变量</p>
+<p>一维数据插值<code>Y1 = interp1(X, Y, X1, method)</code> 函数根据X，Y的值计算函数在X1处的值。</p>
+<p>XY是两个等长的已知向量，分别描述采样点和样本值。</p>
+<p>X1是一个向量或标量，描述想要插值的点，Y1是一个与X1等长的插值结果。</p>
+<p>method取值：</p>
+<ul>
+<li>linear  (默认)</li>
+<li>nearest</li>
+<li>cubic</li>
+<li>spline</li>
+</ul>
+<p>​	表示四种插值方式</p>
+<p>一般来说，3次样条和3次多项式的插值结果比线性插值和最近点插值方法好，但是插值方法的<strong>好坏依赖于被插值的函数</strong></p>
+<p>例：给出概率积分数据如下，用不同的插值方法计算f(0.472)</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">0.46</span>:<span class="number">0.01</span>:<span class="number">0.49</span></span><br><span class="line">f = [<span class="number">0.4846555</span> <span class="number">0.4937542</span> <span class="number">0.5027498</span> <span class="number">0.5116683</span>];</span><br><span class="line">format long </span><br><span class="line">interp1(x, f, <span class="number">0.472</span>)  <span class="comment">% 默认</span></span><br><span class="line">interp1(x, f, <span class="number">0.472</span>, <span class="string">&#x27;neraest&#x27;</span>) <span class="comment">% 最近插值法</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210419155643963.png" title="image-20210419155643963" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210419155643963.png" alt="image-20210419155643963"></a></p>
+<h3 id="曲线拟合"><a href="#曲线拟合" class="headerlink" title="曲线拟合"></a>曲线拟合</h3><p>用 <code>ployfit</code> 求最小二乘拟合多项式的系数，再用<code>polyval</code>函数按照所得的多项式计算所给出点上的函数的近似值。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[P, S] = polyfit(X, Y, m)</span><br><span class="line"><span class="comment">% X 采样点</span></span><br><span class="line"><span class="comment">% Y 采样点的函数值</span></span><br><span class="line"><span class="comment">% m 产生m次的多项式</span></span><br><span class="line"><span class="comment">% P 多项式的系数</span></span><br><span class="line"><span class="comment">% S 误差向量</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>例题：</p>
+<p>用一个三次多项式在区间0到2pi内逼近函数sinx</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="built_in">linspace</span>(<span class="number">0</span>, <span class="number">2</span>*<span class="built_in">pi</span>, <span class="number">20</span>); <span class="comment">% </span></span><br><span class="line">y = <span class="built_in">sin</span>(x);</span><br><span class="line">p = polyfit(x, y, <span class="number">3</span>);</span><br><span class="line">y1 = polyval(p, x);</span><br><span class="line"><span class="built_in">plot</span>(x, y, <span class="string">&#x27;:o&#x27;</span>, x, y1, <span class="string">&#x27;-*&#x27;</span>);</span><br><span class="line"><span class="built_in">legend</span>(<span class="string">&#x27;sin(x)&#x27;</span>, <span class="string">&#x27;fit&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210419160450112.png" title="image-20210419160450112" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210419160450112.png" alt="image-20210419160450112"></a></p>
+<h2 id="MATLAB符号运算"><a href="#MATLAB符号运算" class="headerlink" title="MATLAB符号运算"></a>MATLAB符号运算</h2><h3 id="符号运算基础"><a href="#符号运算基础" class="headerlink" title="符号运算基础"></a>符号运算基础</h3><p>符号对象的定义</p>
+<ul>
+<li>定义符号对象的指令： <code>sym</code> \ <code>syms</code></li>
+<li><code>f = sym(arg)</code>  或者  <code>f = syms(&#39;arg1&#39;, &#39;arg2&#39;, ...)</code> 或者 <code>syms arg1, arg2...</code><ul>
+<li>将数字、字符串或者表达式arg转换为符号对象f</li>
+</ul>
+</li>
+<li>符号表达式可以进行四则运算</li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">syms x  y a b;</span><br><span class="line">f1 = <span class="built_in">sin</span>(x) + <span class="built_in">cos</span>(y)</span><br><span class="line">f2 = a - b;</span><br><span class="line">f12 = f1 + f2;</span><br><span class="line">f12</span><br><span class="line">f3 = f1 * f2;</span><br></pre></td></tr></table></figure>
+
+<p>基本符号运算和操作</p>
+<p><code>collect(s)</code> <code>collect(s, v)</code></p>
+<p>s 是将要进行合并的函数</p>
+<p>v 是以什么为基准合并，字符串</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br><span class="line">syms x y;</span><br><span class="line">f = x^<span class="number">2</span>*y + y*x-x^<span class="number">2</span><span class="number">-2</span>*x;</span><br><span class="line">collect(f);</span><br><span class="line">collect(f, <span class="string">&#x27;y&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210419162140048.png" title="image-20210419162140048" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210419162140048.png" alt="image-20210419162140048"></a><br>因式分解</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br><span class="line">syms x y</span><br><span class="line"><span class="built_in">factor</span>(x^<span class="number">5</span>-y^<span class="number">5</span>)</span><br><span class="line"><span class="built_in">factor</span>(x^<span class="number">10</span>-y^<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210419162307004.png" title="image-20210419162307004" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210419162307004.png" alt="image-20210419162307004"></a><br>化简 <code>simplify</code>  <code>simple</code></p>
+<p>展开 <code>expand</code></p>
+<p>嵌套形式 <code>horner</code></p>
+<p>找到分子和分母 <code>numden</code></p>
+<h3 id="符号矩阵的创建与运算"><a href="#符号矩阵的创建与运算" class="headerlink" title="符号矩阵的创建与运算"></a>符号矩阵的创建与运算</h3><p>使用sym创建符号数组</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a1 = sym(<span class="string">&#x27;[1/3 1/2 sqrt(2)]&#x27;</span>)</span><br><span class="line">or </span><br><span class="line">b1 = <span class="string">&#x27;[1/3 1/2 sqrt(2)]&#x27;</span></span><br><span class="line">a2 = sym(b1);</span><br><span class="line">a1</span><br><span class="line">a2</span><br><span class="line">// 没跑出来</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>创建符号常数数组</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="built_in">reshape</span>(<span class="number">1</span>:<span class="number">9</span>, <span class="number">3</span>, <span class="number">3</span>)</span><br><span class="line">s_a = sym(a)</span><br><span class="line">s_b = <span class="number">1.</span>/ s_a</span><br><span class="line">whos a s_a s_b</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210419164349946.png" title="image-20210419164349946" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210419164349946.png" alt="image-20210419164349946"></a></p>
+<p>创建一般符号数组</p>
+<p>符号矩阵可以乘以普通标量、符号标量、点乘等</p>
+<h3 id="符号微积分"><a href="#符号微积分" class="headerlink" title="符号微积分"></a>符号微积分</h3><p>符号极限指令: </p>
+<ul>
+<li><code>limit(f, x, a)</code> 计算变量x-&gt;a的时候，函数f的极限值</li>
+<li><code>limit(f, a)</code> 计算有findsym(f)确定的自变量-&gt;a的时候，函数f的极限值</li>
+<li><code>limit(f)</code> 计算a &#x3D; 0的时候函数f 的极限值</li>
+<li><code>limit(f, x, &#39;right&#39;)</code> <code>limit(f, x, &#39;left&#39;)</code> 计算x-&gt;a时的右极限、左极限</li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">syms x t y h</span><br><span class="line">f = <span class="built_in">sin</span>(x)/x;</span><br><span class="line">limit(f)</span><br><span class="line">limit((<span class="number">1</span>+<span class="number">2</span>*t/x)^(<span class="number">3</span>*x), x, <span class="built_in">inf</span>)</span><br><span class="line">limit(<span class="number">1</span>/x, x, <span class="number">0</span>, <span class="string">&#x27;right&#x27;</span>) <span class="comment">% 右极限</span></span><br><span class="line">limit(<span class="number">1</span>/x, x, <span class="number">0</span>, <span class="string">&#x27;left&#x27;</span>) <span class="comment">% 左极限</span></span><br><span class="line">limit((<span class="built_in">sin</span>(x+h)-<span class="built_in">sin</span>(x))/h, h, <span class="number">0</span>) <span class="comment">% sin(x)的导数的概念</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210419165716570.png" title="image-20210419165716570" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210419165716570.png" alt="image-20210419165716570"></a></p>
+<h3 id="函数的符号微分与求导"><a href="#函数的符号微分与求导" class="headerlink" title="函数的符号微分与求导"></a>函数的符号微分与求导</h3><p>MATLAB符号微分指令： <code>diff</code></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">syms x y;</span><br><span class="line">f = x^<span class="number">2</span> + x*y + <span class="built_in">sin</span>(x) + <span class="built_in">cos</span>(y);</span><br><span class="line">dy1 = diff(f, <span class="string">&#x27;y&#x27;</span>) <span class="comment">% 默认对x求导，用’y‘作为参数可以对y求导</span></span><br><span class="line">dx2 = diff(f, <span class="number">2</span>) <span class="comment">% 求2阶导数</span></span><br><span class="line">dy2 = diff(f, <span class="string">&#x27;y&#x27;</span>, <span class="number">2</span>) <span class="comment">% 求 y 的二阶导数</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210419170704038.png" title="image-20210419170704038" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210419170704038.png" alt="image-20210419170704038"></a></p>
+<h3 id="符号积分"><a href="#符号积分" class="headerlink" title="符号积分"></a>符号积分</h3><p><code>int</code> 计算不定积分和定积分</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">syms x w t;</span><br><span class="line">int(<span class="number">1</span>/x)</span><br><span class="line">int(<span class="number">1</span>/x^<span class="number">2</span>)</span><br><span class="line">int(<span class="built_in">sin</span>(w*t), t) <span class="comment">% 对 t 积分</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><a href="/imgs/image-20210419171018559.png" title="image-20210419171018559" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210419171018559.png" alt="image-20210419171018559"></a></p>
+<h3 id="符号代数方程的求解"><a href="#符号代数方程的求解" class="headerlink" title="符号代数方程的求解"></a>符号代数方程的求解</h3><p>代数方程求解代数方程的指令：</p>
+<ul>
+<li>线性方程组的求解：<code>linsolve</code></li>
+<li>一般代数方程组的解：<code>solve</code></li>
+</ul>
+<p>$$<br>求方程组 u<em>y^2+v</em>z+w&#x3D;0,y+z+w&#x3D;0 关于y，z的解<br>$$</p>
+<h2 id="MATLAB应用举例"><a href="#MATLAB应用举例" class="headerlink" title="MATLAB应用举例"></a>MATLAB应用举例</h2><p><strong>求解方程的根</strong><br>$$<br>2x^5-3x^3+71x^2-9x+13&#x3D;0<br>$$</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 建立多项式系数行向量</span></span><br><span class="line"><span class="comment">% 每一个系数</span></span><br><span class="line">p = [<span class="number">2</span>, <span class="number">0</span>, <span class="number">-3</span>, <span class="number">71</span>, <span class="number">-9</span>, <span class="number">13</span>];</span><br><span class="line">x = roots(p); <span class="comment">% 求根</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><strong>求解线性方程组</strong><br>$$<br>\begin{cases}<br>2x+3y-z&#x3D;2 \8x+2y+3z&#x3D;4 \45x+3y+9z&#x3D;23<br>\end{cases}<br>$$</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">-1</span>; <span class="number">8</span>, <span class="number">2</span>, <span class="number">3</span>; <span class="number">45</span>, <span class="number">3</span>, <span class="number">9</span>]; <span class="comment">% 建立系数矩阵a</span></span><br><span class="line">b = [<span class="number">2</span>; <span class="number">4</span>; <span class="number">23</span>]; <span class="comment">% 建立列向量b</span></span><br><span class="line">z = inv(a) * b;</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<p>$$<br>原方程组可化为<br>\begin{cases}<br>2x+3y-z-2&#x3D;0 \8x+2y+3z-4&#x3D;0 \45x+3y+9z-23&#x3D;0<br>\end{cases}<br>$$</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">syms x y z; <span class="comment">% 声明变量</span></span><br><span class="line">[x, y ,z] = solve(<span class="number">2</span>*x+<span class="number">3</span>*y-z-z, <span class="number">8</span>*x+<span class="number">2</span>*y+<span class="number">3</span>*z<span class="number">-4</span>, <span class="number">45</span>*x+<span class="number">3</span>*y+<span class="number">9</span>*z<span class="number">-23</span>); <span class="comment">% 求解变量</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>求解定积分</strong><br>$$<br>\int_{0}^{1}{x\ln(1+x)}dx<br>$$</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">quad(<span class="string">&#x27;x.*log(1+x)&#x27;</span>, <span class="number">0</span>, <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>多项式曲线拟合</strong></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 考虑以下实验数据</span></span><br><span class="line">x = [<span class="number">1</span>:<span class="number">1</span>:<span class="number">10</span>];</span><br><span class="line">y = [<span class="number">1.2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">4.7</span>, <span class="number">5</span>, <span class="number">5.2</span>, <span class="number">6</span>, <span class="number">7.2</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">% 一次多项式拟合</span></span><br><span class="line">p1 = polyfit(x, y, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">% 三次多项式拟合</span></span><br><span class="line">p3 = polyfit(x, y, <span class="number">3</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">% 画出原始数据和拟合曲线</span></span><br><span class="line">x2 = <span class="number">1</span>:<span class="number">0.1</span>:<span class="number">10</span>;</span><br><span class="line">y1 = polyval(p1, x2);</span><br><span class="line">y3 = polyval(p3, x2);</span><br><span class="line"></span><br><span class="line"><span class="comment">% 3个一组，两个变量和变量的显示形式。</span></span><br><span class="line"><span class="built_in">plot</span>(x, y, <span class="string">&#x27;*&#x27;</span>, x2, y1, <span class="string">&#x27;:&#x27;</span>, x2, y3);</span><br></pre></td></tr></table></figure>
+
+
+
+<p><a href="/imgs/image-20210308162050858.png" title="image-20210308162050858" class="gallery-item" style="box-shadow: none;"> <img src="/imgs/image-20210308162050858.png" alt="image-20210308162050858"></a></p>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2021-03-22</span>
+            
+            
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2021/05/22/springboot/'>笔记 | SpringBoot2</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2021/03/11/CSS/">笔记 | CSS3</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+             
+
+            
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>Change And Challenge</span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>

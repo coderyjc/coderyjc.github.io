@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="总结 | 环境问题总结" />
+    <meta name="hexo-theme-A4" content="v1.9.6" />
+    <link rel="alternate icon" type="image/webp" href="/img/avatar.png">
+    <title>Jingcun Yan</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+    
+    
+        <style>
+            .index-main{
+                max-width:  880px;
+            }
+        </style>
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            <div class="left-toc-container">
+                <nav id="toc" class="bs-docs-sidebar"></nav>
+            </div>
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/avatar.png" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">Jingcun Yan</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    总结 | 环境问题总结
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                
+                    
+                     <span>字数总计：5.3k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：25分钟</span>
+                
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+        <div class=".article-gallery"><h1 id="Docker安装与卸载"><a href="#Docker安装与卸载" class="headerlink" title="Docker安装与卸载"></a>Docker安装与卸载</h1><blockquote>
+<p>总结: 从官网看文档安装最好 <a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/ubuntu/">https://docs.docker.com/engine/install/ubuntu/</a></p>
+</blockquote>
+<h3 id="卸载旧版本"><a href="#卸载旧版本" class="headerlink" title="卸载旧版本"></a>卸载旧版本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt-get remove docker docker-engine docker.io containerd runc</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置仓库"><a href="#设置仓库" class="headerlink" title="设置仓库"></a>设置仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> apt-get update</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">sudo</span> apt-get install \</span><br><span class="line">    ca-certificates \</span><br><span class="line">    curl \</span><br><span class="line">    gnupg \</span><br><span class="line">    lsb-release</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">sudo</span> <span class="built_in">mkdir</span> -p /etc/apt/keyrings</span><br><span class="line">$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | <span class="built_in">sudo</span> gpg --dearmor -o /etc/apt/keyrings/docker.gpg</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$ <span class="built_in">echo</span> \</span><br><span class="line">  <span class="string">&quot;deb [arch=<span class="subst">$(dpkg --print-architecture)</span> signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \</span></span><br><span class="line"><span class="string">  <span class="subst">$(lsb_release -cs)</span> stable&quot;</span> | <span class="built_in">sudo</span> <span class="built_in">tee</span> /etc/apt/sources.list.d/docker.list &gt; /dev/null</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p>![[img&#x2F;image-20220623131117.png]]</p>
+<h3 id="安装Docker引擎并测试"><a href="#安装Docker引擎并测试" class="headerlink" title="安装Docker引擎并测试"></a>安装Docker引擎并测试</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> apt-get update</span><br><span class="line">$ <span class="built_in">sudo</span> apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">sudo</span> docker run hello-world</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> apt-get purge docker-ce docker-ce-cli containerd.io docker-compose-plugin</span><br></pre></td></tr></table></figure>
+<p>Images, containers, volumes, or customized configuration files on your host are not automatically removed. To delete all images, containers, and volumes:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> <span class="built_in">rm</span> -rf /var/lib/docker</span><br><span class="line">$ <span class="built_in">sudo</span> <span class="built_in">rm</span> -rf /var/lib/containerd</span><br></pre></td></tr></table></figure>
+
+<p>You must delete any edited configuration files manually.</p>
+<h1 id="HBuilder连接夜神模拟器"><a href="#HBuilder连接夜神模拟器" class="headerlink" title="HBuilder连接夜神模拟器"></a>HBuilder连接夜神模拟器</h1><h3 id="基础连接"><a href="#基础连接" class="headerlink" title="基础连接"></a>基础连接</h3><p>设置</p>
+<p><a href="/img/image-20220429152732.png" title="image-20220429152732.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20220429152732.png" alt="image-20220429152732.png"></a></p>
+<p><a href="/img/image-20220429152837.png" title="image-20220429152837.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20220429152837.png" alt="image-20220429152837.png"></a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nox_adb connect 127.0.0.1:62001  </span><br></pre></td></tr></table></figure>
+
+<p><a href="/img/image-20220429154304.png" title="image-20220429154304.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20220429154304.png" alt="image-20220429154304.png"></a></p>
+<h3 id="由于目标计算机积极拒绝，无法连接"><a href="#由于目标计算机积极拒绝，无法连接" class="headerlink" title="由于目标计算机积极拒绝，无法连接"></a>由于目标计算机积极拒绝，无法连接</h3><p>原因:</p>
+<ol>
+<li><p>adb和nox_adb的版本不一致</p>
+</li>
+<li><p>进入进Android SDK下的platform-tools目录</p>
+</li>
+<li><p>将adb.exe拷贝至夜神bin目录下，粘贴两个，一个改成nox_adb.exe，把原来的nox_adb.exe删掉。</p>
+</li>
+</ol>
+<p>配置环境变量, 将夜神模拟器的bin目录添加到path目录下面</p>
+<p>V:\IDE\Android-SDK\android-sdk-windows\platform-tools 添加到path目录下面</p>
+<h1 id="npm和node安装"><a href="#npm和node安装" class="headerlink" title="npm和node安装"></a>npm和node安装</h1><p>Node.js是一个JavaScript运行环境(runtime environment)，不是一个js文件，实质是对Chrome V8引擎进行了封装。Node是一个让 JavaScript 运行在服务端的开发平台，它让 JavaScript 成为与PHP、等服务端语言平起平坐的脚本语言。  </p>
+<p>[1]Node.js提供替代的API，使得V8在非浏览器环境下运行得更好。V8引擎执行Javascript的速度非常快，性能非常好。  </p>
+<p>[2]Node.js是一个基于Chrome JavaScript运行时建立的平台， 用于方便地搭建响应速度快、易于扩展的网络应用。  </p>
+<p>chrome浏览器和Node.js在解析javascript都使用了v8引擎：</p>
+<p>node内置了npm</p>
+<h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1 安装"></a>1 安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cd /opt;</span><br><span class="line"></span><br><span class="line">wget https://nodejs.org/dist/v16.14.0/node-v16.14.0-linux-x64.tar.xz</span><br><span class="line"></span><br><span class="line">tar -xvf node-v16.14.0-linux-x64.tar.xz</span><br><span class="line"></span><br><span class="line">ln -s /opt/node-v16.14.0-linux-x64/bin/npm /usr/bin/  </span><br><span class="line">ln -s /opt/node-v16.14.0-linux-x64/bin/node /usr/bin/  </span><br><span class="line">ln -s /opt/node-v16.14.0-linux-x64/bin/npx /usr/bin/</span><br></pre></td></tr></table></figure>
+
+<p>![[..&#x2F;..&#x2F;DevOps&#x2F;Nginx&#x2F;Nginx-解决方案&#x2F;assets&#x2F;image-20220505183225.png]]</p>
+<h2 id="2-查看config配置并设置全局路径"><a href="#2-查看config配置并设置全局路径" class="headerlink" title="2 查看config配置并设置全局路径"></a>2 查看config配置并设置全局路径</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm config ls</span><br><span class="line"></span><br><span class="line">npm config set prefix &#x27;/home/data/nodejs/node_global&#x27;  </span><br><span class="line">npm config set cache &#x27;/home/data/nodejs/node_cache&#x27;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-修改镜像"><a href="#3-修改镜像" class="headerlink" title="3 修改镜像"></a>3 修改镜像</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">升级</span></span><br><span class="line"></span><br><span class="line">npm install -g npm@8.5.4</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">npm 修改为国内镜像地址</span></span><br><span class="line"></span><br><span class="line">npm config set registry https://registry.npm.taobao.org/</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="4-配置后可通过下面方式来验证是否成功"><a href="#4-配置后可通过下面方式来验证是否成功" class="headerlink" title="4 配置后可通过下面方式来验证是否成功"></a>4 配置后可通过下面方式来验证是否成功</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm config get registry  </span><br><span class="line">或者  </span><br><span class="line">npm info express</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="5-环境变量ENV"><a href="#5-环境变量ENV" class="headerlink" title="5 环境变量ENV"></a>5 环境变量ENV</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/home/data/nodejs/node_global/bin</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> NODE_GLOBAL=/home/data/nodejs/node_global</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;NODE_GLOBAL&#125;</span>/bin:<span class="variable">$&#123;PATH&#125;</span>  </span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
+
+<h1 id="Python-第三方库相关"><a href="#Python-第三方库相关" class="headerlink" title="Python 第三方库相关"></a>Python 第三方库相关</h1><h2 id="pip-使用清华源安装"><a href="#pip-使用清华源安装" class="headerlink" title="pip 使用清华源安装"></a>pip 使用清华源安装</h2><h3 id="临时"><a href="#临时" class="headerlink" title="临时"></a>临时</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install ** -i &lt;https://pypi.yuna.tsinghua.edu.en/simple&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="永久"><a href="#永久" class="headerlink" title="永久"></a>永久</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install pip -U</span><br><span class="line">pip config <span class="built_in">set</span> global.index-url https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure>
+
+<p>永久的设置会在路径<code>C:\Users\Administrator\AppData\Roaming\pip</code>中创建文件<code>pip.ini</code></p>
+<p>内容为：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[global]</span></span><br><span class="line"><span class="attr">index-url</span> = https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure>
+
+<p>因此我们可以在这个目录中创建文件并写入文本</p>
+<blockquote>
+<p>在使用清华源进行下载的软件包的时候可能会遇到如下问题：<br>Could not fetch URL <a target="_blank" rel="noopener" href="https://pypi.tuna.tsinghua.edu.cn/simple/asgiref/">https://pypi.tuna.tsinghua.edu.cn/simple/asgiref/</a>: There was a problem confirming the ssl certificate: HTTPSConnectionPool(host&#x3D;’pypi.tuna.tsinghua.edu.cn’, port&#x3D;443): Max retries ex<br>ceeded with url: &#x2F;simple&#x2F;asgiref&#x2F; (Caused by SSLError(“Can’t connect to HTTPS URL because the SSL module is not available.”)) - skipping<br>出现这种问题是因为证书不安全，如下解决方法：</p>
+</blockquote>
+<p>增加–trusted-host pypi.douban.com</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install xxx --trusted-host pypi.tuna.tsinghua.edu.cn</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="软件包下载问题"><a href="#软件包下载问题" class="headerlink" title="软件包下载问题"></a>软件包下载问题</h2><p>如果直接pip下载慢的话，直接登录所在的软件包管理网站，在目录中查找想要的whl文件，然后使用迅雷新建下载任务，然后下载。</p>
+<p>软件包网站：</p>
+<p><a target="_blank" rel="noopener" href="https://www.lfd.uci.edu/~gohlke/pythonlibs/">https://www.lfd.uci.edu/~gohlke/pythonlibs/</a></p>
+<p><a target="_blank" rel="noopener" href="https://pypi.org/project/">https://pypi.org/project/</a></p>
+<p>比如我要找<code>ruamel.yaml.clib==0.2.4</code>可以直接在页面中搜索<code>ruamel.yaml.clib</code></p>
+<p><a href="/img/image-20230126000543.png" title="image-20230126000543.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230126000543.png" alt="image-20230126000543.png"></a></p>
+<h1 id="Vim-Plugin"><a href="#Vim-Plugin" class="headerlink" title="Vim-Plugin"></a>Vim-Plugin</h1><p>起初是想实现 vim的自动补全功能的, 但是无意间发现了这个管理vim中插件的方法</p>
+<blockquote>
+<p>vim <a target="_blank" rel="noopener" href="https://github.com/vim/vim.git">https://github.com/vim/vim.git</a><br>vim插件管理软件  vim-plug <a target="_blank" rel="noopener" href="https://github.com/junegunn/vim-plug">https://github.com/junegunn/vim-plug</a><br>下载完管理插件的之后 从这里下载插件 <a target="_blank" rel="noopener" href="https://vimawesome.com/">https://vimawesome.com/</a></p>
+</blockquote>
+<h2 id="Vim8-1-的安装"><a href="#Vim8-1-的安装" class="headerlink" title="Vim8.1 的安装"></a>Vim8.1 的安装</h2><h3 id="卸载旧版本Vim8-0"><a href="#卸载旧版本Vim8-0" class="headerlink" title="卸载旧版本Vim8.0"></a>卸载旧版本Vim8.0</h3><ol>
+<li>查看所有与 vim 有关的包</li>
+</ol>
+<p><code>dpkg -l | grep vim</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ dpkg -l | grep vim</span><br><span class="line">ii  vim                                    2:8.0.1453-1ubuntu1.8               amd64        Vi IMproved - enhanced vi editor</span><br><span class="line">ii  vim-common                             2:8.0.1453-1ubuntu1.8               all          Vi IMproved - Common files</span><br><span class="line">rc  vim-nox                                2:8.0.1453-1ubuntu1.8               amd64        Vi IMproved - enhanced vi editor - with scripting languages support</span><br><span class="line">ii  vim-runtime                            2:8.0.1453-1ubuntu1.8               all          Vi IMproved - Runtime files</span><br><span class="line">rc  vim-tiny                               2:8.0.1453-1ubuntu1.8               amd64        Vi IMproved - enhanced vi editor - compact version</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>删除所有的相关包</li>
+</ol>
+<p><code>sudo apt-get remove vim vim-runtime vim-common</code></p>
+<h3 id="安装vim8-1"><a href="#安装vim8-1" class="headerlink" title="安装vim8.1"></a>安装vim8.1</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/vim/vim.git</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> vim</span><br><span class="line"></span><br><span class="line">./configure</span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> make</span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> make install</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="vim-plug的安装"><a href="#vim-plug的安装" class="headerlink" title="vim-plug的安装"></a>vim-plug的安装</h2><blockquote>
+<p>简单翻译一下这个repo的readme.md</p>
+</blockquote>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>下载 <code>plug.vim</code> 到vim目录, 我的是<code>/usr/share/vim/vim80/autoload</code>, 直接从<a target="_blank" rel="noopener" href="https://github.com/junegunn/vim-plug/blob/master/plug.vim">github的plug.vim</a>中复制然后编辑文件也可以.</p>
+<p>如果没有这个文件夹, 就从用户文件夹中创建<code>.vimrc/autoload</code> 在这个文件夹中进行操作 </p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>在<code>~/.vimrc</code>中添加vim插件的片段</p>
+<p>例子如下: </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">call plug#begin()</span><br><span class="line"></span><br><span class="line">Plug <span class="string">&#x27;junegunn/vim-easy-align&#x27;</span></span><br><span class="line"></span><br><span class="line">Plug <span class="string">&#x27;SirVer/ultisnips&#x27;</span> | Plug <span class="string">&#x27;honza/vim-snippets&#x27;</span></span><br><span class="line"></span><br><span class="line">Plug <span class="string">&#x27;rdnetto/YCM-Generator&#x27;</span>, &#123; <span class="string">&#x27;branch&#x27;</span>: <span class="string">&#x27;stable&#x27;</span> &#125;</span><br><span class="line"></span><br><span class="line">Plug <span class="string">&#x27;nsf/gocode&#x27;</span>, &#123; <span class="string">&#x27;tag&#x27;</span>: <span class="string">&#x27;v.20150303&#x27;</span>, <span class="string">&#x27;rtp&#x27;</span>: <span class="string">&#x27;vim&#x27;</span> &#125;</span><br><span class="line"></span><br><span class="line">Plug <span class="string">&#x27;junegunn/fzf&#x27;</span>, &#123; <span class="string">&#x27;dir&#x27;</span>: <span class="string">&#x27;~/.fzf&#x27;</span>, <span class="string">&#x27;do&#x27;</span>: <span class="string">&#x27;./install --all&#x27;</span> &#125;</span><br><span class="line"></span><br><span class="line">Plug <span class="string">&#x27;~/my-prototype-plugin&#x27;</span></span><br><span class="line"></span><br><span class="line">call plug#end()</span><br></pre></td></tr></table></figure>
+
+<h3 id="举例-–-安装-Nerd-Tree-插件"><a href="#举例-–-安装-Nerd-Tree-插件" class="headerlink" title="举例 – 安装 Nerd Tree 插件"></a>举例 – 安装 Nerd Tree 插件</h3><p>打开 <a target="_blank" rel="noopener" href="https://vimawesome.com/plugin/nerdtree-red">https://vimawesome.com/plugin/nerdtree-red</a> </p>
+<p><a href="/img/image-20220619130124.png" title="image-20220619130124.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20220619130124.png" alt="image-20220619130124.png"></a></p>
+<p>在 <code>.vimrc</code> 中加入 <code>Plug &#39;scrooloose/nerdtree&#39;</code></p>
+<p>然后在vim编辑器中运行命令 </p>
+<p><code>:source %</code><br><code>:PlugInstall</code></p>
+<p>如图</p>
+<p><a href="/img/image-20220619130325.png" title="image-20220619130325.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20220619130325.png" alt="image-20220619130325.png"></a></p>
+<p>输入PlugInstall命令之后显示, 成功</p>
+<p><a href="/img/image-20220619130412.png" title="image-20220619130412.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20220619130412.png" alt="image-20220619130412.png"></a></p>
+<p>在<code>/vimrc</code> 中添加 <code>autocmd VimEnter * NERDTree</code> 设置自启动</p>
+<h3 id="卸载插件"><a href="#卸载插件" class="headerlink" title="卸载插件"></a>卸载插件</h3><p>先删除vimrc 中的Plug命令, 再在vim中执行命令 <code>:PlugClean</code></p>
+<h1 id="VsCode-C环境"><a href="#VsCode-C环境" class="headerlink" title="VsCode-C环境"></a>VsCode-C环境</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://zhuanlan.zhihu.com/p/87864677</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装MinGW编译器"><a href="#安装MinGW编译器" class="headerlink" title="安装MinGW编译器"></a>安装MinGW编译器</h2><h3 id="方法一：下载安装器在线安装"><a href="#方法一：下载安装器在线安装" class="headerlink" title="方法一：下载安装器在线安装"></a>方法一：下载安装器在线安装</h3><p>可以在MinGW<a target="_blank" rel="noopener" href="https://sourceforge.net/projects/mingw-w64/files/mingw-w64/mingw-w64-release/">官网地址下载</a>，也可以直接下载：<a target="_blank" rel="noopener" href="https://nchc.dl.sourceforge.net/project/mingw-w64/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/installer/mingw-w64-install.exe">MinGW直接下载</a></p>
+<p>下载参数如下：</p>
+<p><a href="/img/image-20230225124610.png" title="image-20230225124610.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230225124610.png" alt="image-20230225124610.png"></a></p>
+<p>确保路径中不包含<strong>空格</strong>和<strong>中文</strong>字符</p>
+<p><a href="/img/image-20230225124739.png" title="image-20230225124739.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230225124739.png" alt="image-20230225124739.png"></a></p>
+<p>安装成功即可</p>
+<p>但是我在安装的时候安装失败了（科学上网也不行），报错如下，因此尝试离线安装</p>
+<p><a href="/img/image-20230225125231.png" title="image-20230225125231.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230225125231.png" alt="image-20230225125231.png"></a></p>
+<h3 id="方法二：离线安装"><a href="#方法二：离线安装" class="headerlink" title="方法二：离线安装"></a>方法二：离线安装</h3><p>直接在官网下载离线安装包，或者<a target="_blank" rel="noopener" href="https://altushost-swe.dl.sourceforge.net/project/mingw-w64/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/8.1.0/threads-win32/seh/x86_64-8.1.0-release-win32-seh-rt_v6-rev0.7z">点击直接下载</a></p>
+<p>下载完之后直接解压到文件夹即可。</p>
+<p>然后将 <code>&#123;安装路径&#125;\mingw64\bin</code>添加到环境变量</p>
+<p>检测：</p>
+<p>cmd中输入<code>gcc -v</code>出现下列文字说明配置正确。</p>
+<p><a href="/img/image-20230225125919.png" title="image-20230225125919.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230225125919.png" alt="image-20230225125919.png"></a></p>
+<h2 id="VsCode安装C-扩展"><a href="#VsCode安装C-扩展" class="headerlink" title="VsCode安装C++扩展"></a>VsCode安装C++扩展</h2><p>从插件列表中下载C&#x2F;C++扩展</p>
+<p><a href="/img/image-20230225162343.png" title="image-20230225162343.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230225162343.png" alt="image-20230225162343.png"></a></p>
+<p>先编写测试代码</p>
+<p><a href="/img/image-20230225162408.png" title="image-20230225162408.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230225162408.png" alt="image-20230225162408.png"></a></p>
+<p>发现需要配置运行环境</p>
+<p>下面我们开始配置运行环境</p>
+<h2 id="方法3（2024-4-22更新）"><a href="#方法3（2024-4-22更新）" class="headerlink" title="方法3（2024.4.22更新）"></a>方法3（2024.4.22更新）</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// tasks.json</span></span><br><span class="line"></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="comment">// See https://go.microsoft.com/fwlink/?LinkId=733558</span></span><br><span class="line">  <span class="comment">// for the documentation about the tasks.json format</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;tasks&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">&#123;</span></span><br><span class="line">          <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;echo&quot;</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;shell&quot;</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;g++&quot;</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">              <span class="string">&quot;-g&quot;</span><span class="punctuation">,</span> </span><br><span class="line">              <span class="string">&quot;$&#123;file&#125;&quot;</span><span class="punctuation">,</span> </span><br><span class="line">              <span class="string">&quot;-o&quot;</span><span class="punctuation">,</span> </span><br><span class="line">              <span class="string">&quot;$&#123;fileBasenameNoExtension&#125;.exe&quot;</span><span class="punctuation">,</span></span><br><span class="line">              <span class="string">&quot;-fexec-charset=GBK&quot;</span><span class="comment">//解决中文乱码</span></span><br><span class="line">          <span class="punctuation">]</span></span><br><span class="line">      <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;presentation&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;echo&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;reveal&quot;</span><span class="punctuation">:</span> <span class="string">&quot;always&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;focus&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;panel&quot;</span><span class="punctuation">:</span> <span class="string">&quot;shared&quot;</span><span class="punctuation">,</span> </span><br><span class="line">      <span class="attr">&quot;showReuseMessage&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;clear&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// c_cpp_properties.json</span></span><br><span class="line"></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;configurations&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Win32&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;includePath&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;$&#123;workspaceRoot&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="comment">// &quot;F:\\env\\mingw\\include&quot;,</span></span><br><span class="line">                <span class="comment">// &quot;F:\\env\\mingw\\lib\\gcc\\x86_64-w64-mingw32\\8.1.0\\include\\c++&quot;,</span></span><br><span class="line">                <span class="comment">// &quot;F:\\env\\mingw\\lib\\gcc\\x86_64-w64-mingw32\\8.1.0\\include\\c++\\x86_64-w64-mingw32&quot;,</span></span><br><span class="line">                <span class="comment">// &quot;F:\\env\\mingw\\lib\\gcc\\x86_64-w64-mingw32\\8.1.0\\include\\c++\\backward&quot;,</span></span><br><span class="line">                <span class="comment">// &quot;F:\\env\\mingw\\lib\\gcc\\x86_64-w64-mingw32\\8.1.0\\include&quot;,</span></span><br><span class="line">                <span class="comment">// &quot;F:\\env\\mingw\\lib\\gcc\\x86_64-w64-mingw32\\8.1.0\\include-fixed&quot;,</span></span><br><span class="line">                <span class="comment">// &quot;F:\\env\\mingw\\x86_64-w64-mingw32\\include&quot;</span></span><br><span class="line">            <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;defines&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;_DEBUG&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;UNICODE&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;__GNUC__=6&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;__cdecl=__attribute__((__cdecl__))&quot;</span></span><br><span class="line">            <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;intelliSenseMode&quot;</span><span class="punctuation">:</span> <span class="string">&quot;msvc-x64&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;browse&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;limitSymbolsToIncludedHeaders&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;databaseFilename&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;path&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                    <span class="string">&quot;$&#123;workspaceRoot&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="comment">// &quot;F:\\env\\mingw\\include&quot;,</span></span><br><span class="line">                    <span class="comment">// &quot;F:\\env\\mingw\\lib\\gcc\\x86_64-w64-mingw32\\8.1.0\\include\\c++&quot;,</span></span><br><span class="line">                    <span class="comment">// &quot;F:\\env\\mingw\\lib\\gcc\\x86_64-w64-mingw32\\8.1.0\\include\\c++\\x86_64-w64-mingw32&quot;,</span></span><br><span class="line">                    <span class="comment">// &quot;F:\\env\\mingw\\lib\\gcc\\x86_64-w64-mingw32\\8.1.0\\include\\c++\\backward&quot;,</span></span><br><span class="line">                    <span class="comment">// &quot;F:\\env\\mingw\\lib\\gcc\\x86_64-w64-mingw32\\8.1.0\\include&quot;,</span></span><br><span class="line">                    <span class="comment">// &quot;F:\\env\\mingw\\lib\\gcc\\x86_64-w64-mingw32\\8.1.0\\include-fixed&quot;,</span></span><br><span class="line">                    <span class="comment">// &quot;F:\\env\\mingw\\x86_64-w64-mingw32\\include&quot;</span></span><br><span class="line">                <span class="punctuation">]</span></span><br><span class="line">            <span class="punctuation">&#125;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="number">4</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// launch.json</span></span><br><span class="line"></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="comment">// Use IntelliSense to learn about possible attributes.</span></span><br><span class="line">  <span class="comment">// Hover to view descriptions of existing attributes.</span></span><br><span class="line">  <span class="comment">// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;0.2.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;configurations&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;(Windows) Launch&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cppvsdbg&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;request&quot;</span><span class="punctuation">:</span> <span class="string">&quot;launch&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;program&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cmd&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;preLaunchTask&quot;</span><span class="punctuation">:</span> <span class="string">&quot;echo&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">            <span class="string">&quot;/C&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;$&#123;fileDirname&#125;\\$&#123;fileBasenameNoExtension&#125;.exe&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;&amp;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;echo.&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="comment">// &quot;&amp;&quot;,</span></span><br><span class="line">            <span class="comment">// &quot;pause&quot; // 黑框一闪而过就释放这里的注释</span></span><br><span class="line">        <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;stopAtEntry&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;cwd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;workspaceFolder&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;environment&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;externalConsole&quot;</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;(gdb) Launch&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cppdbg&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;request&quot;</span><span class="punctuation">:</span> <span class="string">&quot;launch&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;program&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;workspaceFolder&#125;/$&#123;fileBasenameNoExtension&#125;.exe&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;stopAtEntry&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;cwd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;workspaceFolder&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;environment&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;externalConsole&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;MIMode&quot;</span><span class="punctuation">:</span> <span class="string">&quot;gdb&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;miDebuggerPath&quot;</span><span class="punctuation">:</span> <span class="string">&quot;F:\\env\\mingw\\bin\\g++.exe&quot;</span><span class="punctuation">,</span><span class="comment">// 自己电脑的gdb</span></span><br><span class="line">      <span class="attr">&quot;preLaunchTask&quot;</span><span class="punctuation">:</span> <span class="string">&quot;echo&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;setupCommands&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Enable pretty-printing for gdb&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;text&quot;</span><span class="punctuation">:</span> <span class="string">&quot;-enable-pretty-printing&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;ignoreFailures&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">      <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="方法2【新版】"><a href="#方法2【新版】" class="headerlink" title="方法2【新版】"></a>方法2【新版】</h2><p>在文件夹下创建<code>.vscode</code>文件夹，然后创建3个文件。</p>
+<ol>
+<li><p>c_cpp_properties.json</p>
+</li>
+<li><p>launch.json</p>
+</li>
+<li><p>tasks.json</p>
+</li>
+<li><p>c_cpp_properties.json</p>
+</li>
+</ol>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;configurations&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">          <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Win32&quot;</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;includePath&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;$&#123;workspaceFolder&#125;/**&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;defines&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;_DEBUG&quot;</span><span class="punctuation">,</span> <span class="string">&quot;UNICODE&quot;</span><span class="punctuation">,</span> <span class="string">&quot;_UNICODE&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;windowsSdkVersion&quot;</span><span class="punctuation">:</span> <span class="string">&quot;10.0.17763.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;compilerPath&quot;</span><span class="punctuation">:</span> <span class="string">&quot;F:\\codeConfiguration\\minGW\\bin\\g++.exe&quot;</span><span class="punctuation">,</span>   <span class="comment">/*修改成自己bin目录下的g++.exe，这里的路径和电脑里复制的文件目录有一点不一样，这里是两个反斜杠\\*/</span></span><br><span class="line">          <span class="attr">&quot;cStandard&quot;</span><span class="punctuation">:</span> <span class="string">&quot;c11&quot;</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;cppStandard&quot;</span><span class="punctuation">:</span> <span class="string">&quot;c++17&quot;</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;intelliSenseMode&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;default&#125;&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">      <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="number">4</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>launch.json</li>
+</ol>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="comment">// 使用 IntelliSense 了解相关属性。 </span></span><br><span class="line">    <span class="comment">// 悬停以查看现有属性的描述。</span></span><br><span class="line">    <span class="comment">// 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;0.2.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;configurations&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;g++.exe build and debug active file&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cppdbg&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;request&quot;</span><span class="punctuation">:</span> <span class="string">&quot;launch&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;program&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;fileDirname&#125;\\$&#123;fileBasenameNoExtension&#125;.exe&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;stopAtEntry&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cwd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;workspaceFolder&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;environment&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;externalConsole&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;MIMode&quot;</span><span class="punctuation">:</span> <span class="string">&quot;gdb&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;miDebuggerPath&quot;</span><span class="punctuation">:</span> <span class="string">&quot;F:\\codeConfiguration\\MinGW\\bin\\gdb.exe&quot;</span><span class="punctuation">,</span>		<span class="comment">/*修改成自己bin目录下的gdb.exe，这里的路径和电脑里复制的文件目录有一点不一样，这里是两个反斜杠\\*/</span></span><br><span class="line">            <span class="attr">&quot;setupCommands&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="punctuation">&#123;</span></span><br><span class="line">                    <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;为 gdb 启用整齐打印&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;text&quot;</span><span class="punctuation">:</span> <span class="string">&quot;-enable-pretty-printing&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;ignoreFailures&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">                <span class="punctuation">&#125;</span></span><br><span class="line">            <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;preLaunchTask&quot;</span><span class="punctuation">:</span> <span class="string">&quot;task g++&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>tasks.json</li>
+</ol>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="comment">// See https://go.microsoft.com/fwlink/?LinkId=733558 </span></span><br><span class="line">    <span class="comment">// for the documentation about the tasks.json format</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;tasks&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;shell&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;task g++&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;F:\\codeConfiguration\\MinGW\\bin\\g++.exe&quot;</span><span class="punctuation">,</span>	<span class="comment">/*修改成自己bin目录下的g++.exe，这里的路径和电脑里复制的文件目录有一点不一样，这里是两个反斜杠\\*/</span></span><br><span class="line">        <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">            <span class="string">&quot;-g&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;$&#123;file&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;-o&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;$&#123;fileDirname&#125;\\$&#123;fileBasenameNoExtension&#125;.exe&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;-I&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;F:\\codeProject\\vsCode&quot;</span><span class="punctuation">,</span>      <span class="comment">/*修改成自己放c/c++项目的文件夹，这里的路径和电脑里复制的文件目录有一点不一样，这里是两个反斜杠\\*/</span></span><br><span class="line">            <span class="string">&quot;-std=c++17&quot;</span></span><br><span class="line">        <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;options&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;cwd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;F:\\codeConfiguration\\MinGW\\bin&quot;</span>	<span class="comment">/*修改成自己bin目录，这里的路径和电脑里复制的文件目录有一点不一样，这里是两个反斜杠\\*/</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;problemMatcher&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span></span><br><span class="line">            <span class="string">&quot;$gcc&quot;</span></span><br><span class="line">        <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;group&quot;</span><span class="punctuation">:</span> <span class="string">&quot;build&quot;</span><span class="punctuation">,</span></span><br><span class="line">        </span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>然后写个hello world进行测试。</p>
+<p>应该没问题。</p>
+<h2 id="方法1【旧版】"><a href="#方法1【旧版】" class="headerlink" title="方法1【旧版】"></a>方法1【旧版】</h2><h3 id="配置C-环境"><a href="#配置C-环境" class="headerlink" title="配置C++环境"></a>配置C++环境</h3><p>可以直接在弹出来的窗口中选择<code>Configure UI</code></p>
+<p><a href="/img/image-20230225162447.png" title="image-20230225162447.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230225162447.png" alt="image-20230225162447.png"></a></p>
+<p>也可以<code>Ctrl Shift P</code>后输入C++，选择<code>Configure UI</code></p>
+<p><a href="/img/image-20230225162533.png" title="image-20230225162533.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230225162533.png" alt="image-20230225162533.png"></a></p>
+<p>这里已经自动写好了，默认是gcc的，用来编译C语言代码，可以改成g++，C++兼容C语言</p>
+<p><a href="/img/image-20230225162636.png" title="image-20230225162636.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230225162636.png" alt="image-20230225162636.png"></a></p>
+<p>这里IntelliSense代码补全工具写windows-gcc-x64</p>
+<p><a href="/img/image-20230225162742.png" title="image-20230225162742.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230225162742.png" alt="image-20230225162742.png"></a></p>
+<p>配置完成后，此时在侧边栏可以发现多了一个.vscode文件夹，并且里面有一个c_cpp_properties.json文件，内容如下，说明上述配置成功。现在可以通过<code>Ctrl+&lt;</code>快捷键打开内置终端并进行编译运行了。</p>
+<p>目前已经可以进行编译和运行了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">g++ hello.cpp</span><br><span class="line">./a.exe</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置构建任务（使用vscode的debug调试）"><a href="#配置构建任务（使用vscode的debug调试）" class="headerlink" title="配置构建任务（使用vscode的debug调试）"></a>配置构建任务（使用vscode的debug调试）</h3><p>创建一个tasks.json文件来告诉VS Code如何构建（编译）程序。该任务将调用g++编译器基于源代码创建可执行文件。 按快捷键<code>Ctrl+Shift+P</code>调出命令面板，输入tasks，选择“Tasks:Configure Default Build Task”：</p>
+<p><a href="/img/image-20230225163408.png" title="image-20230225163408.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230225163408.png" alt="image-20230225163408.png"></a></p>
+<p><a href="/img/image-20230225163510.png" title="image-20230225163510.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230225163510.png" alt="image-20230225163510.png"></a></p>
+<p>在<code>./.vscode</code>生成了<code>task.json</code></p>
+<p>此时在<code>hello.cpp</code>中直接按<code>F5</code>可以直接进行调试，</p>
+<p><a href="/img/image-20230225164105.png" title="image-20230225164105.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230225164105.png" alt="image-20230225164105.png"></a></p>
+<p>选择：<code>C++(GDB/LLDB)</code></p>
+<p>然后产生一个<code>launch.json</code>文件</p>
+<p>直接替换！！</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title:注意</span><br><span class="line">- miDebuggerPath要换成自己的路径</span><br><span class="line">- preLaunchTask要替换成自己的字段，就是之前配置的tasks.json中的label字段</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="comment">// Use IntelliSense to learn about possible attributes.</span></span><br><span class="line">  <span class="comment">// Hover to view descriptions of existing attributes.</span></span><br><span class="line">  <span class="comment">// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;0.2.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;configurations&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;(gdb) Launch&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;preLaunchTask&quot;</span><span class="punctuation">:</span> <span class="string">&quot;C/C++: g++.exe build active file&quot;</span><span class="punctuation">,</span><span class="comment">//调试前执行的任务，就是之前配置的tasks.json中的label字段</span></span><br><span class="line">      <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cppdbg&quot;</span><span class="punctuation">,</span><span class="comment">//配置类型，只能为cppdbg</span></span><br><span class="line">      <span class="attr">&quot;request&quot;</span><span class="punctuation">:</span> <span class="string">&quot;launch&quot;</span><span class="punctuation">,</span><span class="comment">//请求配置类型，可以为launch（启动）或attach（附加）</span></span><br><span class="line">      <span class="attr">&quot;program&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;fileDirname&#125;\\$&#123;fileBasenameNoExtension&#125;.exe&quot;</span><span class="punctuation">,</span><span class="comment">//调试程序的路径名称</span></span><br><span class="line">      <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span><span class="comment">//调试传递参数</span></span><br><span class="line">      <span class="attr">&quot;stopAtEntry&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;cwd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;workspaceFolder&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;environment&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;externalConsole&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span><span class="comment">//true显示外置的控制台窗口，false显示内置终端</span></span><br><span class="line">      <span class="attr">&quot;MIMode&quot;</span><span class="punctuation">:</span> <span class="string">&quot;gdb&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;miDebuggerPath&quot;</span><span class="punctuation">:</span> <span class="string">&quot;F:\\env\\mingw64\\bin\\gdb.exe&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;setupCommands&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">          <span class="punctuation">&#123;</span></span><br><span class="line">              <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Enable pretty-printing for gdb&quot;</span><span class="punctuation">,</span></span><br><span class="line">              <span class="attr">&quot;text&quot;</span><span class="punctuation">:</span> <span class="string">&quot;-enable-pretty-printing&quot;</span><span class="punctuation">,</span></span><br><span class="line">              <span class="attr">&quot;ignoreFailures&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">          <span class="punctuation">&#125;</span></span><br><span class="line">      <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>最后，打了断点之后能够显示变量和正常运行，即为配置成功</p>
+<p><a href="/img/image-20230225164820.png" title="image-20230225164820.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230225164820.png" alt="image-20230225164820.png"></a></p>
+<h1 id="WSL-GCC环境"><a href="#WSL-GCC环境" class="headerlink" title="WSL-GCC环境"></a>WSL-GCC环境</h1><p>更换软件源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">deb https://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse</span><br><span class="line">deb-src https://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse</span><br><span class="line"> </span><br><span class="line">deb https://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line">deb-src https://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line"> </span><br><span class="line">deb https://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line">deb-src https://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line"> </span><br><span class="line"><span class="comment"># deb https://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse</span></span><br><span class="line"><span class="comment"># deb-src https://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse</span></span><br><span class="line"> </span><br><span class="line">deb https://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line">deb-src https://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure>
+
+<p>更新软件源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt-get update</span><br><span class="line"><span class="built_in">sudo</span> apt-get upgrade</span><br></pre></td></tr></table></figure>
+
+<p>安装gcc</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt install build-essential</span><br></pre></td></tr></table></figure>
+
+<p>成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">coderyjc@DESKTOP-477G6R1:~$ gcc -v</span><br><span class="line">Using built-in specs.</span><br><span class="line">COLLECT_GCC=gcc</span><br><span class="line">COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper</span><br><span class="line">OFFLOAD_TARGET_NAMES=nvptx-none:hsa</span><br><span class="line">OFFLOAD_TARGET_DEFAULT=1</span><br><span class="line">Target: x86_64-linux-gnu</span><br><span class="line">Configured with: ../src/configure -v --with-pkgversion=<span class="string">&#x27;Ubuntu 9.4.0-1ubuntu1~20.04.1&#x27;</span> --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=<span class="built_in">yes</span> --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-Av3uEd/gcc-9-9.4.0/debian/tmp-nvptx/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu</span><br><span class="line">Thread model: posix</span><br><span class="line">gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.1)</span><br></pre></td></tr></table></figure>
+
+<h1 id="七牛云对象存储"><a href="#七牛云对象存储" class="headerlink" title="七牛云对象存储"></a>七牛云对象存储</h1><h2 id="账号注册与薅羊毛"><a href="#账号注册与薅羊毛" class="headerlink" title="账号注册与薅羊毛"></a>账号注册与薅羊毛</h2><p>账号注册步骤省略，先注册账号，再进行用户实名认证，认证完成之后才能每个月领取10G的存储额度。</p>
+<p>注册七牛云账号，新用户可以每个月免费领10G的云存储，在这个页面 <a target="_blank" rel="noopener" href="https://marketing.qiniu.com/activity/act-free">https://marketing.qiniu.com/activity/act-free</a></p>
+<p><a href="/img/image-20230303192332.png" title="image-20230303192332.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230303192332.png" alt="image-20230303192332.png"></a></p>
+<p>从这里领取。</p>
+<h2 id="新建bucket（存储空间）"><a href="#新建bucket（存储空间）" class="headerlink" title="新建bucket（存储空间）"></a>新建bucket（存储空间）</h2><p>从这进去</p>
+<p><a href="/img/image-20230303192522.png" title="image-20230303192522.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230303192522.png" alt="image-20230303192522.png"></a></p>
+<p>点击空间管理，进入管理空间</p>
+<p>点击新建空间</p>
+<p><a href="/img/image-20230303192626.png" title="image-20230303192626.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230303192626.png" alt="image-20230303192626.png"></a></p>
+<p>填写存储空间名称（bucket name），选择一个比较近的存储区域，访问控制为公开。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title:注意</span><br><span class="line">记住存储空间名称和存储区域，一会要用。</span><br></pre></td></tr></table></figure>
+
+<p><a href="/img/image-20230303193057.png" title="image-20230303193057.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230303193057.png" alt="image-20230303193057.png"></a></p>
+<p>创建成功后会有提示：</p>
+<p>文件上传需要绑定自定义域名，最好绑定一个自己的域名，但是一开始官方免费提供试用一个月的，这就意味着如果直接用官方给定的， 一个月到了之后就不能用了，所以还要绑定自己的域名。</p>
+<p><a href="/img/image-20230303193116.png" title="image-20230303193116.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230303193116.png" alt="image-20230303193116.png"></a></p>
+<p>可以先点击“好的，我知道了”进行后续的配置</p>
+<h2 id="配置Obsidian"><a href="#配置Obsidian" class="headerlink" title="配置Obsidian"></a>配置Obsidian</h2><h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><p>下载插件 remotely-save ，地址：<a target="_blank" rel="noopener" href="https://gitee.com/whghcyx/obsidian-plugin/raw/master/plugin/remotely-save.zip">https://gitee.com/whghcyx/obsidian-plugin/raw/master/plugin/remotely-save.zip</a></p>
+<p>添加到obsidian，启用插件</p>
+<p><a href="/img/image-20230303193920.png" title="image-20230303193920.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230303193920.png" alt="image-20230303193920.png"></a></p>
+<p>进入插件配置页面</p>
+<h3 id="服务类型"><a href="#服务类型" class="headerlink" title="服务类型"></a>服务类型</h3><p>远程服务选择S3或者兼容S3的服务</p>
+<p><a href="/img/image-20230303194010.png" title="image-20230303194010.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230303194010.png" alt="image-20230303194010.png"></a></p>
+<p>剩下的主要配置下列五项</p>
+<p><a href="/img/image-20230303194101.png" title="image-20230303194101.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230303194101.png" alt="image-20230303194101.png"></a></p>
+<h3 id="配置服务地址-Endpoint"><a href="#配置服务地址-Endpoint" class="headerlink" title="配置服务地址 Endpoint"></a>配置服务地址 Endpoint</h3><p>进入七牛云空间管理</p>
+<p><a href="/img/image-20230303193404.png" title="image-20230303193404.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230303193404.png" alt="image-20230303193404.png"></a></p>
+<p>点击查看S3域名</p>
+<p><a href="/img/image-20230303194348.png" title="image-20230303194348.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230303194348.png" alt="image-20230303194348.png"></a></p>
+<p>这个结点名称，填写到①处，服务地址</p>
+<p><a href="/img/image-20230303194500.png" title="image-20230303194500.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230303194500.png" alt="image-20230303194500.png"></a></p>
+<h3 id="配置区域-Region"><a href="#配置区域-Region" class="headerlink" title="配置区域 Region"></a>配置区域 Region</h3><p>七牛云存储区域上传地址 <a target="_blank" rel="noopener" href="https://developer.qiniu.com/kodo/1671/region-endpoint-fq">https://developer.qiniu.com/kodo/1671/region-endpoint-fq</a></p>
+<p>这个地址是你创建存储空间（Bucket）的时候选择的地址，也就是在[[七牛云搭建Obsidian存储#新建bucket（存储空间）]] 中选择的地址，我的存储空间在河北。</p>
+<p><a href="/img/image-20230303192221.png" title="image-20230303192221.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230303192221.png" alt="image-20230303192221.png"></a></p>
+<p>查上表可得，河北区的地址为<code>z1</code></p>
+<p>因此我的第②项填<code>z1</code></p>
+<h3 id="填写Access-Key和-Secert-Access-Key"><a href="#填写Access-Key和-Secert-Access-Key" class="headerlink" title="填写Access Key和 Secert Access Key"></a>填写Access Key和 Secert Access Key</h3><p>在自己的七牛云空间的个人空间，选择密钥管理</p>
+<p><a href="/img/image-20230303194713.png" title="image-20230303194713.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230303194713.png" alt="image-20230303194713.png"></a></p>
+<p>上图中的AK和SK就是要填写的③和④</p>
+<p><a href="/img/image-20230303194749.png" title="image-20230303194749.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230303194749.png" alt="image-20230303194749.png"></a></p>
+<h3 id="填写存储桶名字"><a href="#填写存储桶名字" class="headerlink" title="填写存储桶名字"></a>填写存储桶名字</h3><p>存储桶名字，就是存储空间名字，就是[[七牛云搭建Obsidian存储#新建bucket（存储空间）]] 中填写的名字。</p>
+<h3 id="测试链接情况"><a href="#测试链接情况" class="headerlink" title="测试链接情况"></a>测试链接情况</h3><p>配置完之后是这样的：</p>
+<p><a href="/img/image-20230303195110.png" title="image-20230303195110.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230303195110.png" alt="image-20230303195110.png"></a></p>
+<p>点击检查，成功即可。</p>
+<p><a href="/img/image-20230303195131.png" title="image-20230303195131.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230303195131.png" alt="image-20230303195131.png"></a></p>
+<h2 id="开始同步"><a href="#开始同步" class="headerlink" title="开始同步"></a>开始同步</h2><p>点击这个按钮，开始同步</p>
+<p><a href="/img/image-20230303195240.png" title="image-20230303195240.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230303195240.png" alt="image-20230303195240.png"></a></p>
+<p>显示已完成同步</p>
+<p><a href="/img/image-20230303195306.png" title="image-20230303195306.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230303195306.png" alt="image-20230303195306.png"></a></p>
+<p>去七牛云的服务器上查看：</p>
+<p><a href="/img/image-20230303195402.png" title="image-20230303195402.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230303195402.png" alt="image-20230303195402.png"></a></p>
+<p>已经有文件了</p>
+<p>点击列表项目右侧的详情，可以查看图片。</p>
+<p><a href="/img/image-20230303195454.png" title="image-20230303195454.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230303195454.png" alt="image-20230303195454.png"></a></p>
+<p>配置完成，可以使用了（暂时）。</p>
+<hr>
+<h2 id="【附录】自定义CDN加速域名"><a href="#【附录】自定义CDN加速域名" class="headerlink" title="【附录】自定义CDN加速域名"></a>【附录】自定义CDN加速域名</h2><h3 id="域名的购买和配置"><a href="#域名的购买和配置" class="headerlink" title="域名的购买和配置"></a>域名的购买和配置</h3><p>域名的购买看这一篇文章 [[域名的购买和认证|域名注册]]</p>
+<p>进入自己的域名管理系统，我的是百度智能云，</p>
+<h3 id="配置七牛云的CDN加速"><a href="#配置七牛云的CDN加速" class="headerlink" title="配置七牛云的CDN加速"></a>配置七牛云的CDN加速</h3><p>进入管理空间，点击绑定域名</p>
+<p><a href="/img/image-20230303200224.png" title="image-20230303200224.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230303200224.png" alt="image-20230303200224.png"></a></p>
+<p>输入自己创建的域名，最好是二级域名。</p>
+<p><a href="/img/image-20230303200302.png" title="image-20230303200302.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230303200302.png" alt="image-20230303200302.png"></a></p>
+<p>域名创建成功之后，需要确认你是域主</p>
+<p>这里先不写了。</p>
+<p>创建成功之后，开始配置域名的的CNAME，这一步需要回到自己创建域名的网站，我的是百度智能云的域名管理。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title:注意</span><br><span class="line">这里的CNAME要复制下来，记下来，一会要用</span><br></pre></td></tr></table></figure>
+
+<p><a href="/img/image-20230303200632.png" title="image-20230303200632.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230303200632.png" alt="image-20230303200632.png"></a></p>
+<p>进入百度智能云的域名管理页面，点击解析域名</p>
+<p><a href="/img/image-20230303200818.png" title="image-20230303200818.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230303200818.png" alt="image-20230303200818.png"></a></p>
+<p>找到刚才用来验证的TXT类型的域名，点击修改</p>
+<p><a href="/img/image-20230303201024.png" title="image-20230303201024.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230303201024.png" alt="image-20230303201024.png"></a></p>
+<p>修改记录类型和记录值，这里的记录值，是刚才的加速域名创建之后，七牛云给出的CNAME</p>
+<p><a href="/img/image-20230303201103.png" title="image-20230303201103.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230303201103.png" alt="image-20230303201103.png"></a></p>
+<p>返回这里的域名管理，等待一段时间（3分钟左右，然后刷新一下）</p>
+<p><a href="/img/image-20230303200632.png" title="image-20230303200632.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230303200632.png" alt="image-20230303200632.png"></a></p>
+<p>显示配置成功即可成功使用</p>
+<p><a href="/img/image-20230303201400.png" title="image-20230303201400.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230303201400.png" alt="image-20230303201400.png"></a></p>
+<p>回到存储空间管理，可以看到已经成功了。</p>
+<p><a href="/img/image-20230303201436.png" title="image-20230303201436.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230303201436.png" alt="image-20230303201436.png"></a></p>
+<p>结束。</p>
+<h1 id="Pytorch安装"><a href="#Pytorch安装" class="headerlink" title="Pytorch安装"></a>Pytorch安装</h1><h3 id="安装CUDA"><a href="#安装CUDA" class="headerlink" title="安装CUDA"></a>安装CUDA</h3><p>使用命令 <code>nvidia-smi</code> 查看显卡信息</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">(d2l) C:\Users\Administrator&gt;nvidia-smi</span><br><span class="line">Tue Apr 30 22:50:40 2024</span><br><span class="line">+---------------------------------------------------------------------------------------+</span><br><span class="line">| NVIDIA-SMI 531.61                 Driver Version: 531.61       CUDA Version: 12.1     |</span><br><span class="line">|-----------------------------------------+----------------------+----------------------+</span><br><span class="line">| GPU  Name                      TCC/WDDM | Bus-Id        Disp.A | Volatile Uncorr. ECC |</span><br><span class="line">| Fan  Temp  Perf            Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |</span><br><span class="line">|                                         |                      |               MIG M. |</span><br><span class="line">|=========================================+======================+======================|</span><br><span class="line">|   0  NVIDIA GeForce GTX 1050       WDDM | 00000000:01:00.0  On |                  N/A |</span><br><span class="line">| N/A   40C    P8               N/A /  N/A|    116MiB /  3072MiB |      0%      Default |</span><br><span class="line">|                                         |                      |                  N/A |</span><br><span class="line">+-----------------------------------------+----------------------+----------------------+</span><br><span class="line"></span><br><span class="line">+---------------------------------------------------------------------------------------+</span><br><span class="line">| Processes:                                                                            |</span><br><span class="line">|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |</span><br><span class="line">|        ID   ID                                                             Usage      |</span><br><span class="line">|=======================================================================================|</span><br><span class="line">+---------------------------------------------------------------------------------------+</span><br></pre></td></tr></table></figure>
+
+<p>上面显示了 CUDA Version: 12.1 ，因此我需要安装版本小于等于12.1的cuda</p>
+<p>我安装了12.1： <a target="_blank" rel="noopener" href="https://developer.nvidia.com/cuda-12-1-0-download-archive">https://developer.nvidia.com/cuda-12-1-0-download-archive</a></p>
+<h3 id="安装PyTorch"><a href="#安装PyTorch" class="headerlink" title="安装PyTorch"></a>安装PyTorch</h3><p>《动手学深度学习》 <a target="_blank" rel="noopener" href="https://zh-v2.d2l.ai/">https://zh-v2.d2l.ai/</a> 书中的安装部分给出的pytorch安装方式默认是CPU版本的。</p>
+<p>以下是CPU版本的：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install torch==1.12.0</span><br><span class="line">pip install torchvision==0.13.0</span><br></pre></td></tr></table></figure>
+
+<p>GPU版本需要自己指定，如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia</span><br></pre></td></tr></table></figure>
+
+<p>如果再次之前已经安装了cpu版本的，需要先卸载 <code>conda uninstall pytorch</code></p>
+<p>安装完成之后，使用如下代码判断是否成功</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Administrator&gt;conda activate d2l</span><br><span class="line"></span><br><span class="line">(d2l) C:\Users\Administrator&gt;python</span><br><span class="line">Python 3.9.19 (main, Mar 21 2024, 17:21:27) [MSC v.1916 64 bit (AMD64)] on win32</span><br><span class="line">Type <span class="string">&quot;help&quot;</span>, <span class="string">&quot;copyright&quot;</span>, <span class="string">&quot;credits&quot;</span> or <span class="string">&quot;license&quot;</span> <span class="keyword">for</span> more information.</span><br><span class="line">&gt;&gt;&gt; import torch</span><br><span class="line">&gt;&gt;&gt; torch.__version__</span><br><span class="line"><span class="string">&#x27;2.3.0&#x27;</span></span><br><span class="line">&gt;&gt;&gt; torch.cuda.is_available()</span><br><span class="line">True</span><br></pre></td></tr></table></figure>
+
+<p><code>torch.cuda.is_available()</code> 为True则安装成功。</p>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2023-05-23</span>
+            
+            
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2023/11/17/ECharts.js/'>笔记 | Vue-Router</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2023/04/06/Vuex/">笔记 | VueX</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+             
+
+            
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>Change And Challenge</span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>

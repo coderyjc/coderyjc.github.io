@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="笔记 | 正则表达式" />
+    <meta name="hexo-theme-A4" content="v1.9.6" />
+    <link rel="alternate icon" type="image/webp" href="/img/avatar.png">
+    <title>Jingcun Yan</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+    
+    
+        <style>
+            .index-main{
+                max-width:  880px;
+            }
+        </style>
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            <div class="left-toc-container">
+                <nav id="toc" class="bs-docs-sidebar"></nav>
+            </div>
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/avatar.png" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">Jingcun Yan</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    笔记 | 正则表达式
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                
+                    
+                     <span>字数总计：1.4k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：6分钟</span>
+                
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+        <div class=".article-gallery"><h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><p>基本匹配： 直接输入，全字匹配</p>
+<p><code>.</code> 匹配任何字符</p>
+<p>字符集 <code>[]</code> 匹配方括号内的任意字符</p>
+<p>否定字符集 <code>[^]</code> 方括号内的字符不匹配</p>
+<p>字母范围 <code>[a-h]</code> 匹配范围内的字母，左右都是闭合的</p>
+<p>数字范围 <code>[a-h]</code> 匹配范围内的数字，左右都是闭合的</p>
+<h2 id="重复"><a href="#重复" class="headerlink" title="重复"></a>重复</h2><p><code>*</code> 字符和星号在一起，表示字符出现<strong>0次或者多次</strong>，比如<code>a*</code>表示字符<code>a</code>出现0次或者多次</p>
+<p><code>+</code> 字符和+号在一起，表示字符出现<strong>1次或者多次</strong>，比如<code>a+</code>表示字符<code>a</code>出现1次或者多次</p>
+<p><code>?</code> 字符和？号在一起，表示字符出现<strong>0次或1次</strong>，比如<code>a？</code>表示字符<code>a</code>出现0次或者1次</p>
+<p><code>&#123;&#125;</code> 表示指定字符出现的次数，<code>a&#123;2&#125;</code>表示匹配出现两次的a</p>
+<p><code>&#123;n,&#125;</code> 表示指定字符<strong>至少</strong>出现的次数，<code>a&#123;2,&#125;</code>表示匹配至少出现两次的a</p>
+<p><code>&#123;n,m&#125;</code> 表示指定字符出现的次数的<strong>范围</strong>，<code>a&#123;2,4&#125;</code>表示匹配出现2到4词的a字符，包含2和4</p>
+<h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><p>[[..&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;1.收集箱&#x2F;simpread_clipper&#x2F;repo&#x2F;1-python正则表达式精讲–分组 - 知乎|正则表达式-分组–知乎]]</p>
+<p><code>()</code>构成分组，这样方便提取</p>
+<p><code>(ha)-\1,(haa)-\2</code> 1和2表示分组的顺序</p>
+<p><code>(?: )</code> 非捕获分组（匿名分组），也就是不被捕获，</p>
+<h2 id="位置"><a href="#位置" class="headerlink" title="位置"></a>位置</h2><p><code>|</code> 竖线允许一个表达式包含多个不同的分支，所有分支用|分隔。</p>
+<p><code>\</code> 转义字符，用来转义 <code>&#123; &#125; [ ] / \ + * . $^ | ?</code></p>
+<p><code>^</code> 插入符号。在表达式<strong>前面</strong>加上这个符号，表示匹配表达式的开始</p>
+<p><code>$</code> 结束符。在表达式<strong>后面</strong>加上这个符号，表示匹配表达式的结尾</p>
+<h2 id="单词字符"><a href="#单词字符" class="headerlink" title="单词字符"></a>单词字符</h2><p><code>\w</code> 匹配 字母、数字和下划线</p>
+<p><code>\W</code> 匹配除了 字母、数字和下划线 之外的所有东西</p>
+<p><code>\d</code> 匹配 数字</p>
+<p><code>\D</code> 匹配 非数字</p>
+<p><code>\s</code> 匹配空白字符</p>
+<p><code>\S</code> 匹配非空白字符</p>
+<h2 id="零宽断言"><a href="#零宽断言" class="headerlink" title="零宽断言"></a>零宽断言</h2><p>我们希望正在写的词语出现在另一个词语之前或之后</p>
+<p><code>(?=)</code> 正向先行断言，<code>\d+(?=PM)</code>表示匹配数字，数字后面有PM</p>
+<p><code>(?!)</code> 负向先行断言，<code>\d+(?!PM)</code>表示匹配数字，数字后面没有PM字母</p>
+<p><code>(?&lt;=)</code> 正向后行断言，<code>(?&lt;=\$)\d+</code> 表示匹配数字，数字前面是$符号</p>
+<p><code>(?&lt;!)</code> 负向后行断言，<code>(?&lt;!\$)\d+</code> 表示匹配数字，数字前面不是$符号</p>
+<h2 id="标志"><a href="#标志" class="headerlink" title="标志"></a>标志</h2><p>全局标志，选中所有匹配项目 <code>/\w+\.com/g</code></p>
+<p>多行标志，单独处理每一行<code>/\w+\.com/m</code></p>
+<p>忽略大小写标志，大小写不再敏感 <code>/\w+\.com/i</code></p>
+<blockquote>
+<p>可以叠加 <code>/\w+\.com/gmi</code></p>
+</blockquote>
+<h2 id="匹配机制"><a href="#匹配机制" class="headerlink" title="匹配机制"></a>匹配机制</h2><p><code>.*</code> 贪心匹配，匹配满足条件的<strong>最长</strong>的字符串，比如<code>.*r</code>是匹配以r结尾的最长子串</p>
+<p><code>.*?</code> 懒惰匹配，匹配满足条件的<strong>最短</strong>的字符串，比如<code>.*?r</code>是匹配以r结尾的最短子串</p>
+<h1 id="其他解决方案"><a href="#其他解决方案" class="headerlink" title="其他解决方案"></a>其他解决方案</h1><p>匹配java的行内注释</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">目标：<span class="comment">/*asdasd*/</span></span><br><span class="line"></span><br><span class="line">模式：/\\[\\s\\S]?\\*/</span><br><span class="line"></span><br><span class="line">目标：</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	Author: Jancoyan</span></span><br><span class="line"><span class="comment">	Date: 2020-03-03</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line">模式：/\/\*[\w\W]*?\*\/|\/\/.*/</span><br><span class="line"></span><br><span class="line">模式：`/\_[\s\S]_?\*/`</span><br></pre></td></tr></table></figure>
+
+<p>匹配空行</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">^(\\t)*$\\n   tab构成的空行</span><br><span class="line">^( )*$\\n   空格构成的空行</span><br><span class="line">/^\\s*$/  </span><br></pre></td></tr></table></figure>
+
+
+<p>#正则表达式 </p>
+<blockquote>
+<p>借鉴了 <a target="_blank" rel="noopener" href="https://blog.csdn.net/chuixue24/article/details/111352791">CSDN-正则表达式校验日期时间格式</a></p>
+</blockquote>
+<h2 id="日期校验"><a href="#日期校验" class="headerlink" title="日期校验"></a>日期校验</h2><h3 id="yyyyMMdd"><a href="#yyyyMMdd" class="headerlink" title="yyyyMMdd"></a>yyyyMMdd</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">((\d&#123;<span class="number">3</span>&#125;[<span class="number">1</span>-<span class="number">9</span>]|\d&#123;<span class="number">2</span>&#125;[<span class="number">1</span>-<span class="number">9</span>]\d|\d[<span class="number">1</span>-<span class="number">9</span>]\d&#123;<span class="number">2</span>&#125;|[<span class="number">1</span>-<span class="number">9</span>]\d&#123;<span class="number">3</span>&#125;)(((<span class="number">0</span>[<span class="number">13578</span>]|<span class="number">1</span>[<span class="number">02</span>])(<span class="number">0</span>[<span class="number">1</span>-<span class="number">9</span>]|[<span class="number">12</span>]\d|<span class="number">3</span>[<span class="number">01</span>]))|((<span class="number">0</span>[<span class="number">469</span>]|<span class="number">11</span>)(<span class="number">0</span>[<span class="number">1</span>-<span class="number">9</span>]|[<span class="number">12</span>]\d|<span class="number">30</span>))|(<span class="number">02</span>(<span class="number">0</span>[<span class="number">1</span>-<span class="number">9</span>]|[<span class="number">1</span>]\d|<span class="number">2</span>[<span class="number">0</span>-<span class="number">8</span>]))))|(((\d&#123;<span class="number">2</span>&#125;)(<span class="number">0</span>[<span class="number">48</span>]|[<span class="number">2468</span>][<span class="number">048</span>]|[<span class="number">13579</span>][<span class="number">26</span>])|((<span class="number">0</span>[<span class="number">48</span>]|[<span class="number">2468</span>][<span class="number">048</span>]|[<span class="number">3579</span>][<span class="number">26</span>])<span class="number">00</span>))<span class="number">0229</span>)</span><br></pre></td></tr></table></figure>
+
+<p>举例：</p>
+<ul>
+<li>20220102 √</li>
+<li>20200202 √</li>
+<li>20010222 √</li>
+<li>20220229 ×</li>
+</ul>
+<h3 id="yyyy-MM-dd"><a href="#yyyy-MM-dd" class="headerlink" title="yyyy-MM-dd"></a>yyyy-MM-dd</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">((([<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">3</span>&#125;[<span class="number">1</span>-<span class="number">9</span>]|[<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">2</span>&#125;[<span class="number">1</span>-<span class="number">9</span>][<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">1</span>&#125;|[<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">1</span>&#125;[<span class="number">1</span>-<span class="number">9</span>][<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">2</span>&#125;|[<span class="number">1</span>-<span class="number">9</span>][<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">3</span>&#125;)-(((<span class="number">0</span>[<span class="number">13578</span>]|<span class="number">1</span>[<span class="number">02</span>])-(<span class="number">0</span>[<span class="number">1</span>-<span class="number">9</span>]|[<span class="number">12</span>][<span class="number">0</span>-<span class="number">9</span>]|<span class="number">3</span>[<span class="number">01</span>]))|((<span class="number">0</span>[<span class="number">469</span>]|<span class="number">11</span>)-(<span class="number">0</span>[<span class="number">1</span>-<span class="number">9</span>]|[<span class="number">12</span>][<span class="number">0</span>-<span class="number">9</span>]|<span class="number">30</span>))|(<span class="number">02</span>-(<span class="number">0</span>[<span class="number">1</span>-<span class="number">9</span>]|[<span class="number">1</span>][<span class="number">0</span>-<span class="number">9</span>]|<span class="number">2</span>[<span class="number">0</span>-<span class="number">8</span>]))))|((([<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">2</span>&#125;)(<span class="number">0</span>[<span class="number">48</span>]|[<span class="number">2468</span>][<span class="number">048</span>]|[<span class="number">13579</span>][<span class="number">26</span>])|((<span class="number">0</span>[<span class="number">48</span>]|[<span class="number">2468</span>][<span class="number">048</span>]|[<span class="number">3579</span>][<span class="number">26</span>])<span class="number">00</span>))-<span class="number">02</span>-<span class="number">29</span>))</span><br></pre></td></tr></table></figure>
+
+<p>注意：连字符中间不能有空格</p>
+<p>举例：</p>
+<ul>
+<li>2022-01-02 √</li>
+<li>2020-02-02 √</li>
+<li>2001-02-22 √</li>
+<li>2022-02-29 ×</li>
+<li>2022 - 02 - 20 ×</li>
+</ul>
+<h2 id="时间校验"><a href="#时间校验" class="headerlink" title="时间校验"></a>时间校验</h2><h3 id="HHmmss"><a href="#HHmmss" class="headerlink" title="HHmmss"></a>HHmmss</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">([<span class="number">0</span>-<span class="number">1</span>]?[<span class="number">0</span>-<span class="number">9</span>]|<span class="number">2</span>[<span class="number">0</span>-<span class="number">3</span>]):([<span class="number">0</span>-<span class="number">5</span>][<span class="number">0</span>-<span class="number">9</span>]):([<span class="number">0</span>-<span class="number">5</span>][<span class="number">0</span>-<span class="number">9</span>])</span><br></pre></td></tr></table></figure>
+
+<p>举例：</p>
+<ul>
+<li>21:02:12 √</li>
+<li>12:21:22 √</li>
+<li>15:21:22 √</li>
+</ul>
+<p>注意：冒号是英文的</p>
+<h3 id="HHmmss-1"><a href="#HHmmss-1" class="headerlink" title="HHmmss"></a>HHmmss</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">([<span class="number">0</span>-<span class="number">1</span>]?[<span class="number">0</span>-<span class="number">9</span>]|<span class="number">2</span>[<span class="number">0</span>-<span class="number">3</span>])([<span class="number">0</span>-<span class="number">5</span>][<span class="number">0</span>-<span class="number">9</span>])([<span class="number">0</span>-<span class="number">5</span>][<span class="number">0</span>-<span class="number">9</span>])</span><br></pre></td></tr></table></figure>
+
+<p>举例：</p>
+<ul>
+<li>210212 √</li>
+<li>122122 √</li>
+<li>152122 √</li>
+</ul>
+<h3 id="HH-mm-ss"><a href="#HH-mm-ss" class="headerlink" title="HH-mm-ss"></a>HH-mm-ss</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">([<span class="number">0</span>-<span class="number">1</span>]?[<span class="number">0</span>-<span class="number">9</span>]|<span class="number">2</span>[<span class="number">0</span>-<span class="number">3</span>])-([<span class="number">0</span>-<span class="number">5</span>][<span class="number">0</span>-<span class="number">9</span>])-([<span class="number">0</span>-<span class="number">5</span>][<span class="number">0</span>-<span class="number">9</span>])</span><br></pre></td></tr></table></figure>
+
+<p>举例：</p>
+<ul>
+<li>21-02-12 √</li>
+<li>12-21-22 √</li>
+<li>15-21-22 √</li>
+</ul>
+<h2 id="日期时间校验"><a href="#日期时间校验" class="headerlink" title="日期时间校验"></a>日期时间校验</h2><h3 id="yyyyMMddHHmmss"><a href="#yyyyMMddHHmmss" class="headerlink" title="yyyyMMddHHmmss"></a>yyyyMMddHHmmss</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">((([<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">3</span>&#125;[<span class="number">1</span>-<span class="number">9</span>]|[<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">2</span>&#125;[<span class="number">1</span>-<span class="number">9</span>][<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">1</span>&#125;|[<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">1</span>&#125;[<span class="number">1</span>-<span class="number">9</span>][<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">2</span>&#125;|[<span class="number">1</span>-<span class="number">9</span>][<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">3</span>&#125;)(((<span class="number">0</span>[<span class="number">13578</span>]|<span class="number">1</span>[<span class="number">02</span>])(<span class="number">0</span>[<span class="number">1</span>-<span class="number">9</span>]|[<span class="number">12</span>][<span class="number">0</span>-<span class="number">9</span>]|<span class="number">3</span>[<span class="number">01</span>]))|((<span class="number">0</span>[<span class="number">469</span>]|<span class="number">11</span>)(<span class="number">0</span>[<span class="number">1</span>-<span class="number">9</span>]|[<span class="number">12</span>][<span class="number">0</span>-<span class="number">9</span>]|<span class="number">30</span>))|(<span class="number">02</span>(<span class="number">0</span>[<span class="number">1</span>-<span class="number">9</span>]|[<span class="number">1</span>][<span class="number">0</span>-<span class="number">9</span>]|<span class="number">2</span>[<span class="number">0</span>-<span class="number">8</span>]))))|((([<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">2</span>&#125;)(<span class="number">0</span>[<span class="number">48</span>]|[<span class="number">2468</span>][<span class="number">048</span>]|[<span class="number">13579</span>][<span class="number">26</span>])|((<span class="number">0</span>[<span class="number">48</span>]|[<span class="number">2468</span>][<span class="number">048</span>]|[<span class="number">3579</span>][<span class="number">26</span>])<span class="number">00</span>))<span class="number">0229</span>))([<span class="number">0</span>-<span class="number">1</span>]?[<span class="number">0</span>-<span class="number">9</span>]|<span class="number">2</span>[<span class="number">0</span>-<span class="number">3</span>])([<span class="number">0</span>-<span class="number">5</span>][<span class="number">0</span>-<span class="number">9</span>])([<span class="number">0</span>-<span class="number">5</span>][<span class="number">0</span>-<span class="number">9</span>])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="yyyy-MM-dd-HH-mm-ss"><a href="#yyyy-MM-dd-HH-mm-ss" class="headerlink" title="yyyy-MM-dd HH:mm:ss"></a>yyyy-MM-dd HH:mm:ss</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">((([<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">3</span>&#125;[<span class="number">1</span>-<span class="number">9</span>]|[<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">2</span>&#125;[<span class="number">1</span>-<span class="number">9</span>][<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">1</span>&#125;|[<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">1</span>&#125;[<span class="number">1</span>-<span class="number">9</span>][<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">2</span>&#125;|[<span class="number">1</span>-<span class="number">9</span>][<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">3</span>&#125;)-(((<span class="number">0</span>[<span class="number">13578</span>]|<span class="number">1</span>[<span class="number">02</span>])-(<span class="number">0</span>[<span class="number">1</span>-<span class="number">9</span>]|[<span class="number">12</span>][<span class="number">0</span>-<span class="number">9</span>]|<span class="number">3</span>[<span class="number">01</span>]))|((<span class="number">0</span>[<span class="number">469</span>]|<span class="number">11</span>)-(<span class="number">0</span>[<span class="number">1</span>-<span class="number">9</span>]|[<span class="number">12</span>][<span class="number">0</span>-<span class="number">9</span>]|<span class="number">30</span>))|(<span class="number">02</span>-(<span class="number">0</span>[<span class="number">1</span>-<span class="number">9</span>]|[<span class="number">1</span>][<span class="number">0</span>-<span class="number">9</span>]|<span class="number">2</span>[<span class="number">0</span>-<span class="number">8</span>]))))|((([<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">2</span>&#125;)(<span class="number">0</span>[<span class="number">48</span>]|[<span class="number">2468</span>][<span class="number">048</span>]|[<span class="number">13579</span>][<span class="number">26</span>])|((<span class="number">0</span>[<span class="number">48</span>]|[<span class="number">2468</span>][<span class="number">048</span>]|[<span class="number">3579</span>][<span class="number">26</span>])<span class="number">00</span>))-<span class="number">02</span>-<span class="number">29</span>))\\s+([<span class="number">0</span>-<span class="number">1</span>]?[<span class="number">0</span>-<span class="number">9</span>]|<span class="number">2</span>[<span class="number">0</span>-<span class="number">3</span>]):([<span class="number">0</span>-<span class="number">5</span>][<span class="number">0</span>-<span class="number">9</span>]):([<span class="number">0</span>-<span class="number">5</span>][<span class="number">0</span>-<span class="number">9</span>])</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2020-07-20</span>
+            
+            
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2020/08/20/MySQL/'>笔记 | MySQL</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2020/07/05/JavaSE/">笔记 | JavaSE</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+             
+
+            
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>Change And Challenge</span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>

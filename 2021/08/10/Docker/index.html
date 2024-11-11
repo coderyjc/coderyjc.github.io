@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="笔记 | Docker" />
+    <meta name="hexo-theme-A4" content="v1.9.6" />
+    <link rel="alternate icon" type="image/webp" href="/img/avatar.png">
+    <title>Jingcun Yan</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+    
+    
+        <style>
+            .index-main{
+                max-width:  880px;
+            }
+        </style>
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            <div class="left-toc-container">
+                <nav id="toc" class="bs-docs-sidebar"></nav>
+            </div>
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/avatar.png" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">Jingcun Yan</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    笔记 | Docker
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                
+                    
+                     <span>字数总计：4k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：15分钟</span>
+                
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+        <div class=".article-gallery"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><strong>Docker为什么出现？</strong></p>
+<p>Docker的思想来自于集装箱；</p>
+<p>JRE – 多个应用（端口冲突）– 原来都是交叉的！</p>
+<p>隔离 ： Docker核心思想，打包装箱，每个箱子是互相隔离的。</p>
+<p>Docker通过隔离机制，可以将服务器利用到极致！</p>
+<p><strong>Docker的历史</strong></p>
+<p>Docker 是 PaaS 提供商 dotCloud 开源的一个基于 LXC 的高级容器引擎，源代码托管在 Github 上, 基于go语言并遵从Apache2.0协议开源。</p>
+<p><strong>Docker能做什么？</strong></p>
+<blockquote>
+<p>之前的虚拟机技术</p>
+</blockquote>
+<p>虚拟机技术的缺点：</p>
+<ol>
+<li>资源占用十分多</li>
+<li>冗余步骤多</li>
+</ol>
+<blockquote>
+<p>容器化技术</p>
+</blockquote>
+<p>容器化技术不是模拟一个完整的操作系统</p>
+<p>比较Docker和虚拟机技术的不同：</p>
+<ul>
+<li><p>传统虚拟机，虚拟出一套硬件，运行一个完整的操作系统，然后在这个系统上安装和运行软件</p>
+</li>
+<li><p>Docker容器内的应用直接运行在宿主机的内核，容器没有自己的内核，也没有虚拟我们的硬件，所以就轻便了</p>
+</li>
+<li><p>每个容器间是相互隔离，每个容器都有一个属于自己的文件系统，互不影响</p>
+</li>
+</ul>
+<blockquote>
+<p>DevOps（开发即运维）</p>
+</blockquote>
+<p><strong>应用更快速的交付和部署</strong></p>
+<p>传统：一堆帮助文档，安装程序</p>
+<p>Docker : 打包镜像发布测试，一键运行</p>
+<p><strong>更快捷的升级和扩容</strong></p>
+<p>使用了Docker之后，我们部署应用就和搭积木一样！</p>
+<p>项目打包为一个镜像</p>
+<p><strong>更简单的系统运维</strong></p>
+<p>在容器化之后，我们的开发，测试环境都是高度一致的</p>
+<p><strong>更高效的计算资源利用</strong></p>
+<p>Docker是内核级别的虚拟化，可以在一个物理机上运行很多的容器实例，服务器的性能可以被压榨到极致。</p>
+<h2 id="Docker安装"><a href="#Docker安装" class="headerlink" title="Docker安装"></a>Docker安装</h2><h3 id="Docker基本组成"><a href="#Docker基本组成" class="headerlink" title="Docker基本组成"></a>Docker基本组成</h3><p><strong>镜像（image）</strong></p>
+<p>docker镜像就好比是一个模板，可以通过这个模板来创建容器服务。</p>
+<p>tomcat镜像 &#x3D;&#x3D;&gt; run &#x3D;&#x3D;&gt; tomcat容器（提供服务）</p>
+<p>通过这个镜像可以创建多个容器（最终运行或者项目运行都是在容器中的）。</p>
+<p><strong>容器（container）</strong></p>
+<p>Docker利用容器技术，独立运行一个或者一组应用，是通过镜像来创建的。</p>
+<p>有启动，停止，删除等Linux基本指令！</p>
+<p>目前就可以把这个容器理解为一个简易的Linux系统</p>
+<p><strong>仓库（repository）</strong></p>
+<p>仓库就是存放镜像的地方，分为私有仓库和公有仓库；</p>
+<p>Docker Hub（默认是国外的）</p>
+<p>阿里云都有容器服务器（配置镜像加速！）</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>查看服务器环境，系统环境是 3.10 以上的。</p>
+<p><a href="/img/image-20210625190020465.png" title="image-20210625190020465" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20210625190020465.png" alt="image-20210625190020465"></a></p>
+<p>查看系统信息</p>
+<p><a href="/img/image-20210625190119128.png" title="image-20210625190119128" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20210625190119128.png" alt="image-20210625190119128"></a></p>
+<p><strong>开始安装</strong></p>
+<p>#后端&#x2F;docker&#x2F;环境配置</p>
+<p>帮助文档：<a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/centos/">https://docs.docker.com/engine/install/centos/</a></p>
+<ol>
+<li><p>卸载旧版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">yum remove docker \</span><br><span class="line">                  docker-client \</span><br><span class="line">                  docker-client-latest \</span><br><span class="line">                  docker-common \</span><br><span class="line">                  docker-latest \</span><br><span class="line">                  docker-latest-logrotate \</span><br><span class="line">                  docker-logrotate \</span><br><span class="line">                  docker-engine</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装相关的安装包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y yum-utils</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置镜像仓库, 最好用阿里云的</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新yum的索引</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum makecache faster</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装最新版的docker引擎</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动docker</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start docker</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看版本信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker version</span><br></pre></td></tr></table></figure>
+
+<p><a href="/img/image-20210625191005181.png" title="image-20210625191005181" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20210625191005181.png" alt="image-20210625191005181"></a></p>
+<p><a href="/img/image-20210625191347316.png" title="image-20210625191347316" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20210625191347316.png" alt="image-20210625191347316"></a></p>
+</li>
+<li><p>查看本地镜像 <code>docker images</code> 我们最终的服务都要打包成镜像运行</p>
+<p><a href="/img/image-20210625191452451.png" title="image-20210625191452451" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20210625191452451.png" alt="image-20210625191452451"></a></p>
+</li>
+</ol>
+<p>了解 ： 卸载docker</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1、依赖卸载</span></span><br><span class="line">yum remove docker-ce docker-ce-cli containerd.io</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2、删除资源</span></span><br><span class="line"><span class="built_in">rm</span> -rf /var/lib/docker</span><br><span class="line"></span><br><span class="line"><span class="comment"># /var/lib/docker docker的默认工作路径</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="阿里云镜像加速服务"><a href="#阿里云镜像加速服务" class="headerlink" title="阿里云镜像加速服务"></a>阿里云镜像加速服务</h3><p><a href="/img/image-20210625192048000.png" title="image-20210625192048000" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20210625192048000.png" alt="image-20210625192048000"></a></p>
+<p><a href="/img/image-20210625192115542.png" title="image-20210625192115542" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20210625192115542.png" alt="image-20210625192115542"></a></p>
+<h3 id="回顾HelloWorld流程"><a href="#回顾HelloWorld流程" class="headerlink" title="回顾HelloWorld流程"></a>回顾HelloWorld流程</h3><p><a href="/img/image-20210625192722979.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20210625192722979.png"></a></p>
+<h3 id="Portainer"><a href="#Portainer" class="headerlink" title="Portainer"></a>Portainer</h3><p>密码 ：<code>12345678</code></p>
+<h3 id="底层原理"><a href="#底层原理" class="headerlink" title="底层原理"></a>底层原理</h3><p><strong>Docker是怎么工作的？</strong></p>
+<p>Docker是一个Client-Server结构的系统，Docker的守护进程运行在主机上，通过Socket从客户端访问！</p>
+<p>DockerServer接收到Docker-Client的指令，就会执行这个命令！</p>
+<p><a href="/img/image-20210625193108916.png" title="image-20210625193108916" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20210625193108916.png" alt="image-20210625193108916"></a></p>
+<p><strong>Docker为什么比VM快？</strong></p>
+<ol>
+<li>Docker有着比虚拟机更少的抽象层</li>
+<li>Docker利用的是宿主机的内核，VM需要的是Guest OS</li>
+</ol>
+<p>所以说，新建一个容器的时候，docker不需要像虚拟机一样重新加载一个操作系统内核，避免引导。虚拟机是加载Guset OS , 分钟级别的，而docker是利用宿主机的操作系统，省略了这个复杂的过程，秒级。</p>
+<h2 id="Docker常用命令"><a href="#Docker常用命令" class="headerlink" title="Docker常用命令"></a>Docker常用命令</h2><h3 id="帮助命令"><a href="#帮助命令" class="headerlink" title="帮助命令"></a>帮助命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker version      <span class="comment"># 显示docker的版本信息</span></span><br><span class="line">docker info         <span class="comment"># 显示docker的系统信息，包括镜像和容器的数量</span></span><br><span class="line">docker 命令 --<span class="built_in">help</span>   <span class="comment"># 帮助命令</span></span><br></pre></td></tr></table></figure>
+
+<p>帮助文档的地址：<a target="_blank" rel="noopener" href="https://docs.docker.com/reference/">https://docs.docker.com/reference/</a></p>
+<h3 id="镜像命令"><a href="#镜像命令" class="headerlink" title="镜像命令"></a>镜像命令</h3><blockquote>
+<p>docker images 查看所有本地主机上的镜像</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br><span class="line"></span><br><span class="line">REPOSITORY    TAG       IMAGE ID       CREATED        SIZE</span><br><span class="line">hello-world   latest    d1165f221234   3 months ago   13.3kB</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 解释</span></span><br><span class="line">REPOSITORY  镜像的仓库源</span><br><span class="line">TAG         镜像的标签</span><br><span class="line">IMAGE ID    镜像的<span class="built_in">id</span></span><br><span class="line">CREATED     镜像的创建时间</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可选项</span></span><br><span class="line">	-a, --all      <span class="comment"># 列出所有的镜像</span></span><br><span class="line">	-q, --quiet    <span class="comment"># 只显示镜像的id</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>docker serch 在dockhub中搜索镜像</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@iz2ze1rhvd25ba6iiq2dvwz ~]# docker search mysql</span><br><span class="line">NAME                              DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED</span><br><span class="line">mysql                             MySQL is a widely used, open-source relation…   11038     [OK]       </span><br><span class="line"></span><br><span class="line"><span class="comment"># 可选项</span></span><br><span class="line">--filter , -f		Filter output based on conditions provided</span><br><span class="line"></span><br><span class="line">docker search mysql -f=stars=5000</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>docker pull 下载镜像</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载镜像 docker pull 镜像名[:tag]</span></span><br><span class="line">[root@AlibabaECS ~]# docker pull mysql</span><br><span class="line">Using default tag: latest <span class="comment"># 如果不写tag,默认就是latest</span></span><br><span class="line">latest: Pulling from library/mysql </span><br><span class="line">bf5952930446: Pull complete <span class="comment"># 分层下载，docker image的核心 联合文件系统</span></span><br><span class="line">8254623a9871: Pull complete </span><br><span class="line">938e3e06dac4: Pull complete </span><br><span class="line">ea28ebf28884: Pull complete </span><br><span class="line">f3cef38785c2: Pull complete </span><br><span class="line">894f9792565a: Pull complete </span><br><span class="line">1d8a57523420: Pull complete </span><br><span class="line">6c676912929f: Pull complete </span><br><span class="line">ff39fdb566b4: Pull complete </span><br><span class="line">fff872988aba: Pull complete </span><br><span class="line">4d34e365ae68: Pull complete </span><br><span class="line">7886ee20621e: Pull complete </span><br><span class="line">Digest: sha256:c358e72e100ab493a0304bda35e6f239db2ec8c9bb836d8a427ac34307d074ed <span class="comment"># 签名</span></span><br><span class="line">Status: Downloaded newer image <span class="keyword">for</span> mysql:latest</span><br><span class="line">docker.io/library/mysql:latest <span class="comment"># 真实地址</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 两条命令等价</span></span><br><span class="line">docker pull mysql</span><br><span class="line">docker.io/library/mysql:latest</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定版本下载</span></span><br><span class="line">docker pull mysql:5.7</span><br><span class="line"></span><br><span class="line">[root@AlibabaECS ~]# docker pull mysql:5.7</span><br><span class="line">5.7: Pulling from library/mysql</span><br><span class="line">bf5952930446: Already exists  <span class="comment"># 前面的很多文件已经存在了，就不用重新下载了</span></span><br><span class="line">8254623a9871: Already exists  <span class="comment"># 这是Docker中非常重要的一个特性 —— 分层文件系统</span></span><br><span class="line">938e3e06dac4: Already exists </span><br><span class="line">ea28ebf28884: Already exists </span><br><span class="line">f3cef38785c2: Already exists </span><br><span class="line">894f9792565a: Already exists </span><br><span class="line">1d8a57523420: Already exists </span><br><span class="line">5f09bf1d31c1: Pull complete </span><br><span class="line">1b6ff254abe7: Pull complete </span><br><span class="line">74310a0bf42d: Pull complete </span><br><span class="line">d398726627fd: Pull complete </span><br><span class="line">Digest: sha256:da58f943b94721d46e87d5de208dc07302a8b13e638cd1d24285d222376d6d84</span><br><span class="line">Status: Downloaded newer image <span class="keyword">for</span> mysql:5.7</span><br><span class="line">docker.io/library/mysql:5.7</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>docker rmi 删除镜像</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker rmi -f 镜像<span class="built_in">id</span>                <span class="comment"># 删除指定的镜像</span></span><br><span class="line">docker rmi -f  镜像<span class="built_in">id</span> 镜像<span class="built_in">id</span> 镜像<span class="built_in">id</span>  <span class="comment"># 删除多个镜像</span></span><br><span class="line">docker rmi -f $(docker images -aq) <span class="comment"># 删除全部镜像</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="容器命令"><a href="#容器命令" class="headerlink" title="容器命令"></a>容器命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker run  镜像<span class="built_in">id</span> <span class="comment">#新建容器并启动</span></span><br><span class="line">docker ps   <span class="comment">#列出所有运行的容器 docker container list</span></span><br><span class="line">docker <span class="built_in">rm</span>   容器<span class="built_in">id</span> <span class="comment">#删除指定容器</span></span><br><span class="line">docker start 容器<span class="built_in">id</span> <span class="comment">#启动容器</span></span><br><span class="line">docker restart容器<span class="built_in">id</span> <span class="comment">#重启容器</span></span><br><span class="line">docker stop  容器<span class="built_in">id</span> <span class="comment">#停止当前正在运行的容器</span></span><br><span class="line">docker <span class="built_in">kill</span>  容器<span class="built_in">id</span> <span class="comment">#强制停止当前容器</span></span><br></pre></td></tr></table></figure>
+
+<p>下载一个centOS镜像来测试学习</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull centos</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>新建容器并启动</p>
+</blockquote>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">docker run [可选参数] image</span><br><span class="line"></span><br><span class="line"><span class="comment"># 参数说明</span></span><br><span class="line">--name = <span class="string">&quot;Name&quot;</span>    容器名字  tomcat01，tomcat02,用来区分容器</span><br><span class="line">-d                 后台方式运行</span><br><span class="line">-it                使用交互方式运行，进入容器查看区分</span><br><span class="line">-p                 指定容器的端口 -p 8080：8080</span><br><span class="line">    -p ip:主机端口：容器端口</span><br><span class="line">    -p 主机端口：容器端口(常用)</span><br><span class="line">    -p 容器端口</span><br><span class="line">    容器端口</span><br><span class="line">-P                 随机指定端口</span><br></pre></td></tr></table></figure>
+
+<p><a href="/img/image-20210627101922222.png" title="image-20210627101922222" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20210627101922222.png" alt="image-20210627101922222"></a></p>
+<p>镜像里面的命令有很多都是不完善的</p>
+<p><strong>列出所有的运行中的容器</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># docker ps 命令</span></span><br><span class="line">			 <span class="comment"># 列出当前正在运行的容器</span></span><br><span class="line">	-a   <span class="comment"># 列出当前正在运行的容器+带出历史运行过的容器</span></span><br><span class="line">  -n=? <span class="comment"># 显示最近创建的容器</span></span><br><span class="line">  -q   <span class="comment"># 只显示容器的编号</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出所有运行过和运行中的容器</span></span><br><span class="line">docker ps -a</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><a href="/img/image-20210627102145045.png" title="image-20210627102145045" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20210627102145045.png" alt="image-20210627102145045"></a></p>
+<blockquote>
+<p>退出容器</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exit</span>            <span class="comment"># 直接容器停止并退出</span></span><br><span class="line">Ctrl + P + Q    <span class="comment"># 容器不停止退出</span></span><br></pre></td></tr></table></figure>
+
+<p>!Docker.imgs&#x2F;image-20210627102445188.png<br><a href="/img/image-20210627102445188.png" title="image-20210627102445188" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20210627102445188.png" alt="image-20210627102445188"></a></p>
+<blockquote>
+<p>删除容器</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">rm</span> 容器<span class="built_in">id</span>                  <span class="comment"># 删除指定容器，不能删除正在运行的容器，如果要强制删除 rm -f</span></span><br><span class="line">docker <span class="built_in">rm</span> -f $(docker ps -aq)    <span class="comment"># 删除所有的容器</span></span><br><span class="line">docker ps -aq|xargs docker <span class="built_in">rm</span>    <span class="comment"># 删除所有的容器</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>启动和停止容器</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker start 容器<span class="built_in">id</span>        <span class="comment"># 启动容器</span></span><br><span class="line">docker restart 容器<span class="built_in">id</span>      <span class="comment"># 重启容器</span></span><br><span class="line">docker stop 容器<span class="built_in">id</span>         <span class="comment"># 停止当前正在运行的容器</span></span><br><span class="line">docker <span class="built_in">kill</span> 容器<span class="built_in">id</span>         <span class="comment"># 强制停止当前容器</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="常用其他命令"><a href="#常用其他命令" class="headerlink" title="常用其他命令"></a>常用其他命令</h3><blockquote>
+<p>后台启动容器</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 命令 docker run -d 镜像名</span></span><br><span class="line">docker run -d centos</span><br></pre></td></tr></table></figure>
+
+<p>问题docker ps, 发现 centos 停止了</p>
+<p>常见的坑, <strong>docker容器使用后台运行，就必须要有一个前台进程，docker发现没有应用，就会自动停止</strong></p>
+<p>nginx,容器启动后，发现自己没有提供服务，就会立刻停止，就是没有程序了</p>
+<blockquote>
+<p>查看日志命令</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">docker logs -f -t --<span class="built_in">tail</span> 容器<span class="built_in">id</span>，没有日志</span><br><span class="line"></span><br><span class="line"><span class="comment"># 自己编写一段shell脚本</span></span><br><span class="line">docker run -d centos /bin/sh -c <span class="string">&quot;while true;do echo kuangshen;sleep 1;done&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示日志</span></span><br><span class="line">-tf                <span class="comment"># 显示日志</span></span><br><span class="line">--<span class="built_in">tail</span> number      <span class="comment"># 要显示的日志条数</span></span><br><span class="line"></span><br><span class="line">docker logs -ft --<span class="built_in">tail</span> f1178d5b0bd8</span><br></pre></td></tr></table></figure>
+
+<p>如果当前没有运行日志，则在执行了命令之后会出现如下情况：</p>
+<p><a href="/img/image-20210627104442120.png" title="image-20210627104442120" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20210627104442120.png" alt="image-20210627104442120"></a></p>
+<p>查找不到日志，那我们手动编写shell脚本在容器中运行，生成日志</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d centos /bin/sh -c <span class="string">&quot;while true;do echo helloworld; sleep 1;done&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="/img/image-20210627104938329.png" title="image-20210627104938329" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20210627104938329.png" alt="image-20210627104938329"></a></p>
+<p>如上图所示，正在执行并生成日志</p>
+<blockquote>
+<p>查看容器中的进程信息</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 命令 docker top 容器id</span></span><br><span class="line"></span><br><span class="line">[root@AlibabaECS /]# docker top f1178d5b0bd8</span><br><span class="line">UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD</span><br><span class="line">root                21626               21609               0                   <span class="keyword">while</span> <span class="literal">true</span>;<span class="keyword">do</span> <span class="built_in">echo</span> kuangshen;<span class="built_in">sleep</span> 1;<span class="keyword">done</span></span><br><span class="line">root                27492               21626               0                   13:15               ?                   00:00:00            </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>查看镜像元数据</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker inspect 容器id</span><br></pre></td></tr></table></figure>
+
+<p><a href="/img/image-20210627105441651.png" title="image-20210627105441651" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20210627105441651.png" alt="image-20210627105441651"></a></p>
+<blockquote>
+<p>进入当前<strong>正在运行</strong>的容器</p>
+<p>再次注意：<strong>docker容器使用后台运行，就必须要有一个前台进程，docker发现没有应用，就会自动停止</strong>, 容器启动后，发现自己没有提供服务，就会立刻停止，就是没有程序了</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 方式一</span></span><br><span class="line">docker <span class="built_in">exec</span> -it  容器<span class="built_in">id</span> /bin/bash</span><br><span class="line"><span class="comment"># 方式二</span></span><br><span class="line">docker attach 容器<span class="built_in">id</span></span><br></pre></td></tr></table></figure>
+
+<p>两种方式的区别：</p>
+<ul>
+<li><p>exec是新开一个终端进去</p>
+</li>
+<li><p>attach是直接进去正在运行的终端</p>
+</li>
+</ul>
+<blockquote>
+<p>从容器内拷贝到主机上</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 命令</span></span><br><span class="line">docker <span class="built_in">cp</span> [r] 容器<span class="built_in">id</span> :容器内路径 目的地主机路径</span><br><span class="line"><span class="comment"># 参数r : 递归拷贝</span></span><br><span class="line"><span class="comment"># 测试</span></span><br><span class="line">docker <span class="built_in">cp</span> a485a9d900b4:/home/test.java /home</span><br></pre></td></tr></table></figure>
+
+<h3 id="总结和作业"><a href="#总结和作业" class="headerlink" title="总结和作业"></a>总结和作业</h3><p><a href="/img/image-20210627203910706.png" title="image-20210627203910706" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20210627203910706.png" alt="image-20210627203910706"></a></p>
+<p>端口暴露：</p>
+<p><a href="/img/image-20210627205117961.png" title="image-20210627205117961" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20210627205117961.png" alt="image-20210627205117961"></a></p>
+<p>从外网访问docker服务需要从外到里经过： 阿里云的安全组、Linux服务器防火墙、Docker服务器防火墙</p>
+<p>我们把docker服务的端口打开、Linux服务器的防火墙打开、阿里云的安全组也打开</p>
+<p>建立端口 - docker服务之间的映射</p>
+<p>就可以从外部网络直接访问docker服务了</p>
+<p><strong>作业：在docker中部署tomcat</strong></p>
+<p>下载镜像</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull tomcat :9.0</span><br></pre></td></tr></table></figure>
+
+<p>启动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 3389:8080 --name tomcat01 tomcat:9.0</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>-d 后台启动</li>
+<li>-p 端口暴露，把tomcat的8080端口映射到主机的3389端口</li>
+<li>–name 别名为 tomcat01</li>
+<li>使用镜像 tomcat:9.0 , 不加9.0默认使用最新的</li>
+</ul>
+<p>启动之后是找不到网页的，说明已经部署完成了，但是无法访问,我们进入容器看一下:</p>
+<p><a href="/img/image-20210627211648168.png" title="image-20210627211648168" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20210627211648168.png" alt="image-20210627211648168"></a></p>
+<p>发现webapps里面是空的,并且不支持部分linux命令</p>
+<p>原因: 阿里云的镜像是默认最小的,所有的不必要的文件都去掉了</p>
+<p>所有webapps里面的文件都在webapp.dist中,我们可以复制过去或者剪切过去</p>
+<p>等一段时间,再次访问.</p>
+<p><a href="/img/image-20210627212850013.png" title="image-20210627212850013" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20210627212850013.png" alt="image-20210627212850013"></a></p>
+<p>成功.</p>
+<p><code>docker stats </code>查看cpu的状态</p>
+<p><a href="/img/image-20210627213310263.png" title="image-20210627213310263" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20210627213310263.png" alt="image-20210627213310263"></a></p>
+<h2 id="Docker-镜像讲解"><a href="#Docker-镜像讲解" class="headerlink" title="Docker 镜像讲解"></a>Docker 镜像讲解</h2><h3 id="UnionFS（联合文件系统）"><a href="#UnionFS（联合文件系统）" class="headerlink" title="UnionFS（联合文件系统）"></a>UnionFS（联合文件系统）</h3><ul>
+<li>联合文件系统（UnionFS）是一种分层、轻量级并且高性能的文件系统，它支持对文件系统的修改作为一次提交来一层层的叠加，同时可以将不同目录挂载到同一个虚拟文件系统下。联合文件系统是 Docker 镜像的基础。镜像可以通过分层来进行继承，基于基础镜像（没有父镜像），可以制作各种具体的应用镜像。</li>
+<li>特性：一次同时加载多个文件系统，但从外面看起来只能看到一个文件系统。联合加载会把各层文件系统叠加起来，这样最终的文件系统会包含所有底层的文件和目录。</li>
+</ul>
+<h3 id="镜像加载原理"><a href="#镜像加载原理" class="headerlink" title="镜像加载原理"></a>镜像加载原理</h3><p>Docker的镜像实际由一层一层的文件系统组成：</p>
+<ul>
+<li><p>bootfs（boot file system）主要包含bootloader和kernel。bootloader主要是引导加载kernel，完成后整个内核就都在内存中了。此时内存的使用权已由bootfs转交给内核，系统卸载bootfs。可以被不同的Linux发行版公用。</p>
+</li>
+<li><p>rootfs（root file system），包含典型Linux系统中的&#x2F;dev，&#x2F;proc，&#x2F;bin，&#x2F;etc等标准目录和文件。rootfs就是各种不同操作系统发行版（Ubuntu，Centos等）。因为底层直接用Host的kernel，rootfs只包含最基本的命令，工具和程序就可以了。</p>
+</li>
+<li><p>分层理解</p>
+</li>
+</ul>
+<p>所有的Docker镜像都起始于一个基础镜像层，当进行修改或增加新的内容时，就会在当前镜像层之上，创建新的容器层。<br>容器在启动时会在镜像最外层上建立一层可读写的容器层（R&#x2F;W），而镜像层是只读的（R&#x2F;O）。</p>
+<p><a href="/img/image-20210822164259097.png" title="image-20210822164259097" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20210822164259097.png" alt="image-20210822164259097"></a></p>
+<p>所有的 Docker镜像都起始于一个基础镜像层，当进行修改或者增加加新的内容时，就会在当前镜像层之上，创建新的镜像层。</p>
+<p>举一个简单的例子，假如基于 Ubuntu Linux16.04创建一个新的镜像，这就是新镜像的第一层；如果在该镜像中添加 Python包，就会在基础镜像层之上创建第二个镜像层；如果继续添加一个安全补丁，就会创健第三个镜像层该像当前已经包含3个镜像层，如下图所示（这只是一个用于演示的很简单的例子）。</p>
+<p>在添加额外的镜像层的同时，镜像始终保持是当前所有镜像的组合，理解这一点非常重要。下图中举了一个简单的例子，每个镜像层包含3个文件，而镜像包含了来自两个镜像层的6个文件。</p>
+<p><a href="/img/image-20210822164647432.png" title="image-20210822164647432" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20210822164647432.png" alt="image-20210822164647432"></a></p>
+<p>上图中的镜像层跟之前图中的略有区別，主要目的是便于展示文件</p>
+<p>下图中展示了一个稍微复杂的三层镜像，在外部看来整个镜像只有6个文件，这是因为最上层中的文件7是文件5的一个更新版</p>
+<p><a href="/img/image-20210822164659503.png" title="image-20210822164659503" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20210822164659503.png" alt="image-20210822164659503"></a></p>
+<p>这种情況下，上层镜像层中的文件覆盖了底层镜像层中的文件。这样就使得文件的更新版本作为一个新镜像层添加到镜像当中</p>
+<p>Docker通过存储引擎（新版本采用快照机制）的方式来实现镜像层堆栈，并保证多镜像层对外展示为统一的文件系统</p>
+<p>Linux上可用的存储引撃有AUFS、 Overlay2、 Device Mapper、Btrfs以及ZFS。顾名思义，每种存储引擎都基于 Linux中对应的<br>件系统或者块设备技术，井且每种存储引擎都有其独有的性能特点。</p>
+<p>Docker在 Windows上仅支持 windowsfilter 一种存储引擎，该引擎基于NTFS文件系统之上实现了分层和CoW [1]。</p>
+<p>下图展示了与系统显示相同的三层镜像。所有镜像层堆并合井，对外提供统一的视图</p>
+<p><a href="/img/image-20210822164719726.png" title="image-20210822164719726" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20210822164719726.png" alt="image-20210822164719726"></a></p>
+<h3 id="提交镜像"><a href="#提交镜像" class="headerlink" title="提交镜像"></a>提交镜像</h3><p>步骤：</p>
+<blockquote>
+<ol>
+<li>启动一个默认的tomcat</li>
+<li>发现这个默认的tomcat是没有webapps应用， 镜像的原因，官方镜像默认webapps下面是没有内容的</li>
+<li>我自己拷贝进去了基本的文件</li>
+<li>将我们操作过的容器通过commit提价为一个镜镜像！我们以后就使用我们自己制作的镜像了</li>
+</ol>
+</blockquote>
+<p><code>docker commit -m=&quot;描述信息&quot; -a=&quot;作者&quot; 容器id 目标镜像名:[tag]  *# 编辑容器后提交容器成为一个新镜像*</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker commit 提交容器成为一个新的版本</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 命令和git 原理类似</span></span><br><span class="line">docker commit -m=<span class="string">&quot;提交的描述信息&quot;</span> -a=<span class="string">&quot;作者&quot;</span> 容器<span class="built_in">id</span> 目标镜像名：[TAG]</span><br><span class="line"> </span><br><span class="line">docker commit -a=<span class="string">&quot;xiaofan&quot;</span> -m=<span class="string">&quot;add webapps app&quot;</span> d798a5946c1f tomcat007:1.0</span><br></pre></td></tr></table></figure>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2021-08-10</span>
+            
+            
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2021/08/17/uni-app%E5%BC%80%E5%8F%91%E5%B0%8F%E7%BB%93/'>Uni-App开发小结</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2021/06/05/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86/">笔记 | 数据库原理</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+             
+
+            
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>Change And Challenge</span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>

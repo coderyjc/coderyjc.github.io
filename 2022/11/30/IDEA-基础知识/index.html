@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="笔记 | JetBrains IDEA" />
+    <meta name="hexo-theme-A4" content="v1.9.6" />
+    <link rel="alternate icon" type="image/webp" href="/img/avatar.png">
+    <title>Jingcun Yan</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+    
+    
+        <style>
+            .index-main{
+                max-width:  880px;
+            }
+        </style>
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            <div class="left-toc-container">
+                <nav id="toc" class="bs-docs-sidebar"></nav>
+            </div>
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/avatar.png" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">Jingcun Yan</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    笔记 | JetBrains IDEA
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                
+                    
+                     <span>字数总计：3.6k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：14分钟</span>
+                
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+        <div class=".article-gallery"><blockquote>
+<p>主要内容包括：安装与卸载、运行程序、jdk配置、编辑器设置、工程管理、代码模版使用、快捷键、调试、工程管理、数据库相关内容。</p>
+</blockquote>
+<h1 id="IDEA使用教程"><a href="#IDEA使用教程" class="headerlink" title="IDEA使用教程"></a>IDEA使用教程</h1><h2 id="卸载和安装"><a href="#卸载和安装" class="headerlink" title="卸载和安装"></a>卸载和安装</h2><h3 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h3><ol start="0">
+<li>保存配置文件。（可选）</li>
+</ol>
+<p>配置文件：IDEA文件根目录的 <code>IDEA\bin\IdeaConfig\config\options</code></p>
+<p>插件：IDEA文件根目录的 <code>IDEA\bin\IdeaConfig\config\plugins</code></p>
+<p>或者直接从IDEA中导出：</p>
+<p><a href="/img/image-20221130211059399.png" title="image-20221130211059399" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221130211059399.png" alt="image-20221130211059399"></a></p>
+<p>直接从IDEA导出可以选择更多的选项。</p>
+<ol>
+<li>卸载软件。</li>
+</ol>
+<p><strong>如果下载的是免安装版本，则不会显示在电脑系统的“应用程序”中，这时候直接删除整个文件夹即可。</strong></p>
+<p>如果下载的是安装版，则直接从控制面板-卸载程序即可。</p>
+<p><a href="/img/image-20221130211703333.png" title="image-20221130211703333" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221130211703333.png" alt="image-20221130211703333"></a></p>
+<ol start="2">
+<li>删除残留配置文件</li>
+</ol>
+<p><code>C:\Users\&#123;电脑用户名&#125;\AppData\Local\JetBrains</code></p>
+<p><code>C:\Users\&#123;电脑用户名&#125;\AppData\Roaming\JetBrains</code></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>官方网站：<a target="_blank" rel="noopener" href="https://www.jetbrains.com/zh-cn/idea/download/">https://www.jetbrains.com/zh-cn/idea/download/</a></p>
+<p>破解办法自行百度，或者下载社区版，支持正版，人人有责。</p>
+<p>IDEA 分为两个版本： 旗舰版(Ultimate) 和 社区版(Community) 。</p>
+<p>IDEA的大版本每年迭代一次，大版本下的小版本（如：2022.x）迭代时间不固定，一般每年3-4个小版本，目前最新的版本是2022.4。</p>
+<hr>
+<p>安装步骤：</p>
+<ol>
+<li>欢迎界面</li>
+</ol>
+<p><a href="/img/image-20221130212440314.png" title="image-20221130212440314" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221130212440314.png" alt="image-20221130212440314"></a></p>
+<ol start="2">
+<li>选择路径</li>
+</ol>
+<p><a href="/img/image-20221130212550093.png" title="image-20221130212550093" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221130212550093.png" alt="image-20221130212550093"></a></p>
+<ol start="3">
+<li>选项</li>
+</ol>
+<p><a href="/img/image-20221130212747408.png" title="image-20221130212747408" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221130212747408.png" alt="image-20221130212747408"></a></p>
+<p>按照自己的喜好选择，一般来说选择添加到PATH</p>
+<ol start="4">
+<li>开始菜单中创建的文件夹的名称为JetBrains，就是下图</li>
+</ol>
+<p><a href="/img/image-20221130213046789.png" title="image-20221130213046789" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221130213046789.png" alt="image-20221130213046789"></a></p>
+<ol start="5">
+<li>开始安装，安装完成</li>
+</ol>
+<p><a href="/img/image-20221130213022978.png" title="image-20221130213022978" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221130213022978.png" alt="image-20221130213022978"></a></p>
+<hr>
+<p>第一次使用：</p>
+<p>是否发送数据？默认选不发送</p>
+<p><a href="/img/image-20221130213216287.png" title="image-20221130213216287" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221130213216287.png" alt="image-20221130213216287"></a></p>
+<p>是否导入原来的配置文件？</p>
+<p>如果在以前导出了相关的配置文件，则可以在这里导入。一般名为<code>settings.zip</code></p>
+<p><a href="/img/image-20221130213312661.png" title="image-20221130213312661" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221130213312661.png" alt="image-20221130213312661"></a></p>
+<p>这里为了演示，我就不导入了。</p>
+<p>然后就ok了。</p>
+<blockquote>
+<p>激活问题请自己解决。</p>
+</blockquote>
+<h3 id="一些问题"><a href="#一些问题" class="headerlink" title="一些问题"></a>一些问题</h3><p>问题描述1：2022.1启动不了，双击桌面图标，没有响应。</p>
+<p>问题描述2：进入到安装目录…\IntelliJ IDEA 2022.1.2\bin，打开CMD。输入idea，发现报错。</p>
+<p>解决办法：</p>
+<p>打开<code>C:\Users\｛用户名｝\AppData\Roaming\JetBrains\IntelliJIdea2022.1\idea64.exe.vmoptions</code>这个文件。</p>
+<p>删除最后一行以<code>-javaagent</code>开头的一行配置</p>
+<p>原因：之前使用过的比如2021.2.2版本，是破解版。新版IEDA把现有的启运参数也都复制过去了。又因为最新的IDEA，不兼容pojie程序-javaagent:D:\develop_tools\IDEA\IntelliJ IDEA 2021.2.2\bin\jetbrains-agent.jar了，所以报错了，所以JVM结束了，所以没有启动画面。</p>
+<h2 id="示例程序"><a href="#示例程序" class="headerlink" title="示例程序"></a>示例程序</h2><h3 id="新建工程"><a href="#新建工程" class="headerlink" title="新建工程"></a>新建工程</h3><p><a href="/img/image-20221130215144461.png" title="image-20221130215144461" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221130215144461.png" alt="image-20221130215144461"></a></p>
+<p><a href="/img/image-20221130215556659.png" title="image-20221130215556659" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221130215556659.png" alt="image-20221130215556659"></a></p>
+<p>项目创建完成，开始创建java文件</p>
+<p><a href="/img/image-20221130215702493.png" title="image-20221130215702493" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221130215702493.png" alt="image-20221130215702493"></a></p>
+<p><a href="/img/image-20221130215733733.png" title="image-20221130215733733" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221130215733733.png" alt="image-20221130215733733"></a></p>
+<h3 id="编写代码"><a href="#编写代码" class="headerlink" title="编写代码"></a>编写代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p>因为在创建项目的时候已经设置了jdk了，因此不用再重复设置了。</p>
+<p>可以点击方法旁边的运行，来运行项目</p>
+<p><a href="/img/image-20221130215923390.png" title="image-20221130215923390" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221130215923390.png" alt="image-20221130215923390"></a></p>
+<p>也可以点击工具栏中的运行。</p>
+<p><a href="/img/image-20221130215939214.png" title="image-20221130215939214" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221130215939214.png" alt="image-20221130215939214"></a></p>
+<h2 id="JDK相关设置"><a href="#JDK相关设置" class="headerlink" title="JDK相关设置"></a>JDK相关设置</h2><p>查看项目的jdk</p>
+<p><a href="/img/image-20221130220033129.png" title="image-20221130220033129" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221130220033129.png" alt="image-20221130220033129"></a></p>
+<p><a href="/img/image-20221130220112858.png" title="image-20221130220112858" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221130220112858.png" alt="image-20221130220112858"></a></p>
+<p>Language level 语言级别是什么：</p>
+<p>我们可以使用高版本的jdk，但是使用低版本的语言规范，这个时候虽然使用了新版本的jdk，但是无法使用新版本的语法特性。这个语言级别就是语言规范。</p>
+<h2 id="详细设置"><a href="#详细设置" class="headerlink" title="详细设置"></a>详细设置</h2><p>显示工具栏</p>
+<p><a href="/img/image-20221201104442153.png" title="image-20221201104442153" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201104442153.png" alt="image-20221201104442153"></a></p>
+<p>打开详细配置</p>
+<p><a href="/img/image-20221201104500251.png" title="image-20221201104500251" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201104500251.png" alt="image-20221201104500251"></a></p>
+<p>详细配置设置</p>
+<p><a href="/img/image-20221201104636721.png" title="image-20221201104636721" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201104636721.png" alt="image-20221201104636721"></a></p>
+<h3 id="系统设置"><a href="#系统设置" class="headerlink" title="系统设置"></a>系统设置</h3><h4 id="默认启动项配置"><a href="#默认启动项配置" class="headerlink" title="默认启动项配置"></a>默认启动项配置</h4><p><a href="/img/image-20221201104846063.png" title="image-20221201104846063" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201104846063.png" alt="image-20221201104846063"></a></p>
+<p>如果去掉Reopen last project on startup前面的对勾，每次启动IDEA就会出现如下界面</p>
+<p><a href="/img/image-20221201104945855.png" title="image-20221201104945855" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201104945855.png" alt="image-20221201104945855"></a></p>
+<h4 id="取消自动更新"><a href="#取消自动更新" class="headerlink" title="取消自动更新"></a>取消自动更新</h4><p>Settings–&gt;Appearance &amp; Behavior-&gt;System Settings -&gt; Updates</p>
+<p><a href="/img/image-20221201105102710.png" title="image-20221201105102710" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201105102710.png" alt="image-20221201105102710"></a></p>
+<p>建议检查IDE更新的√去掉</p>
+<p>检查插件更新的√选上</p>
+<h3 id="主题设置"><a href="#主题设置" class="headerlink" title="主题设置"></a>主题设置</h3><p><strong>整体主题</strong></p>
+<p><a href="/img/image-20221201105303600.png" title="image-20221201105303600" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201105303600.png" alt="image-20221201105303600"></a></p>
+<p>默认提供4个主题：2白1黑1高对比度。</p>
+<p><strong>菜单和窗口字体大小</strong></p>
+<p><a href="/img/image-20221201105455046.png" title="image-20221201105455046" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201105455046.png" alt="image-20221201105455046"></a></p>
+<p><a href="/img/image-20221201105557255.png" title="image-20221201105557255" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201105557255.png" alt="image-20221201105557255"></a></p>
+<p><strong>设置背景图</strong></p>
+<p><a href="/img/image-20221201105912758.png" title="image-20221201105912758" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201105912758.png" alt="image-20221201105912758"></a></p>
+<p>效果：</p>
+<p><a href="/img/image-20221201105931374.png" title="image-20221201105931374" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201105931374.png" alt="image-20221201105931374"></a></p>
+<h3 id="编辑器字体设置"><a href="#编辑器字体设置" class="headerlink" title="编辑器字体设置"></a>编辑器字体设置</h3><h4 id="编辑器主题设置"><a href="#编辑器主题设置" class="headerlink" title="编辑器主题设置"></a>编辑器主题设置</h4><p><a href="/img/image-20221201110550838.png" title="image-20221201110550838" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201110550838.png" alt="image-20221201110550838"></a></p>
+<h4 id="字体大小"><a href="#字体大小" class="headerlink" title="字体大小"></a>字体大小</h4><p><a href="/img/image-20221201111030533.png" title="image-20221201111030533" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201111030533.png" alt="image-20221201111030533"></a></p>
+<p><a href="/img/image-20221201110913046.png" title="image-20221201110913046" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201110913046.png" alt="image-20221201110913046"></a></p>
+<h4 id="详细字体设置：以注释为例"><a href="#详细字体设置：以注释为例" class="headerlink" title="详细字体设置：以注释为例"></a>详细字体设置：以注释为例</h4><p><a href="/img/image-20221201111240818.png" title="image-20221201111240818" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201111240818.png" alt="image-20221201111240818"></a></p>
+<h3 id="行号和方法分隔符"><a href="#行号和方法分隔符" class="headerlink" title="行号和方法分隔符"></a>行号和方法分隔符</h3><p><a href="/img/image-20221201111409015.png" title="image-20221201111409015" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201111409015.png" alt="image-20221201111409015"></a></p>
+<p><a href="/img/image-20221201111444183.png" title="image-20221201111444183" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201111444183.png" alt="image-20221201111444183"></a></p>
+<h3 id="代码提示"><a href="#代码提示" class="headerlink" title="代码提示"></a>代码提示</h3><p><a href="/img/image-20221201164053546.png" title="image-20221201164053546" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201164053546.png" alt="image-20221201164053546"></a></p>
+<h3 id="自动导包"><a href="#自动导包" class="headerlink" title="自动导包"></a>自动导包</h3><p>默认需要自己手动导包，Alt+Enter快捷键</p>
+<p><a href="/img/image-20221201164245625.png" title="image-20221201164245625" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201164245625.png" alt="image-20221201164245625"></a></p>
+<p><a href="/img/image-20221201164444787.png" title="image-20221201164444787" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201164444787.png" alt="image-20221201164444787"></a></p>
+<h3 id="字符编码（全都改成UTF-8）"><a href="#字符编码（全都改成UTF-8）" class="headerlink" title="字符编码（全都改成UTF-8）"></a>字符编码（全都改成UTF-8）</h3><p><a href="/img/image-20221201164554131.png" title="image-20221201164554131" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201164554131.png" alt="image-20221201164554131"></a></p>
+<p><a href="/img/image-20221201164637002.png" title="image-20221201164637002" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201164637002.png" alt="image-20221201164637002"></a></p>
+<blockquote>
+<p>字符编码也可以针对文件设置，也是这个步骤，当导入了外部的Java文件，而文件产生了乱码的时候，可以按照这个步骤进行修改。</p>
+</blockquote>
+<h3 id="类的头部注释信息"><a href="#类的头部注释信息" class="headerlink" title="类的头部注释信息"></a>类的头部注释信息</h3><p><a href="/img/image-20221201164903582.png" title="image-20221201164903582" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201164903582.png" alt="image-20221201164903582"></a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* ClassName: $&#123;NAME&#125;</span></span><br><span class="line"><span class="comment">* Package: $&#123;PACKAGE_NAME&#125;</span></span><br><span class="line"><span class="comment">* Description: </span></span><br><span class="line"><span class="comment">* <span class="doctag">@Author</span> Yan Jingcun</span></span><br><span class="line"><span class="comment">* <span class="doctag">@Create</span> $&#123;DATE&#125; $&#123;TIME&#125; </span></span><br><span class="line"><span class="comment">* <span class="doctag">@Version</span> 1.0   </span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<p>常用的预设变量：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$&#123;PACKAGE_NAME&#125; - the name of the target package where the new class or interface will </span><br><span class="line">be created. </span><br><span class="line">$&#123;PROJECT_NAME&#125; - the name of the current project. </span><br><span class="line">$&#123;FILE_NAME&#125; - the name of the PHP file that will be created. </span><br><span class="line">$&#123;NAME&#125; - the name of the new file which you specify in the New File dialog box during </span><br><span class="line">the file creation. </span><br><span class="line">$&#123;USER&#125; - the login name of the current user. </span><br><span class="line">$&#123;DATE&#125; - the current system date.</span><br><span class="line">$&#123;TIME&#125; - the current system time. </span><br><span class="line">$&#123;YEAR&#125; - the current year. </span><br><span class="line">$&#123;MONTH&#125; - the current month. </span><br><span class="line">$&#123;DAY&#125; - the current day of the month. </span><br><span class="line">$&#123;HOUR&#125; - the current hour. </span><br><span class="line">$&#123;MINUTE&#125; - the current minute. </span><br><span class="line">$&#123;PRODUCT_NAME&#125; - the name of the IDE in which the file will be created. </span><br><span class="line">$&#123;MONTH_NAME_SHORT&#125; - the first 3 letters of the month name. Example: Jan, Feb, etc. </span><br><span class="line">$&#123;MONTH_NAME_FULL&#125; - full name of a month. Example: January, February, etc.</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="自动编译"><a href="#自动编译" class="headerlink" title="自动编译"></a>自动编译</h3><p><a href="/img/image-20221201165040509.png" title="image-20221201165040509" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201165040509.png" alt="image-20221201165040509"></a></p>
+<h3 id="省电模式"><a href="#省电模式" class="headerlink" title="省电模式"></a>省电模式</h3><p><a href="/img/image-20221201165108344.png" title="image-20221201165108344" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201165108344.png" alt="image-20221201165108344"></a></p>
+<h3 id="取消双击shift搜索"><a href="#取消双击shift搜索" class="headerlink" title="取消双击shift搜索"></a>取消双击shift搜索</h3><p><a href="/img/image-20221201165238821.png" title="image-20221201165238821" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201165238821.png" alt="image-20221201165238821"></a></p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>是否在单行显式编辑器选项卡（建议去掉勾选）</p>
+<p><a href="/img/image-20221201165514155.png" title="image-20221201165514155" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201165514155.png" alt="image-20221201165514155"></a></p>
+<h2 id="工程和模块管理"><a href="#工程和模块管理" class="headerlink" title="工程和模块管理"></a>工程和模块管理</h2><h3 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h3><p>Project - Module — Package — Class</p>
+<p>也就是说：</p>
+<ul>
+<li>一个project中可以创建多个module</li>
+<li>一个module中可以创建多个package</li>
+<li>一个package中可以创建多个class</li>
+</ul>
+<p><a href="/img/image-20221201165616453.png" title="image-20221201165616453" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201165616453.png" alt="image-20221201165616453"></a></p>
+<p>在 IntelliJ IDEA 中Project是最顶级的结构单元，然后就是Module。目前，主流的大型项目结构基本都是多Module的结构，这类项目一般是按功能划分的，比如：user-core-module、user-facade-module和user-hessian-module等等，模块之间彼此可以相互依赖，有着不可分割的业务关系。因此，对于一个Project来说：</p>
+<ul>
+<li>当为单Module项目的时候，这个单独的Module实际上就是一个Project。</li>
+<li>当为多Module项目的时候，多个模块处于同一个Project之中，此时彼此之间具有互相依赖的关联关系。</li>
+<li>当然多个模块没有建立依赖关系的话，也可以作为单独一个“小项目”运行。</li>
+</ul>
+<h3 id="创建模块"><a href="#创建模块" class="headerlink" title="创建模块"></a>创建模块</h3><p>建议创建“Empty空工程”，然后创建多模块，每一个模块可以独立运行，相当于一个小项目。</p>
+<ol>
+<li>先创建空工程</li>
+</ol>
+<p><a href="/img/image-20221201171316110.png" title="image-20221201171316110" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201171316110.png" alt="image-20221201171316110"></a></p>
+<ol start="2">
+<li>创建模块</li>
+</ol>
+<p><a href="/img/image-20221201171650971.png" title="image-20221201171650971" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201171650971.png" alt="image-20221201171650971"></a></p>
+<p><a href="/img/image-20221201171737755.png" title="image-20221201171737755" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201171737755.png" alt="image-20221201171737755"></a></p>
+<h3 id="删除模块"><a href="#删除模块" class="headerlink" title="删除模块"></a>删除模块</h3><p><a href="/img/image-20221201171849880.png" title="image-20221201171849880" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201171849880.png" alt="image-20221201171849880"></a></p>
+<p>移出之后是在本项目中删除了这个项目</p>
+<p>但是这个文件夹还在</p>
+<p>因此还要把这个文件夹删除</p>
+<p><a href="/img/image-20221201171948501.png" title="image-20221201171948501" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201171948501.png" alt="image-20221201171948501"></a></p>
+<h3 id="导入其他外部模块"><a href="#导入其他外部模块" class="headerlink" title="导入其他外部模块"></a>导入其他外部模块</h3><p>直接复制的时候不会被IDEA标志为本项目的模块，而是以文件夹的形式呈现。</p>
+<p><a href="/img/image-20221201172228830.png" title="image-20221201172228830" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201172228830.png" alt="image-20221201172228830"></a></p>
+<p>应该在Project Structure中导入</p>
+<p><a href="/img/image-20221201172528383.png" title="image-20221201172528383" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201172528383.png" alt="image-20221201172528383"></a></p>
+<p><a href="/img/image-20221201172331694.png" title="image-20221201172331694" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201172331694.png" alt="image-20221201172331694"></a></p>
+<p><a href="/img/image-20221201172406695.png" title="image-20221201172406695" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201172406695.png" alt="image-20221201172406695"></a></p>
+<p><a href="/img/image-20221201172429711.png" title="image-20221201172429711" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201172429711.png" alt="image-20221201172429711"></a></p>
+<p>然后一路Next下去。</p>
+<p>如果文件存在的时候，可以选择Overwrite</p>
+<h2 id="代码模版的使用"><a href="#代码模版的使用" class="headerlink" title="代码模版的使用"></a>代码模版的使用</h2><h3 id="查看Postfix-Completion模板-后缀补全"><a href="#查看Postfix-Completion模板-后缀补全" class="headerlink" title="查看Postfix Completion模板(后缀补全)"></a>查看Postfix Completion模板(后缀补全)</h3><p><a href="/img/image-20221201173411749.png" title="image-20221201173411749" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201173411749.png" alt="image-20221201173411749"></a></p>
+<h3 id="查看Live-Templates模板-实时模板"><a href="#查看Live-Templates模板-实时模板" class="headerlink" title="查看Live Templates模板(实时模板)"></a>查看Live Templates模板(实时模板)</h3><p>这个2022.4版本没有，可能已经删除了，就不写了。</p>
+<h3 id="常用代码模版"><a href="#常用代码模版" class="headerlink" title="常用代码模版"></a>常用代码模版</h3><p>1、非空判断 </p>
+<ul>
+<li>变量.null：if(变量 &#x3D;&#x3D; null)</li>
+<li>变量.nn：if(变量 !&#x3D; null)</li>
+<li>变量.notnull：if(变量 !&#x3D; null)</li>
+<li>ifn：if(xx &#x3D;&#x3D; null)</li>
+<li>inn：if(xx !&#x3D; null)</li>
+</ul>
+<p>2、遍历数组和集合 </p>
+<ul>
+<li>数组或集合变量.fori：for循环</li>
+<li>数组或集合变量.for：增强for循环</li>
+<li>数组或集合变量.forr：反向for循环</li>
+<li>数组或集合变量.iter：增强for循环遍历数组或集合</li>
+</ul>
+<p>3、输出语句 </p>
+<ul>
+<li>sout：相当于System.out.println</li>
+<li>soutm：打印当前方法的名称</li>
+<li>soutp：打印当前方法的形参及形参对应的实参值</li>
+<li>soutv：打印方法中声明的最近的变量的值</li>
+<li>变量.sout：打印当前变量值</li>
+<li>变量.soutv：打印当前变量名及变量值</li>
+</ul>
+<p>4、对象操作 </p>
+<p>创建对象</p>
+<ul>
+<li>Xxx.new.var ：创建Xxx类的对象，并赋给相应的</li>
+</ul>
+<p>变量</p>
+<ul>
+<li>Xxx.new.field：会将方法内刚创建的Xxx对象抽取</li>
+</ul>
+<p>为一个属性</p>
+<p>强转</p>
+<ul>
+<li>对象.cast：将对象进行强转</li>
+<li>对象.castvar：将对象强转后，并赋给一个变量</li>
+</ul>
+<p>5、静态常量声明 </p>
+<ul>
+<li>psf：public static final</li>
+<li>psfi：public static final int</li>
+<li>psfs：public static final String</li>
+<li>prsf：private static final</li>
+</ul>
+<h3 id="自定义代码模版"><a href="#自定义代码模版" class="headerlink" title="自定义代码模版"></a>自定义代码模版</h3><p><strong>自定义后缀补全模版</strong></p>
+<p><a href="/img/image-20221201181208657.png" title="image-20221201181208657" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201181208657.png" alt="image-20221201181208657"></a></p>
+<p><a href="/img/image-20221201181707456.png" title="image-20221201181707456" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201181707456.png" alt="image-20221201181707456"></a></p>
+<p>EXPR是事先要输入的表达式，比如这样设置之后，我需要先输入类型比如<code>Stirng</code>，然后输入<code>.list</code></p>
+<p><a href="/img/image-20221201181817560.png" title="image-20221201181817560" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201181817560.png" alt="image-20221201181817560"></a></p>
+<p>然后回车或者tab就能自动补全代码。</p>
+<p><strong>自定义Live Templates</strong></p>
+<p>定义<code>sop</code>为<code>System.out.println();</code>语句</p>
+<ol>
+<li>添加自定义代码片段组</li>
+</ol>
+<p><a href="/img/image-20221201182132267.png" title="image-20221201182132267" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201182132267.png" alt="image-20221201182132267"></a></p>
+<ol start="2">
+<li>在组中添加新模板</li>
+</ol>
+<p><a href="/img/image-20221201182256933.png" title="image-20221201182256933" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201182256933.png" alt="image-20221201182256933"></a></p>
+<p><a href="/img/image-20221201182357869.png" title="image-20221201182357869" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201182357869.png" alt="image-20221201182357869"></a></p>
+<p><a href="/img/image-20221201182450298.png" title="image-20221201182450298" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201182450298.png" alt="image-20221201182450298"></a></p>
+<p>在文件中输入<code>sop</code></p>
+<p><a href="/img/image-20221201182528230.png" title="image-20221201182528230" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201182528230.png" alt="image-20221201182528230"></a></p>
+<p>然后输入回车即可。</p>
+<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><h3 id="查看快捷键"><a href="#查看快捷键" class="headerlink" title="查看快捷键"></a>查看快捷键</h3><p><strong>已知快捷键操作名，未知快捷键</strong></p>
+<p><a href="/img/image-20221201183600931.png" title="image-20221201183600931" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201183600931.png" alt="image-20221201183600931"></a></p>
+<p><strong>已知快捷键，不知道对应的操作名</strong></p>
+<p><a href="/img/image-20221201183701913.png" title="image-20221201183701913" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201183701913.png" alt="image-20221201183701913"></a></p>
+<h3 id="自定义快捷键"><a href="#自定义快捷键" class="headerlink" title="自定义快捷键"></a>自定义快捷键</h3><p><a href="/img/image-20221201183837058.png" title="image-20221201183837058" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201183837058.png" alt="image-20221201183837058"></a></p>
+<h3 id="使用其他平台的快捷键"><a href="#使用其他平台的快捷键" class="headerlink" title="使用其他平台的快捷键"></a>使用其他平台的快捷键</h3><p><a href="/img/image-20221201183934845.png" title="image-20221201183934845" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201183934845.png" alt="image-20221201183934845"></a></p>
+<h2 id="断点调试"><a href="#断点调试" class="headerlink" title="断点调试"></a>断点调试</h2><h3 id="Debug步骤"><a href="#Debug步骤" class="headerlink" title="Debug步骤"></a>Debug步骤</h3><p>Debug(调试)程序步骤如下：</p>
+<p>1、添加断点</p>
+<p>2、启动调试</p>
+<p>3、单步执行</p>
+<p>4、观察变量和执行流程，找到并解决问题</p>
+<hr>
+<p><strong>1. 添加断点</strong></p>
+<p><a href="/img/image-20221201184912622.png" title="image-20221201184912622" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201184912622.png" alt="image-20221201184912622"></a></p>
+<blockquote>
+<p>也可以用 Ctrl + F8 添加或删除断点</p>
+</blockquote>
+<p><strong>2. 启动调试</strong></p>
+<p><a href="/img/image-20221201185005627.png" title="image-20221201185005627" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201185005627.png" alt="image-20221201185005627"></a></p>
+<blockquote>
+<p>也可以用Shift + F9开启断点</p>
+</blockquote>
+<p><strong>3. 单步执行</strong></p>
+<p><a href="/img/image-20221201185130569.png" title="image-20221201185130569" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201185130569.png" alt="image-20221201185130569"></a></p>
+<blockquote>
+<p>在debug的过程中可以动态打断点。</p>
+</blockquote>
+<p><strong>4. 观察执行情况，找出问题</strong></p>
+<h3 id="多种debug情况介绍"><a href="#多种debug情况介绍" class="headerlink" title="多种debug情况介绍"></a>多种debug情况介绍</h3><h4 id="行断点"><a href="#行断点" class="headerlink" title="行断点"></a>行断点</h4><p>断点打在代码所在的行上。执行到这一行时，会停下来。</p>
+<h4 id="方法断点"><a href="#方法断点" class="headerlink" title="方法断点"></a>方法断点</h4><p>断点设置在方法的签名上，默认当进入时，断点可以被唤醒。</p>
+<p>也可以设置在方法退出时，断点也被唤醒</p>
+<p><a href="/img/image-20221201185620024.png" title="image-20221201185620024" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201185620024.png" alt="image-20221201185620024"></a></p>
+<p>在多态的场景下，在父类或接口的方法上打断点，会自动调入到子类或实现类的方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * ClassName: Hello</span></span><br><span class="line"><span class="comment"> * Package: PACKAGE_NAME</span></span><br><span class="line"><span class="comment"> * Description:</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> Yan Jingcun</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Create</span> 2022/12/1 18:15</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Version</span> 1.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Hello</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//1.</span></span><br><span class="line">        <span class="type">Son</span> <span class="variable">instance</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Son</span>();</span><br><span class="line">        instance.test();</span><br><span class="line">        <span class="comment">//2.</span></span><br><span class="line">        <span class="type">Father</span> <span class="variable">instance1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Son</span>();</span><br><span class="line">        instance1.test();</span><br><span class="line">        <span class="comment">//3.</span></span><br><span class="line">        <span class="type">Consumer</span> <span class="variable">con</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ConsumerImpl</span>();</span><br><span class="line">        con.accept(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Father</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test</span><span class="params">()</span>&#123; <span class="comment">// 【断点】</span></span><br><span class="line">        System.out.println(<span class="string">&quot;Father : test&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Son</span> <span class="keyword">extends</span> <span class="title class_">Father</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test</span><span class="params">()</span>&#123; <span class="comment">// 【断点】</span></span><br><span class="line">        System.out.println(<span class="string">&quot;Son : test&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Consumer</span>&#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">accept</span><span class="params">(String str)</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ConsumerImpl</span> <span class="keyword">implements</span> <span class="title class_">Consumer</span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">accept</span><span class="params">(String str)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;ConsumerImple:&quot;</span> + str);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="字段断点"><a href="#字段断点" class="headerlink" title="字段断点"></a>字段断点</h4><p>在<strong>类的属性</strong>声明上打断点，默认对属性的修改操作进行监控</p>
+<p><a href="/img/image-20221201190625104.png" title="image-20221201190625104" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201190625104.png" alt="image-20221201190625104"></a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.function.Consumer;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * ClassName: Hello</span></span><br><span class="line"><span class="comment"> * Package: PACKAGE_NAME</span></span><br><span class="line"><span class="comment"> * Description:</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> Yan Jingcun</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Create</span> 2022/12/1 18:15</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Version</span> 1.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Hello</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Person</span> <span class="variable">p1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="number">20</span>);</span><br><span class="line">        p1.setAge(p1.getAge() + <span class="number">1</span>);</span><br><span class="line">        p1.setAge(p1.getAge() + <span class="number">1</span>);</span><br><span class="line">        p1.setAge(p1.getAge() + <span class="number">1</span>);</span><br><span class="line">        p1.setAge(p1.getAge() + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Person</span><span class="params">(<span class="type">int</span> age)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setAge</span><span class="params">(<span class="type">int</span> age)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getAge</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="条件断点"><a href="#条件断点" class="headerlink" title="条件断点"></a>条件断点</h4><p>针对上述代码，在满足i &#x3D;&#x3D; 3的条件下，执行断点。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Hello</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">target</span> <span class="operator">=</span> i + <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><a href="/img/image-20221201190759993.png" title="image-20221201190759993" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201190759993.png" alt="image-20221201190759993"></a></p>
+<p><a href="/img/image-20221201191041354.png" title="image-20221201191041354" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201191041354.png" alt="image-20221201191041354"></a></p>
+<h4 id="异常断点"><a href="#异常断点" class="headerlink" title="异常断点"></a>异常断点</h4><p>对异常进行跟踪。如果程序出现指定异常，程序就会执行断点，自动停住。</p>
+<p><a href="/img/image-20221201191300276.png" title="image-20221201191300276" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201191300276.png" alt="image-20221201191300276"></a></p>
+<p>打上勾之后就可以实现异常断点了。</p>
+<p><a href="/img/image-20221201191335815.png" title="image-20221201191335815" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201191335815.png" alt="image-20221201191335815"></a></p>
+<h4 id="线程调试"><a href="#线程调试" class="headerlink" title="线程调试"></a>线程调试</h4><p>当线程的名称为<code>Thread2</code>的时候，进入断点。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    test(<span class="string">&quot;Thread1&quot;</span>);</span><br><span class="line">    test(<span class="string">&quot;Thread2&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">test</span><span class="params">(String threadName)</span> &#123;</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">Thread</span>(</span><br><span class="line">            () -&gt; System.out.println(Thread.currentThread().getName()),</span><br><span class="line">            threadName</span><br><span class="line">    ).start();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="/img/image-20221201191631368.png" title="image-20221201191631368" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201191631368.png" alt="image-20221201191631368"></a></p>
+<p>表达式为<code>Thread.currentThread().getName().equals(&quot;Thread2&quot;)</code></p>
+<p><a href="/img/image-20221201191719845.png" title="image-20221201191719845" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201191719845.png" alt="image-20221201191719845"></a></p>
+<h4 id="强制结束"><a href="#强制结束" class="headerlink" title="强制结束"></a>强制结束</h4><p>Ctrl+F2强制结束调试。</p>
+<p><a href="/img/image-20221201191823296.png" title="image-20221201191823296" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201191823296.png" alt="image-20221201191823296"></a></p>
+<p>右键之后ForceReturn可以结束当前线程。</p>
+<h3 id="自定义调试数据视图"><a href="#自定义调试数据视图" class="headerlink" title="自定义调试数据视图"></a>自定义调试数据视图</h3><p><a href="/img/image-20221201215124992.png" title="image-20221201215124992" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201215124992.png" alt="image-20221201215124992"></a></p>
+<p><a href="/img/image-20221201215251325.png" title="image-20221201215251325" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201215251325.png" alt="image-20221201215251325"></a></p>
+<h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><p>问题：使用Step Into时，会出现无法进入源码的情况。如何解决？</p>
+<p>方案1：使用 force step into 即可</p>
+<p>方案2：点击Setting -&gt; Build,Execution,Deployment -&gt; Debugger -&gt; Stepping</p>
+<p>把Do not step into the classess中的java.<em>、javax.</em> 取消勾选即可。</p>
+<p><a href="/img/image-20221201215410841.png" title="image-20221201215410841" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201215410841.png" alt="image-20221201215410841"></a></p>
+<h2 id="创建不同类型的工程"><a href="#创建不同类型的工程" class="headerlink" title="创建不同类型的工程"></a>创建不同类型的工程</h2><h3 id="创建Java工程"><a href="#创建Java工程" class="headerlink" title="创建Java工程"></a>创建Java工程</h3><p>在【示例程序】中已经演示了创建Project的方法，在【工程和模块管理】中已经演示了创建Module的方法。</p>
+<p>下面演示创建包的方法：</p>
+<p><a href="/img/image-20221201215728634.png" title="image-20221201215728634" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201215728634.png" alt="image-20221201215728634"></a></p>
+<p>输入报名后即可创建，多级package使用点号连接。<code>top.evilemperor.demo</code></p>
+<p><a href="/img/image-20221201215812539.png" title="image-20221201215812539" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201215812539.png" alt="image-20221201215812539"></a></p>
+<h3 id="创建JavaWeb工程"><a href="#创建JavaWeb工程" class="headerlink" title="创建JavaWeb工程"></a>创建JavaWeb工程</h3><ol>
+<li>创建新模块</li>
+</ol>
+<p><a href="/img/image-20221201220017372.png" title="image-20221201220017372" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201220017372.png" alt="image-20221201220017372"></a></p>
+<ol start="2">
+<li>选中当前创建的工程，添加框架支持：</li>
+</ol>
+<p><a href="/img/image-20221201220105686.png" title="image-20221201220105686" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201220105686.png" alt="image-20221201220105686"></a></p>
+<ol start="3">
+<li>选择：Web Application，选择Create web.xml，如下：</li>
+</ol>
+<p><a href="/img/image-20221201220159855.png" title="image-20221201220159855" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201220159855.png" alt="image-20221201220159855"></a></p>
+<ol start="4">
+<li>配置web工程并运行</li>
+</ol>
+<p><a href="/img/image-20221201220309012.png" title="image-20221201220309012" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201220309012.png" alt="image-20221201220309012"></a></p>
+<p><a href="/img/image-20221201220350741.png" title="image-20221201220350741" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201220350741.png" alt="image-20221201220350741"></a></p>
+<p>配置tomcat</p>
+<p><a href="/img/image-20221201220519113.png" title="image-20221201220519113" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201220519113.png" alt="image-20221201220519113"></a></p>
+<p><a href="/img/image-20221201220537718.png" title="image-20221201220537718" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201220537718.png" alt="image-20221201220537718"></a></p>
+<p><a href="/img/image-20221201220654891.png" title="image-20221201220654891" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201220654891.png" alt="image-20221201220654891"></a></p>
+<p>运行效果</p>
+<p><a href="/img/image-20221201220747355.png" title="image-20221201220747355" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201220747355.png" alt="image-20221201220747355"></a></p>
+<h4 id="乱码问题的解决"><a href="#乱码问题的解决" class="headerlink" title="乱码问题的解决"></a>乱码问题的解决</h4><p>问题：</p>
+<p><a href="/img/image-20221201220820815.png" title="image-20221201220820815" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201220820815.png" alt="image-20221201220820815"></a></p>
+<p>解决：</p>
+<ol start="0">
+<li>确保IDEA控制台的字符集编码和tomcat输出的字符集编码是一样的(最好是UTF-8)</li>
+</ol>
+<p>IDEA:</p>
+<p><a href="/img/image-20221201222431888.png" title="image-20221201222431888" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201222431888.png" alt="image-20221201222431888"></a></p>
+<p>tomcat:</p>
+<p>在文件<code>apache-tomcat-8.5.42\conf\logging.properties</code>中，确保以下所有字符集都是UTF-8</p>
+<p><a href="/img/image-20221201222518377.png" title="image-20221201222518377" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201222518377.png" alt="image-20221201222518377"></a></p>
+<ol>
+<li>点击Help &#x3D;&gt; Edit custom VM Options，在最后面添加<code>-Dfile.encoding=UTF-8</code></li>
+</ol>
+<p><a href="/img/image-20221201221004268.png" title="image-20221201221004268" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201221004268.png" alt="image-20221201221004268"></a></p>
+<p><a href="/img/image-20221201220948166.png" title="image-20221201220948166" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201220948166.png" alt="image-20221201220948166"></a></p>
+<ol start="2">
+<li>在当前Tomcat实例中配置 VM option，添加<code>-Dfile.encoding=UTF-8</code></li>
+</ol>
+<p><a href="/img/image-20221201221117212.png" title="image-20221201221117212" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201221117212.png" alt="image-20221201221117212"></a></p>
+<p>在第二步的Startup&#x2F;Connection页签的Run和Debug添加一个key为<code>JAVA_TOOL_OPTIONS</code>，value为<code>-Dfile.encoding=UTF-8</code>的环境变量</p>
+<p><a href="/img/image-20221201221218316.png" title="image-20221201221218316" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201221218316.png" alt="image-20221201221218316"></a></p>
+<ol start="3">
+<li>重启IDEA</li>
+</ol>
+<p>成功。</p>
+<p><a href="/img/image-20221201223249234.png" title="image-20221201223249234" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201223249234.png" alt="image-20221201223249234"></a></p>
+<h3 id="创建Maven-Java工程"><a href="#创建Maven-Java工程" class="headerlink" title="创建Maven Java工程"></a>创建Maven Java工程</h3><p>读者自行下载Maven和配置</p>
+<p>配置结果举例:</p>
+<p><a href="/img/image-20221201223313715.png" title="image-20221201223313715" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201223313715.png" alt="image-20221201223313715"></a></p>
+<ol>
+<li>创建maven模块（项目），选择一套模版。</li>
+</ol>
+<p><a href="/img/image-20221201223744340.png" title="image-20221201223744340" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201223744340.png" alt="image-20221201223744340"></a></p>
+<p><a href="/img/image-20221201224006902.png" title="image-20221201224006902" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201224006902.png" alt="image-20221201224006902"></a></p>
+<p>然后点击创建即可。</p>
+<ol start="2">
+<li>添加缺少的资源目录</li>
+</ol>
+<p>给main和text目录下添加resources目录，并设置为资源目录</p>
+<p><a href="/img/image-20221201224239447.png" title="image-20221201224239447" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201224239447.png" alt="image-20221201224239447"></a></p>
+<p>Maven的Java目录结构：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">工程名</span><br><span class="line">     src</span><br><span class="line">     ----main</span><br><span class="line">     --------java</span><br><span class="line">     --------resources</span><br><span class="line">     ----test</span><br><span class="line">     --------java</span><br><span class="line">     --------resources</span><br><span class="line">     pom.xml</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>main目录用于存放主程序。</li>
+<li>test目录用于存放测试程序。</li>
+<li>java目录用于存放源代码文件。</li>
+<li>resources目录用于存放配置文件和资源文件。</li>
+</ul>
+<ol start="3">
+<li>测试</li>
+</ol>
+<p>第1步：创建Maven的核心配置文件pom.xml（已创建）</p>
+<p>第2步：编写主程序代码</p>
+<p>第3步：编写测试代码</p>
+<p>第4步：运行几个基本的Maven命令</p>
+<p><a href="/img/image-20221201224517830.png" title="image-20221201224517830" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201224517830.png" alt="image-20221201224517830"></a></p>
+<p>比如运行了打包package</p>
+<p><a href="/img/image-20221201224804770.png" title="image-20221201224804770" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201224804770.png" alt="image-20221201224804770"></a></p>
+<h4 id="报错：不再支持源选项-5。请使用-7-或更高版本。"><a href="#报错：不再支持源选项-5。请使用-7-或更高版本。" class="headerlink" title="报错：不再支持源选项 5。请使用 7 或更高版本。"></a>报错：不再支持源选项 5。请使用 7 或更高版本。</h4><p>pom.xml文件中的properties标签改成如下样式：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.build.sourceEncoding</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">maven.compiler.encoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">maven.compiler.encoding</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">java.version</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">maven.compiler.source</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.source</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">maven.compiler.target</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.target</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="创建Maven-Web工程"><a href="#创建Maven-Web工程" class="headerlink" title="创建Maven Web工程"></a>创建Maven Web工程</h3><p><a href="/img/image-20221201224949630.png" title="image-20221201224949630" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201224949630.png" alt="image-20221201224949630"></a></p>
+<p>直接创建即可。</p>
+<p>然后进行配置，选择对应的artifact即可，然后进行相关的配置即可。</p>
+<p><a href="/img/image-20221201233102233.png" title="image-20221201233102233" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201233102233.png" alt="image-20221201233102233"></a></p>
+<p>问题：如果deployment中不显示刚刚创建的artifact，则重新加载一下项目即可。</p>
+<p><a href="/img/image-20221201233037428.png" title="image-20221201233037428" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201233037428.png" alt="image-20221201233037428"></a></p>
+<p><a href="/img/image-20221201233213060.png" title="image-20221201233213060" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201233213060.png" alt="image-20221201233213060"></a></p>
+<p>由于现在jsp早就淘汰了，就不写下面的了。</p>
+<h2 id="关联数据库"><a href="#关联数据库" class="headerlink" title="关联数据库"></a>关联数据库</h2><h3 id="关联方式"><a href="#关联方式" class="headerlink" title="关联方式"></a>关联方式</h3><p>显示数据库</p>
+<p><a href="/img/image-20221201233239845.png" title="image-20221201233239845" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201233239845.png" alt="image-20221201233239845"></a></p>
+<p>添加数据库</p>
+<p><a href="/img/image-20221201233309950.png" title="image-20221201233309950" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201233309950.png" alt="image-20221201233309950"></a></p>
+<p><a href="/img/image-20221201233408970.png" title="image-20221201233408970" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201233408970.png" alt="image-20221201233408970"></a></p>
+<h3 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h3><p><a href="/img/image-20221201233449937.png" title="image-20221201233449937" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201233449937.png" alt="image-20221201233449937"></a></p>
+<p>也可以展示ER图并导出</p>
+<p><a href="/img/image-20221201233509135.png" title="image-20221201233509135" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20221201233509135.png" alt="image-20221201233509135"></a></p>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2022-11-30</span>
+            
+            
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2023/01/02/Redis/'>笔记 | Redis</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2022/10/22/Express.js/">笔记 | Express.js</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+             
+
+            
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>Change And Challenge</span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>

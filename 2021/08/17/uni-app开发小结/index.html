@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="Uni-App开发小结" />
+    <meta name="hexo-theme-A4" content="v1.9.6" />
+    <link rel="alternate icon" type="image/webp" href="/img/avatar.png">
+    <title>Jingcun Yan</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+    
+    
+        <style>
+            .index-main{
+                max-width:  880px;
+            }
+        </style>
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            <div class="left-toc-container">
+                <nav id="toc" class="bs-docs-sidebar"></nav>
+            </div>
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/avatar.png" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">Jingcun Yan</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    Uni-App开发小结
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                
+                    
+                     <span>字数总计：2.3k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：10分钟</span>
+                
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+        <div class=".article-gallery"><h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p><code>pages.json</code> 对 uni-app 进行全局配置，页面文件的路径、窗口样式、原生的导航栏、底部的原生tabbar 等</p>
+<ul>
+<li>配置pages和globalStyle字段<ul>
+<li>navigationBarBackgroundColor 导航栏背景颜色（同状态栏背景色）</li>
+<li>navigationBarTitleText 导航栏标题文字内容</li>
+<li>enablePullDownRefresh 是否开启下拉刷新，详见<a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/use?id=%E9%A1%B5%E9%9D%A2%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">页面生命周期</a>。</li>
+<li>onReachBottomDistance 页面上拉触底事件触发时距页面底部距离</li>
+<li>…</li>
+</ul>
+</li>
+<li>tabBar字段<ul>
+<li>iconPath 图片路径</li>
+<li>selectedIconPath 选中的图片路径</li>
+<li>…</li>
+</ul>
+</li>
+</ul>
+<p><code>manifest.json</code> 文件是应用的配置文件，用于指定应用的名称、图标、权限等。</p>
+<p><code>App.vue</code>是我们的跟组件，所有页面都是在<code>App.vue</code>下进行切换的，是页面入口文件，可以调用应用的生命周期函数。</p>
+<p><code>main.js</code>是项目入口文件，主要作用是初始化<code>vue</code>实例并使用需要的插件。</p>
+<p><code>uni.scss</code>文件的用途是为了方便整体控制应用的风格。比如按钮颜色、边框风格，<code>uni.scss</code>文件里预置了一批scss全局变量预置。</p>
+<p>所有的页面存放目录</p>
+<p><code>static</code> 静态资源目录，例如图片等</p>
+<p><code>components</code> 组件存放目录</p>
+<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><h3 id="text"><a href="#text" class="headerlink" title="text"></a>text</h3><p>属性</p>
+<ul>
+<li>selectable 文本是否可选</li>
+<li>space 是否显示连续空格</li>
+<li>decode 是否解码</li>
+</ul>
+<p><code>text</code> 组件相当于行内标签、在同一行显示，除了文本节点以外的其他节点都无法长按选中</p>
+<h3 id="view"><a href="#view" class="headerlink" title="view"></a>view</h3><p>类似于 div</p>
+<p>其他属性见官方文档</p>
+<h3 id="image"><a href="#image" class="headerlink" title="image"></a>image</h3><ul>
+<li>src 地址</li>
+<li>mode 裁剪方式</li>
+</ul>
+<p>页面结构复杂，css样式太多的情况，使用 image 可能导致样式生效较慢，出现 “闪一下” 的情况，此时设置 <code>image&#123;will-change: transform&#125;</code> ,可优化此问题。</p>
+<h2 id="样式、数据绑定"><a href="#样式、数据绑定" class="headerlink" title="样式、数据绑定"></a>样式、数据绑定</h2><ul>
+<li><p>rpx 即响应式px，一种根据屏幕宽度自适应的动态单位。以750宽的屏幕为基准，750rpx恰好为屏幕宽度。屏幕变宽，rpx 实际显示效果会等比放大。</p>
+</li>
+<li><p>使用<code>@import</code>语句可以导入外联样式表，<code>@import</code>后跟需要导入的外联样式表的相对路径，用<code>;</code>表示语句结束</p>
+</li>
+<li><p>支持基本常用的选择器class、id、element等,在 <code>uni-app</code> 中不能使用 <code>*</code> 选择器。</p>
+</li>
+<li><p><code>page</code> 相当于 <code>body</code> 节点</p>
+</li>
+<li><p>定义在 App.vue 中的样式为全局样式，作用于每一个页面。在 pages 目录下 的 vue 文件中定义的样式为局部样式，只作用在对应的页面，并会覆盖 App.vue 中相同的选择器。</p>
+</li>
+<li><p><code>uni-app</code> 支持使用字体图标，使用方式与普通 <code>web</code> 项目相同，需要注意以下几点：</p>
+<ul>
+<li><p>字体文件小于 40kb，<code>uni-app</code> 会自动将其转化为 base64 格式；</p>
+</li>
+<li><p>字体文件大于等于 40kb， 需开发者自己转换，否则使用将不生效；</p>
+</li>
+<li><p>字体文件的引用路径推荐使用以 ~@ 开头的绝对路径。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><code>~@/static/iconfont.ttf</code></p>
+<p>直接在data的return中定义数据即可，和vue一样</p>
+<p>插值表达式也和vue一样，同样也可以进行基本运算和三元运算</p>
+<p>也可以进行动态渲染和事件传参</p>
+<h2 id="上拉加载、下拉刷新"><a href="#上拉加载、下拉刷新" class="headerlink" title="上拉加载、下拉刷新"></a>上拉加载、下拉刷新</h2><ul>
+<li>需要在 <code>pages.json</code> 里，找到的当前页面的pages节点，并在 <code>style</code> 选项中开启 <code>enablePullDownRefresh</code></li>
+<li>通过调用uni.startPullDownRefresh方法来开启下拉刷新</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">	<span class="title function_">data</span> () &#123;</span><br><span class="line">		<span class="keyword">return</span> &#123;</span><br><span class="line">			<span class="attr">arr</span>: [<span class="string">&#x27;前端&#x27;</span>,<span class="string">&#x27;java&#x27;</span>,<span class="string">&#x27;ui&#x27;</span>,<span class="string">&#x27;大数据&#x27;</span>]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">methods</span>: &#123;</span><br><span class="line">		<span class="title function_">startPull</span> () &#123;</span><br><span class="line">			uni.<span class="title function_">startPullDownRefresh</span>()</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	</span><br><span class="line">	<span class="title function_">onPullDownRefresh</span> () &#123; <span class="comment">// 下拉刷新</span></span><br><span class="line">		<span class="variable language_">this</span>.<span class="property">arr</span> = []</span><br><span class="line">		<span class="built_in">setTimeout</span>(<span class="function">()=&gt;</span> &#123;</span><br><span class="line">			<span class="variable language_">this</span>.<span class="property">arr</span> = [<span class="string">&#x27;前端&#x27;</span>,<span class="string">&#x27;java&#x27;</span>,<span class="string">&#x27;ui&#x27;</span>,<span class="string">&#x27;大数据&#x27;</span>]</span><br><span class="line">			uni.<span class="title function_">stopPullDownRefresh</span>()</span><br><span class="line">		&#125;, <span class="number">1000</span>);</span><br><span class="line">	&#125;,</span><br><span class="line">       	<span class="title function_">onReachBottom</span> () &#123;  <span class="comment">// 上拉加载</span></span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;触底了&#x27;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="利用编程式导航进行跳转"><a href="#利用编程式导航进行跳转" class="headerlink" title="利用编程式导航进行跳转"></a>利用编程式导航进行跳转</h3><p><a target="_blank" rel="noopener" href="https://blog.coderyjc.top/2021/08/16/uni-app%E5%85%A5%E9%97%A8%E6%80%BB%E7%BB%93/[uni.navigateTo](https://uniapp.dcloud.io/api/router?id=navigateto)">导航跳转文档</a></p>
+<h4 id="利用navigateTo进行导航跳转"><a href="#利用navigateTo进行导航跳转" class="headerlink" title="利用navigateTo进行导航跳转"></a><strong>利用navigateTo进行导航跳转</strong></h4><p>保留当前页面，跳转到应用内的某个页面，使用<code>uni.navigateBack</code>可以返回到原页面。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;primary&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;goAbout&quot;</span>&gt;</span>跳转到关于页面<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>通过navigateTo方法进行跳转到普通页面</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">goAbout</span> () &#123;</span><br><span class="line">  uni.<span class="title function_">navigateTo</span>(&#123;</span><br><span class="line">    <span class="attr">url</span>: <span class="string">&#x27;/pages/about/about&#x27;</span>,</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="通过switchTab跳转到tabbar页面"><a href="#通过switchTab跳转到tabbar页面" class="headerlink" title="通过switchTab跳转到tabbar页面"></a><strong>通过switchTab跳转到tabbar页面</strong></h4><p>跳转到tabbar页面</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;primary&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;goMessage&quot;</span>&gt;</span>跳转到message页面<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>通过switchTab方法进行跳转</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">goMessage</span> () &#123;</span><br><span class="line">  uni.<span class="title function_">switchTab</span>(&#123;</span><br><span class="line">    <span class="attr">url</span>: <span class="string">&#x27;/pages/message/message&#x27;</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="redirectTo进行跳转"><a href="#redirectTo进行跳转" class="headerlink" title="redirectTo进行跳转"></a><strong>redirectTo进行跳转</strong></h4><p>关闭当前页面，跳转到应用内的某个页面。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- template --&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;primary&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;goMessage&quot;</span>&gt;</span>跳转到message页面<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">&lt;!-- js --&gt;</span><br><span class="line"><span class="title function_">goMessage</span> () &#123;</span><br><span class="line">  uni.<span class="title function_">switchTab</span>(&#123;</span><br><span class="line">    <span class="attr">url</span>: <span class="string">&#x27;/pages/message/message&#x27;</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过onUnload测试当前组件确实卸载</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">onUnload</span> () &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;组件卸载了&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="导航跳转传递参数"><a href="#导航跳转传递参数" class="headerlink" title="导航跳转传递参数"></a>导航跳转传递参数</h3><p>在导航进行跳转到下一个页面的同时，可以给下一个页面传递相应的参数，接收参数的页面可以通过onLoad生命周期进行接收</p>
+<p>传递参数的页面</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">goAbout</span> () &#123;</span><br><span class="line">  uni.<span class="title function_">navigateTo</span>(&#123;</span><br><span class="line">    <span class="attr">url</span>: <span class="string">&#x27;/pages/about/about?id=80&#x27;</span>,</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接收参数的页面</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">	<span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="language-javascript">		<span class="title function_">onLoad</span> (options) &#123;</span></span><br><span class="line"><span class="language-javascript">			<span class="variable language_">console</span>.<span class="title function_">log</span>(options)</span></span><br><span class="line"><span class="language-javascript">		&#125;</span></span><br><span class="line"><span class="language-javascript">	&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="uni-app项目总结"><a href="#uni-app项目总结" class="headerlink" title="uni-app项目总结"></a>uni-app项目总结</h1><h2 id="地图组件和拨打电话"><a href="#地图组件和拨打电话" class="headerlink" title="地图组件和拨打电话"></a>地图组件和拨打电话</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> @<span class="attr">click</span>=<span class="string">&quot;makePhoneCall()&quot;</span>&gt;</span>联系电话：000-0000-0000（ 点击拨打 ）<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">map</span> <span class="attr">class</span>=<span class="string">&quot;map&quot;</span> <span class="attr">:longitude</span>=<span class="string">&quot;longitude&quot;</span> <span class="attr">:latitude</span>=<span class="string">&quot;latitude&quot;</span> <span class="attr">:markers</span>=<span class="string">&quot;markers&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">map</span>&gt;</span></span><br><span class="line">...</span><br><span class="line">export default &#123;</span><br><span class="line">data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">        longitude:116.088667,</span><br><span class="line">        latitude:35.801418,</span><br><span class="line">        markers:[ // 地图上的标记</span><br><span class="line">            &#123;</span><br><span class="line">                longitude:116.088667,</span><br><span class="line">                latitude:35.801418,</span><br><span class="line">                iconPath: &#x27;../../static/image/marker.png&#x27;,</span><br><span class="line">                width: 15,</span><br><span class="line">                height: 15</span><br><span class="line">            &#125;]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        makePhoneCall()&#123;</span><br><span class="line">            // 拨打电话</span><br><span class="line">            uni.makePhoneCall(&#123;</span><br><span class="line">                phoneNumber:&#x27;0000000000&#x27;  // 电话</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Swiper的使用"><a href="#Swiper的使用" class="headerlink" title="Swiper的使用"></a>Swiper的使用</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;swiper class=&quot;swiper&quot;</span><br><span class="line">:indicator-dots=&quot;indicatorDots&quot; </span><br><span class="line">:autoplay=&quot;autoplay&quot; </span><br><span class="line">:interval=&quot;interval&quot; </span><br><span class="line">:duration=&quot;duration&quot;&gt;</span><br><span class="line">    &lt;swiper-item v-for=&quot;item in swipers&quot;&gt;</span><br><span class="line">        &lt;image :src=&quot;item.url&quot;&gt;&lt;/image&gt;</span><br><span class="line">&lt;/swiper-item&gt;</span><br><span class="line">&lt;/swiper&gt;</span><br><span class="line"></span><br><span class="line">data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">        indicatorDots: true, // 显示当前是第几张图片的小点点</span><br><span class="line">        autoplay: true,  // 自动播放</span><br><span class="line">        interval: 2000, // 间隔</span><br><span class="line">        duration: 500, // 持续时间</span><br><span class="line">        swipers: [  // 图片</span><br><span class="line">            &#123;</span><br><span class="line">                url:&quot;../../static/image/goods-detail/1.png&quot;</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                url:&quot;../../static/image/goods-detail/2.png&quot;</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                url:&quot;../../static/image/goods-detail/3.png&quot;</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                url:&quot;../../static/image/goods-detail/4.png&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="页面跳转"><a href="#页面跳转" class="headerlink" title="页面跳转"></a>页面跳转</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;view class=&quot;good_list&quot;&gt;</span><br><span class="line">    &lt;view class=&quot;goods_item&quot; v-for=&quot;(item, index) in goods&quot; @click=&quot;goodsDetail(index + 1)&quot;&gt;</span><br><span class="line">        &lt;image :src=&quot;item.img&quot;&gt;&lt;/image&gt;</span><br><span class="line">	&lt;view class=&quot;price&quot;&gt;</span><br><span class="line">              &lt;text&gt;￥&#123;&#123;item.discount&#125;&#125;&lt;/text&gt;</span><br><span class="line">            &lt;text&gt;￥&#123;&#123;item.price&#125;&#125;&lt;/text&gt;</span><br><span class="line">	&lt;/view&gt;</span><br><span class="line">	&lt;view class=&quot;name&quot;&gt;商品&#123;&#123;index + 1&#125;&#125;&lt;/view&gt;</span><br><span class="line">	&lt;/view&gt;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line">...</span><br><span class="line">methods: &#123;</span><br><span class="line">    // 导航点击的处理函数</span><br><span class="line">    navItemClick (path) &#123;</span><br><span class="line">        console.log(path)</span><br><span class="line">        uni.navigateTo(&#123;</span><br><span class="line">            // url 参数名称不一样的时候要指定，如果传过来的是参数名称是，url，就直接写 url，不用写 url:url</span><br><span class="line">            url:path</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">        // 跳转到商品详情页</span><br><span class="line">        goodsDetail(id)&#123;</span><br><span class="line">            uni.navigateTo(&#123;</span><br><span class="line">                url:&#x27;../goods-detail/goods-detail?id=&#x27; + id</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="过滤器的使用"><a href="#过滤器的使用" class="headerlink" title="过滤器的使用"></a>过滤器的使用</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">&lt;view class=&quot;news_item&quot; v-for=&quot;item in news&quot; @click=&quot;goDetail(item.id)&quot;&gt;</span><br><span class="line">	&lt;image :src=&quot;item.img&quot;&gt;&lt;/image&gt;</span><br><span class="line">	&lt;view class=&quot;right&quot;&gt;</span><br><span class="line">		&lt;text class=&quot;title&quot;&gt;&#123;&#123;item.title&#125;&#125;&lt;/text&gt;</span><br><span class="line">		&lt;view class=&quot;info&quot;&gt;</span><br><span class="line">			&lt;!-- 使用过滤器 fotmatDate --&gt;</span><br><span class="line">			&lt;text&gt;发表时间：&#123;&#123;item.date | formatDate&#125;&#125;&lt;/text&gt; </span><br><span class="line">			&lt;text&gt;浏览：&#123;&#123;item.view&#125;&#125;次&lt;/text&gt;</span><br><span class="line">		&lt;/view&gt;</span><br><span class="line">	&lt;/view&gt;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line">...</span><br><span class="line">	export default &#123;</span><br><span class="line">		filters:&#123;</span><br><span class="line">			formatDate(date)&#123;</span><br><span class="line">				return date.substr(0, 10)</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,</span><br><span class="line">		</span><br><span class="line">		data() &#123;</span><br><span class="line">			return &#123;</span><br><span class="line">				news:[</span><br><span class="line">					&#123;</span><br><span class="line">						id:1,</span><br><span class="line">						img:&#x27;../../static/image/news/1.png&#x27;,</span><br><span class="line">						title:&#x27;Defender永久关闭W10杀毒&#x27;,</span><br><span class="line">						date:&#x27;2021-02-03 00:00:00&#x27;,</span><br><span class="line">						view:154</span><br><span class="line">					&#125;</span><br><span class="line">				]</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,</span><br><span class="line">		methods: &#123;</span><br><span class="line">			goDetail(id)&#123;</span><br><span class="line">				uni.navigateTo(&#123;</span><br><span class="line">					url:&#x27;../news-detail/news-detail?id=&#x27; + id</span><br><span class="line">				&#125;)</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Scroll-View的使用"><a href="#Scroll-View的使用" class="headerlink" title="Scroll-View的使用"></a>Scroll-View的使用</h2><p>scroll-y 设置竖着滚动</p>
+<p>前提是要设置页面长度为 100%</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;scroll-view class=&quot;left&quot; scroll-y&gt; </span><br><span class="line">	&lt;view</span><br><span class="line">		 :class=&quot;active === index ? &#x27;active&#x27; : &#x27;&#x27;&quot; </span><br><span class="line">		 v-for=&quot;(item, index) in options&quot;</span><br><span class="line">		 @click=&quot;leftClickHandler(index)&quot;</span><br><span class="line">	&gt;</span><br><span class="line">	 相册&#123;&#123;item&#125;&#125;</span><br><span class="line">	 &lt;/view&gt;</span><br><span class="line">&lt;/scroll-view&gt;</span><br><span class="line">...</span><br><span class="line">methods: &#123;</span><br><span class="line">	// 动态设置高亮</span><br><span class="line">	leftClickHandler(index)&#123;</span><br><span class="line">		this.active = index</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="图片预览"><a href="#图片预览" class="headerlink" title="图片预览"></a>图片预览</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;view class=&quot;item&quot; v-for=&quot;item in secondData&quot; :key=&quot;item.id&quot;&gt;</span><br><span class="line">	&lt;image :src=&quot;item.url&quot; @click=&quot;previewImg(item.url)&quot;&gt;&lt;/image&gt;</span><br><span class="line">	&lt;text&gt;&#123;&#123;item.title&#125;&#125;&lt;/text&gt;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">methods: &#123;</span><br><span class="line">	previewImg(current)&#123;</span><br><span class="line">		// 用 secondData 中的每一个url组成一个列表</span><br><span class="line">		const urls = this.secondData.map(item=&gt;&#123;</span><br><span class="line">			return item.url;</span><br><span class="line">		&#125;)</span><br><span class="line">		// 图片预览</span><br><span class="line">		uni.previewImage(&#123;</span><br><span class="line">			current,</span><br><span class="line">			urls</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="网络请求方法的封装和调用"><a href="#网络请求方法的封装和调用" class="headerlink" title="网络请求方法的封装和调用"></a>网络请求方法的封装和调用</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 封装</span></span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">BASE_URL</span> = <span class="string">&#x27;http://localhost:8080&#x27;</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title function_">myRequest</span> = (<span class="params">options</span>)=&gt;&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>((resolve, reject)=&#123;</span><br><span class="line">		uni.<span class="title function_">request</span>(&#123;</span><br><span class="line">			<span class="attr">url</span>: <span class="variable constant_">BASE_URL</span>+options.<span class="property">url</span>,</span><br><span class="line">			<span class="attr">method</span>: options.<span class="property">method</span> || <span class="string">&#x27;GET&#x27;</span>,</span><br><span class="line">			<span class="attr">data</span>: options.<span class="property">data</span> || &#123;&#125;,</span><br><span class="line">			<span class="attr">success</span>: <span class="function">(<span class="params">res</span>)=&gt;</span>&#123;</span><br><span class="line">				<span class="keyword">if</span>(res.<span class="property">data</span>.<span class="property">status</span> !== <span class="number">0</span>)&#123;</span><br><span class="line">					<span class="keyword">return</span> uni.<span class="title function_">showToast</span>(&#123;</span><br><span class="line">						<span class="attr">title</span>: <span class="string">&#x27;获取数据失败&#x27;</span></span><br><span class="line">					&#125;)</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="title function_">resolve</span>(res)</span><br><span class="line">			&#125;,</span><br><span class="line">			<span class="attr">fail</span>: <span class="function">(<span class="params">err</span>)=&gt;</span>&#123;</span><br><span class="line">				uni.<span class="title function_">showToast</span>(&#123;</span><br><span class="line">					<span class="attr">title</span>:<span class="string">&#x27;请求接口失败&#x27;</span></span><br><span class="line">				&#125;)</span><br><span class="line">				<span class="title function_">reject</span>(err)</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//调用</span></span><br><span class="line"><span class="comment">//相当于自己实现了一个ajax</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123;myRequest&#125; <span class="keyword">from</span> <span class="string">&#x27;./util/api.js&#x27;</span></span><br><span class="line"><span class="title class_">Vue</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">$myRequest</span> = myRequest</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="variable language_">this</span>.$myRequest(&#123;</span><br><span class="line">        <span class="attr">url</span>: <span class="string">&#x27;/api/api&#x27;</span>,</span><br><span class="line">        <span class="attr">method</span>: <span class="string">&#x27;GET&#x27;</span>,</span><br><span class="line">        <span class="attr">data</span>: [],</span><br><span class="line">        <span class="attr">success</span>:&#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2021-08-17</span>
+            
+            
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2021/10/05/DesignPattern/'>笔记 | 设计模式</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2021/08/10/Docker/">笔记 | Docker</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+             
+
+            
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>Change And Challenge</span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>

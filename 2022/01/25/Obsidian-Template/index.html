@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="译 | Obsidian-Template文档" />
+    <meta name="hexo-theme-A4" content="v1.9.6" />
+    <link rel="alternate icon" type="image/webp" href="/img/avatar.png">
+    <title>Jingcun Yan</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+    
+    
+        <style>
+            .index-main{
+                max-width:  880px;
+            }
+        </style>
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            <div class="left-toc-container">
+                <nav id="toc" class="bs-docs-sidebar"></nav>
+            </div>
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/avatar.png" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">Jingcun Yan</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    译 | Obsidian-Template文档
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                
+                    
+                     <span>字数总计：2.5k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：11分钟</span>
+                
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+        <div class=".article-gallery"><blockquote>
+<p>翻译自官方文档  <a target="_blank" rel="noopener" href="https://blacksmithgu.github.io/obsidian-dataview/">https://blacksmithgu.github.io/obsidian-dataview/</a></p>
+<p>如有不同之处，请以官方文档为主。</p>
+</blockquote>
+<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>这是个模板语言，能让你在笔记中插入变量和函数。还能让你执行js代码操作这些变量和函数。</p>
+<p>这是个例子</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">creation <span class="attr">date</span>: <span class="number">2022</span>-<span class="number">01</span>-<span class="number">25</span> <span class="number">18</span>:<span class="number">16</span></span><br><span class="line">modification <span class="attr">date</span>: 星期三 <span class="number">26</span>日 一月 <span class="number">2022</span> <span class="number">18</span>:<span class="number">09</span>:<span class="number">58</span></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&lt;&lt; [[<span class="number">2022</span>-<span class="number">02</span>-<span class="number">07</span>]] | [[<span class="number">2022</span>-<span class="number">02</span>-<span class="number">09</span>]] &gt;&gt;</span><br><span class="line"></span><br><span class="line"># <span class="number">4.</span>命令行</span><br><span class="line"></span><br><span class="line">&gt; <span class="title class_">Let</span> us sacrifice our today so that our children can have a better tomorrow.</span><br><span class="line">&gt; — &lt;cite&gt;A. P. J. <span class="title class_">Abdul</span> <span class="title class_">Kalam</span>&lt;/cite&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>它会产生以下结果：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">creation <span class="attr">date</span>: <span class="number">2021</span>-<span class="number">01</span>-<span class="number">07</span> <span class="number">17</span>:<span class="number">20</span></span><br><span class="line">modification <span class="attr">date</span>: <span class="title class_">Thursday</span> 7th <span class="title class_">January</span> <span class="number">2021</span> <span class="number">17</span>:<span class="number">20</span>:<span class="number">43</span></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&lt;&lt; [[<span class="number">2021</span>-<span class="number">04</span>-<span class="number">08</span>]] | [[<span class="number">2021</span>-<span class="number">04</span>-<span class="number">10</span>]] &gt;&gt;</span><br><span class="line"></span><br><span class="line"># <span class="title class_">Test</span> <span class="title class_">Test</span></span><br><span class="line"></span><br><span class="line">&gt; <span class="title class_">Do</span> the best you can until you know better. <span class="title class_">Then</span> when you know better, <span class="keyword">do</span> better.</span><br><span class="line">&gt; &amp;mdash; <span class="language-xml"><span class="tag">&lt;<span class="name">cite</span>&gt;</span>Maya Angelou<span class="tag">&lt;/<span class="name">cite</span>&gt;</span></span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>可以看出，尖括号中的内容都被替换了（有点像jsp）</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>不再赘述。</p>
+<h3 id="一些术语"><a href="#一些术语" class="headerlink" title="一些术语"></a>一些术语</h3><ul>
+<li>模板：包含命令的文件</li>
+<li>命令：开始标签<code>和结束标签包裹的语句</code></li>
+<li>函数：在命令中调用并返回字符串的对象</li>
+</ul>
+<p>我们可以使用两种函数</p>
+<ul>
+<li>内置函数：插件中定义的</li>
+<li>用户函数：自己写的，可以是系统命令或者用户脚本</li>
+</ul>
+<p>例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Yesterday</span>: <span class="number">2022</span>-<span class="number">02</span>-<span class="number">07</span></span><br><span class="line"><span class="title class_">Tomorrow</span>: <span class="number">2022</span>-<span class="number">02</span>-<span class="number">09</span></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p>Templater 的所有函数都是使用命令调用的 JavaScript 对象。</p>
+<p>命令须一个开始标签<code>和一个结束标签</code>，比如，使用<code>tp.date.now</code>内部函数：<code>2022-02-08</code></p>
+<p>所有的函数，无论用户函数还是内置函数，都在且只在 tp 对象下可用，因此调用方式为 <code>tp.xxx....</code></p>
+<h3 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h3><p>通过设置 <code>Template folder location</code> 来告诉templater从哪里找模板</p>
+<p>可以为新文件创建模板，也能为某一个特定的文件夹设置模板，这样一来，在指定文件夹下面创建新文件的时候就不用手动指定模板了。</p>
+<p>可以和 Daily note、Calendar、Review、Note refactor 等兼容</p>
+<h1 id="内置函数"><a href="#内置函数" class="headerlink" title="内置函数"></a>内置函数</h1><p>调用方式 <code>&lt;% tp.&lt;module_name&gt;.&lt;internal_function_name&gt; %&gt;</code></p>
+<p>接下来介绍各种模块以及函数的用法。</p>
+<h2 id="tp-date"><a href="#tp-date" class="headerlink" title="tp.date"></a>tp.date</h2><p>本模板让我们可以直接使用moment.js 的moment对象，以及其所有的函数，</p>
+<p>官方文档 <a target="_blank" rel="noopener" href="https://momentjs.com/docs/#/displaying/">https://momentjs.com/docs/#/displaying/</a></p>
+<p>当前日期 tp.date.now<br><code>tp.date.now(format: string = &quot;YYYY-MM-DD&quot;, offset?: number⎮string, reference?: string, reference_format?: string)</code></p>
+<p>下一天的日期 tp.date.tomorow<br><code>tp.date.tomorrow(format: string = &quot;YYYY-MM-DD&quot;)</code></p>
+<p>带有周几标记的<br><code>tp.date.weekday(format: string = &quot;YYYY-MM-DD&quot;, weekday: number, reference?: string, reference_format?: string)</code></p>
+<p>上一天的时间 tp.date.yesterday<br><code>tp.date.yesterday(format: string = &quot;YYYY-MM-DD&quot;)</code></p>
+<ul>
+<li><code>format</code>: 日期的格式，参考这里  <a target="_blank" rel="noopener" href="https://momentjs.com/docs/#/displaying/format/">format reference</a></li>
+<li><code>offset</code>: 日期的偏移，-7代表上周    </li>
+<li><code>reference</code>: 日期引用, 比如把本文件的标题设置为本函数的返回值</li>
+<li><code>reference_format</code>: 日期引用的格式</li>
+</ul>
+<h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><p>这里调用file的title接口有报错了，先跳过。没有列举在下面</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Date</span> <span class="attr">now</span>: &lt;% tp.<span class="property">date</span>.<span class="title function_">now</span>() %&gt;</span><br><span class="line"><span class="title class_">Date</span> now <span class="keyword">with</span> <span class="attr">format</span>: &lt;% tp.<span class="property">date</span>.<span class="title function_">now</span>(<span class="string">&quot;Do MMMM YYYY&quot;</span>) %&gt;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Last</span> <span class="attr">week</span>: &lt;% tp.<span class="property">date</span>.<span class="title function_">now</span>(<span class="string">&quot;dddd Do MMMM YYYY&quot;</span>, -<span class="number">7</span>) %&gt;</span><br><span class="line"><span class="title class_">Today</span>: &lt;% tp.<span class="property">date</span>.<span class="title function_">now</span>(<span class="string">&quot;dddd Do MMMM YYYY, ddd&quot;</span>) %&gt;</span><br><span class="line"><span class="title class_">Next</span> <span class="attr">week</span>: &lt;% tp.<span class="property">date</span>.<span class="title function_">now</span>(<span class="string">&quot;dddd Do MMMM YYYY&quot;</span>, <span class="number">7</span>) %&gt;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Last</span> <span class="attr">month</span>: &lt;% tp.<span class="property">date</span>.<span class="title function_">now</span>(<span class="string">&quot;YYYY-MM-DD&quot;</span>, <span class="string">&quot;P-1M&quot;</span>) %&gt;</span><br><span class="line"><span class="title class_">Next</span> <span class="attr">year</span>: &lt;% tp.<span class="property">date</span>.<span class="title function_">now</span>(<span class="string">&quot;YYYY-MM-DD&quot;</span>, <span class="string">&quot;P1Y&quot;</span>) %&gt;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Date</span> tomorrow <span class="keyword">with</span> <span class="attr">format</span>: &lt;% tp.<span class="property">date</span>.<span class="title function_">tomorrow</span>(<span class="string">&quot;Do MMMM YYYY&quot;</span>) %&gt;    </span><br><span class="line"></span><br><span class="line"><span class="title class_">This</span> week<span class="string">&#x27;s monday: &lt;% tp.date.weekday(&quot;YYYY-MM-DD&quot;, 0) %&gt;</span></span><br><span class="line"><span class="string">Next monday: &lt;% tp.date.weekday(&quot;YYYY-MM-DD&quot;, 7) %&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Date yesterday with format: &lt;% tp.date.yesterday(&quot;Do MMMM YYYY&quot;) %&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>生成之后是这样：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Date now: 2022-01-25</span><br><span class="line">Date now with format: 25日 一月 2022</span><br><span class="line"></span><br><span class="line">Last week: 星期二 18日 一月 2022</span><br><span class="line">Today: 星期二 25日 一月 2022, 周二</span><br><span class="line">Next week: 星期二 1日 二月 2022</span><br><span class="line"></span><br><span class="line">Last month: 2021-12-25</span><br><span class="line">Next year: 2023-01-25</span><br><span class="line"></span><br><span class="line">Date tomorrow with format: 26日 一月 2022    </span><br><span class="line"></span><br><span class="line">This week&#x27;s monday: 2022-01-24</span><br><span class="line">Next monday: 2022-01-31</span><br><span class="line"></span><br><span class="line">Date yesterday with format: 24日 一月 2022</span><br></pre></td></tr></table></figure>
+
+<h2 id="tp-file"><a href="#tp-file" class="headerlink" title="tp.file"></a>tp.file</h2><p><code>tp.file.content</code>  文件的内容</p>
+<p><code>tp.file.create_new(template: TFile | string, filename?: string, open_new: boolean = false, folder?: TFolder)</code> 用特定的模板和特定的内容创建新文件</p>
+<ul>
+<li><code>filename</code>: 新文件的文件名, 默认是 “Untitled”.</li>
+<li><code>folder</code>: 放置新文件的路径，默认是obsidian的默认路径</li>
+<li><code>open_new</code>: 是不是打开新文件。如果是，以后所有命令都会执行在新文件中</li>
+<li><code>template</code>: 新文件模板</li>
+</ul>
+<p><code>tp.file.creation_date(format: string = &quot;YYYY-MM-DD HH:mm&quot;)</code> 返回文件创建日期</p>
+<p>cursur 相关的没有写，以后可以补充</p>
+<p><code>tp.file.exists(filename: string)</code> 文件是否存在</p>
+<p><code>tp.file.folder(relative: boolean = false)</code> 文件所在的文件夹的名称</p>
+<ul>
+<li><code>relative</code>: 是否是相对路径</li>
+</ul>
+<p><code>tp.file.include(include_link: string | TFile)</code>  包括文件的链接内容。将解析包含内容中的模板。</p>
+<ul>
+<li><code>include_link</code>: 要解析的链接，e.g.  MyFile , 或者 TFile 对象.也支持文档块 e.g. MyFile#Section1</li>
+</ul>
+<p><code>tp.file.last_modified_date(format: string = &quot;YYYY-MM-DD HH:mm&quot;)</code> 文件最后一次修改时间</p>
+<p><code>tp.file.move(new_path: string)</code> 移动文件。能有目录名和文件名不能有后缀。</p>
+<p><code>tp.file.path(relative: boolean = false)</code> 返回文件路径</p>
+<p><code>tp.file.rename(new_title: string)</code> 重命名，只写文件不用写后缀</p>
+<p><code>tp.file.selection()</code>  查找选择的文本</p>
+<p><code>tp.file.tags</code> 文件中的标签，返回字符串列表</p>
+<p><code>tp.file.title</code>  标题</p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">File</span> <span class="attr">content</span>: &lt;% tp.<span class="property">file</span>.<span class="property">content</span> %&gt;</span><br><span class="line"></span><br><span class="line"><span class="title class_">File</span> creation <span class="attr">date</span>: &lt;% tp.<span class="property">file</span>.<span class="title function_">creation_date</span>() %&gt;</span><br><span class="line"><span class="title class_">File</span> creation date <span class="keyword">with</span> <span class="attr">format</span>: &lt;% tp.<span class="property">file</span>.<span class="title function_">creation_date</span>(<span class="string">&quot;dddd Do MMMM YYYY HH:mm&quot;</span>) %&gt;</span><br><span class="line"></span><br><span class="line"><span class="title class_">File</span> <span class="attr">creation</span>: [[&lt;% (<span class="keyword">await</span> tp.<span class="property">file</span>.<span class="title function_">create_new</span>(<span class="string">&quot;MyFileContent&quot;</span>, <span class="string">&quot;MyFilename&quot;</span>)).<span class="property">basename</span> %&gt;]]</span><br><span class="line"></span><br><span class="line"><span class="title class_">File</span> <span class="attr">cursor</span>: &lt;% tp.<span class="property">file</span>.<span class="title function_">cursor</span>(<span class="number">1</span>) %&gt;</span><br><span class="line"></span><br><span class="line"><span class="title class_">File</span> cursor <span class="attr">append</span>: &lt;% tp.<span class="property">file</span>.<span class="title function_">cursor_append</span>(<span class="string">&quot;Some text&quot;</span>) %&gt;</span><br><span class="line">    </span><br><span class="line"><span class="title class_">File</span> <span class="attr">existence</span>: &lt;% tp.<span class="property">file</span>.<span class="title function_">exists</span>(<span class="string">&quot;MyFile&quot;</span>) %&gt;</span><br><span class="line"></span><br><span class="line"><span class="title class_">File</span> find <span class="title class_">TFile</span>: &lt;% tp.<span class="property">file</span>.<span class="title function_">find_tfile</span>(<span class="string">&quot;MyFile&quot;</span>).<span class="property">basename</span> %&gt;</span><br><span class="line">    </span><br><span class="line"><span class="title class_">File</span> <span class="title class_">Folder</span>: &lt;% tp.<span class="property">file</span>.<span class="title function_">folder</span>() %&gt;</span><br><span class="line"><span class="title class_">File</span> <span class="title class_">Folder</span> <span class="keyword">with</span> relative <span class="attr">path</span>: &lt;% tp.<span class="property">file</span>.<span class="title function_">folder</span>(<span class="literal">true</span>) %&gt;</span><br><span class="line"></span><br><span class="line"><span class="title class_">File</span> <span class="title class_">Include</span>: &lt;% tp.<span class="property">file</span>.<span class="title function_">include</span>(<span class="string">&quot;[[Template1]]&quot;</span>) %&gt;</span><br><span class="line"></span><br><span class="line"><span class="title class_">File</span> <span class="title class_">Last</span> <span class="title class_">Modif</span> <span class="title class_">Date</span>: &lt;% tp.<span class="property">file</span>.<span class="title function_">last_modified_date</span>() %&gt;</span><br><span class="line"><span class="title class_">File</span> <span class="title class_">Last</span> <span class="title class_">Modif</span> <span class="title class_">Date</span> <span class="keyword">with</span> <span class="attr">format</span>: &lt;% tp.<span class="property">file</span>.<span class="title function_">last_modified_date</span>(<span class="string">&quot;dddd Do MMMM YYYY HH:mm&quot;</span>) %&gt;</span><br><span class="line"></span><br><span class="line"><span class="title class_">File</span> <span class="title class_">Move</span>: &lt;% <span class="keyword">await</span> tp.<span class="property">file</span>.<span class="title function_">move</span>(<span class="string">&quot;/A/B/&quot;</span> + tp.<span class="property">file</span>.<span class="property">title</span>) %&gt;</span><br><span class="line"><span class="title class_">File</span> <span class="title class_">Move</span> + <span class="title class_">Rename</span>: &lt;% <span class="keyword">await</span> tp.<span class="property">file</span>.<span class="title function_">move</span>(<span class="string">&quot;/A/B/NewTitle&quot;</span>) %&gt;</span><br><span class="line"></span><br><span class="line"><span class="title class_">File</span> <span class="title class_">Path</span>: &lt;% tp.<span class="property">file</span>.<span class="title function_">path</span>() %&gt;</span><br><span class="line"><span class="title class_">File</span> <span class="title class_">Path</span> <span class="keyword">with</span> relative <span class="attr">path</span>: &lt;% tp.<span class="property">file</span>.<span class="title function_">path</span>(<span class="literal">true</span>) %&gt;</span><br><span class="line"></span><br><span class="line"><span class="title class_">File</span> <span class="title class_">Rename</span>: &lt;% <span class="keyword">await</span> tp.<span class="property">file</span>.<span class="title function_">rename</span>(<span class="string">&quot;MyNewName&quot;</span>) %&gt;</span><br><span class="line"><span class="title class_">Append</span> a <span class="string">&quot;2&quot;</span>: &lt;% <span class="keyword">await</span> tp.<span class="property">file</span>.<span class="title function_">rename</span>(tp.<span class="property">file</span>.<span class="property">title</span> + <span class="string">&quot;2&quot;</span>) %&gt;</span><br><span class="line"></span><br><span class="line"><span class="title class_">File</span> <span class="title class_">Selection</span>: &lt;% tp.<span class="property">file</span>.<span class="title function_">selection</span>() %&gt;</span><br><span class="line"></span><br><span class="line"><span class="title class_">File</span> <span class="attr">tags</span>: &lt;% tp.<span class="property">file</span>.<span class="property">tags</span> %&gt;</span><br><span class="line"></span><br><span class="line"><span class="title class_">File</span> <span class="attr">title</span>: &lt;% tp.<span class="property">file</span>.<span class="property">title</span> %&gt;</span><br><span class="line"><span class="title class_">Strip</span> the <span class="title class_">Zettelkasten</span> <span class="variable constant_">ID</span> <span class="keyword">of</span> <span class="title function_">title</span> (<span class="keyword">if</span> space separated): &lt;% tp.<span class="property">file</span>.<span class="property">title</span>.<span class="title function_">split</span>(<span class="string">&quot; &quot;</span>)[<span class="number">1</span>] %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>例子报错了，以后再看吧，还是path的问题。</p>
+<h2 id="tp-frontmatter"><a href="#tp-frontmatter" class="headerlink" title="tp.frontmatter"></a>tp.frontmatter</h2><p>元数据信息</p>
+<p>不重要</p>
+<p>User Guide<br><a target="_blank" rel="noopener" href="https://silentvoid13.github.io/Templater/internal-functions/internal-modules/frontmatter-module.html">https://silentvoid13.github.io/Templater/internal-functions/internal-modules/frontmatter-module.html</a></p>
+<h2 id="tp-obsidian"><a href="#tp-obsidian" class="headerlink" title="tp.obsidian"></a>tp.obsidian</h2><p>一般用不到</p>
+<p>User Guide<br><a target="_blank" rel="noopener" href="https://silentvoid13.github.io/Templater/internal-functions/internal-modules/obsidian-module.html">https://silentvoid13.github.io/Templater/internal-functions/internal-modules/obsidian-module.html</a></p>
+<h2 id="tp-system"><a href="#tp-system" class="headerlink" title="tp.system"></a>tp.system</h2><p><code>tp.system.clipboard()</code> 返回用户剪贴板的内容</p>
+<p>其他的应该用不到了</p>
+<p>User Guide<br><a target="_blank" rel="noopener" href="https://silentvoid13.github.io/Templater/internal-functions/internal-modules/system-module.html">https://silentvoid13.github.io/Templater/internal-functions/internal-modules/system-module.html</a></p>
+<h2 id="tp-web"><a href="#tp-web" class="headerlink" title="tp.web"></a>tp.web</h2><p>一般用不到</p>
+<p>User Guide<br><a target="_blank" rel="noopener" href="https://silentvoid13.github.io/Templater/internal-functions/internal-modules/web-module.html">https://silentvoid13.github.io/Templater/internal-functions/internal-modules/web-module.html</a></p>
+<h2 id="Contributing"><a href="#Contributing" class="headerlink" title="Contributing"></a>Contributing</h2><p>用于自主DIY这个软件</p>
+<p>User Guide<br><a target="_blank" rel="noopener" href="https://silentvoid13.github.io/Templater/internal-functions/contribute.html">https://silentvoid13.github.io/Templater/internal-functions/contribute.html</a></p>
+<h2 id="用户脚本"><a href="#用户脚本" class="headerlink" title="用户脚本"></a>用户脚本</h2><p>你可以从obsidian中调用你自己的脚本，获取其输出，但是要保证你的obsidian库能访问到脚本（<strong>需要设置脚本路径</strong>）</p>
+<h3 id="定义用户函数"><a href="#定义用户函数" class="headerlink" title="定义用户函数"></a>定义用户函数</h3><p>Let’s say you specified the <code>Scripts</code> folder as your script folder in Templater’s settings.</p>
+<p>假设你的自定义脚本在这里 <code>Scripts/my_script.js</code> </p>
+<p>脚本需要遵循  <a target="_blank" rel="noopener" href="https://flaviocopes.com/commonjs/">CommonJS module specification</a>, 然后导出为单个函数</p>
+<p>Let’s have an example with our previous script <code>my_script.js</code>:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">my_function</span>(<span class="params">msg</span>)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Message from my script : &quot;</span>, msg);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = my_function</span><br></pre></td></tr></table></figure>
+
+<p>Templater 将会加载指定文件夹中的所有js文件，然后你就能调用了</p>
+<p><code>&lt;% tp.user.my_script(&quot;Hello World!&quot;) %&gt;</code> </p>
+<h3 id="全局命名空间"><a href="#全局命名空间" class="headerlink" title="全局命名空间"></a>全局命名空间</h3><p>在用户自定义脚本中可以访问全局命名空间中的变量，比如 <code>app</code> 和 <code>moment</code>.</p>
+<p>只不过在使用的时候，你需要将他们当作参数传进去。</p>
+<h2 id="系统命令"><a href="#系统命令" class="headerlink" title="系统命令"></a>系统命令</h2><h3 id="系统命令型用户函数"><a href="#系统命令型用户函数" class="headerlink" title="系统命令型用户函数"></a>系统命令型用户函数</h3><p>这种函数让你执行系统命令获取他们的输出</p>
+<p><strong>需要在设置中进行设置</strong></p>
+<p>![[assets&#x2F;image-20220125232545.png]]</p>
+<p>暂时不需要这么多，先不看了</p>
+<p>User Guide<br><a target="_blank" rel="noopener" href="https://silentvoid13.github.io/Templater/user-functions/system-user-functions.html">https://silentvoid13.github.io/Templater/user-functions/system-user-functions.html</a></p>
+<h1 id="命令类型"><a href="#命令类型" class="headerlink" title="命令类型"></a>命令类型</h1><p>一共有三种</p>
+<p><strong>开始</strong>符号：</p>
+<ul>
+<li><code>&lt;%</code>: 只显示里面命令的表达式输出</li>
+<li><code>&lt;%~</code>: 插值，添加了一些字符转义</li>
+<li><code>&lt;%*</code>: 执行里面的js代码，默认不输出内容</li>
+</ul>
+<p><strong>结束</strong>符号：都是<code>%&gt;</code></p>
+<p>命令工具</p>
+<p>除了以上三种，还有一些工具， 在命令的开始标记中声明。</p>
+<p>包括空白控制和动态命令</p>
+<h2 id="动态命令"><a href="#动态命令" class="headerlink" title="动态命令"></a>动态命令</h2><p>命令将在进入预览模式时被解析。</p>
+<p>声明方式：把开标签换成 <code>&lt;%+</code></p>
+<p>比如查看上次修改日期 <code>&lt;%+ tp.file.last_modified_date() %&gt;</code> </p>
+<p>刷新问题：是放缓存中，每次预览刷一次，不会改变</p>
+<h2 id="执行js命令"><a href="#执行js命令" class="headerlink" title="执行js命令"></a>执行js命令</h2><p>可以通过tp访问对象和所有内部变量和函数</p>
+<p>js执行时也可以访问app和moment等</p>
+<h2 id="异步函数"><a href="#异步函数" class="headerlink" title="异步函数"></a>异步函数</h2><p>不要忘了使用 <code>await</code> 异步关键字</p>
+<h2 id="如何输出"><a href="#如何输出" class="headerlink" title="如何输出"></a>如何输出</h2><p>最好使用原始的插值命令</p>
+<p>非要想输出的话，就将要输出的值append到tR的后面  <code>&lt;%* tR += &quot;test&quot; %&gt;</code> </p>
+<p>一些例子</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;%* <span class="keyword">if</span> (tp.<span class="property">file</span>.<span class="property">title</span>.<span class="title function_">startsWith</span>(<span class="string">&quot;Hello&quot;</span>)) &#123; %&gt;</span><br><span class="line"><span class="title class_">This</span> is a hello file !</span><br><span class="line">&lt;%* &#125; <span class="keyword">else</span> &#123; %&gt;</span><br><span class="line"><span class="title class_">This</span> is a normal file !</span><br><span class="line">&lt;%* &#125; %&gt;</span><br><span class="line">    </span><br><span class="line">&lt;%* <span class="keyword">if</span> (tp.<span class="property">frontmatter</span>.<span class="property">type</span> === <span class="string">&quot;seedling&quot;</span>) &#123; %&gt;</span><br><span class="line"><span class="title class_">This</span> is a seedling file !</span><br><span class="line">&lt;%* &#125; <span class="keyword">else</span> &#123; %&gt;</span><br><span class="line"><span class="title class_">This</span> is a normal file !</span><br><span class="line">&lt;%* &#125; %&gt;</span><br><span class="line">    </span><br><span class="line">&lt;%* <span class="keyword">if</span> (tp.<span class="property">file</span>.<span class="property">tags</span>.<span class="title function_">contains</span>(<span class="string">&quot;#todo&quot;</span>)) &#123; %&gt;</span><br><span class="line"><span class="title class_">This</span> is a todo file !</span><br><span class="line">&lt;%* &#125; <span class="keyword">else</span> &#123; %&gt;</span><br><span class="line"><span class="title class_">This</span> is a finished file !</span><br><span class="line">&lt;%* &#125; %&gt;</span><br><span class="line"></span><br><span class="line">&lt;%*</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">log</span>(<span class="params">msg</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(msg);</span><br><span class="line">&#125;</span><br><span class="line">%&gt;</span><br><span class="line">&lt;%* <span class="title function_">log</span>(<span class="string">&quot;Title: &quot;</span> + tp.<span class="property">file</span>.<span class="property">title</span>) %&gt;</span><br><span class="line">    </span><br><span class="line">&lt;%* tR += tp.<span class="property">file</span>.<span class="property">content</span>.<span class="title function_">replace</span>(<span class="regexp">/stuff/</span>, <span class="string">&quot;things&quot;</span>); %&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="空白控制"><a href="#空白控制" class="headerlink" title="空白控制"></a>空白控制</h2><p>Templater不会删除任何换行符，比如</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;%* <span class="keyword">if</span> (tp.<span class="property">file</span>.<span class="property">title</span> == <span class="string">&quot;MyFile&quot;</span> ) &#123; %&gt;</span><br><span class="line"><span class="title class_">This</span> is my file!</span><br><span class="line">&lt;%* &#125; <span class="keyword">else</span> &#123; %&gt;</span><br><span class="line"><span class="title class_">This</span> isn<span class="string">&#x27;t my file!</span></span><br><span class="line"><span class="string">&lt;%* &#125; %&gt;</span></span><br><span class="line"><span class="string">Some content ...</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
+
+<p>会变成下面这样</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\\换行</span><br><span class="line"><span class="title class_">This</span> isn<span class="string">&#x27;t my file!</span></span><br><span class="line"><span class="string">\\换行</span></span><br><span class="line"><span class="string">Some content ...</span></span><br></pre></td></tr></table></figure>
+
+<p>命令执行完后的空行可以删除。如下。</p>
+<ul>
+<li>开头符号 <code>&lt;%_</code> 会删除命令前的所有空格</li>
+<li>结尾符号<code>_%&gt;</code>)  删除之后的</li>
+<li>开头符号<code>&lt;%-</code>) 会删除命令前的1个空格</li>
+<li>结尾符号<code>-%&gt;</code> 会删除后面的1个</li>
+</ul>
+<p>如下</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;%* <span class="keyword">if</span> (tp.<span class="property">file</span>.<span class="property">title</span> == <span class="string">&quot;MyFile&quot;</span> ) &#123; -%&gt;</span><br><span class="line"><span class="title class_">This</span> is my file!</span><br><span class="line">&lt;%* &#125; <span class="keyword">else</span> &#123; -%&gt;</span><br><span class="line"><span class="title class_">This</span> isn<span class="string">&#x27;t my file!</span></span><br><span class="line"><span class="string">&lt;%* &#125; -%&gt;</span></span><br><span class="line"><span class="string">Some content ...</span></span><br></pre></td></tr></table></figure>
+
+<p>输出为：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">This</span> isn<span class="string">&#x27;t my file!</span></span><br><span class="line"><span class="string">Some content ...</span></span><br></pre></td></tr></table></figure></div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2022-01-25</span>
+            
+            
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2022/01/26/Obsidian-Dataview/'>译 | Obsidian-Dataview文档</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2021/11/25/CSS3/">笔记 | CSS3</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+             
+
+            
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>Change And Challenge</span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>

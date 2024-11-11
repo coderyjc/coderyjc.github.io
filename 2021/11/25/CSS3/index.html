@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="笔记 | CSS3" />
+    <meta name="hexo-theme-A4" content="v1.9.6" />
+    <link rel="alternate icon" type="image/webp" href="/img/avatar.png">
+    <title>Jingcun Yan</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+    
+    
+        <style>
+            .index-main{
+                max-width:  880px;
+            }
+        </style>
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            <div class="left-toc-container">
+                <nav id="toc" class="bs-docs-sidebar"></nav>
+            </div>
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/avatar.png" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">Jingcun Yan</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    笔记 | CSS3
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                
+                    
+                     <span>字数总计：2.6k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：9分钟</span>
+                
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+        <div class=".article-gallery"><h1 id="CSS3高级"><a href="#CSS3高级" class="headerlink" title="CSS3高级"></a>CSS3高级</h1><p>在实战中查漏补缺式学习</p>
+<h2 id="计量单位"><a href="#计量单位" class="headerlink" title="计量单位"></a>计量单位</h2><p>视口：浏览器的可视区域的大小&#x2F;移动端的LayoutViewport，也就是 <code>window.innerWidth/window.innerHeight</code> 的大小，不包括标题栏和工具栏</p>
+<p>vw和vh</p>
+<ol>
+<li>vw：1vw等于视口宽度的1%。</li>
+<li>vh：1vh等于视口高度的1%。</li>
+<li>vmin：选取vw和vh中最小的那个。</li>
+<li>vmax：选取vw和vh中最大的那个。</li>
+</ol>
+<p>字体</p>
+<ol>
+<li>px <ol>
+<li>IE无法调整那些使用px作为单位的字体大小；</li>
+<li>国外的大部分网站能够调整的原因在于其使用了em或rem作为字体单位；</li>
+<li>Firefox能够调整px和em，rem，但是96%以上的中国网民使用IE浏览器(或内核)。</li>
+</ol>
+</li>
+<li>em <ol>
+<li>em的值并不是固定的；</li>
+<li>em会继承父级元素的字体大小。</li>
+</ol>
+</li>
+<li>rem <ol>
+<li>与em的区别：区别在于使用rem为元素设定字体大小时，仍然是相对大小，但相对的只是HTML根元素。</li>
+</ol>
+</li>
+</ol>
+<p>font-size:100%;设置字体属性为默认大小,是相对于浏览器默认字体大小或继承body设定的字体大小来说的。</p>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><h4 id="box-sizing"><a href="#box-sizing" class="headerlink" title="box-sizing"></a>box-sizing</h4><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> 中的 <strong><code>box-sizing</code></strong> 属性定义了 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Glossary/User_agent">user agent</a> 应该如何计算一个元素的总宽度和总高度。</p>
+<p>在 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model">CSS 盒子模型</a>的默认定义里，你对一个元素所设置的 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/width"><code>width</code></a> 与 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/height"><code>height</code></a> 只会应用到这个元素的内容区。如果这个元素有任何的 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/border"><code>border</code></a> 或 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/padding"><code>padding</code></a> ，绘制到屏幕上时的盒子宽度和高度会加上设置的边框和内边距值。这意味着当你调整一个元素的宽度和高度时需要时刻注意到这个元素的边框和内边距。当我们实现响应式布局时，这个特点尤其烦人。</p>
+<p>box-sizing 属性可以被用来调整这些表现:</p>
+<ul>
+<li><code>content-box</code> 是默认值。如果你设置一个元素的宽为100px，那么这个元素的内容区会有100px 宽，并且任何边框和内边距的宽度都会被增加到最后绘制出来的元素宽度中。</li>
+<li><code>border-box</code> 告诉浏览器：你想要设置的边框和内边距的值是包含在width内的。也就是说，如果你将一个元素的width设为100px，那么这100px会包含它的border和padding，内容区的实际宽度是width减去(border + padding)的值。大多数情况下，这使得我们更容易地设定一个元素的宽高。</li>
+</ul>
+<p><strong>译者注:</strong> <code>border-box</code>不包含<code>margin</code></p>
+<h4 id="outline"><a href="#outline" class="headerlink" title="outline"></a>outline</h4><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/CSS">CSS</a> 的 <code>outline</code> 属性是在一条声明中设置多个轮廓属性的<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Shorthand_properties">简写属性</a></p>
+<h4 id="object-fit"><a href="#object-fit" class="headerlink" title="object-fit"></a><strong>object-fit</strong></h4><p><strong><code>object-fit</code></strong> <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS">CSS</a> 属性指定<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Replaced_element">可替换元素</a>的内容应该如何适应到其使用的高度和宽度确定的框。</p>
+<p>您可以通过使用 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-position"><code>object-position</code></a> 属性来切换被替换元素的内容对象在元素框内的对齐方式。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">contain</span><br></pre></td></tr></table></figure>
+
+<p>被替换的内容将被缩放，以在填充元素的内容框时保持其宽高比。 整个对象在填充盒子的同时保留其长宽比，因此如果宽高比与框的宽高比不匹配，该对象将被添加“<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%BB%91%E9%82%8A">黑边</a>”。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cover</span><br></pre></td></tr></table></figure>
+
+<p>被替换的内容在保持其宽高比的同时填充元素的整个内容框。如果对象的宽高比与内容框不相匹配，该对象将被剪裁以适应内容框。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fill</span><br></pre></td></tr></table></figure>
+
+<p>被替换的内容正好填充元素的内容框。整个对象将完全填充此框。如果对象的宽高比与内容框不相匹配，那么该对象将被拉伸以适应内容框。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">none</span><br></pre></td></tr></table></figure>
+
+<p>被替换的内容将保持其原有的尺寸。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scale-down</span><br></pre></td></tr></table></figure>
+
+<p>内容的尺寸与 <code>none</code> 或 <code>contain</code> 中的一个相同，取决于它们两个之间谁得到的对象尺寸会更小一些。</p>
+<h4 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h4><p><code>flex</code> <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Shorthand_properties">CSS简写属性</a>设置了弹性项目如何增大或缩小以适应其弹性容器中可用的空间。</p>
+<p>此属性是以下CSS属性的简写：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-grow"><code>flex-grow</code></a>  CSS 属性 <strong><code>flex-grow</code></strong> <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> 设置 flex 项<a target="_blank" rel="noopener" href="https://www.w3.org/TR/css-flexbox/#main-size">主尺寸</a> 的 flex 增长系数。</li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-shrink"><code>flex-shrink</code></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS">CSS</a> <strong><code>flex-shrink</code></strong> 属性指定了 flex 元素的收缩规则。flex 元素仅在默认宽度之和大于容器的时候才会发生收缩，其收缩的大小是依据 flex-shrink 的值。</li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-basis"><code>flex-basis</code> </a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS">CSS</a> 属性 <strong><code>flex-basis</code></strong> 指定了 flex 元素在主轴方向上的初始大小。如果不使用  <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-sizing"><code>box-sizing</code></a> 改变盒模型的话，那么这个属性就决定了 flex 元素的内容盒（content-box）的尺寸。</li>
+</ul>
+<h4 id="mix-blend-mode"><a href="#mix-blend-mode" class="headerlink" title="mix-blend-mode"></a><strong>mix-blend-mode</strong></h4><p>混合模式</p>
+<p>现用现查</p>
+<h4 id="white-space"><a href="#white-space" class="headerlink" title="white-space"></a>white-space</h4><p><strong><code>white-space</code></strong> CSS 属性是用来设置如何处理元素中的 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Glossary/Whitespace">空白 (en-US)</a>。</p>
+<ul>
+<li><p><code>normal</code></p>
+<p>连续的空白符会被合并，换行符会被当作空白符来处理。换行在填充「行框盒子(<a target="_blank" rel="noopener" href="https://www.w3.org/TR/CSS2/visuren.html#inline-formatting">line boxes</a>)」时是必要。</p>
+</li>
+<li><p><code>nowrap</code></p>
+<p>和 normal 一样，连续的空白符会被合并。但文本内的换行无效。</p>
+</li>
+<li><p><code>pre</code></p>
+<p>连续的空白符会被保留。在遇到换行符或者<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/br">&#96;&#96;</a>元素时才会换行。 </p>
+</li>
+<li><p><code>pre-wrap</code></p>
+<p>连续的空白符会被保留。在遇到换行符或者<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/br">&#96;&#96;</a>元素，或者需要为了填充「行框盒子(<a target="_blank" rel="noopener" href="https://www.w3.org/TR/CSS2/visuren.html#inline-formatting">line boxes</a>)」时才会换行。</p>
+</li>
+<li><p><code>pre-line</code></p>
+<p>连续的空白符会被合并。在遇到换行符或者<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/br">&#96;&#96;</a>元素，或者需要为了填充「行框盒子(<a target="_blank" rel="noopener" href="https://www.w3.org/TR/CSS2/visuren.html#inline-formatting">line boxes</a>)」时会换行。</p>
+</li>
+</ul>
+<p><code>**break-spaces**</code><br>与 <code>pre-wrap</code>的行为相同，除了：</p>
+<ul>
+<li>任何保留的空白序列总是占用空间，包括在行尾。</li>
+<li>每个保留的空格字符后都存在换行机会，包括空格字符之间。</li>
+<li>这样保留的空间占用空间而不会挂起，从而影响盒子的固有尺寸（最小内容大小和最大内容大小）。</li>
+</ul>
+<p>下面的表格总结了各种 white-space 值的行为：</p>
+<p><a href="/img/image-20211125153754182.png" title="image-20211125153754182" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20211125153754182.png" alt="image-20211125153754182"></a></p>
+<h4 id="scroll-behavior"><a href="#scroll-behavior" class="headerlink" title="scroll-behavior"></a>scroll-behavior</h4><p>当用户手动导航或者 CSSOM scrolling API 触发滚动操作时，<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS">CSS</a> 属性 <strong><code>scroll-behavior</code></strong> 为一个滚动框指定滚动行为，其他任何的滚动，例如那些由于用户行为而产生的滚动，不受这个属性的影响。在根元素中指定这个属性时，它反而适用于视窗。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auto</span><br></pre></td></tr></table></figure>
+
+<p>滚动框立即滚动。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">smooth</span><br></pre></td></tr></table></figure>
+
+<p>滚动框通过一个用户代理预定义的时长、使用预定义的时间函数，来实现平稳的滚动，用户代理应遵循其平台的约定，如果有的话。</p>
+<h4 id="perspective"><a href="#perspective" class="headerlink" title="perspective"></a>perspective</h4><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> 属性 **<code>perspective</code>**指定了观察者与 z&#x3D;0 平面的距离，使具有三维位置变换的元素产生透视效果。 z&gt;0 的三维元素比正常大，而 z&lt;0 时则比正常小，大小程度由该属性的值决定。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">none</span><br></pre></td></tr></table></figure>
+
+<p>没有应用 perspective 样式时的默认值.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;length&gt;</span><br></pre></td></tr></table></figure>
+
+<p>指定观察者距离 z&#x3D;0 平面的距离，为元素及其内容应用透视变换。当值为0或负值时，无透视变换。</p>
+<h4 id="transform"><a href="#transform" class="headerlink" title="transform"></a>transform</h4><p>transform、scale XYZ的示意图</p>
+<p><a href="/img/image-20211125190317570.png" title="image-20211125190317570" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20211125190317570.png" alt="image-20211125190317570"></a></p>
+<p>rotate的示意图</p>
+<p><a href="/img/image-20211125190701305.png" title="image-20211125190701305" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20211125190701305.png" alt="image-20211125190701305"></a></p>
+<h4 id="滚动条相关"><a href="#滚动条相关" class="headerlink" title="滚动条相关"></a>滚动条相关</h4><ul>
+<li>::-webkit-scrollbar 滚动条整体部分</li>
+<li>::-webkit-scrollbar-thumb 滚动条里面的小方块，能向上向下移动（或往左往右移动，取决于是垂直滚动条还是水平滚动条）</li>
+<li>::-webkit-scrollbar-track 滚动条的轨道（里面装有Thumb）</li>
+<li>::-webkit-scrollbar-button 滚动条的轨道的两端按钮，允许通过点击微调小方块的位置。</li>
+<li>::-webkit-scrollbar-track-piece 内层轨道，滚动条中间部分（除去）</li>
+<li>::-webkit-scrollbar-corner 边角，即两个滚动条的交汇处</li>
+<li>::-webkit-resizer 两个滚动条的交汇处上用于通过拖动调整元素大小的小控件</li>
+</ul>
+<h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><p>定位 &#x3D; 定位模式 + 边偏移</p>
+<p>定位模式：position（static、relative、absolute、fixed）</p>
+<p>边偏移（相对于其父元素的上下左右边线的举例）：top、bottom、left、right</p>
+<p><strong>static</strong> 无定位，默认、在文档流之中</p>
+<p><strong>relative</strong> 相对定位，相对于自身原来的位置进行偏移、所占的位置保留、限制绝对定位</p>
+<p><strong>absolute</strong> 绝对定位，相对于祖先元素来说、没有父元素或者父元素没有定位就以浏览器为父元素、如果父元素有定位，就以最近一级带有定位的父元素的定位为约束、 不占有原来的位置</p>
+<p><strong>子绝父相</strong> ： 如果子元素使用了绝对定位，那么父元素应该使用相对定位（父元素要占有位置，因此相对定位，子元素不需要占有位置，但需要相对于父元素定位，所以是绝对定位），如果父元素不需要占有位置， 子绝父绝也可能用到。</p>
+<p><strong>fixed</strong> 固定定位，固定于浏览器的某个位置，以浏览器的可视窗口作为基准、跟父元素没有关系，不随着滚动条滚动、不占用原来的位置。</p>
+<p><strong>stick</strong> 粘性定位，以浏览器的可视窗口为参照点移动元素、占有原来的位置、必须添加top\left\bottom\right才有效【一开始是相对定位，拉到下面的时候开始固定定位（常见导航来的做法）】兼容性差、IE不支持</p>
+<p><a href="/img/image-20211125141003716.png" title="image-20211125141003716" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20211125141003716.png" alt="image-20211125141003716"></a></p>
+<p><strong>定位的叠放次序：z-index</strong> 使用定位布局的时候可能会出现盒子重叠的情况，可以使用z-index控制盒子的前后次序，非负整数，默认auto、越大越靠上、没有单位、只有定位的盒子才有z-index属性</p>
+<p>绝对定位的盒子（absolute）不能通过margin: 0 auto 居中，但是可以通过以下方式水平和垂直居中：假设盒子的大小为200px <code>left:50%</code> <code>margin-left: -100px</code> -100px 的意思是让盒子向左移动自身宽度的一半</p>
+<p><strong>定位的特殊特性</strong></p>
+<ul>
+<li>行内元素 添加绝对或者固定定位之后可以直接设置高度和宽度</li>
+<li>块级元素 添加绝对或者固定帝国位置后，如果不给宽度或者高度，默认大小是内容的大小</li>
+<li>脱标的盒子不会触发外边距塌陷</li>
+</ul>
+<p>浮动元素不同，只会压住它下面标准流的盒子，不会压住下面标准流盒子中的文字和图片，但是绝对定位（固定定位）会压住下面标准流中的所有内容，因为浮动最初产生的目的是为了文字环绕效果。</p>
+<h3 id="Flex弹性盒模型"><a href="#Flex弹性盒模型" class="headerlink" title="Flex弹性盒模型"></a>Flex弹性盒模型</h3><p><a href="/img/image-20211023234325376.png" title="image-20211023234325376" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20211023234325376.png" alt="image-20211023234325376"></a></p>
+<p><a href="/img/flex.png" title="image" class="gallery-item" style="box-shadow: none;"> <img src="/img/flex.png" alt="image"></a></p>
+<p><a href="/img/image-20211024075016336.png" title="image-20211024075016336" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20211024075016336.png" alt="image-20211024075016336"></a></p>
+<h2 id="SCSS语法"><a href="#SCSS语法" class="headerlink" title="SCSS语法"></a>SCSS语法</h2><h3 id="mixin"><a href="#mixin" class="headerlink" title="mixin"></a>mixin</h3><p>相当于自定义了一段代码复用的片段，可以提高代码的重复使用率</p>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2021-11-25</span>
+            
+            
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2022/01/25/Obsidian-Template/'>译 | Obsidian-Template文档</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2021/10/05/DesignPattern/">笔记 | 设计模式</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+             
+
+            
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>Change And Challenge</span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="Linux部署MC服务器" />
+    <meta name="hexo-theme-A4" content="v1.9.6" />
+    <link rel="alternate icon" type="image/webp" href="/img/avatar.png">
+    <title>Jingcun Yan</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+    
+    
+        <style>
+            .index-main{
+                max-width:  880px;
+            }
+        </style>
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            <div class="left-toc-container">
+                <nav id="toc" class="bs-docs-sidebar"></nav>
+            </div>
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/avatar.png" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">Jingcun Yan</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    Linux部署MC服务器
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                
+                    
+                     <span>字数总计：1.5k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：6分钟</span>
+                
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+        <div class=".article-gallery"><h2 id="客户端服务器搭建"><a href="#客户端服务器搭建" class="headerlink" title="客户端服务器搭建"></a>客户端服务器搭建</h2><p>下载 1.19.0 服务端文件, 并上传到服务器</p>
+<p>地址: <a target="_blank" rel="noopener" href="https://bmclapi2.bangbang93.com/version/1.19/server">https://bmclapi2.bangbang93.com/version/1.19/server</a></p>
+<blockquote>
+<p>注意: MC1.19.0需要Java版本&gt;&#x3D; 17.0.3, 版本过低会导致运行失败</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">➜  mc java -Xms1G -Xmx2G -jar server.jar</span><br></pre></td></tr></table></figure>
+
+<p>运行之后命令行最后出现:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[20:08:40] [ServerMain/INFO]: Building unoptimized datafixer</span><br><span class="line">[20:08:41] [ServerMain/ERROR]: Failed to load properties from file: server.properties</span><br><span class="line">[20:08:41] [ServerMain/WARN]: Failed to load eula.txt</span><br><span class="line">[20:08:41] [ServerMain/INFO]: You need to agree to the EULA in order to run the server. Go to eula.txt for more info.</span><br></pre></td></tr></table></figure>
+
+<p>他告诉我们需要同意EULA来运行服务器</p>
+<p>这时候的文件夹结构</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">➜  mc ll    </span><br><span class="line">total 44M</span><br><span class="line">-rw-rw-r-- 1 jancoyan jancoyan  158 Jul 19 20:08 eula.txt</span><br><span class="line">drwxrwxr-x 8 jancoyan jancoyan 4.0K Jul 19 20:08 libraries</span><br><span class="line">drwxrwxr-x 2 jancoyan jancoyan 4.0K Jul 19 20:08 logs</span><br><span class="line">-rwxr-xr-x 1 www      www       44M Jul 19 18:55 server.jar</span><br><span class="line">-rw-rw-r-- 1 jancoyan jancoyan 1.3K Jul 19 20:08 server.properties</span><br><span class="line">drwxrwxr-x 3 jancoyan jancoyan 4.0K Jul 19 20:08 versions</span><br></pre></td></tr></table></figure>
+
+<p>编辑<code>Eula.txt</code> , 把里面的false改成true即可</p>
+<p>改完之后的文件夹结构:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 #By changing the setting below to TRUE you are indicating your agreement to our EULA (https://aka.ms/MinecraftEULA).</span><br><span class="line">2 #Tue Jul 19 20:08:41 CST 2022</span><br><span class="line">3 eula=true </span><br></pre></td></tr></table></figure>
+
+<p>这时候再次运行java服务到后台</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nohup java -Xms1G -Xmx2G -jar server.jar &gt; log.txt &amp; </span><br></pre></td></tr></table></figure>
+
+<p>如果你无法加入说明使用的不是正版，打开server.properties文件把online-mode改为false即可</p>
+<p>这个时候的文件夹结构:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">total 44M</span><br><span class="line">-rw-rw-r--  1 jancoyan jancoyan    2 Jul 19 20:52 banned-ips.json # 禁止加入的ip</span><br><span class="line">-rw-rw-r--  1 jancoyan jancoyan    2 Jul 19 20:52 banned-players.json # 禁止加入的玩家</span><br><span class="line">-rw-rw-r--  1 jancoyan jancoyan  157 Jul 19 20:14 eula.txt # 用户协议</span><br><span class="line">drwxrwxr-x  8 jancoyan jancoyan 4.0K Jul 19 20:08 libraries</span><br><span class="line">drwxrwxr-x  2 jancoyan jancoyan 4.0K Jul 19 20:52 logs # 日志文件</span><br><span class="line">-rw-rw-r--  1 jancoyan jancoyan    0 Jul 19 20:20 log.txt # server启动的日志</span><br><span class="line">-rw-rw-r--  1 jancoyan jancoyan    2 Jul 19 20:52 ops.json # 服务器管理员</span><br><span class="line">-rwxr-xr-x  1 www      www       44M Jul 19 18:55 server.jar# 服务器程序</span><br><span class="line">-rw-rw-r--  1 jancoyan jancoyan 1.3K Jul 19 20:52 server.properties # 服务器程序配置文件</span><br><span class="line">-rw-rw-r--  1 jancoyan jancoyan  102 Jul 19 20:54 usercache.json # 缓存, 无意义</span><br><span class="line">drwxrwxr-x  3 jancoyan jancoyan 4.0K Jul 19 20:08 versions</span><br><span class="line">-rw-rw-r--  1 jancoyan jancoyan    2 Jul 19 20:15 whitelist.json # 白名单</span><br><span class="line">drwxrwxr-x 12 jancoyan jancoyan 4.0K Jul 19 20:53 world # 世界</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>以下内容完全为引用 作者：爷真可爱qwqwq <a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv16106328/">https://www.bilibili.com/read/cv16106328/</a> 出处：bilibili</p>
+<p>服务器配置如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">#Minecraft server properties</span><br><span class="line">#Sun Apr 10 15:32:09 CST 2022</span><br><span class="line">spawn-protection=16 # 出生点保护 世界出生点一定范围内不可破坏或放置方块，设为0可以停用</span><br><span class="line">max-tick-time=60000 # 一个tick跑多少ms以上之后会关闭服务器 不建议修改</span><br><span class="line">query.port=25565</span><br><span class="line">generator-settings= # 世界生成设置 一般没用</span><br><span class="line">sync-chunk-writes=true # 启用同步区块写入 不建议修改</span><br><span class="line">force-gamemode=false # 是否强制游戏模式，如果你想让整个服保持一个游戏模式可以设置为true</span><br><span class="line">allow-nether=true # 是否启用下界 设为false则传送门不会生效</span><br><span class="line">enforce-whitelist=false # 执行白名单 设置为true后会在reload白名单文件后踢出不在白名单里的在线玩家</span><br><span class="line">gamemode=survival # 默认游戏模式，还可改为creative，adventure或spectator</span><br><span class="line">broadcast-console-to-ops=true # 是否把在控制台使用的命令发给所有管理员</span><br><span class="line">enable-query=false</span><br><span class="line">player-idle-timeout=0 # 如果不是0，将会把挂机若干分钟的玩家踢出</span><br><span class="line">text-filtering-config=</span><br><span class="line">difficulty=easy # 游戏难度，还可改成peaceful，normal和hard</span><br><span class="line">spawn-monsters=true # 是否生成怪物</span><br><span class="line">broadcast-rcon-to-ops=true # 把远程控制的命令发送给所有在线管理员</span><br><span class="line">op-permission-level=4 #默认管理员权限等级</span><br><span class="line">pvp=true # 玩家互相伤害</span><br><span class="line">entity-broadcast-range-percentage=100</span><br><span class="line">snooper-enabled=true</span><br><span class="line">level-type=default # 世界类型</span><br><span class="line">hardcore=false # 极限 死去的玩家会自动被服务器ban掉</span><br><span class="line">enable-status=true</span><br><span class="line">enable-command-block=false # 是否启用命令方块</span><br><span class="line">max-players=20 # 最大玩家数</span><br><span class="line">network-compression-threshold=256</span><br><span class="line">resource-pack-sha1= # 资源包的sha1哈希</span><br><span class="line">max-world-size=29999984 # 最大世界大小（单位）取决于worldbounder位置，设置为1000允许玩家在2000*2000范围内</span><br><span class="line">function-permission-level=2 # 数据包函数权限等级</span><br><span class="line">rcon.port=25575 # 远程连接所用端口</span><br><span class="line">server-port=25565 # 服务器绑定端口</span><br><span class="line">server-ip=</span><br><span class="line">spawn-npcs=true</span><br><span class="line">allow-flight=false # 是否允许生存模式飞行</span><br><span class="line">level-name=world # 世界名字</span><br><span class="line">view-distance=10 # 视距 建议调大一点</span><br><span class="line">resource-pack= # 资源包</span><br><span class="line">spawn-animals=true # 是否生成动物</span><br><span class="line">white-list=false # 是否开启白名单</span><br><span class="line">rcon.password= # 远程控制的密码</span><br><span class="line">generate-structures=true # 是否生成结构 如下界要塞等</span><br><span class="line">max-build-height=256 # 最高建筑上限 修改了可能出现问题</span><br><span class="line">online-mode=true # 是否启用正版验证 调为false允许非正版玩家进入 你进不了服务器的罪魁祸首（</span><br><span class="line">level-seed= # 世界种子</span><br><span class="line">use-native-transport=true</span><br><span class="line">prevent-proxy-connections=false # 是否阻止玩家使用v*n或代理</span><br><span class="line">enable-jmx-monitoring=false</span><br><span class="line">enable-rcon=false # 启用远程控制</span><br><span class="line">rate-limit=0</span><br><span class="line">motd=A Minecraft Server # 服务器介绍，中文可能会乱码</span><br></pre></td></tr></table></figure>
+
+<p>最后可以在控制台里输入stop指令来停止服务器</p>
+<p>请注意所有加入服务器的玩家都默认不为管理员（不能使用大部分指令），哪怕你是第一个进服的也一样</p>
+<p>可以通过执行op 玩家名 的指令来让某位玩家成为管理员（拥有命令使用权）</p>
+<p>控制台使用命令不需要打斜杠</p>
+<p>平时需要用到的服务器指令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">令一位玩家成为管理员			op &lt;player name&gt;</span><br><span class="line">剥夺玩家的管理员身份			deop &lt;player name&gt;</span><br><span class="line">显示所有的管理员				ops</span><br><span class="line">停止/关不服务器				stop</span><br><span class="line">重新加载（配方和数据包		reload</span><br><span class="line">将服务器存至硬盘				save-all</span><br><span class="line">启用自动保存					save-on</span><br><span class="line">禁用自动保存					save-off</span><br><span class="line">踢出玩家						kick &lt;player name&gt;</span><br><span class="line">禁止玩家进入服务器			ban &lt;player name&gt;</span><br><span class="line">禁止玩家的ip加入服务器		ban-ip &lt;player name&gt;</span><br><span class="line">解除玩家的封禁				pardon &lt;player name&gt;</span><br><span class="line">解除玩家的ip的封禁			pardon-ip &lt;player name&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>本文参考了 <a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv16106328/">https://www.bilibili.com/read/cv16106328/</a> 作者：爷真可爱qwqwq 出处：bilibili</p>
+</blockquote>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2022-07-19</span>
+            
+            
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2022/08/05/%E8%AF%91-BSD%E9%80%9A%E7%94%A8%E5%91%BD%E4%BB%A4%E6%89%8B%E5%86%8C/'>译 | BSD通用命令手册</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2022/06/18/zsh%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">zsh安装与配置</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+             
+
+            
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>Change And Challenge</span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>

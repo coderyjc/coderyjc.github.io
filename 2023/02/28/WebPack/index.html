@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="笔记 | WebPack" />
+    <meta name="hexo-theme-A4" content="v1.9.6" />
+    <link rel="alternate icon" type="image/webp" href="/img/avatar.png">
+    <title>Jingcun Yan</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+    
+    
+        <style>
+            .index-main{
+                max-width:  880px;
+            }
+        </style>
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            <div class="left-toc-container">
+                <nav id="toc" class="bs-docs-sidebar"></nav>
+            </div>
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/avatar.png" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">Jingcun Yan</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    笔记 | WebPack
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                
+                    
+                     <span>字数总计：5.7k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：23分钟</span>
+                
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+        <div class=".article-gallery"><blockquote>
+<p>webpack的官方文档 <a target="_blank" rel="noopener" href="https://webpack.js.org/">https://webpack.js.org/</a><br>webpack的中文官方文档 <a target="_blank" rel="noopener" href="https://webpack.docschina.org/">https://webpack.docschina.org/</a></p>
+</blockquote>
+<p><a href="/img/Webpack.png" title="Webpack.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/Webpack.png" alt="Webpack.png"></a></p>
+<h1 id="认识Webpack"><a href="#认识Webpack" class="headerlink" title="认识Webpack"></a>认识Webpack</h1><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p><a href="/img/image-20230228090418.png" title="image-20230228090418.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228090418.png" alt="image-20230228090418.png"></a></p>
+<p>假设我们现在在做vue项目，那么我们需要加载哪些文件？</p>
+<p>JavaScript的打包：</p>
+<ul>
+<li>将ES6转换成ES5的语法；</li>
+<li>TypeScript的处理，将其转换成JavaScript；</li>
+</ul>
+<p>Css的处理：</p>
+<ul>
+<li>CSS文件模块的加载、提取；</li>
+<li>Less、Sass等预处理器的处理；</li>
+</ul>
+<p>资源文件img、font：</p>
+<ul>
+<li>图片img文件的加载；</li>
+<li>字体font文件的加载；</li>
+</ul>
+<p>HTML资源的处理：打包HTML资源文件；<br>处理vue项目的SFC文件.vue文件；</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title:webpack到底是如何对我们的项目进行打包的呢？</span><br><span class="line">事实上webpack在处理应用程序时，它会根据命令或者配置文件找到入口文件；从入口开始，会生成一个 依赖关系图，这个依赖关系图会包含应用程序中所需的所有模块（比如.js文件、css文件、图片、字体等）；然后遍历图结构，打包一个个模块（根据文件的不同使用不同的loader来解析）；</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>webpack的安装目前分为两个：webpack、webpack-cli</p>
+<p>它们的关系：</p>
+<p>执行webpack命令，会执行node_modules下的.bin目录下的webpack；webpack在执行时是依赖webpack-cli的，如果没有安装就会报错；而webpack-cli中代码执行时，才是真正利用webpack进行编译和打包的过程；</p>
+<p>所以在安装webpack时，我们需要同时安装webpack-cli（第三方的脚手架事实上是没有使用webpack-cli的，而是类似于自己的vue-service-cli的东西）</p>
+<p><a href="/img/image-20230228090818.png" title="image-20230228090818.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228090818.png" alt="image-20230228090818.png"></a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install webpack webpack-cli –g <span class="comment"># 全局安装</span></span><br><span class="line">npm install webpack webpack-cli –D <span class="comment"># 局部安装</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在实际开发中我们通常使用**局部安装**的webpack</span><br></pre></td></tr></table></figure>
+
+<p>安装之后可以直接使用<code>npx webpack</code>进行打包，但是这种打包方式有弊端——根目录下必须有一个<code>src</code>文件夹.</p>
+<h3 id="指定配置文件"><a href="#指定配置文件" class="headerlink" title="指定配置文件"></a>指定配置文件</h3><p>配置文件可以指定webpack打包的根目录，也可以指定生成的目录等</p>
+<p>配置文件的名字是<code>webpack.config.js</code>放在项目根目录中，和<code>node_modules</code>同级</p>
+<p>在这个文件中导出node模块</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="comment">// 打包的入口</span></span><br><span class="line">  <span class="attr">entry</span>: <span class="string">&#x27;./src/main.js&#x27;</span>,</span><br><span class="line">  <span class="comment">// 输出设置</span></span><br><span class="line">  <span class="attr">output</span>:&#123;</span><br><span class="line">    <span class="attr">filename</span>: <span class="string">&#x27;bundle.js&#x27;</span>,</span><br><span class="line">    <span class="comment">// path必须传入一个绝对路径，我们把目标路径和绝对路径拼接</span></span><br><span class="line">    <span class="attr">path</span>: path.<span class="title function_">resolve</span>(__dirname, <span class="string">&quot;./build&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果我们的webpack配置文件是别的名字，可以从脚本里面设置script，指定参数运行webpack</p>
+<p>修改配置文件为 <code>pack.config.js</code></p>
+<p>package.json文件</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;test&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;test project&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;build&quot;</span><span class="punctuation">:</span> <span class="string">&quot;webpack --config config.js&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;devDependencies&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;webpack&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^5.75.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;webpack-cli&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^5.0.1&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>然后可以直接运行 <code>npm run build</code> 直接使用指定文件打包</p>
+<h1 id="Node的path模块"><a href="#Node的path模块" class="headerlink" title="Node的path模块"></a>Node的path模块</h1><p>path模块用于对路径和文件进行处理，提供了很多好用的方法。</p>
+<p>我们知道在Mac OS、Linux和window上的路径是不一样的：window上会使用 \或者 \ 来作为文件路径的分隔符，当然目前也支持 &#x2F;；在Mac OS、Linux的Unix操作系统上使用 &#x2F; 来作为文件路径的分隔符；</p>
+<p>那么如果我们在window上使用 \ 来作为分隔符开发了一个应用程序，要部署到Linux上面应该怎么办呢，显示路径会出现一些问题，所以为了屏蔽他们之间的差异，在开发中对于路径的操作我们可以使用 path 模块；</p>
+<p>&#x3D;&#x3D;获取路径中的信息&#x3D;&#x3D;</p>
+<p>dirname：获取文件的父文件夹；<br>basename：获取文件名；<br>extname：获取文件扩展名</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> filepath = <span class="string">&#x27;C://dir1/dir2/dir3&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 从路径中获取信息</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(path.<span class="title function_">extname</span>(filepath))</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取文件名</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(path.<span class="title function_">basename</span>(filepath))</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取文件夹所在路径</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(path.<span class="title function_">dirname</span>(filepath))</span><br></pre></td></tr></table></figure>
+
+
+<p>&#x3D;&#x3D;路径的拼接&#x3D;&#x3D;</p>
+<p>如果我们希望将多个路径进行拼接，但是不同的操作系统可能使用的是不同的分隔符；<br>这个时候我们可以使用path.join函数；</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将多个路径拼接在一起</span></span><br><span class="line"><span class="keyword">const</span> path1 = <span class="string">&#x27;/aaa/bbb&#x27;</span></span><br><span class="line"><span class="keyword">const</span> path2 = <span class="string">&#x27;../nodejs&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(path.<span class="title function_">join</span>(path1, path2))</span><br></pre></td></tr></table></figure>
+
+<p>&#x3D;&#x3D;绝对路径的拼接&#x3D;&#x3D;</p>
+<p>path.resolve() 方法会把一个路径或路径片段的序列解析为一个绝对路径；</p>
+<p>给定的路径的序列是从右往左被处理的，后面每个 path 被依次解析，直到构造完成一个绝对路径；如果在处理完所有给定path的段之后，还没有生成绝对路径，则使用当前工作目录；生成的路径被规范化并删除尾部斜杠，零长度path段被忽略；如果没有path传递段，path.resolve()将返回当前工作目录的绝对路径；</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 多个路径拼接在一起，最后返回一个绝对路径</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 从后向前查找，直到查找到绝对路径</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(path.<span class="title function_">resolve</span>(<span class="string">&quot;./abc/test&quot;</span>, <span class="string">&quot;/root/&quot;</span>, <span class="string">&quot;/a.txt&quot;</span>))</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(path.<span class="title function_">resolve</span>(<span class="string">&quot;./abc/test&quot;</span>, <span class="string">&quot;/root/&quot;</span>, <span class="string">&quot;a.txt&quot;</span>))</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(path.<span class="title function_">resolve</span>(<span class="string">&quot;/abc/test&quot;</span>, <span class="string">&quot;root/&quot;</span>, <span class="string">&quot;a.txt&quot;</span>))</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(path.<span class="title function_">resolve</span>(<span class="string">&quot;./abc/test&quot;</span>, <span class="string">&quot;root/&quot;</span>, <span class="string">&quot;a.txt&quot;</span>))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><a href="/img/image-20230228090007.png" title="image-20230228090007.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228090007.png" alt="image-20230228090007.png"></a></p>
+<h1 id="使用Webpack进行打包"><a href="#使用Webpack进行打包" class="headerlink" title="使用Webpack进行打包"></a>使用Webpack进行打包</h1><h3 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h3><p>依赖图：</p>
+<p><a href="/img/image-20230228095220.png" title="image-20230228095220.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228095220.png" alt="image-20230228095220.png"></a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在使用webpack进行打包的时候，在js中只引入文件构建依赖图，而不导入资源，可以直接使用 `import &quot;path&quot;的形式`</span><br></pre></td></tr></table></figure>
+
+<p><strong>main.js</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&quot;./components/add_div.js&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+<p><strong>css&#x2F;div.css</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.content</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: aqua;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>components&#x2F;add_div.js</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&quot;../css/div.css&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> divEl = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;div&#x27;</span>)</span><br><span class="line"></span><br><span class="line">divEl.<span class="property">textContent</span> = <span class="string">&#x27;Hello World!&#x27;</span></span><br><span class="line">divEl.<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;content&#x27;</span>)</span><br><span class="line"><span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">append</span>(divEl)</span><br></pre></td></tr></table></figure>
+
+<p>执行命令 <code>npm run build</code>进行打包</p>
+<p><a href="/img/image-20230228100004.png" title="image-20230228100004.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228100004.png" alt="image-20230228100004.png"></a></p>
+<p>上面的错误信息告诉我们需要一个loader来加载这个css文件，但是loader是什么呢？loader 可以用于对模块的源代码进行转换；</p>
+<p>我们可以将css文件也看成是一个模块，我们是通过import来加载这个模块的；</p>
+<p>在加载这个模块时，webpack其实并不知道如何对其进行加载，我们必须制定对应的loader来完成这个功能；</p>
+<p>那么我们需要一个什么样的loader呢？<br>对于加载css文件来说，我们需要一个可以读取css文件的loader，这个loader最常用的是css-loader；</p>
+<h3 id="css-loader安装"><a href="#css-loader安装" class="headerlink" title="css-loader安装"></a>css-loader安装</h3><p>css-loader的安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install css-loader -D</span><br></pre></td></tr></table></figure>
+
+<p>如何使用css-loader?</p>
+<ol>
+<li>内联方式；</li>
+<li>CLI方式（webpack5中不再使用）；</li>
+<li>配置方式；</li>
+</ol>
+<p>我们只讲配置方式，其他方式基本已经不再使用。</p>
+<p>配置方式表示的意思是在我们的webpack.config.js文件中写明配置信息：</p>
+<ul>
+<li>module.rules中允许我们配置多个loader（因为我们也会继续使用其他的loader，来完成其他文件的加载）；</li>
+<li>这种方式可以更好的表示loader的配置，也方便后期的维护，同时也让你对各个Loader有一个全局的概览；</li>
+</ul>
+<p>module.rules的配置如下：</p>
+<ul>
+<li>rules属性对应的值是一个数组：<code>[Rule]</code></li>
+<li>数组中存放的是一个个的Rule，Rule是一个对象，对象中可以设置多个属性：<ul>
+<li>test属性：用于对 resource（资源）进行匹配的，通常会设置成<strong>正则表达式</strong>；</li>
+<li>use属性：对应的值是一个数组：<code>[UseEntry]</code><ul>
+<li>UseEntry是一个对象，可以通过对象的属性来设置一些其他属性</li>
+<li>loader：必须有一个 loader属性，对应的值是一个字符串；</li>
+<li>options：可选的属性，值是一个字符串或者对象，值会被传入到loader中；</li>
+<li>query：目前已经使用options来替代；</li>
+<li>传递字符串（如：<code>use: [ &#39;style-loader&#39; ]</code>）是 loader 属性的简写方式（如：<code>use: [ &#123; loader: &#39;style-loader&#39;&#125; ]</code>）；</li>
+</ul>
+</li>
+<li>loader属性： <code>Rule.use: [ &#123; loader &#125; ]</code> 的简写。</li>
+</ul>
+</li>
+</ul>
+<p><a href="/img/image-20230228101737.png" title="image-20230228101737.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228101737.png" alt="image-20230228101737.png"></a></p>
+<p>然后 <code>npm run build</code>构建项目</p>
+<p><a href="/img/image-20230228101836.png" title="image-20230228101836.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228101836.png" alt="image-20230228101836.png"></a></p>
+<p>构建成功</p>
+<p>打开<code>src/index.html</code>查看文件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;../build/bundle.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">注意：这里的script引入应该在body之后，以防引入js的时候，body还没有加载出来导致错误</span><br></pre></td></tr></table></figure>
+
+<p><a href="/img/image-20230228102523.png" title="image-20230228102523.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228102523.png" alt="image-20230228102523.png"></a></p>
+<p>我们已经可以通过css-loader来加载css文件了，但是你会发现这个css在我们的代码中并没有生效（页面没有效果）。</p>
+<p>这是为什么呢？</p>
+<p>因为css-loader只是负责将.css文件进行解析，并不会将解析之后的css插入到页面中；如果我们希望再完成插入style的操作，那么我们还需要另外一个loader，就是style-loader；</p>
+<h3 id="style-loader安装"><a href="#style-loader安装" class="headerlink" title="style-loader安装"></a>style-loader安装</h3><p>安装style-loader：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install style-loader -D</span><br></pre></td></tr></table></figure>
+
+<p>配置style-loader</p>
+<p>那么我们应该如何使用style-loader：</p>
+<ul>
+<li>在配置文件中，添加style-loader</li>
+</ul>
+<p>注意：因为loader的执行顺序是从右向左（或者说从下到上，或者说从后到前的），所以我们需要将style-loader写到css-loader的前面；</p>
+<p><a href="/img/image-20230228102736.png" title="image-20230228102736.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228102736.png" alt="image-20230228102736.png"></a></p>
+<p>如下，这样就可以了</p>
+<p><a href="/img/image-20230228102743.png" title="image-20230228102743.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228102743.png" alt="image-20230228102743.png"></a></p>
+<h1 id="less工具"><a href="#less工具" class="headerlink" title="less工具"></a>less工具</h1><p>安装less-loader工具</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install less-loader -D</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>css&#x2F;title.less</strong></p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@fontsize:</span> <span class="number">50px</span>;</span><br><span class="line"><span class="variable">@fontColor:</span> blue;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.title</span>&#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="variable">@fontsize</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="variable">@fontColor</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>add_div.js</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&quot;../css/div.css&quot;</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;../css/title.less&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> divEl = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;div&#x27;</span>)</span><br><span class="line">divEl.<span class="property">textContent</span> = <span class="string">&#x27;Hello World!&#x27;</span></span><br><span class="line">divEl.<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;content&#x27;</span>)</span><br><span class="line"><span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">append</span>(divEl)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 新增</span></span><br><span class="line"><span class="keyword">const</span> titleEl = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;div&#x27;</span>)</span><br><span class="line">titleEl.<span class="property">textContent</span> = <span class="string">&#x27;TITLE&#x27;</span></span><br><span class="line">titleEl.<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;title&#x27;</span>)</span><br><span class="line"><span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">append</span>(titleEl)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一定不要忘了引入less文件</span><br></pre></td></tr></table></figure>
+
+<p><strong>config.js</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="comment">// 打包的入口</span></span><br><span class="line">  <span class="attr">entry</span>: <span class="string">&#x27;./src/main.js&#x27;</span>,</span><br><span class="line">  <span class="comment">// 输出设置</span></span><br><span class="line">  <span class="attr">output</span>:&#123;</span><br><span class="line">    <span class="attr">filename</span>: <span class="string">&#x27;bundle.js&#x27;</span>,</span><br><span class="line">    <span class="comment">// path必须传入一个绝对路径，我们把目标路径和绝对路径拼接</span></span><br><span class="line">    <span class="attr">path</span>: path.<span class="title function_">resolve</span>(__dirname, <span class="string">&quot;./build&quot;</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">module</span>: &#123;</span><br><span class="line">    <span class="attr">rules</span>: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">test</span>: <span class="regexp">/\.css$/</span>,</span><br><span class="line">        <span class="comment">// 多个loader不需要其他属性的时候可以直接写loader字符串数组的形式</span></span><br><span class="line">        <span class="attr">use</span>: [<span class="string">&#x27;style-loader&#x27;</span>, <span class="string">&#x27;css-loader&#x27;</span>]</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">test</span>: <span class="regexp">/\.less$/</span>,</span><br><span class="line">        <span class="attr">use</span>: [<span class="string">&#x27;style-loader&#x27;</span>, <span class="string">&#x27;css-loader&#x27;</span>, <span class="string">&#x27;less-loader&#x27;</span>]</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>成果如图：</p>
+<p><a href="/img/image-20230228104845.png" title="image-20230228104845.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228104845.png" alt="image-20230228104845.png"></a></p>
+<h1 id="Post-css工具"><a href="#Post-css工具" class="headerlink" title="Post-css工具"></a>Post-css工具</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">我们在开发的时候基本上不适用 autoprefixer，而是使用post-preset-env</span><br></pre></td></tr></table></figure>
+
+<p>假设我们要设置css属性： <code>user-select: none</code>，该属性的作用是，用户鼠标悬浮在元素上的时候不显示任何交互动作（文字不能被选中和复制），但是这个属性在不同的浏览器中的设置是不一样的，比如 <code>-ms-user-select:none</code>，<code>--webkit-user-select:none</code></p>
+<p>我们需要一个工具，当我们设置了这个元素之后，自动帮我们添加上在不同浏览器上的属性，这个工具就是<code>postcss</code>（的autoprefixer插件）</p>
+<p>安装post-css</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install postcss-loader -D</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="整合配置的post-css"><a href="#整合配置的post-css" class="headerlink" title="整合配置的post-css"></a>整合配置的post-css</h3><p><strong>webpack.config.js</strong> </p>
+<p>安装autoprefixer插件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install autoprefixer -D</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">use</span>: [</span><br><span class="line">  <span class="string">&#x27;style-loader&#x27;</span>, </span><br><span class="line">  <span class="string">&#x27;css-loader&#x27;</span>,</span><br><span class="line">  &#123;</span><br><span class="line">	<span class="attr">loader</span>: <span class="string">&#x27;postcss-loader&#x27;</span>,</span><br><span class="line">	<span class="attr">options</span>: &#123;</span><br><span class="line">	  <span class="attr">postcssOptions</span>: &#123;</span><br><span class="line">		<span class="attr">plugins</span>: [</span><br><span class="line">		  <span class="built_in">require</span>(<span class="string">&#x27;autoprefixer&#x27;</span>)</span><br><span class="line">		]</span><br><span class="line">	  &#125;</span><br><span class="line">	&#125;</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p><a href="/img/image-20230228122716.png" title="image-20230228122716.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228122716.png" alt="image-20230228122716.png"></a></p>
+<p><strong>div.css</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.content</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: aqua;</span><br><span class="line">  user-<span class="selector-tag">select</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>css中只写了一个user-select，但是构建完成的网站中显示如下：</p>
+<p><a href="/img/image-20230228122908.png" title="image-20230228122908.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228122908.png" alt="image-20230228122908.png"></a></p>
+<h3 id="单独配置的post-css文件"><a href="#单独配置的post-css文件" class="headerlink" title="单独配置的post-css文件"></a>单独配置的post-css文件</h3><p>webpack.config.js 中</p>
+<p><a href="/img/image-20230228123111.png" title="image-20230228123111.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228123111.png" alt="image-20230228123111.png"></a></p>
+<p>另外在根目录创建文件 postcss.config.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">plugins</span>: [</span><br><span class="line">    <span class="built_in">require</span>(<span class="string">&#x27;autoprefixer&#x27;</span>)</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>同理</p>
+<p><a href="/img/image-20230228123304.png" title="image-20230228123304.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228123304.png" alt="image-20230228123304.png"></a></p>
+<h3 id="postcss-preset-env"><a href="#postcss-preset-env" class="headerlink" title="postcss-preset-env"></a>postcss-preset-env</h3><p>事实上，在配置postcss-loader时，我们配置插件并不需要使用autoprefixer。我们可以使用另外一个插件：postcss-preset-env</p>
+<p>postcss-preset-env也是一个postcss的插件，它可以帮助我们将一些现代的CSS特性，转成大多数浏览器认识的CSS，并且会根据目标浏览器或者运行时环境添加所需的polyfill；也包括会自动帮助我们添加autoprefixer（所以相当于已经内置了autoprefixer）；</p>
+<p>首先，我们需要安装postcss-preset-env：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install postcss-preset-env -D</span><br></pre></td></tr></table></figure>
+
+<p>直接在postcss.config.js 中引入插件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">plugins</span>: [</span><br><span class="line">    <span class="built_in">require</span>(<span class="string">&#x27;postcss-preset-env&#x27;</span>)</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果是一样的</p>
+<p><a href="/img/image-20230228123635.png" title="image-20230228123635.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228123635.png" alt="image-20230228123635.png"></a></p>
+<h2 id="WebPack-打包-Img"><a href="#WebPack-打包-Img" class="headerlink" title="WebPack 打包 Img"></a>WebPack 打包 Img</h2><h3 id="打包图片"><a href="#打包图片" class="headerlink" title="打包图片"></a>打包图片</h3><p>加载图片有两种方式：</p>
+<ol>
+<li>img元素，设置src属性；</li>
+<li>其他元素（比如div），设置background-image的css属性；</li>
+</ol>
+<p>以前打包图片需要自己安装file-loader，但是现在用不着了，因为已经webpack已经为我们内置了。但是如果我们直接把图片import进来，会导致webpack把他认为是一个js模块，因此我们应该进行相应的配置来告诉webpack。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">test</span>: <span class="regexp">/\.(png|jpe?g|gif|svg)$/</span>,</span><br><span class="line">  <span class="attr">type</span>: <span class="string">&quot;asset&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="/img/image-20230228125300.png" title="image-20230228125300.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228125300.png" alt="image-20230228125300.png"></a></p>
+<p>资源模块类型(<strong>asset</strong> module type)，通过添加 4 种新的模块类型，来替换所有这些 loader：</p>
+<ul>
+<li>asset&#x2F;resource 发送一个单独的文件并导出 URL。之前通过使用 file-loader 实现；</li>
+<li>asset&#x2F;inline 导出一个资源的 data URI。之前通过使用 url-loader 实现；</li>
+<li>asset&#x2F;source 导出资源的源代码。之前通过使用 raw-loader 实现；</li>
+<li>asset 在导出一个 data URI 和发送一个单独的文件之间自动选择。之前通过使用 url-loader，并且配置资源体积限制实现；</li>
+</ul>
+<p>测试：</p>
+<p>拷贝一张图片到img中</p>
+<p>add_div.js中新增</p>
+<p>错误示范</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 新增图片</span></span><br><span class="line"><span class="keyword">const</span> imgEl = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;img&#x27;</span>)</span><br><span class="line">imgEl.<span class="property">src</span> = <span class="string">&#x27;/src/img/bird.png&#x27;</span> <span class="comment">//  不能这样写，这样写是直接定死的字符串，而不是资源的引用</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">append</span>(imgEl)</span><br></pre></td></tr></table></figure>
+
+<p>正确示范</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> bird <span class="keyword">from</span> <span class="string">&quot;../img/bird.png&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 新增图片</span></span><br><span class="line"><span class="keyword">const</span> imgEl = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;img&#x27;</span>)</span><br><span class="line">imgEl.<span class="property">src</span> = bird</span><br><span class="line"><span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">append</span>(imgEl)</span><br></pre></td></tr></table></figure>
+
+
+<p>直接构建项目,成功</p>
+<p><a href="/img/image-20230228125848.png" title="image-20230228125848.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228125848.png" alt="image-20230228125848.png"></a></p>
+<h3 id="三种解释资源类型的解释"><a href="#三种解释资源类型的解释" class="headerlink" title="三种解释资源类型的解释"></a>三种解释资源类型的解释</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">asset/source 在开发中基本不适用，因此不解释了</span><br></pre></td></tr></table></figure>
+
+
+<p>add_div.js</p>
+<p>增加一个小图片</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 新增图片2</span></span><br><span class="line"><span class="keyword">import</span> dog <span class="keyword">from</span> <span class="string">&quot;../img/dog.png&quot;</span></span><br><span class="line"><span class="keyword">const</span> imgEl1 = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;img&#x27;</span>)</span><br><span class="line">imgEl1.<span class="property">src</span> = dog</span><br><span class="line"><span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">append</span>(imgEl1)</span><br></pre></td></tr></table></figure>
+
+<p>&#x3D;&#x3D;asset&#x2F;resource&#x3D;&#x3D;</p>
+<p>修改资源类型</p>
+<p><a href="/img/image-20230228132548.png" title="image-20230228132548.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228132548.png" alt="image-20230228132548.png"></a></p>
+<p>重新构建</p>
+<p><a href="/img/image-20230228133547.png" title="image-20230228133547.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228133547.png" alt="image-20230228133547.png"></a></p>
+<p><a href="/img/image-20230228133604.png" title="image-20230228133604.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228133604.png" alt="image-20230228133604.png"></a></p>
+<p>可以看到资源都指向了新生成的图片</p>
+<p>因此这个方法是打包两张图片，每张图片都有自己的地址，并把网页中的地址自己的地址（新图片是用哈希算法生成的）</p>
+<p>优点：js文件比较小，容易加载<br>缺点：需要多次发送请求，向服务器请求图片</p>
+<p>&#x3D;&#x3D;asset&#x2F;inline&#x3D;&#x3D;</p>
+<p>修改资源类型</p>
+<p><a href="/img/image-20230228133756.png" title="image-20230228133756.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228133756.png" alt="image-20230228133756.png"></a></p>
+<p>重新构建</p>
+<p><a href="/img/image-20230228133835.png" title="image-20230228133835.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228133835.png" alt="image-20230228133835.png"></a></p>
+<p>可以看到图片使用base64编码进行内置到了元素里面。</p>
+<p>同时js文件变得更大了（存储了图片的编码）</p>
+<p>优点：不需要多次发送请求，向服务器请求图片<br>缺点：js文件比较大，不容易加载</p>
+<p>&#x3D;&#x3D;asset&#x3D;&#x3D;</p>
+<p>修改成asset之后</p>
+<p><a href="/img/image-20230228134130.png" title="image-20230228134130.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228134130.png" alt="image-20230228134130.png"></a></p>
+<p>可以看见对于大图片，构建生成了新的图片并指向链接，而对于小图片，生成了base64编码提高了加载速度，大小图片的区分是有一个临界值的。</p>
+<p>这个临界值，当然是可以自定义的：</p>
+<p>webpack.config.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">test</span>: <span class="regexp">/\.(png|jpe?g|gif|svg)$/</span>,</span><br><span class="line">	<span class="attr">type</span>: <span class="string">&quot;asset&quot;</span>,</span><br><span class="line">	<span class="attr">parser</span>: &#123;</span><br><span class="line">	  <span class="attr">dataUrlCondition</span>: &#123;</span><br><span class="line">		<span class="attr">maxSize</span>: <span class="number">50</span> * <span class="number">1024</span> <span class="comment">// 设置50KB为临界值</span></span><br><span class="line">	  &#125;</span><br><span class="line">	&#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="/img/image-20230228134439.png" title="image-20230228134439.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228134439.png" alt="image-20230228134439.png"></a></p>
+<h3 id="自定义输出文件的名称和路径"><a href="#自定义输出文件的名称和路径" class="headerlink" title="自定义输出文件的名称和路径"></a>自定义输出文件的名称和路径</h3><p>&#x3D;&#x3D;针对图片路径：&#x3D;&#x3D;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> &#123;</span><br><span class="line"><span class="attr">test</span>: <span class="regexp">/\.(png|jpe?g|gif|svg)$/</span>,</span><br><span class="line"><span class="attr">type</span>: <span class="string">&quot;asset&quot;</span>,</span><br><span class="line"><span class="attr">generator</span>: &#123;</span><br><span class="line">  <span class="attr">filename</span>: <span class="string">&quot;img/[name].[hash:6].[ext]&quot;</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="attr">parser</span>: &#123;</span><br><span class="line">  <span class="attr">dataUrlCondition</span>: &#123;</span><br><span class="line">	<span class="attr">maxSize</span>: <span class="number">50</span> * <span class="number">1024</span> <span class="comment">// 设置50KB为临界值</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li><code>[ext]</code>： 处理文件的扩展名；</li>
+<li><code>[name]</code>：处理文件的名称；</li>
+<li><code>[hash]</code>：文件的内容，使用MD4的散列函数处理，生成的一个128位的hash值（32个十六进制）；</li>
+</ul>
+<p><code>&quot;img/[name].[hash:6].[ext]&quot;</code> 表示生成的文件放在img文件夹下面，文件名是原名.6位哈希加上原来的后缀名。</p>
+<p>构建之后： </p>
+<p><a href="/img/image-20230228135227.png" title="image-20230228135227.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228135227.png" alt="image-20230228135227.png"></a></p>
+<p>&#x3D;&#x3D;针对所有资源路径：&#x3D;&#x3D;</p>
+<p>修改output，添加assetModuleFilename属性；</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">output</span>:&#123;</span><br><span class="line">  <span class="attr">filename</span>: <span class="string">&#x27;bundle.js&#x27;</span>,</span><br><span class="line">  <span class="comment">// path必须传入一个绝对路径，我们把目标路径和绝对路径拼接</span></span><br><span class="line">  <span class="attr">path</span>: path.<span class="title function_">resolve</span>(__dirname, <span class="string">&quot;./build&quot;</span>),</span><br><span class="line">  <span class="attr">assetModuleFilename</span>: <span class="string">&quot;img/[name].[hash:6].[ext]&quot;</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+
+<p><a href="/img/image-20230228135154.png" title="image-20230228135154.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228135154.png" alt="image-20230228135154.png"></a></p>
+<h2 id="Babel"><a href="#Babel" class="headerlink" title="Babel"></a>Babel</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">我们在开发的时候基本上不适用 autoprefixer，而是使用post-preset-env</span><br></pre></td></tr></table></figure>
+
+<p>Babel是一个工具链，主要用于旧浏览器或者环境中将ECMAScript 2015+代码转换为向后兼容版本的JavaScript；包括：语法转换、源代码转换等</p>
+<p>默认打包的时候，如果自己写的是es6，那么打包之后的代码也是es6代码，如果想要将es6的代码转化为es5的代码，应该使用babel</p>
+<h3 id="命令行直接使用"><a href="#命令行直接使用" class="headerlink" title="命令行直接使用"></a>命令行直接使用</h3><p><a href="/img/image-20230228140946.png" title="image-20230228140946.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228140946.png" alt="image-20230228140946.png"></a></p>
+<p>Babel配置方法和PostCSS极其相似。</p>
+<p>首先安装babel-loader</p>
+<p>@babel&#x2F;core是babel的核心代码，必须安装；<br>@babel&#x2F;cli是命令行使用babel的工具</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install @babel/cli @babel/core -D</span><br><span class="line">npm i babel-loader -D</span><br></pre></td></tr></table></figure>
+
+<h3 id="方法一二：整合配置、抽取文件配置同postcss"><a href="#方法一二：整合配置、抽取文件配置同postcss" class="headerlink" title="方法一二：整合配置、抽取文件配置同postcss"></a>方法一二：整合配置、抽取文件配置同postcss</h3><p>平时基本不用，略</p>
+<p><a href="/img/image-20230228141005.png" title="image-20230228141005.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228141005.png" alt="image-20230228141005.png"></a></p>
+<h3 id="方法三：使用预设单独配置【推荐】"><a href="#方法三：使用预设单独配置【推荐】" class="headerlink" title="方法三：使用预设单独配置【推荐】"></a>方法三：使用预设单独配置【推荐】</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install @babel/preset-env -D</span><br></pre></td></tr></table></figure>
+
+<p>webpack.config.js 中</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">test</span>: <span class="regexp">/\.js$/</span>,</span><br><span class="line">  <span class="attr">use</span>: [<span class="string">&#x27;babel-loader&#x27;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="/img/image-20230228141619.png" title="image-20230228141619.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228141619.png" alt="image-20230228141619.png"></a></p>
+<p>另外在根目录创建文件 babel.config.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">presets</span>: [</span><br><span class="line">    <span class="string">&quot;@babel/preset-env&quot;</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>进行构建</p>
+<p><a href="/img/image-20230228143959.png" title="image-20230228143959.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228143959.png" alt="image-20230228143959.png"></a></p>
+<p>变成了ES5的语法（const变成了var）</p>
+<h2 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h2><p>在src中创建文件夹<code>src/vue_demo</code>，创建文件<code>App.vue</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h2 class=&quot;title&quot;&gt;&#123;&#123; title &#125;&#125;&lt;/h2&gt;</span><br><span class="line">    &lt;p class=&quot;content&quot;&gt;this is content...&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  data()&#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      title: &quot;Title&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.title&#123;</span><br><span class="line">  color: red;</span><br><span class="line">  font-weight: 800;</span><br><span class="line">&#125;</span><br><span class="line">.content&#123;</span><br><span class="line">  color: grey;;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<p>安装vue框架，因为开发和生产环境都要用到，因此直接安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue</span><br></pre></td></tr></table></figure>
+
+<p>安装webpack进行解析的loader并配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-loader</span><br></pre></td></tr></table></figure>
+
+<p>webpack.config.js</p>
+<p>vue项目比较特殊，需要引入一个插件：VueLoaderPlugin</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;<span class="title class_">VueLoaderPlugin</span>&#125; = <span class="built_in">require</span>(<span class="string">&#x27;vue-loader/dist/index&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//....</span></span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">test</span>: <span class="regexp">/\.vue$/</span>,</span><br><span class="line">        <span class="attr">use</span>: [ <span class="string">&quot;vue-loader&quot;</span>]</span><br><span class="line">      &#125;,</span><br><span class="line"><span class="comment">//....</span></span><br><span class="line"></span><br><span class="line"><span class="attr">plugins</span>: [</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">VueLoaderPlugin</span>()</span><br><span class="line">  ]</span><br></pre></td></tr></table></figure>
+
+<p><a href="/img/image-20230228151636.png" title="image-20230228151636.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228151636.png" alt="image-20230228151636.png"></a></p>
+<p>main.js 中引入vue</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createApp &#125; <span class="keyword">from</span> <span class="string">&quot;vue&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">&quot;./vue_demo/App.vue&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="title function_">createApp</span>(<span class="title class_">App</span>).<span class="title function_">mount</span>(<span class="string">&#x27;#app&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>index.html中创建挂载点</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>项目构建</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+
+<p><a href="/img/image-20230228151715.png" title="image-20230228151715.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228151715.png" alt="image-20230228151715.png"></a></p>
+<p>成功</p>
+<h1 id="resolve模块解析"><a href="#resolve模块解析" class="headerlink" title="resolve模块解析"></a>resolve模块解析</h1><p>resolve用于设置模块如何被解析：</p>
+<ul>
+<li>在开发中我们会有各种各样的模块依赖，这些模块可能来自于自己编写的代码，也可能来自第三方库；</li>
+<li>resolve可以帮助webpack从每个 require&#x2F;import 语句中，找到需要引入到合适的模块代码；</li>
+<li>webpack 使用 enhanced-resolve 来解析文件路径；</li>
+</ul>
+<h2 id="webpack能解析三种文件路径"><a href="#webpack能解析三种文件路径" class="headerlink" title="webpack能解析三种文件路径"></a>webpack能解析三种文件路径</h2><p>绝对路径</p>
+<ul>
+<li>由于已经获得文件的绝对路径，因此不需要再做进一步解析。</li>
+</ul>
+<p>相对路径</p>
+<ul>
+<li>在这种情况下，使用 import 或 require 的资源文件所处的目录，被认为是上下文目录；</li>
+<li>在 import&#x2F;require 中给定的相对路径，会拼接此上下文路径，来生成模块的绝对路径；</li>
+</ul>
+<p>模块路径</p>
+<ul>
+<li>在 resolve.modules中指定的所有目录检索模块；</li>
+<li>默认值是 <code>[&#39;node_modules&#39;]</code>，所以默认会从node_modules中查找文件；</li>
+<li>我们可以通过设置别名的方式来替换初识模块路径，具体后面讲解alias的配置；</li>
+</ul>
+<h2 id="webpack如何确认你写的路径是文件还是文件夹"><a href="#webpack如何确认你写的路径是文件还是文件夹" class="headerlink" title="webpack如何确认你写的路径是文件还是文件夹"></a>webpack如何确认你写的路径是文件还是文件夹</h2><p>如果是一个文件：</p>
+<ul>
+<li>如果文件具有扩展名，则直接打包文件；</li>
+<li>否则，将使用 resolve.extensions选项作为文件扩展名解析；</li>
+</ul>
+<p>如果是一个文件夹：</p>
+<ul>
+<li>会在文件夹中根据 resolve.mainFiles配置选项中指定的文件顺序查找；</li>
+<li>resolve.mainFiles的默认值是 [‘index’]；</li>
+<li>再根据 resolve.extensions来解析扩展名；</li>
+</ul>
+<h2 id="extensions和alias配置"><a href="#extensions和alias配置" class="headerlink" title="extensions和alias配置"></a>extensions和alias配置</h2><p>extensions是解析到文件时自动添加扩展名：</p>
+<ul>
+<li>默认值是 <code>[&#39;.wasm&#39;, &#39;.mjs&#39;, &#39;.js&#39;, &#39;.json&#39;]</code></li>
+<li>所以如果我们代码中想要添加加载 .vue 或者 jsx 或者 ts 等文件时，我们必须自己写上扩展名；</li>
+</ul>
+<p>另一个非常好用的功能是配置别名alias：</p>
+<ul>
+<li>特别是当我们项目的目录结构比较深的时候，或者一个文件的路径可能需要 ..&#x2F;..&#x2F;..&#x2F;这种路径片段；</li>
+<li>我们可以给某些常见的路径起一个别名；</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">resolve</span>: &#123;</span><br><span class="line">  <span class="attr">extensions</span>: [<span class="string">&#x27;.js&#x27;</span>, <span class="string">&#x27;.json&#x27;</span>, <span class="string">&#x27;.jsx&#x27;</span>, <span class="string">&#x27;.vue&#x27;</span>, <span class="string">&#x27;.tx&#x27;</span>, <span class="string">&#x27;.tsx&#x27;</span>],</span><br><span class="line">  <span class="attr">alias</span>: &#123;</span><br><span class="line">    <span class="string">&#x27;@&#x27;</span>:path.<span class="title function_">resolve</span>(__dirname, <span class="string">&quot;./src&quot;</span>),</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<p><a href="/img/image-20230228153258.png" title="image-20230228153258.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228153258.png" alt="image-20230228153258.png"></a></p>
+<h1 id="Webpack搭建本地服务器"><a href="#Webpack搭建本地服务器" class="headerlink" title="Webpack搭建本地服务器"></a>Webpack搭建本地服务器</h1><h2 id="Webpack搭建本地服务器-1"><a href="#Webpack搭建本地服务器-1" class="headerlink" title="Webpack搭建本地服务器"></a>Webpack搭建本地服务器</h2><p>目的：</p>
+<ul>
+<li>我们希望可以做到，当文件发生变化时，可以自动的完成 编译 和 展示；</li>
+<li>我们希望在不适用live-server的情况下，可以具备live reloading（实时重新加载）的功能；</li>
+</ul>
+<p>webpack提供的方法：</p>
+<ul>
+<li>webpack watch mode；</li>
+<li>webpack-dev-server（常用）；</li>
+<li>webpack-dev-middleware；</li>
+</ul>
+<p>安装webpack-dev-server</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install webpack-dev-server -D</span><br></pre></td></tr></table></figure>
+
+<p>打包好的东西不会放在磁盘中，不会写文件，而是直接放在内存中。</p>
+<h3 id="开启本地服务器"><a href="#开启本地服务器" class="headerlink" title="开启本地服务器"></a>开启本地服务器</h3><p>命令行为 <code>webpack serve</code></p>
+<p>在package.json中添加相关启动命令</p>
+<p><a href="/img/image-20230228183547.png" title="image-20230228183547.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228183547.png" alt="image-20230228183547.png"></a></p>
+<p>启动成功</p>
+<p><a href="/img/image-20230228183633.png" title="image-20230228183633.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228183633.png" alt="image-20230228183633.png"></a></p>
+<p>报错，要设置mode</p>
+<p><a href="/img/image-20230228183727.png" title="image-20230228183727.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228183727.png" alt="image-20230228183727.png"></a></p>
+<p>在config文件中设置mode</p>
+<p><a href="/img/image-20230228183907.png" title="image-20230228183907.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228183907.png" alt="image-20230228183907.png"></a></p>
+<p>再次启动，成功</p>
+<p><a href="/img/image-20230228183851.png" title="image-20230228183851.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228183851.png" alt="image-20230228183851.png"></a></p>
+<h3 id="HMR热模块替换"><a href="#HMR热模块替换" class="headerlink" title="HMR热模块替换"></a>HMR热模块替换</h3><p>什么是HMR呢？</p>
+<ul>
+<li>HMR的全称是Hot Module Replacement，翻译为模块热替换；</li>
+<li>模块热替换是指在 应用程序运行过程中，替换、添加、删除模块，而无需重新刷新整个页面；</li>
+</ul>
+<p>HMR通过如下几种方式，来提高开发的速度：</p>
+<ul>
+<li>不重新加载整个页面，这样可以保留某些应用程序的状态不丢失；</li>
+<li>只更新需要变化的内容，节省开发的时间；</li>
+<li>修改了css、js源代码，会立即在浏览器更新，相当于直接在浏览器的devtools中直接修改样式；</li>
+</ul>
+<p>如何使用HMR呢？</p>
+<ul>
+<li>默认情况下，webpack-dev-server已经支持HMR，我们只需要开启即可（默认已经开启）；</li>
+<li>在不开启HMR的情况下，当我们修改了源代码之后，整个页面会自动刷新，使用的是live reloading；</li>
+</ul>
+<p><a href="/img/image-20230228185058.png" title="image-20230228185058.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228185058.png" alt="image-20230228185058.png"></a></p>
+<p>hot设置为true即可</p>
+<p><a href="/img/image-20230228185129.png" title="image-20230228185129.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228185129.png" alt="image-20230228185129.png"></a></p>
+<p>有一个问题：在开发其他项目时，我们是否需要经常手动去写入 module.hot.accpet相关的API呢？</p>
+<ul>
+<li>比如开发Vue、React项目，我们修改了组件，希望进行热更新，这个时候应该如何去操作呢？</li>
+</ul>
+<p>事实上社区已经针对这些有很成熟的解决方案了：</p>
+<ul>
+<li>比如vue开发中，我们使用vue-loader，此loader支持vue组件的HMR，提供开箱即用的体验；</li>
+<li>比如react开发中，有React Hot Loader，实时调整react组件（目前React官方已经弃用了，改成使用react-refresh）；</li>
+</ul>
+<h3 id="devServer配置"><a href="#devServer配置" class="headerlink" title="devServer配置"></a>devServer配置</h3><p>host默认是localhost，如果希望其他地方也可以访问，可以设置为 0.0.0.0</p>
+<p>port设置监听的端口，默认情况下是8080</p>
+<p>open是否打开浏览器：</p>
+<ul>
+<li>默认值是false，设置为true会打开浏览器；</li>
+<li>也可以设置为类似于 Google Chrome等值；</li>
+</ul>
+<p>compress是否为静态文件开启gzip compression：</p>
+<ul>
+<li>默认值是false，可以设置为true；</li>
+</ul>
+<p><a href="/img/image-20230228185320.png" title="image-20230228185320.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/image-20230228185320.png" alt="image-20230228185320.png"></a></p>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2023-02-28</span>
+            
+            
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2023/03/08/Vue2/'>笔记 | Vue2.x</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2023/02/26/Django/">笔记 | Django</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+             
+
+            
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>Change And Challenge</span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>

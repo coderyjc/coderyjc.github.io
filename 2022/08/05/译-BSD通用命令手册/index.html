@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="译 | BSD通用命令手册" />
+    <meta name="hexo-theme-A4" content="v1.9.6" />
+    <link rel="alternate icon" type="image/webp" href="/img/avatar.png">
+    <title>Jingcun Yan</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+    
+    
+        <style>
+            .index-main{
+                max-width:  880px;
+            }
+        </style>
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            <div class="left-toc-container">
+                <nav id="toc" class="bs-docs-sidebar"></nav>
+            </div>
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/avatar.png" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">Jingcun Yan</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    译 | BSD通用命令手册
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                
+                    
+                     <span>字数总计：14.4k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：51分钟</span>
+                
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+        <div class=".article-gallery"><blockquote>
+<p>在学习OS的时候翻译了一下 linux系统的 man.sh </p>
+<p>源文档中分段较少, 我在原文的基础上对段落结构进行了略微分段, 并使用markdown对原文进行了排版, 以获得更好的阅读体验. 如有歧义, 请以官方文档为主.</p>
+<p>官方文档获取方法: 在linux系统终端输入<code>man sh</code>命令.</p>
+<p>商用转载请联系授权. 非商用转载请注明来源.</p>
+</blockquote>
+<p>更新情况:</p>
+<table>
+<thead>
+<tr>
+<th>版本号</th>
+<th>日期</th>
+<th>主要内容描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>v0.1</td>
+<td>2022.07.15</td>
+<td>基本的翻译, 部分内容不太准确</td>
+</tr>
+</tbody></table>
+<h1 id="BSD通用命令手册-中文版-v0-1"><a href="#BSD通用命令手册-中文版-v0-1" class="headerlink" title="BSD通用命令手册-中文版 v0.1"></a>BSD通用命令手册-中文版 v0.1</h1><p>名称: dash  – 命令解释器(shell)</p>
+<p>概要: </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dash [-aCefnuvxIimqVEbp] [+aCefnuvxIimqVEbp] [-o option_name] [+o option_name] [command_file [argument ...]]</span><br><span class="line">dash -c [-aCefnuvxIimqVEbp] [+aCefnuvxIimqVEbp] [-o option_name] [+o option_name] command_string [command_name [argument ...]]</span><br><span class="line">dash -s [-aCefnuvxIimqVEbp] [+aCefnuvxIimqVEbp] [-o option_name] [+o option_name] [argument ...]</span><br></pre></td></tr></table></figure>
+
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>dash 是本系统的标准命令解释器. dash当前版本的正在进行修改以符合POSIX1003.2和1003.2a对于shell的规范. </p>
+<p>这个版本有很多特性, 这些特性使它在某些地方看起来和 Korn shell 很相似，但它不是 Korn shell 的克隆(请参阅 ksh(1)). </p>
+<p>只有POSIX规范设计的特性, 加上一些伯克利的扩展, 正在合并到这个shell中. 这个帮助页面旨在成为一个教程或者这个shell完整的说明.</p>
+<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>shell是一个命令, 这个命令从文件或者终端中读取命令行并解释, 一般用来执行其他命令. 这是在用户登入到系统的时候运行的程序(即便用户能够通过chsh命令(1)选择不同的shell). </p>
+<p>shell实现了一种语言, 这种语言具有控制流结构, 一种宏除了数据存储外, 还提供各种功能的宏工具, 这种宏工具具有内置的历史命令和行编辑功能. </p>
+<p>它结合了许多功能来帮助交互使用，并具有以下优点：这种解释性语言对于交互式和非交互式使用(shell脚本)都是通用的. </p>
+<p>也就是说，命令可以直接键入到正在运行的shell中, 也可以放入文件中，文件可以直接被shell执行.</p>
+<h3 id="调用"><a href="#调用" class="headerlink" title="调用"></a>调用</h3><p>如果没有参数, 并且shell的标准输入连接到终端(或者设置了-i标志), -c选项没有设置, 则该shell被视为交互式shell. 交互式shell通常在每个命令之前进行提示, 并以不同的方式处理编程和命令错误(如下所述).第一次启动时, shell检查首个参数, 如果它以破折号”-“开头, 则shell也被视为登录shell. 这通常在用户首次登录时由系统自动完成. 登录shell首先从文件 <code>/etc/profile</code> 和 .profile 中读取命令(如果他们存在).如果环境变量ENV在交互式shell的入口上设置, 或者在login shell的.profile中设置. shell接下来就会读取在ENV中指定的文件中的命令. </p>
+<p>因此，用户应在.profile文件中放置仅在登录时执行的命令; 在ENV文件中放置针对每个交互式shell执行的命令.</p>
+<p>想要设置ENV变量设置为某个文件, 请在主目录的配置文件 .profile 中写入以下行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ENV=<span class="variable">$HOME</span>/.shinit; <span class="built_in">export</span> ENV</span><br></pre></td></tr></table></figure>
+
+<p>替换 “.shinit” 为任何你想要的文件名</p>
+<p>如果指定了选项之外的命令行参数, 则shell将第一个参数视为从中读取命令的文件名(shell脚本), 其余参数设置为shell的位置参数($1$2等). 否则，shell将从其标准输入中读取命令.</p>
+<h3 id="参数列表处理"><a href="#参数列表处理" class="headerlink" title="参数列表处理"></a>参数列表处理</h3><p>所有具有相应名称的单字母选项都可以用作-o选项的参数. 在下面的描述中, 在单字母选项旁边提供了 -o 的名称. </p>
+<p>指定破折号 “-“ 将启用该选项, 而使用加号 “+” 将禁用该选项. 可以从命令行或使用内置(稍后描述)设置以下选项.</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>意义</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-a</td>
+<td>allexport</td>
+<td>导出所有已分配变量</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>-</td>
+<td>从命令字符串而不是从标准输入读取命令. 特殊参数0从命令名称处设置, 位置参数($1，$2等)将从其余参数操作数设置</td>
+</tr>
+<tr>
+<td>-C</td>
+<td>noclobber</td>
+<td>不使用’&gt;’重写已存在的文件</td>
+</tr>
+<tr>
+<td>-e</td>
+<td>errexit</td>
+<td>在非交互的情况下, 如果任何非测试的命令执行失败会立即退出. 如果命令用于控制if、elif、while或until; 或者如果命令是 “&amp;&amp;” 或 “</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>noglob</td>
+<td>禁用路径名扩展</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>noexec</td>
+<td>在非交互的情况下, 读取命令单步执行. 这对检查shell脚本的语法是非常有用的</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>nounset</td>
+<td>当尝试扩展未被设置的变量时, 向标准错误流中写消息, 如果是非交互shell, 立即退出</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>verbose</td>
+<td>shell在读取时向标准错误错误流中写入其输出.在debug的时候有用</td>
+</tr>
+<tr>
+<td>-x</td>
+<td>xtrace</td>
+<td>在执行每个命令之前, 将其写入标准错误流(前面有一个”+”). Debug时有用</td>
+</tr>
+<tr>
+<td>-I</td>
+<td>ignoreeof</td>
+<td>在交互式shell中, 从输入中忽略文档结束符EOF</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>interactive</td>
+<td>强制shell表现为交互式</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>-</td>
+<td>使dash表现为登录 shell 调用的</td>
+</tr>
+<tr>
+<td>-m</td>
+<td>monitor</td>
+<td>打开作业控制(交互时自动设置)</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>stdin</td>
+<td>从标准输入中读取命令(如果没有文件参数呈现的时候自动设置). 当shell已经运行之后, 这个设置没有效果</td>
+</tr>
+<tr>
+<td>-V</td>
+<td>vi</td>
+<td>启用内置的vi命令行编辑器(如果-E设置了会取消)</td>
+</tr>
+<tr>
+<td>-E</td>
+<td>emacs</td>
+<td>启用内置的emacs命令行编辑器(如果-V设置了会取消)</td>
+</tr>
+<tr>
+<td>-b</td>
+<td>notify</td>
+<td>启用后台作业完成的异步通知(4.4alpha版本没有实现这个功能)</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>priv</td>
+<td>有效uid与uid不匹配时不尝试重置它. 默认情况下不设置, 因为要避免system(3)和popen(3)的错误使用</td>
+</tr>
+</tbody></table>
+<h3 id="词法结构"><a href="#词法结构" class="headerlink" title="词法结构"></a>词法结构</h3><p>shell从文件中按行读取输入, 并从空白(空格和制表符)处和shell特有的特定字符序列(“运算符”)处分解为单词。</p>
+<p>有两种类型的操作符：控制操作符和重定向操作符(稍后讨论).</p>
+<p>以下是操作符列表：</p>
+<p>控制操作符</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp; &amp;&amp; ( ) ; ;; | || &lt;newline&gt;</span><br></pre></td></tr></table></figure>
+
+<p>重定向操作符</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt; &gt; &gt;| &lt;&lt; &gt;&gt; &lt;&amp; &gt;&amp; &lt;&lt;- &lt;&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>引用用于移除shell中某些字符或单词的特殊含义, 如运算符\空格或关键字. 引用有三种类型：匹配的单引号\匹配的双引号和反斜杠。</p>
+<h3 id="反斜杠"><a href="#反斜杠" class="headerlink" title="反斜杠"></a>反斜杠</h3><p>反斜杠保留其后字符的字面含义, 除了⟨newline⟩. 前一个反斜杠⟨newline⟩被视为行的继续.</p>
+<h3 id="单引号"><a href="#单引号" class="headerlink" title="单引号"></a>单引号</h3><p>将字符括在单引号中可以保留所有字符的字面意义(单引号除外, 这使得无法将单引号放在单引号字符串中).</p>
+<h3 id="双引号"><a href="#双引号" class="headerlink" title="双引号"></a>双引号</h3><p>将字符括在双引号内保留除美元符号($)\反引号(&#96;)和反斜杠(\)之外的所有字符的字面含义. 双引号中的反斜杠在历史上很奇怪，只用于引用以下字符：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ` <span class="string">&quot; \ &lt;newline&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>否则它仍然是文字.</p>
+<h3 id="保留字"><a href="#保留字" class="headerlink" title="保留字"></a>保留字</h3><p>保留字是对shell有特殊意义的字，在行首和控制操作符之后识别</p>
+<p>以下为保留字：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>!</td>
+<td>elif</td>
+<td>fi</td>
+<td>while</td>
+<td>case</td>
+</tr>
+<tr>
+<td>else</td>
+<td>for</td>
+<td>then</td>
+<td>{</td>
+<td>}</td>
+</tr>
+<tr>
+<td>do</td>
+<td>done</td>
+<td>until</td>
+<td>if</td>
+<td>esac</td>
+</tr>
+</tbody></table>
+<p>我们将会随后讨论他们的含义.</p>
+<h3 id="别名"><a href="#别名" class="headerlink" title="别名"></a>别名</h3><p>别名是使用alias(1) 内置命令设置的名称和相应值. 每当出现保留字时(见上文), 在检查保留字后, shell会检查该字是否与别名匹配. 如果是, 则在输入流中用其值替换它. </p>
+<p>例如，如果有一个名为”lf”的别名，其值为”ls-F”, 如果输入: </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lf foobar &lt;<span class="built_in">return</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>将会变成</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> -F foobar &lt;<span class="built_in">return</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>别名为初级用户提供了一种方便的方法来创建命令的缩写, 而不必学习如何创建带有参数的函数. 它们还可以用于创建词汇含义不明的代码.</p>
+<p>不鼓励这样使用</p>
+<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><p>shell 根据语言来解释它读取的单词, 该语言的规范不在本手册页的范围内(请参阅POSIX 1003.2文档中的BNF). 但是从本质上讲, 读取一行之后, 如果该行的第一个字(或控制运算符之后)不是保留字, 则 shell 已经识别出一个简单的命令. 否则, 可能识别出复杂的命令或某些其他特殊结构.</p>
+<h3 id="简单命令"><a href="#简单命令" class="headerlink" title="简单命令"></a>简单命令</h3><p>如果已经识别了一个简单的命令, shell会像以下步骤表现</p>
+<ol>
+<li><p>去掉形式为“name&#x3D;value”的前导词, 并将其分配给简单命令的环境. 重定向运算符及其参数(如下所述)被提取并保存以供处理.</p>
+</li>
+<li><p>剩余的单词按照“扩展”一节中的描述进行扩展, 剩余的第一个单词被视为命令名, 命令被定位. 其余单词被视为命令的参数. 如果没有生成命令名, 则第1步中识别的“name&#x3D;value” 变量赋值会影响当前shell.</p>
+</li>
+<li><p>重定向将按下一节所述执行</p>
+</li>
+</ol>
+<h3 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h3><p>重定向用于更改命令读取其输入或发送其输出的位置. 通常, 重定向会打开、关闭或复制对文件的现有引用. </p>
+<p>用于重定向的大概格式为：</p>
+<p><code>[n] redir-op file</code></p>
+<p>其中，redir-op 是前面提到的重定向操作符之一. 以下是可能的重定向列表. [n]是介于0和9之间的可选数字, 如“3”(而不是“[3]”), 表示文件描述符.</p>
+<table>
+<thead>
+<tr>
+<th>形式</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[n]&gt; file</td>
+<td>重定向标准输出到文件</td>
+</tr>
+<tr>
+<td>[n]&gt;| file</td>
+<td>同上, 但是重载-C选项</td>
+</tr>
+<tr>
+<td>[n]&gt;&gt; file</td>
+<td>添加标准输出流到文件</td>
+</tr>
+<tr>
+<td>[n]&lt; file</td>
+<td>从文件重定向标准输入流</td>
+</tr>
+<tr>
+<td>[n1]&lt;&amp;n2</td>
+<td>复制文件描述符n2作为标准输出</td>
+</tr>
+<tr>
+<td>[n]&lt;&amp;-</td>
+<td>关闭标准输入</td>
+</tr>
+<tr>
+<td>[n1]&gt;&amp;n2</td>
+<td>复制文件描述符n2作为标准输入</td>
+</tr>
+<tr>
+<td>[n]&gt;&amp;-</td>
+<td>关闭标准输出</td>
+</tr>
+<tr>
+<td>[n]&lt;&gt; file</td>
+<td>为读写标准输入打开文件</td>
+</tr>
+</tbody></table>
+<p>以下重定向通常称为“here document”。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[n]&lt;&lt; <span class="string">delimiter</span></span><br><span class="line"><span class="string">      here-doc-text ...</span></span><br><span class="line"><span class="string">delimiter</span></span><br></pre></td></tr></table></figure>
+
+<p>连续行中直到定界符的所有文本都会保存下来, 并在标准输入或文件描述符n(如果指定)上提供给命令.</p>
+<p>如果引用了初始行中指定的分隔符, 则按字面处理here-doc-text 否则文本将进行参数扩展、命令替换和算术扩展(如“扩展”一节中所述). 如果操作符是“&lt;&lt;-”而不是“&lt;&lt;”, 则此处中here-doc-text 的前导选项卡将被剥离</p>
+<h3 id="搜索和执行"><a href="#搜索和执行" class="headerlink" title="搜索和执行"></a>搜索和执行</h3><p>有三种命令: shell 函数\内置命令和普通程序——命令在搜索的时候也是按上述顺序排列(按照名称). 当 shell 函数执行时, 所有的 shell 位置参数(除了 $0，它保持不变)都被设置为 shell 函数的参数.显式放置在命令环境中的变量(通过把他们放在函数名之前对它们进行赋值)被设为函数的本地变量并设置为给定的值. 然后执行函数定义中给出的命令. 命令执行完成后, 位置参数将恢复为其原始值. 这一切都发生在当前的 shell 中.</p>
+<p>Shell 内置函数在 shell 内部执行, 不会产生新进程.</p>
+<p>否则, 如果命令名称与函数或内置函数不匹配, 则在文件系统中将命令作为普通程序进行搜索(如下一节所述). 当执行普通程序时, shell 运行程序, 将参数和环境传递给程序. 如果程序不是普通的可执行文件(即, 如果它不以“幻数”开头, “幻数”即ASCII 表示为“#!”, 这时 execve(2) 返回 ENOEXEC) shell 就会在子 shell 中解释程序. 在这种情况下, 子 shell 将重新初始化自己, 因此效果就像调用了一个新的 shell 来处理 ad-hoc shell 脚本, 只是位于父 shell 中的散列的命令的位置将会被子 shell 记住.</p>
+<p>请注意, 本文档的先前版本和源代码本身会误导性地偶尔将没有幻数的 shell 脚本称为“shell 过程”.</p>
+<h3 id="路径搜索"><a href="#路径搜索" class="headerlink" title="路径搜索"></a>路径搜索</h3><p>定位命令时, shell 首先查看它是否具有该名称的 shell 函数. 然后它会查找该名称的内置命令. 如果未找到内置命令, 则会发生以下两种情况之一：</p>
+<ol>
+<li><p>包含斜线的命令名称只执行而不执行任何搜索.</p>
+</li>
+<li><p>shell 依次在 PATH 中的每个条目中搜索命令. PATH 变量的值应该是一系列用冒号分隔的条目. 每个条目都包含一个目录名称. 当前目录可以由一个空目录名称隐式指示, 也可以由一个句点显式指示.</p>
+</li>
+</ol>
+<h3 id="命令退出状态"><a href="#命令退出状态" class="headerlink" title="命令退出状态"></a>命令退出状态</h3><p>每个命令都有一个退出状态, 这个状态可以影响其他 shell 命令的行为. 命令以0表示正常或成功退出, 非0表示失败、错误或错误指示. 每个命令的手册页说明了各种退出代码及其含义. 此外, 内置命令返回退出代码, 执行的 shell 函数也是如此.</p>
+<p>如果命令完全由变量赋值组成, 则命令的退出状态是最后一个命令的状态(如果有的话), 否则就是 0.</p>
+<h3 id="复杂命令"><a href="#复杂命令" class="headerlink" title="复杂命令"></a>复杂命令</h3><p>复杂命令是简单命令与控制运算符或保留字的组合, 共同创建一个更大的复杂命令. 更概括地说, 命令是以下之一: </p>
+<ul>
+<li>简单命令</li>
+<li>管道</li>
+<li>列表或者复合列表</li>
+<li>复合命令</li>
+<li>函数定义</li>
+</ul>
+<p>除非另有说明, 否则命令的退出状态是该命令执行的最后一个简单命令的退出状态.</p>
+<h3 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h3><p>管道是由控制运算符|分隔的一个或多个命令的序列. 除了最后一个命令之外, 所有命令的标准输出都连接到下一个命令的标准输入. 最后一个命令的标准输出是从 shell 继承的.</p>
+<p>管道的格式是 : </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[!] command1 [| command2 ...]</span><br></pre></td></tr></table></figure>
+
+<p>command1 的标准输出连接到 command2 的标准输入. 在作为命令的一部分的重定向运算符指定的任何重定向之前, 一个命令的标准输入、标准输出或两者都被认为是由管道分配的.</p>
+<p>如果管道不在后台(稍后讨论), shell 将会等待所有命令完成.</p>
+<p>如果保留字 ! 不在管道之前, 退出状态是管道中指定的最后一个命令的退出状态. 否则, 退出状态是最后一个命令的退出状态的逻辑非. 即如果最后一条命令返回0, 则退出状态为1;  如果最后一个命令返回大于零, 则退出状态为零.</p>
+<p>因为标准输入或标准输出或两者的管道分配发生在重定向之前, 所以它可以通过重定向来修改. 例如: </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ command1 2&gt;&amp;1 | command2</span><br></pre></td></tr></table></figure>
+
+<p>将 command1 的标准输出和标准错误发送到 command2 的标准输入.</p>
+<p>一个 ; 或 ⟨newline⟩ 终止符导致前面的 AND-OR-list(在下面描述)被顺序执行;</p>
+<p>一个 &amp; 异步执行前面的 AND-OR-list</p>
+<p>请注意, 与其他一些 shell 不同, 管道中的每个进程都是调用 shell 的子进程(除非它是内置 shell, 在这种情况下它在当前 shell 中执行 —— 但它对环境的任何影响都会被清除).</p>
+<h3 id="后台命令-–"><a href="#后台命令-–" class="headerlink" title="后台命令 – &amp;"></a>后台命令 – &amp;</h3><p>如果命令由控制运算符 &amp; 号 (&amp;) 结束, 则 shell 将异步执行命令. 也就是说, shell 在执行下一个命令之前不会等待命令完成.</p>
+<p>在后台运行命令的格式是：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">command1 &amp; [command2 &amp; ...]</span><br></pre></td></tr></table></figure>
+
+<p>如果 shell 不是交互式的, 则异步命令的标准输入设置为 &#x2F;dev&#x2F;null.</p>
+<h3 id="列表-–-概括地说"><a href="#列表-–-概括地说" class="headerlink" title="列表 – 概括地说"></a>列表 – 概括地说</h3><p>列表是由换行符、分号或 &amp; 号分隔的零个或多个命令的序列, 并且可选地由这三个字符其中之一终止. 列表中的命令按照它们写的顺序执行. 如果命令后跟一个 &amp; 号, shell 将启动该命令并立即执行下一个命令; 否则, 它会等待命令终止, 然后再继续执行下一个命令.</p>
+<h3 id="短路列表运算符"><a href="#短路列表运算符" class="headerlink" title="短路列表运算符"></a>短路列表运算符</h3><p>“&amp;&amp;”和“||” 是 AND-OR 列表运算符. </p>
+<p>“&amp;&amp;”执行第一个命令, 然后执行第二个命令</p>
+<p>当且仅当第一个命令的退出状态为零. “||” 执行第二个命令</p>
+<p>当且仅当第一个命令的退出状态为非零时. “&amp;&amp;”和“||” 两者具有相同的优先级.</p>
+<h3 id="控制流约束-–-if-while-for-case"><a href="#控制流约束-–-if-while-for-case" class="headerlink" title="控制流约束 – if,while,for,case"></a>控制流约束 – if,while,for,case</h3><p>if 命令的语法是</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> list</span><br><span class="line"><span class="keyword">then</span> list</span><br><span class="line">[ <span class="keyword">elif</span> list</span><br><span class="line"><span class="keyword">then</span>    list ] ...</span><br><span class="line">[ <span class="keyword">else</span> list ]</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+
+<p>while 命令的语法是</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> list</span><br><span class="line"><span class="keyword">do</span>   list</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+<p>这两个列表在第一个列表的退出状态为零时重复执行. until 命令类似, 但使用 until 代替 while, 这会导致它重复直到第一个列表的退出状态为零.</p>
+<p>for 命令的语法</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> variable [ <span class="keyword">in</span> [ word ... ] ]</span><br><span class="line"><span class="keyword">do</span>   list</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+<p>后面的单词被展开, 然后列表被重复执行, 变量依次设置为每个单词. 在 word 中省略 … 相当于在 “$@” 中</p>
+<p>break 和 continue 的语法是</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">break</span> [ num ]</span><br><span class="line"><span class="built_in">continue</span> [ num ]</span><br></pre></td></tr></table></figure>
+
+<p>Break 终止最里面的 num 个 for 或 while 循环. Continue 继续最内层循环的下一次迭代. 这些是作为内置命令实现的.</p>
+<p>case 命令的语法是</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> word <span class="keyword">in</span></span><br><span class="line">[(]pattern) list ;;</span><br><span class="line">...</span><br><span class="line"><span class="keyword">esac</span></span><br></pre></td></tr></table></figure>
+
+<p>这个模式实际上可以是一个或多个模式(参见后面描述的 Shell 模式), 用“|”分隔字符. 模式前的“(”字符是可选的.</p>
+<h3 id="将命令组合在一起"><a href="#将命令组合在一起" class="headerlink" title="将命令组合在一起"></a>将命令组合在一起</h3><p>可以用 <code>(list)</code> 或者 <code>&#123;list;&#125;</code> 的方法来组合使用</p>
+<p>第一种形式在子 shell 中执行. 分组到列表中的内置命令不会影响当前 shell. </p>
+<p>第二种形式不会派生另一个 shell, 因此效率更高</p>
+<p>以这种方式将命令组合在一起允许你重定向它们的输出, 就好像它们是一个程序一样:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="built_in">printf</span> <span class="string">&quot; hello &quot;</span> ; <span class="built_in">printf</span> <span class="string">&quot; world\n&quot;</span> ; &#125; &gt; greeting</span><br></pre></td></tr></table></figure>
+
+<p>请注意，“}”必须跟在控制运算符(此处为“;”)之后, 以便将其识别为保留字而不是另一个命令参数.</p>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>函数定义的语法为 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">name () <span class="built_in">command</span></span><br></pre></td></tr></table></figure>
+
+<p>函数定义是一个可执行语句; 在执行时, 它会安装一个名为 name 的函数并返回退出状态为0的状态码. 该命令通常是一个包含在“{”和“}”之间的命令列表</p>
+<p>可以使用本地命令将变量声明为函数的局部变量. 这应该作为函数的第一条语句出现, 语法是</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">local</span> [variable | -] ...</span><br></pre></td></tr></table></figure>
+
+<p>局部变量会作为内置命令实现</p>
+<p>当一个变量成为局部变量时, 它会从周围范围内具有相同名称的变量中(如果有的话)继承初始值和已导出的只读标志. 否则, 该变量是未设置初始值的. shell 使用动态作用域,因此如果你将变量 x 设置为函数 f 的局部变量, 然后函数 f 调用函数 g, 在 g 中对变量 x 的引用将指向在 f 中声明的变量 x，而不是名为 x 的全局变量.</p>
+<p>唯一可以局部化的特殊参数是“-”. 将“-”设置为本地任何通过函数内部的 set 命令更改的 shell 选项, 以便在函数返回时恢复到它们的初始值.</p>
+<p>返回命令的语法是</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">return</span> [状态码]</span><br></pre></td></tr></table></figure>
+
+<p>它会终止当前正在执行的函数. Return 将会作为内置命令实现.</p>
+<h3 id="变量和参数"><a href="#变量和参数" class="headerlink" title="变量和参数"></a>变量和参数</h3><p>shell 维护一组参数. 由名称表示的参数称为变量. 启动时, shell 将所有环境变量转换为 shell 变量.</p>
+<p>可以用<code>name=value</code>设置新变量</p>
+<p>用户设置的变量名称必须仅由字母、数字和下划线组成, 并且第一个字符不能是数字. 参数也可以用数字或特殊字符表示, 如下文所述.</p>
+<h3 id="位置参数"><a href="#位置参数" class="headerlink" title="位置参数"></a>位置参数</h3><p>位置参数是由数字 (n &gt; 0) 表示的参数. shell 最初将这些设置为其命令行参数的值, 这些参数遵循 shell 脚本的名称.</p>
+<p>内置的 set 命令也可用于设置或重置它们.</p>
+<h3 id="特殊参数"><a href="#特殊参数" class="headerlink" title="特殊参数"></a>特殊参数</h3><p>特殊参数是由下列特殊字符之一表示的参数. 参数的值列应在字符旁边.</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>*</td>
+<td>展开位置参数1个以上的字符. 当扩展发生在双引号引起的字符串中时, 它会扩展为单个字段, 每个参数的值由 IFS 变量的第一个字符分隔, 如果 IFS 未设置, 则由⟨空格⟩分隔。</td>
+</tr>
+<tr>
+<td>@</td>
+<td>展开位置参数1个以上的字符. 当扩展发生在双引号引起的字符串中时, 每个位置参数都扩展为一个单独的参数. 如果没有位置参数, @ 的扩展会生成零参数, 即使 @ 是被双引号引起来的. 也就是说, 比如, 如果 $1 代表表”abc”, $2 代表”def ghi”, 那么, “@$”会扩展为两个参数 “abc” “def ghi”</td>
+</tr>
+<tr>
+<td>#</td>
+<td>展开到位置参数的数量</td>
+</tr>
+<tr>
+<td>?</td>
+<td>展开到最新管道的退出状态</td>
+</tr>
+<tr>
+<td>- (连字符.)</td>
+<td>展开为调用时指定的当前选项标志(连接成字符串的单字母选项名称), 由 set 内置命令或由 shell 隐式指定.</td>
+</tr>
+<tr>
+<td>$</td>
+<td>展开为被调用 shell 的进程 ID. 子shell保留与其父shell相同的 $ 值</td>
+</tr>
+<tr>
+<td>!</td>
+<td>展开为从当前 shell 执行的最新后台命令的进程 ID. 对于管道, 进程 ID 是管道中最后一个命令的进程 ID</td>
+</tr>
+<tr>
+<td>0 (Zero.)</td>
+<td>展开为shell或者shell脚本的名称</td>
+</tr>
+</tbody></table>
+<h3 id="词扩展"><a href="#词扩展" class="headerlink" title="词扩展"></a>词扩展</h3><p>本节描述了对词执行的各种扩展, 如下所述, 并非对每个单词都执行所有扩展.</p>
+<p>发生在单个单词中的波浪号扩展、参数扩展、命令替换、算术扩展和引号删除会扩展为单个字段. 只有字段拆分或路径名扩展才能从单个单词创建多个字段. 该规则的唯一例外是特殊参数 @ 在双引号内的扩展, 如上所述.</p>
+<p>词扩展的顺序为:</p>
+<ol>
+<li><p>波浪号扩展, 参数扩展, 命令替换, 算数扩展(这个三个同时发生)</p>
+</li>
+<li><p>除非 IFS 变量为空, 否则对步骤 (1) 生成的字段执行字段拆分.</p>
+</li>
+<li><p>路径扩展(除非设置了 -f)</p>
+</li>
+<li><p>引号删除</p>
+</li>
+</ol>
+<p>‘$’ 字符用于引入参数扩展, 命令替换或算术求值</p>
+<h3 id="波浪号扩展-替代用户的主目录"><a href="#波浪号扩展-替代用户的主目录" class="headerlink" title="波浪号扩展(替代用户的主目录)"></a>波浪号扩展(替代用户的主目录)</h3><p>以不带引号的波浪号字符 (~) 开头的单词会进行波浪号扩展. 直到斜杠 (&#x2F;) 或单词结尾的所有字符都被视为用户名, 并替换为用户的主目录. 如果缺少用户名(如 ~&#x2F;foobar), 波浪号将替换为 HOME 变量的值(当前用户的主目录)</p>
+<h3 id="参数扩展"><a href="#参数扩展" class="headerlink" title="参数扩展"></a>参数扩展</h3><p>参数扩展的格式是 <code>$&#123;表达式&#125;</code></p>
+<p>其中表达式由“}”之前的所有字符组成. 在确定匹配的“}”时, 由反斜杠或带引号的字符串转义的任何 “}”, 以及嵌入式算术扩展、命令替换和变量扩展中的字符都不会被检查.</p>
+<p>参数扩展的最简单的格式是 <code>$&#123;参数&#125;</code></p>
+<p>参数的值(如果有)将被替换</p>
+<p>参数名称或符号可以用大括号括起来, 这是可选的, 除了具有多于一个的位置参数, 或当参数后跟一个可以解释为名称一部分的字符的时候. 如果双引号内出现参数扩展：</p>
+<ol>
+<li><p>不会对扩展结果执行路径名扩展</p>
+</li>
+<li><p>不会对展开的结果进行字段拆分, @ 除外.</p>
+</li>
+</ol>
+<p>此外, 可以使用以下格式之一来修改参数扩展.</p>
+<table>
+<thead>
+<tr>
+<th>格式</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>$&#123;parameter:-word&#125;</code></td>
+<td>使用默认值, 如果参数没有设置或者是null, <code>word</code>的扩展将会替换, 否则, <code>parameter</code>的值会被替换</td>
+</tr>
+<tr>
+<td><code>$&#123;parameter:=word&#125;</code></td>
+<td>分配默认值. 如果参数未设置或为空, 则将<code>word</code>的扩展分配给<code>parameter</code>. 在所有情况下, 参数的最终值都会被替换. 只能以这种方式分配变量, 而不是位置参数或特殊参数.</td>
+</tr>
+<tr>
+<td><code>$&#123;parameter:?[word]&#125;</code></td>
+<td>如果为 Null 或未设置, 则显示错误. 如果参数未设置或为空, 则将<code>word</code>的扩展(或如果省略 word 则指示未设置的消息) 写入标准错误, 并且 shell 以非零退出状态退出. 否则, 参数的值被替换. 交互式shell不需要退出.</td>
+</tr>
+<tr>
+<td><code>$&#123;parameter:+word&#125;</code></td>
+<td>使用替代价值. 如果参数未设置或为空, 则替换为空; 否则, 替换<code>word</code>的扩展.</td>
+</tr>
+</tbody></table>
+<p>在前面显示的参数扩展中, 在格式中使用冒号会导致测试未设置或为空的参数; 省略冒号会导致测试未设置的参数.</p>
+<p><code>$&#123;#parameter&#125;</code> 字符长度, 参数值的字符长度.</p>
+<p>以下四种参数扩展提供了子字符串处理. 每种情况都会使用模式匹配表示法(请参阅 Shell 模式)而不是正则表达式表示法用于评估模式. 如果参数是 * 或 @, 则扩展的结果是未指定的. 将完整的参数扩展字符串括在双引号中不会导致以下四种模式字符被引用, 而在大括号内引用字符具有此效果.</p>
+<table>
+<thead>
+<tr>
+<th>参数扩展</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>$&#123;parameter%word&#125; </code></td>
+<td>删除最小后缀模式. 这个词被扩展以产生一个模式. 然后参数扩展产生参数, 后缀模式匹配的最小部分会删除.</td>
+</tr>
+<tr>
+<td><code>$&#123;parameter%%word&#125;</code></td>
+<td>删除最小后缀模式. 这个词被扩展以产生一个模式. 然后参数扩展产生参数, 后缀模式匹配的最大部分会删除.</td>
+</tr>
+<tr>
+<td><code>$&#123;parameter#word&#125; </code></td>
+<td>删除最小前缀模式. 这个词被扩展以产生一个模式. 然后参数扩展产生参数, 前缀模式匹配的最小部分会删除.</td>
+</tr>
+<tr>
+<td><code>$&#123;parameter##word&#125;</code></td>
+<td>删除最小前缀模式. 这个词被扩展以产生一个模式. 然后参数扩展产生参数, 前缀模式匹配的最大部分会删除.</td>
+</tr>
+</tbody></table>
+<h3 id="命令替换"><a href="#命令替换" class="headerlink" title="命令替换"></a>命令替换</h3><p>命令替换允许替换命令的输出来代替命令名称本身. 当命令包含以下内容时, 会发生命令替换: <code>$(command)</code>, 或者使用反引号<code>commend</code></p>
+<p>shell 通过在子shell 环境中执行命令, 并将命令替换为命令的标准输出来扩展命令替换, 在替换结束时删除一个或多个⟨newline⟩s的序列. (在输出结束之前嵌入的 ⟨newline⟩s 不会被删除；但是，在字段拆分期间，它们可能会被转换为 ⟨space⟩s，具体取决于 IFS 的值和有效的引用.)</p>
+<h3 id="算数扩展"><a href="#算数扩展" class="headerlink" title="算数扩展"></a>算数扩展</h3><p>算术扩展提供了一种计算算术表达式并代入其值的机制. 算术展开的格式如下: <code>$((expression))</code></p>
+<p>表达式被看作在双引号中的, 但表达式中的双引号没有被特殊处理. shell 扩展会表达式中的所有标记以进行参数扩展、命令替换和引号删除.</p>
+<p>接下来, shell 将其视为算术表达式并替换表达式的值.</p>
+<h3 id="空白分割"><a href="#空白分割" class="headerlink" title="空白分割"></a>空白分割</h3><p>在参数扩展、命令替换和算术扩展之后, shell 会扫描未出现在双引号中的扩展和替换的结果以进行字段拆分, 并且可能会产生多个字段.</p>
+<p>Shell 将 IFS 的每个字符视为一个分隔符, 并使用分隔符将参数扩展和命令替换的结果拆分为字段.</p>
+<h3 id="路径扩展"><a href="#路径扩展" class="headerlink" title="路径扩展"></a>路径扩展</h3><p>除非设置了 -f 标志, 否则在分词完成生成文件名. 每个单词都被视为一系列模式, 由斜线分隔. 扩展过程将单词替换为所有现有文件的名称, 这些文件的名称可以通过将每个模式替换为与指定模式匹配的字符串来生成. </p>
+<p>对此有两个限制: 首先, 模式不能匹配包含斜杠的字符串; 其次, 模式不能匹配以句点开头的字符串, 除非模式的第一个字符是句点.</p>
+<p>下一节描述了用于路径名扩展和 case 命令的模式.</p>
+<h3 id="shell模式"><a href="#shell模式" class="headerlink" title="shell模式"></a>shell模式</h3><p>模式由匹配自身的普通字符和元字符组成. 元字符是“!”、“*”、“?”和“[”.</p>
+<p>如果引用这些字符, 它们将失去其特殊含义. 当执行命令或变量替换并且美元符号或反引号没有双引号时, 将扫描变量的值或命令的输出以查找这些字符并将它们转换为元字符.</p>
+<p>星号(“*”)匹配任何字符串, 问号(“?”)匹配任何单个字符, 左括号(“[”)引入了一个字符类。字符类的结尾用(“]”)表示; 如果“]”缺失，那么“[”匹配一个“[”而不是引入一个字符类. 字符类匹配方括号之间的任何字符, 可以使用减号指定字符范围. 可以通过将感叹号作为字符类的第一个字符来补充字符类. 要在字符类中包含“]”, 请将其设为列出的第一个字符(在“！”之后, 如果有的话). 要包含减号, 请将其设为列出的第一个或最后一个字符.</p>
+<h3 id="内置的命令或函数"><a href="#内置的命令或函数" class="headerlink" title="内置的命令或函数"></a>内置的命令或函数</h3><p>本节列出了内置命令, 因为它们需要执行一些单独的进程无法执行的操作. 除了这些之外, 还有一些其他命令可以内置以提高效率(例如 printf(1)、echo(1)、test(1) 等)</p>
+<h4 id="True"><a href="#True" class="headerlink" title="True"></a>True</h4><p>返回 0 (true) 退出值的空命令.</p>
+<h4 id="file"><a href="#file" class="headerlink" title=". file"></a>. file</h4><p>指定文件中的命令由 shell 读取和执行</p>
+<h4 id="alias"><a href="#alias" class="headerlink" title="alias"></a>alias</h4><p>语法: <code>alias [name[=string ...]]</code></p>
+<p>如果制定了<code>name=string</code>, shell 就会用字符串值定义这个别名. 如果只指定了name, 别名名称的值就会打印出来. 如果没有参数, 别名的内置函数会打印所有定义的别名和他们的值(查看<code>unalias</code>)</p>
+<h4 id="bg"><a href="#bg" class="headerlink" title="bg"></a>bg</h4><p>语法: <code>bg [job]</code></p>
+<p>在后台继续指定的任务(或当前任务, 如果没有给出任何任务)</p>
+<h4 id="command"><a href="#command" class="headerlink" title="command"></a>command</h4><p>语法: <code>command [-p] [-v] [-V] command [arg ...]</code></p>
+<p>执行指定指令, 但是在查找指令的时候忽略shell函数.(当你有和内置指令相同名称的函数的时候尤其有用)</p>
+<ul>
+<li><code>-p</code> 使用PATH查询命令, 保证找到所有的标准工具</li>
+<li><code>-V</code> 不执行指令, 但是搜索指令并且打印指令搜索的结果, 和type内置函数作用相同</li>
+<li><code>-v</code> 不执行指令, 但是搜索指令并且打印工具\内置函数或者别名扩展的的绝对路径</li>
+</ul>
+<h4 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h4><p>语法: <code>cd -</code>\ <code>cd [-LP] [directory]</code></p>
+<p>切换到指定的目录(默认是 HOME). 如果在cd命令的环境中出现了CDPATH入口, 或者设置了shell变量CDPATH, 并且目录名不是以斜杠开头, 那么将搜索CDPATH中列出的目录以查找指定的目录. CDPATH的格式与PATH相同. 如果一个独立的dash被指定为参数, 它将被OLDPWD的值替换. 如果cd命令与用户给出的名称不同, 那么它将打印实际切换到的目录名称. 这些不同可能是因为使用了CDPATH机制, 也可能是因为参数是一个dash </p>
+<p>-P选项使用物理目录结构, 也就是说, 所有符号链接都解析为它们各自的值.<br>-L选项将取消任何前面的-P选项的效果</p>
+<h4 id="echo"><a href="#echo" class="headerlink" title="echo"></a>echo</h4><p>语法: <code>echo [-n] args...</code></p>
+<p>在标准输出上打印参数, 以空格分隔. 除非有-n选项, 否则参数后面会输出一个新行.</p>
+<p>如果在输出期间遇到以下字符序列中的任何一个, 则不输出该序列. 相反, 执行指定的操作:</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\b</td>
+<td>输出退格字符</td>
+</tr>
+<tr>
+<td>\c</td>
+<td>随后的输出被阻止, 这通常用于最后一个参数的末尾, 以阻止echo输出的末尾换行符.</td>
+</tr>
+<tr>
+<td>\e</td>
+<td>输出ESC符号</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>输出换页符</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>输出换行符</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>输出回车</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>输出水平制表符</td>
+</tr>
+<tr>
+<td>\v</td>
+<td>输出垂直制表符</td>
+</tr>
+<tr>
+<td>\0digits</td>
+<td>输出其值为0到3个八进制数字的字符. 如果有零位, 则输出一个空字符.</td>
+</tr>
+<tr>
+<td>\</td>
+<td>输出反斜杠</td>
+</tr>
+</tbody></table>
+<p>所有其他反斜杠序列都会引发未定义的行为</p>
+<h4 id="eval"><a href="#eval" class="headerlink" title="eval"></a>eval</h4><p>语法: <code>eval string...</code></p>
+<p>用空格连接所有参数. 然后重新解析并执行该命令.</p>
+<h4 id="exec"><a href="#exec" class="headerlink" title="exec"></a>exec</h4><p>语法: <code>exec [command arg ..]</code></p>
+<p>除非省略command, 否则shell进程将被替换为指定的程序(该程序必须是真实的程序, 而不是shell内置程序或函数). exec命令上的任何重定向都被标记为永久的, 以便在exec命令结束时它们不会被撤消.</p>
+<h4 id="exit"><a href="#exit" class="headerlink" title="exit"></a>exit</h4><p>语法: <code>exit [exitstatus]</code></p>
+<p>中止shell进程, 如果指定了返回值, 它就会作为shell的返回值; 否则就会使用最后一个指令的返回值.</p>
+<h4 id="export"><a href="#export" class="headerlink" title="export"></a>export</h4><p>语法: <code>export name ...</code> &#x2F; <code>export -p</code></p>
+<p>将导出指定的名称, 以便它们出现在后续命令的环境中. 取消导出变量的唯一方法是取消它的设置. shell允许在使用 <code>export name=value</code> 写入导出变量的同时设置变量的值</p>
+<p>不带参数时, export命令会列出所有导出变量的名称. 通过指定-p选项, 输出将被格式化为适合非交互式使用的格式.</p>
+<h4 id="fc"><a href="#fc" class="headerlink" title="fc"></a>fc</h4><p>语法: <code>fc [-e editor] [first [last]]</code> &#x2F; <code>fc -l [-nr] [first [last]]</code> &#x2F; <code>fc -s [old=new] [first]</code></p>
+<p>fc内置程序会列出或编辑并重新执行以前输入到交互式shell中的命令.</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-e editor</td>
+<td>使用编辑器指定的编辑器编辑命令. 编辑器字符串是一个命令名, 可以通过PATH变量进行搜索. 当没有指定-e 时, FCEDIT变量中的值将被用作默认值. 如果FCEDIT为空或未设置, 则使用EDITOR变量的值. 如果EDITOR为空或未设置, 则使用ed(1)作为编辑器.</td>
+</tr>
+<tr>
+<td>-l (ell)</td>
+<td>列出命令, 而不是对它们调用编辑器. 命令按照第一个和最后一个操作数所表示的顺序写入, 受 -r 的影响, 每个命令前面都有命令号.</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>使用-l列出命令时禁用命令编号</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>反转列出的命令(使用 -l )或编辑的命令(不使用 -l 或 -s )的顺序</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>重新执行命令, 而不调用编辑器</td>
+</tr>
+<tr>
+<td>first&#x2F;last</td>
+<td>选择要列出或编辑的命令. 可以访问的以前命令的数量由HISTSIZE变量的值决定. first或last或两者的值是下列之一:</td>
+</tr>
+<tr>
+<td>last&gt;[+]number</td>
+<td>正数:表示命令编号的正数; 使用-l选项可以显示命令编号.</td>
+</tr>
+<tr>
+<td>last&gt;-number</td>
+<td>一个负的十进制数, 表示先前执行的命令的数量. 例如, -1是紧挨着前面的命令.</td>
+</tr>
+<tr>
+<td>string</td>
+<td>一个字符串, 指示最近输入的以该字符串开头的命令. 如果old&#x3D;new操作数没有使用-s指定, 则第一个操作数的字符串形式不能包含嵌入的等号.</td>
+</tr>
+</tbody></table>
+<p>以下这些环境变量影响fc的执行</p>
+<ul>
+<li><p>FCEDIT: 要使用的编辑器的名称</p>
+</li>
+<li><p>HISTSIZE: 以前可访问的命令的数量</p>
+</li>
+</ul>
+<h4 id="fg"><a href="#fg" class="headerlink" title="fg"></a>fg</h4><p>语法: <code>fg [job]</code></p>
+<p>把指定的任务或者当前的任务调入前台</p>
+<h4 id="getopts"><a href="#getopts" class="headerlink" title="getopts"></a>getopts</h4><p>语法: <code>getopts optstring var</code></p>
+<p>POSIX getopts 命令, 不要与贝尔实验室派生的getopt(1)混淆</p>
+<p>第一个参数应该是一系列字母, 每个字母后面可以有一个冒号, 表示该选项需要一个参数. 指定的变量被设置为parsed选项</p>
+<p>getopts命令不再使用旧的getopt(1)实用程序, 因为它处理的参数包含空格</p>
+<p>内置的getopts可用于从参数列表中获取选项及其参数. 调用getopts时, 将选项字符串中的下一个选项的值放在var指定的shell变量中, 并将其索引放在shell变量OPTIND中. 调用shell时, OPTIND初始化为1. 对于每个需要参数的选项, 内置的getopts将把它放在shell变量OPTARG中. 如果optstring中不允许有选项, 则不设置OPTARG.</p>
+<p>Optstring是一个可识别选项字母的字符串(参见getopt(3)). 如果一个字母后跟冒号, 则该选项应该有一个参数, 该参数可以用空格分隔, 也可以不用空格分隔. 如果在期望的地方没有找到选项字符, getopts将把变量var设置为” ? “; 然后getopts将取消OPTARG设置并将输出写入标准错误. 通过指定冒号作为optstring的第一个字符, 所有错误将被忽略. </p>
+<p>在最后一个选项之后, getopts将返回一个非零值并将var设置为” ? “</p>
+<p>下面的代码片段展示了如何处理一个命令的参数, 该命令可以接受选项[a]和[b], 以及选项[c], 它需要一个参数.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="built_in">getopts</span> abc: f</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">        <span class="keyword">case</span> <span class="variable">$f</span> <span class="keyword">in</span></span><br><span class="line">        a | b)  flag=<span class="variable">$f</span>;;</span><br><span class="line">        c)      carg=<span class="variable">$OPTARG</span>;;</span><br><span class="line">        \?)     <span class="built_in">echo</span> <span class="variable">$USAGE</span>; <span class="built_in">exit</span> 1;;</span><br><span class="line">        <span class="keyword">esac</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="built_in">shift</span> `<span class="built_in">expr</span> <span class="variable">$OPTIND</span> - 1`</span><br></pre></td></tr></table></figure>
+
+<p>该代码将接受以下任何等价代码:</p>
+<p><code>cmd -acarg file file</code></p>
+<p><code>cmd -a -c arg file file</code></p>
+<p><code>cmd -carg -a file file</code></p>
+<p><code>cmd -a -carg -- file file</code></p>
+<h4 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h4><p>语法: <code>hash -rv command ...</code></p>
+<p>shell维护一个哈希表用于存储命令的位置. 在没有任何参数的情况下, hash命令打印出该表的内容. 自从最后一个cd命令之后没有被查看的条目被标记为星号;这些条目可能是无效的.使用参数的时候, 哈希命令从哈希表中删除指定的命令(除非它们是函数), 然后定位它们.</p>
+<p>-v选项, 散列指令将在找到命令时打印它们的位置.</p>
+<p>-r选项将导致hash命令删除hash表中除函数外的所有条目.</p>
+<h4 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h4><p>语法: <code>pwd [-LP]</code></p>
+<p>这个内置命令记住当前目录是什么, 而不是每次重新计算它. 这使它能够执行地更快. 但是, 如果重命名当前目录, pwd的内置版本将继续打印目录的旧名称. </p>
+<p>-P 选项将显示当前工作目录的物理值, 也就是说, 所有符号链接将解析为它们各自的值.<br>-L 选项将取消任何前面的-P选项的效果</p>
+<h4 id="read"><a href="#read" class="headerlink" title="read"></a>read</h4><p>语法: <code>read [-p prompt] [-r] variable [...]</code></p>
+<p>如果指定了-p选项, 并且标准输入是终端, 则打印提示符. 然后从标准输入中读取一行. 从该行中删除末尾的换行符, 并按照上面关于单词拆分的小节中的描述对该行进行拆分, 并按顺序将这些片段分配给变量. 必须指定至少一个变量. 如果片段比变量多, 则将剩余的片段(以及IFS中分隔它们的字符)赋值给最后一个变量. 如果变量比片段多, 则将剩余的变量分配给空字符串. 内置的read将指示成功, 除非在输入时遇到EOF, 在这种情况下返回失败.</p>
+<p>默认情况下, 除非指定了-r选项, 否则反斜杠“\”将充当转义字符, 导致按字面意义处理以下字符. 如果反斜杠后面跟着换行符, 则将删除反斜杠和换行符. </p>
+<h4 id="readonly"><a href="#readonly" class="headerlink" title="readonly"></a>readonly</h4><p>语法: <code>readonly name ...</code> &#x2F; <code>readonly -p</code></p>
+<p>指定的名称标记为只读, 以便随后不能修改或取消设置. shell允许在变量被标记为只读的同时设置变量的值, 方法是写入<code>readonly name=value</code></p>
+<p>如果没有参数, readonly命令会列出所有只读变量的名称. 通过指定-p选项, 输出将被格式化为适合非交互式使用的格式.</p>
+<h4 id="printf"><a href="#printf" class="headerlink" title="printf"></a>printf</h4><p>语法: <code>printf format [args...]</code></p>
+<p>Printf在格式的控制下格式化并打印它的参数, 在第一个参数之后. 格式是一个字符串, 它包含三种类型的对象: 简单复制到标准输出的纯字符, 转换并复制到标准输出的字符转义序列, 以及格式规范, 其中每一种都导致打印下一个连续参数.</p>
+<p>如果对应的格式是b、c或s, 则第一个参数之后的参数被视为字符串; 否则, 将其作为C常量计算, 扩展如下:</p>
+<ul>
+<li>前面允许有加号或减号</li>
+<li>如果开头字符是单引号或双引号, 则值为下一个字符的ASCII码.</li>
+</ul>
+<p>格式字符串可以根据需要重复使用以满足参数. 任何额外的格式规范都用零或空字符串求值</p>
+<p>如ANSI X3.159-1989 (“ANSI C89”)所定义的那样，字符转义序列采用反斜杠表示法。汉字及其含义如下:</p>
+<table>
+<thead>
+<tr>
+<th>转义序列</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\a</td>
+<td>响铃符号</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>退格符号</td>
+</tr>
+<tr>
+<td>\e</td>
+<td>ESC</td>
+</tr>
+<tr>
+<td>\f</td>
+<td><form-feed></td>
+</tr>
+<tr>
+<td>\n</td>
+<td><new-line></td>
+</tr>
+<tr>
+<td>\r</td>
+<td><carriage return></td>
+</tr>
+<tr>
+<td>\t</td>
+<td><tab></td>
+</tr>
+<tr>
+<td>\v</td>
+<td><vertical tab></td>
+</tr>
+<tr>
+<td>\</td>
+<td>反斜杠</td>
+</tr>
+<tr>
+<td>\num</td>
+<td>8位字符，其ASCII值为1-、2-或3位八进制数字num</td>
+</tr>
+</tbody></table>
+<p>每个格式规范都由百分号字符(‘’ % “)引入. 格式规范的其余部分按以下顺序包括:</p>
+<p>0个或者以下多个标志:</p>
+<table>
+<thead>
+<tr>
+<th>标志</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>#</td>
+<td>‘#’字符, 指定该值应以’替代形式打印’. 对于b、c、d和s格式, 此选项无效. 对于o格式, 数字的精度会提高, 以强制输出字符串的第一个字符为零. 对于x (X)格式, 非零结果前面有字符串0x (0X). 对于e、E、f、g 和 G 格式, 结果将始终包含一个小数点, 即使这个小数点后面没有数字(通常只有在这些格式的结果中有一个数字跟在小数点后面时, 小数点才会出现). 对于g和g格式, 不像在其他情况下那样从结果中删除尾随的零</td>
+</tr>
+<tr>
+<td>-</td>
+<td>一个减号“-”, 它指定在指定的字段中输出的左调整;</td>
+</tr>
+<tr>
+<td>+</td>
+<td>一个’+’字符, 指定在使用带符号的格式时, 数字前应该总是有一个符号.</td>
+</tr>
+<tr>
+<td>‘ ‘</td>
+<td>一个空格, 指定对于有符号的格式, 在正数之前应该留下一个空格. 如果同时使用了两个空格, ‘+’将重写一个空格</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0字符表示应该使用零填充而不是空白填充. 如果同时使用了’-‘，则 ‘-‘会覆盖’0’</td>
+</tr>
+</tbody></table>
+<p>域宽:指定字段宽度的可选数字字符串; 如果输出字符串的字符少于字段宽度, 它将在左侧(或右侧, 如果左侧调整指示器已经给出)填充空白, 以弥补字段宽度(注意, 前导零是一个标志, 但嵌入的零是字段宽度的一部分);</p>
+<p>精度:一个可选的字段, 后面跟着一个可选的数字字符串, 该数字字符串指定了在小数点后出现的数字位数, 对于e和f格式, 或者从字符串(b和s格式)打印的最大字节数; 如果数字字符串缺失, 精度将被视为零;</p>
+<p>格式:表示使用的格式类型的字符(diouxxfwggbcs之一)</p>
+<p>字段宽度或精度可以是’*’而不是数字字符串. 在这种情况下, 参数提供字段宽度或精度.</p>
+<p>格式字符及其含义如下:</p>
+<table>
+<thead>
+<tr>
+<th>格式字符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>diouXx</td>
+<td>参数分别以有符号十进制(d或i)、无符号八进制、无符号十进制或无符号十六进制(X或X)的形式打印</td>
+</tr>
+<tr>
+<td>f</td>
+<td>参数以样式[-]ddd打印, 其中小数点后的d的数量等于参数的精度规范. 如果精度缺失, 则给出6位; 如果精度显式为0, 则不打印任何数字和小数点.</td>
+</tr>
+<tr>
+<td>eE</td>
+<td>参数以[-]d的样式打印, 小数点前有一位, 小数点后的数字等于参数的精度规格;当精度缺失时, 给出6位. 大写的E用于“E”格式</td>
+</tr>
+<tr>
+<td>gG</td>
+<td>参数以样式f或样式e (e)打印, 在最小空间内提供完全精度.</td>
+</tr>
+<tr>
+<td>b</td>
+<td>输出string参数中的字符时, 将展开反斜杠转义序列. 支持以下额外的反斜杠-转义序列: <code>\c</code>:导致破折号忽略包含它的字符串操作数中的任何剩余字符、任何剩余字符串操作数以及格式操作数中的任何额外字符; <code>\0num</code> 写一个8位字符，其ASCII值为1-、2-或3位八进制数字num</td>
+</tr>
+<tr>
+<td>c</td>
+<td>输出参数的第一个字符</td>
+</tr>
+<tr>
+<td>s</td>
+<td>输出string参数中的字符, 直到到达末尾或到达精度规范所指定的字节数为止;如果省略精度, 则打印字符串中的所有字符.</td>
+</tr>
+<tr>
+<td>%</td>
+<td>打印一个‘%’;没有使用任何参数</td>
+</tr>
+</tbody></table>
+<p>在任何情况下, 不存在或很小的字段宽度都不会导致字段截断;只有当指定的字段宽度超过实际宽度时才会产生填充.</p>
+<h4 id="set"><a href="#set" class="headerlink" title="set"></a>set</h4><p>语法: <code>set [&#123; -options | +options | -- &#125;] arg ...</code></p>
+<p>这个指令有三种不同的函数</p>
+<p>没有参数, 会列出所有shell变量的值<br>如果给出了选项, 它会设置指定的选项标志, 或清除它们, 如参数列表处理部分所述. 作为特殊情况, 如果选项是-o或+o且不提供参数, shell将打印其所有选项的设置. 如果选项是-o, 设置将以人可读的格式打印; 如果该选项为+o, 设置将以适合于重新输入到shell的格式打印, 以影响相同的选项设置.<br>set命令的第三个用途是将shell的位置参数的值设置为指定的参数. 要在不改变任何选项的情况下更改位置参数, 请使用“——”作为设置的第一个参数. 如果不存在参数, set命令将清除所有位置参数(相当于执行” shift $# “).</p>
+<h4 id="shift"><a href="#shift" class="headerlink" title="shift"></a>shift</h4><p>语法: <code>shift [n]</code></p>
+<p>移动位置参数n次. shift将$1的值设置为$2的值, $2的值设置为$3的值, 依此类推, 将<code>$#</code>的值减少1.<br>如果n大于位置参数的数量, shift将发出错误消息, 并以返回状态2退出.</p>
+<h4 id="test"><a href="#test" class="headerlink" title="test"></a>test</h4><p>语法: <code>test [expression]</code></p>
+<p>这个测试程序会计算表达式, 如果计算结果为true, 则返回0 (true)退出状态; 否则返回1(false).如果没有表达式, test也返回1 (false).</p>
+<p>所有操作数和标志都是测试实用程序的单独参数</p>
+<p>以下元素用于构建表达式:</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-b file</td>
+<td>文件存在并且是一个块特殊文件, 则返回True</td>
+</tr>
+<tr>
+<td>-c file</td>
+<td>文件存在并且是一个字符特殊文件, 则返回True</td>
+</tr>
+<tr>
+<td>-d file</td>
+<td>文件存在并且是一个目录, 则返回True</td>
+</tr>
+<tr>
+<td>-e file</td>
+<td>文件存在返回True(忽略类型)</td>
+</tr>
+<tr>
+<td>-f file</td>
+<td>文件存在并且是一个常规文件, 则返回True</td>
+</tr>
+<tr>
+<td>-g file</td>
+<td>文件存在并且设置了组ID, 则返回True</td>
+</tr>
+<tr>
+<td>-h file</td>
+<td>文件存在并且是一个符号链接, 则返回True</td>
+</tr>
+<tr>
+<td>-k file</td>
+<td>文件存在并且设置了粘滞位, 则返回True</td>
+</tr>
+<tr>
+<td>-n string</td>
+<td>字符串的长度不是零, 则返回True</td>
+</tr>
+<tr>
+<td>-p file</td>
+<td>文件是一个具名管道, 则返回True</td>
+</tr>
+<tr>
+<td>-r file</td>
+<td>文件存在且可读, 则返回True</td>
+</tr>
+<tr>
+<td>-s file</td>
+<td>文件存在且大小大于0, 则返回True</td>
+</tr>
+<tr>
+<td>-t file_descriptor</td>
+<td>如果文件描述符编号为file_descriptor的文件已打开并且与终端相关联, 则为True.</td>
+</tr>
+<tr>
+<td>-u file</td>
+<td>文件存在且userid已经设置了, 则返回True</td>
+</tr>
+<tr>
+<td>-w file</td>
+<td>如果文件存在且可写, 则为True. True只表示写标志开启. 该文件在只读文件系统上不可写即便该测试指示为true</td>
+</tr>
+<tr>
+<td>-x file</td>
+<td>如果文件存在且可执行, 则为True. True仅表示执行标志开启. file为目录时, true表示可以搜索文件</td>
+</tr>
+<tr>
+<td>-z string</td>
+<td>字符串长度为0的时候为True</td>
+</tr>
+<tr>
+<td>-L file</td>
+<td>如果file存在且是符号链接, 则为True. 保留此操作符是为了兼容此程序的以前版本. 不要依赖它的存在;使用-h</td>
+</tr>
+<tr>
+<td>-O file</td>
+<td>如果文件存在并且它的所有者匹配此进程的有效用户id, 则为True.</td>
+</tr>
+<tr>
+<td>-G file</td>
+<td>如果file存在并且它的组匹配此进程的有效组id, 则为True.</td>
+</tr>
+<tr>
+<td>-S file</td>
+<td>文件存在且是一个socket, 返回True</td>
+</tr>
+<tr>
+<td>file1 -nt file2</td>
+<td>file1和file2都存在, 并且file比file2新, 则返回True</td>
+</tr>
+<tr>
+<td>file1 -ot file2</td>
+<td>file1和file2都存在, 并且file比file2旧, 则返回True</td>
+</tr>
+<tr>
+<td>file1 -ef file2</td>
+<td>file1和file2都存在, 并且file和file2代表同一个文件, 则返回True</td>
+</tr>
+<tr>
+<td>string</td>
+<td>string非空则返回True</td>
+</tr>
+<tr>
+<td>s1 &#x3D; s2</td>
+<td>s1和s2相同则返回True</td>
+</tr>
+<tr>
+<td>s1 !&#x3D; s2</td>
+<td>s1和s2不相同则返回True</td>
+</tr>
+<tr>
+<td>s1 &lt; s2</td>
+<td>根据ASCII值, 字符串s1出现在s2之前, 则为True.</td>
+</tr>
+<tr>
+<td>s1 &gt; s2</td>
+<td>根据ASCII值, 字符串s1出现在s2之后, 则为True.</td>
+</tr>
+<tr>
+<td>n1 -eq n2</td>
+<td>n1的数值在代数上等于n2, 返回True</td>
+</tr>
+<tr>
+<td>n1 -ne n2</td>
+<td>n1的数值在代数上不等于n2, 返回True</td>
+</tr>
+<tr>
+<td>n1 -gt n2</td>
+<td>n1的数值在代数上大于n2, 返回True</td>
+</tr>
+<tr>
+<td>n1 -ge n2</td>
+<td>n1的数值在代数上大于等于n2, 返回True</td>
+</tr>
+<tr>
+<td>n1 -lt n2</td>
+<td>n1的数值在代数上小于n2, 返回True</td>
+</tr>
+<tr>
+<td>n1 -le n2</td>
+<td>n1的数值在代数上小于等于n2, 返回True</td>
+</tr>
+</tbody></table>
+<p>以上这些元素能被这些操作数组合</p>
+<table>
+<thead>
+<tr>
+<th>组合方式</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>! expression</td>
+<td>逻辑非</td>
+</tr>
+<tr>
+<td>expression1 -a expression2</td>
+<td>逻辑与</td>
+</tr>
+<tr>
+<td>expression1 -o expression2</td>
+<td>逻辑或</td>
+</tr>
+<tr>
+<td>(expression)</td>
+<td>返回表达式整体的值</td>
+</tr>
+</tbody></table>
+<p>-a 操作符的优先级高于 -o 操作符</p>
+<h4 id="times"><a href="#times" class="headerlink" title="times"></a>times</h4><p>语法: <code>time</code></p>
+<p>打印shell以及从shell运行的进程的累计用户和系统时间. 返回状态为0.</p>
+<h4 id="trap"><a href="#trap" class="headerlink" title="trap"></a>trap</h4><p>语法: <code>trap [action signal ...]</code></p>
+<p>当接收到任何指定的信号时, 使shell解析并执行操作. 信号由信号号或信号的名称指定. 如果signal为 0 或 EXIT, 则在 shell 退出时执行该操作. 动作可以为空(‘’), 这将导致忽略指定的信号. 当动作被省略或设置为’-‘时, 指定的信号将被设置为它们的默认动作. 当shell拷贝出一个子shell时, 它会将捕获的(但不是忽略的)信号重置为默认操作. trap命令对进入shell时被忽略的信号没有影响. 不带任何参数的Trap会导致它将一组信号及其相关操作以适合作为shell输入的格式写入标准输出, 从而获得相同的捕获结果.</p>
+<p>例子:</p>
+<p><code>trap</code></p>
+<p>列出被捕获的信号及其对应的动作</p>
+<p><code>trap &#39;&#39; INT QUIT tstp 30</code></p>
+<p>忽略信号 INT QUIT TSTP USR1</p>
+<p><code>trap date INT</code></p>
+<p>在接收信号INT时打印日期</p>
+<h4 id="type"><a href="#type" class="headerlink" title="type"></a>type</h4><p>语法: <code>type [name ...]</code></p>
+<p>将每个名称解释为一个命令, 并打印命令搜索的结果. 可能的解决方案是: shell关键字, 别名, shell内置, 命令, 跟踪别名和未找到. 对于别名, 将打印别名扩展; 对于命令和被跟踪的别名将打印命令的完整路径名.</p>
+<h4 id="ulimit"><a href="#ulimit" class="headerlink" title="ulimit"></a>ulimit</h4><p>语法: <code>ulimit [-H | -S] [-a | -tfdscmlpnv [value]]</code></p>
+<p>查询或设置进程的硬件限制或软件限制或设置新的限制。通过这些标志在硬件限制（不允许任何进程违反，一旦降低就不能提高）和软件限制（导致进程发出信号但不一定终止，并且可以提高）之间进行选择</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-H</td>
+<td>设置或者查询硬件限制</td>
+</tr>
+<tr>
+<td>-S</td>
+<td>设置或者查询软件限制</td>
+</tr>
+</tbody></table>
+<p>如果这两个设置都没有设置,就会显示软限制或者设置软硬限制, 如果都指定了,则执行后者</p>
+<p>然后，通过指定以下任何一个标志来选择要查询或设置的限制:</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-a</td>
+<td>显示所有的限制</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>显示或者设置CPU时间的限制(以秒为单位)</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>显示或设置可以创建的最大文件的限制(以512字节块为单位)</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>显示或设置进程的数据段大小的限制(以千字节为单位)</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>显示或设置进程堆栈大小的限制(以千字节为单位)</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>显示或设置可生成的最大核心转储大小的限制(以512字节块为单位)</td>
+</tr>
+<tr>
+<td>-m</td>
+<td>显示或设置一个进程可以使用的总物理内存的限制(千字节)</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>使用mlock(2)显示或设置一个进程可以锁定多少内存的限制(单位为千字节)</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>显示或设置此用户一次可以拥有的进程数的限制</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>显示或设置一个进程一次可以打开的文件数量的限制</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>显示或设置进程可以使用的虚拟内存总量的限制(单位为千字节)</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>显示或设置进程的实时调度优先级的限制</td>
+</tr>
+</tbody></table>
+<p>如果未指定这些, 则显示或设置文件大小限制. 如果指定了值, 则将限制设置为该值, 否则显示当前限制.</p>
+<p>可以使用 sysctl(8) 程序显示或设置任意进程的限制</p>
+<h4 id="umask"><a href="#umask" class="headerlink" title="umask"></a>umask</h4><p>语法: <code>umask [mask]</code></p>
+<p>设置掩码为指定的8进制值. 如果参数未设置, 则打印掩码值.</p>
+<h4 id="unalias"><a href="#unalias" class="headerlink" title="unalias"></a>unalias</h4><p>语法: <code>unalias [-a] [name]</code></p>
+<p>如果指定了name, shell会移除这个别名; 如果指定了<code>-a</code>, 所有的别名都会被移除.</p>
+<h4 id="unset"><a href="#unset" class="headerlink" title="unset"></a>unset</h4><p>语法: <code>unset [-fv] name ...</code></p>
+<p>指定的变量和函数没有设置和导出. 如果指定了 -f 或 -v, 则相应的函数或变量分别取消设置. 如果给定的名称同时对应一个变量和一个函数, 并且没有给出任何选项, 则只有变量取消设置.</p>
+<h4 id="wait"><a href="#wait" class="headerlink" title="wait"></a>wait</h4><p>语法: <code>wait [job]</code></p>
+<p>等待指定的任务完成并返回任务中最后一个进程的返回值. 没有指定参数, 就会等待所有任务结束并发返回0状态码.</p>
+<h3 id="命令行编辑"><a href="#命令行编辑" class="headerlink" title="命令行编辑"></a>命令行编辑</h3><p>当从终端以交互方式使用dash时, 可以使用 vi 模式命令行编辑来编辑当前命令和命令历史记录(参见内置函数中的 fc). 此模式使用命令, 如下所述, 类似于 vi 手册页中描述的命令的子集, 命令“set -o vi”启用 vi 模式编辑并将 sh 置于 vi 插入模式. 启用 vi 模式后, sh 可以在插入模式和命令模式之间切换. 类似于vi: 输入⟨ESC⟩进入vi命令模式. 在命令模式下按 ⟨return⟩ 会将行传递给 shell.</p>
+<h2 id="退出状态"><a href="#退出状态" class="headerlink" title="退出状态"></a>退出状态</h2><p>shell 检测到的错误(例如语法错误)将导致 shell 以非零退出状态退出. 如果 shell 不是交互式 shell, 则 shell 文件的执行将被中止. 否则, shell 将返回最后执行的命令的退出状态, 或者如果 exit 内置函数与数字参数一起使用, 它将返回该参数.</p>
+<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><table>
+<thead>
+<tr>
+<th>环境变量</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>HOME</td>
+<td>由密码文件 (passwd(4)) 中用户登录目录中的 login(1) 自动设置. 此环境变量还用作 cd 内置函数的默认参数</td>
+</tr>
+<tr>
+<td>PATH</td>
+<td>可执行文件的默认搜索路径</td>
+</tr>
+<tr>
+<td>CDPATH</td>
+<td>CD内置使用的搜索路径</td>
+</tr>
+<tr>
+<td>MAIL</td>
+<td>邮件文件的名称,将检查新邮件的到达. 会被MAILPATH重写.</td>
+</tr>
+<tr>
+<td>MAILCHECK</td>
+<td>Shell在邮件路径或邮件文件指定的文件中检查邮件到达的几秒钟之内的频率</td>
+</tr>
+<tr>
+<td>MAILPATH</td>
+<td>一个由冒号“:”分隔的文件名列表, 供 shell 检查进入的邮件. 此环境设置会覆盖 MAIL 设置. 一次最多可以检查 10 个邮箱.</td>
+</tr>
+<tr>
+<td>PS1</td>
+<td>主要的默认提示字符串, 普通用户是“#”, 超级用户为“$”</td>
+</tr>
+<tr>
+<td>PS2</td>
+<td>第二重要的提示字符串, 默认是 “&gt; ”.</td>
+</tr>
+<tr>
+<td>PS4</td>
+<td>启用执行跟踪 (set -x) 时在每行之前输出, 默认是“+”.</td>
+</tr>
+<tr>
+<td>IFS</td>
+<td>输入字段分隔符. 通常设置为⟨space⟩、⟨tab⟩和⟨newline⟩. 查看更多详细信息, 请参阅空白分割部分.</td>
+</tr>
+<tr>
+<td>TERM</td>
+<td>shell 终端的默认设置. 会被子shell继承, 用于历史编辑模式</td>
+</tr>
+<tr>
+<td>HISTSIZE</td>
+<td>shell 历史缓冲区中的命令行数量.</td>
+</tr>
+<tr>
+<td>PWD</td>
+<td>当前工作目录. 由cd命令设置.</td>
+</tr>
+<tr>
+<td>OLDPWD</td>
+<td>当前工作目录的前一个值. 由cd命令设置.</td>
+</tr>
+<tr>
+<td>PPID</td>
+<td>当前 shell 的父进程的进程ID.</td>
+</tr>
+</tbody></table>
+<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><p><code>$HOME/.profile</code></p>
+<p><code>/etc/profile</code></p>
+<h2 id="引用-1"><a href="#引用-1" class="headerlink" title="引用"></a>引用</h2><p>csh(1), echo(1), getopt(1), ksh(1), login(1), printf(1), test(1), getopt(3), passwd(5), environ(7), sysctl(8)</p>
+<h2 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h2><p>dash 是 <code>/bin/sh</code> 的 POSIX 兼容实现, 旨在尽可能小. dash 是 ash 的 NetBSD 版本(Almquist SHell)的直接后代, 于 1997 年初移植到 Linux. 它在 2002 年更名为 dash.</p>
+<h2 id="BUGS"><a href="#BUGS" class="headerlink" title="BUGS"></a>BUGS</h2><p>应尽量避免使用 Setuid shell 脚本, 因为它们存在重大安全风险.</p>
+<p>PS1、PS2、PS4在显示前需进行参数扩展.</p>
+<p>BSD January 19 2003 BSD</p>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2022-08-05</span>
+            
+            
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2022/09/21/JQuery/'>笔记 | JQuery&amp;Ajax&amp;Axios</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2022/07/19/Linux%E9%83%A8%E7%BD%B2MC%E6%9C%8D%E5%8A%A1%E5%99%A8/">Linux部署MC服务器</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+             
+
+            
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>Change And Challenge</span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>

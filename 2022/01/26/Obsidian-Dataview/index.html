@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="译 | Obsidian-Dataview文档" />
+    <meta name="hexo-theme-A4" content="v1.9.6" />
+    <link rel="alternate icon" type="image/webp" href="/img/avatar.png">
+    <title>Jingcun Yan</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+    
+    
+        <style>
+            .index-main{
+                max-width:  880px;
+            }
+        </style>
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            <div class="left-toc-container">
+                <nav id="toc" class="bs-docs-sidebar"></nav>
+            </div>
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/avatar.png" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">Jingcun Yan</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    译 | Obsidian-Dataview文档
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                
+                    
+                     <span>字数总计：7.4k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：32分钟</span>
+                
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+        <div class=".article-gallery"><blockquote>
+<p>翻译自官方文档  <a target="_blank" rel="noopener" href="https://blacksmithgu.github.io/obsidian-dataview/">https://blacksmithgu.github.io/obsidian-dataview/</a></p>
+<p>如有不同之处，请以官方文档为主。</p>
+</blockquote>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><p>Dataview 有两个主要组件：<em>注释</em> 和 <em>查询</em> </p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>Dataview<strong>索引</strong>负责不断解析您的知识库中的 markdown 文件和其他元数据，创建一个内存索引，以便对数据进行快速查询。注释在 <em>markdown 页面</em> 、<em>段落</em> 和 <em>task</em> 级别完成，可以在其中使用：</p>
+<ol>
+<li><p><strong>Frontmatter</strong>，一个常见的 Markdown 扩展，允许在文档顶部添加任意YAML）：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">alias:</span> <span class="string">&quot;document&quot;</span></span><br><span class="line"><span class="attr">last-reviewed:</span> <span class="number">2021-08-17</span></span><br><span class="line"><span class="attr">thoughts:</span></span><br><span class="line"><span class="attr">rating:</span> <span class="number">8</span></span><br><span class="line"><span class="attr">reviewable:</span> <span class="literal">false</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>内联字段</strong>，一种特定于 Dataview 的方式，以直观的<code>Key::Value</code>语法提供元数据：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Markdown Page</span><br><span class="line"></span><br><span class="line">Basic Field:: Value</span><br><span class="line">**Bold Field**:: Nice!</span><br><span class="line"></span><br><span class="line">- [ ] I am a task with [metadata::value]!</span><br><span class="line">	- [X] I am another task with completed::2020-09-15</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>如果需要，您可以结合使用这两种方法。Dataview 还添加了大量“隐式”字段，例如<code>file.name</code>文件名、<code>file.size</code>大小等；</p>
+<p>你可以在<a target="_blank" rel="noopener" href="https://blacksmithgu.github.io/obsidian-dataview/data-annotation">数据注释文档</a>中找到更多详细信息。</p>
+<h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><p>一旦你有一些你已经注释的页面，剩下要做的就是查询它们以创建动态表、列表或 JavaScript 视图。</p>
+<p>有四种方法可以做到这一点：</p>
+<ol>
+<li>**Dataview Query Language (DQL)**：类似 SQL 的语言。请参阅[[3.数据查询]]<br>&#96; &#96;&#96;&#96;dataview<br>TABLE file.name AS “File”, rating AS “Rating” FROM #book</li>
+</ol>
+<p>&#96;&#96;&#96; &#96; </p>
+<p>undefined <strong>内联表达式</strong>：可以直接嵌入到 Markdown 中的 DQL 表达式，并将在预览模式下显示。请参阅[[3.数据查询]]</p>
+<p><code>We are on page `= this.file.name`.</code> </p>
+<ol start="3">
+<li><strong>DataviewJS</strong>：一个高性能的 JavaScript API，它可以完全访问 Dataview 索引和一些方便的渲染实用程序。<strong>如果了解 JavaScript，强烈推荐，因为它比查询语言强大得多</strong>。查看[[5.0.JavascriptAPI]]以获取更多详细信息。<br>&#96; &#96;&#96;&#96;dataviewjs<br>dv.taskList(dv.pages().file.tasks.where(t &#x3D;&gt; !t.completed));</li>
+</ol>
+<p>&#96;&#96;&#96; &#96; </p>
+<ol start="4">
+<li><strong>内联 JS 表达式</strong>：相当于内联表达式的 JavaScript，它允许您执行任意 JS 内联：<br><code>This page was last modified at `$= dv.current().file.mtime`.</code></li>
+</ol>
+<h1 id="数据注释"><a href="#数据注释" class="headerlink" title="数据注释"></a>数据注释</h1><p>数据索引，支持的是字段。</p>
+<hr>
+<h2 id="页面"><a href="#页面" class="headerlink" title="页面"></a>页面</h2><p>您可以通过三种不同的方式将字段添加到markdown页面：</p>
+<ol>
+<li><strong>Frontmatter</strong>：Frontmatter 是一个常见的 Markdown 扩展，它允许将 YAML 元数据添加到页面顶部。所有 YAML 字段都将作为 Dataview 的字段：</li>
+</ol>
+<p><code>--- alias: &quot;document&quot; last-reviewed: 2021-08-17 thoughts:  rating: 8  reviewable: false ---</code> </p>
+<ol start="2">
+<li><strong>内联字段</strong>：Dataview 支持“内联的”字段，它提供了一种简单的<code>Key:: Value</code>语法，你可以直接将其嵌入到文件中：</li>
+</ol>
+<p><code># Markdown Page Basic Field:: Value **Bold Field**:: Nice!</code> </p>
+<p>如果你想在句子中嵌入元数据，或者在同一行中嵌入多个字段，你可以使用括号语法：<br><code>I would rate this a [rating:: 9]! It was [mood:: acceptable].</code> </p>
+<ol start="3">
+<li><strong>隐式</strong>：Dataview 自动使用大量元数据注释页面，例如文件创建日期 (<code>file.cday</code> )、关联日期 ( <code>file.day</code>)、文件中的链接 ( <code>file.outlinks</code>)、标签 ( <code>file.tags</code>) 等。</li>
+</ol>
+<p>一个简单的 Markdown 页面，有以下两种用户定义的添加元数据的方式：</p>
+<p><code>--- duration: 4 hours reviewed: false ---</code><br><code># Movie X **Thoughts**:: It was decent. **Rating**:: 6</code> </p>
+<h4 id="隐式字段"><a href="#隐式字段" class="headerlink" title="隐式字段"></a>隐式字段</h4><p>Dataview 会自动为每个页面添加大量元数据：</p>
+<ul>
+<li><code>file.name</code>：文件标题（字符串）。</li>
+<li><code>file.folder</code>：该文件所属文件夹的路径。</li>
+<li><code>file.path</code>：完整的文件路径（字符串）。</li>
+<li><code>file.link</code>：文件的链接（链接）。</li>
+<li><code>file.size</code>：文件的大小（以字节为单位）（数字）。</li>
+<li><code>file.ctime</code>：文件的创建日期（日期+时间）。</li>
+<li><code>file.cday</code>：文件的创建日期（日期）。</li>
+<li><code>file.mtime</code>：文件最后修改的日期（日期+时间）。</li>
+<li><code>file.mday</code>：文件最后修改的日期（日期）。</li>
+<li><code>file.tags</code>：笔记中所有唯一标签的数组。子标签按每个级别细分，因此<code>#Tag/1/A</code>将存储在数组中<code>[#Tag, #Tag/1, #Tag/1/A]</code>。</li>
+<li><code>file.etags</code>：注释中所有显式标签的数组；不和<code>file.tags</code>一样, 不包括子标签。</li>
+<li><code>file.inlinks</code>：此文件的所有传入链接的数组。</li>
+<li><code>file.outlinks</code>：此文件中所有传出链接的数组。</li>
+<li><code>file.aliases</code>：笔记的所有别名的数组。</li>
+<li><code>file.tasks</code>：此文件中所有任务（即，- [  ] blah blah blah）的数组。</li>
+</ul>
+<p>如果文件在其标题（或表单<code>yyyy-mm-dd</code>或<code>yyyymmdd</code>）中有日期，或者有一个<code>Date</code>字段&#x2F;内联字段，它还具有以下属性：</p>
+<ul>
+<li><code>file.day</code>：与文件关联的日期。</li>
+</ul>
+<hr>
+<h2 id="任务清单"><a href="#任务清单" class="headerlink" title="任务清单"></a>任务清单</h2><p>使用内联字段语法使用元数据注释您的任务清单（即表单的行）：<code>- [ ] blah blah blah</code></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- [ ] Hello, this is some [metadata:: value]!</span><br><span class="line">- [X] I finished this on [completion::2021-08-15].</span><br></pre></td></tr></table></figure>
+
+<h4 id="字段速记"><a href="#字段速记" class="headerlink" title="字段速记"></a>字段速记</h4><p>为了支持“常见用例”，Dataview 了解一些常见数据的简写，您可能希望使用以下命令注释任务：</p>
+<p>语法</p>
+<ul>
+<li>截止日期：<code>🗓️YYYY-MM-DD</code></li>
+<li>完成日期：<code>✅YYYY-MM-DD</code></li>
+<li>创建日期：<code>➕YYYY-MM-DD</code></li>
+</ul>
+<p>如果你不喜欢表情符号，可以对这些字段进行文本注释（<code>[due:: ]</code>、<code>[created:: ]</code>、 <code>[completion:: ]</code>）。</p>
+<h4 id="隐式字段-1"><a href="#隐式字段-1" class="headerlink" title="隐式字段"></a>隐式字段</h4><p>与页面一样，Dataview 为每个任务添加了许多隐式字段：</p>
+<ul>
+<li>任务从其父页面继承所有字段， 因此，如果页面中有一个字段，也可以在任务中访问它。</li>
+<li><code>completed</code>：这个 <em>特定的</em> 任务是否已经完成；这不考虑任何子任务的完成&#x2F;未完成。</li>
+<li><code>fullyCompleted</code>：此任务及其<strong>所有</strong>子任务是否已完成。</li>
+<li><code>text</code>: 这个任务的文本</li>
+<li><code>line</code>：此任务显示的行</li>
+<li><code>path</code>：此任务所在文件的完整路径。</li>
+<li><code>section</code>：此任务所在部分的链接。</li>
+<li><code>link</code>: 指向该任务附近最近的可链接块的链接；对于制作指向任务的链接很有用。</li>
+<li><code>subtasks</code>：此任务的所有子任务。</li>
+<li><code>real</code>: 如果是true，这是一个真正的任务；否则，它是任务上方&#x2F;下方的列表元素。</li>
+<li><code>completion</code>：任务完成的日期。如果没有注释，将默认为文件修改时间。</li>
+<li><code>due</code>：任务的到期日期（如果有的话）。</li>
+<li><code>created</code>：创建任务的日期。如果没有注释，则默认为文件创建时间。</li>
+<li><code>annotated</code>：如果任务有任何自定义注释，则为真，否则为假。</li>
+</ul>
+<hr>
+<h2 id="字段类型"><a href="#字段类型" class="headerlink" title="字段类型"></a>字段类型</h2><p>dataview 中的所有字段都有一个 <em>type</em> ，它决定了 dataview 将如何呈现、排序和操作该字段。Dataview 了解几种不同的字段类型以涵盖常见用例：</p>
+<ul>
+<li><p><strong>文本</strong>：默认的。如果字段不匹配更具体的类型，则它只是纯文本。</p>
+<p><code>Example:: This is some normal text.</code> </p>
+</li>
+<li><p><strong>Number</strong> : 像 ‘6’ 和 ‘3.6’ 这样的数字。</p>
+<p><code>Example:: 6 Example:: 2.4 Example:: -80</code> </p>
+</li>
+<li><p><strong>Boolean</strong> : true&#x2F;false，逻辑值</p>
+<p><code>Example:: true Example:: false</code> </p>
+</li>
+<li><p><strong>日期</strong>：ISO8601日期的一般形式<code>YYYY-MM[-DDTHH:mm:ss.nnn+ZZ]</code>。月后的一切都是可选的。</p>
+<p><code>Example:: 2021-04-18 Example:: 2021-04-18T04:19:35.000 Example:: 2021-04-18T04:19:35.000+06:30</code> </p>
+</li>
+<li><p><strong>持续时间</strong>：<code>&lt;time&gt; &lt;unit&gt;</code>表单的持续时间，例如<code>6 hours</code>或<code>4 minutes</code>。常见的英文缩写如 <code>6hrs</code>or<code>2m</code> 您可以使用可选的逗号分隔符指定多个单位：<code>6 hours, 4 minutes</code> 或 <code>6hr4min</code>.</p>
+<p><code>Example:: 7 hours Example:: 4min Example:: 16 days Example:: 9 years, 8 months, 4 days, 16 hours, 2 minutes Example:: 9 yrs 8 min</code> </p>
+</li>
+<li><p><strong>链接</strong>：普通Obsidian链接，如<code>[[Page]]</code>或<code>[[Page|Page Display]]</code>。</p>
+<ul>
+<li><p>如果你在 frontmatter 中引用链接，则需要引用它，如下所示：<code>key: &quot;[[Link]]&quot;</code>. 这是默认的 Obsidian 支持的行为。</p>
+<p><code>Example:: [[A Page]] Example:: [[Some Other Page|Render Text]]</code></p>
+</li>
+</ul>
+</li>
+<li><p><strong>List</strong>：其他数据视图字段的列表。在 YAML 中，这些被定义为正常的 YAML 列表；对于内联字段，它们只是逗号分隔的列表。</p>
+<p><code>Example:: 1, 2, 3 Example:: &quot;yes&quot;, &quot;or&quot;, &quot;no&quot;</code> </p>
+</li>
+<li><p><strong>对象</strong>：名称到数据视图字段的映射。这些只能在 YAML frontmatter 中定义，使用正常的 YAML 对象语法：</p>
+<p><code>field:   value1: 1   value2: 2   ...</code></p>
+</li>
+</ul>
+<h1 id="创建查询"><a href="#创建查询" class="headerlink" title="创建查询"></a>创建查询</h1><p>有4种方式实现这一点，并且在库update 的时候可以重新加载</p>
+<h2 id="Dataview-查询语言-DQL"><a href="#Dataview-查询语言-DQL" class="headerlink" title="Dataview 查询语言 (DQL)"></a>Dataview 查询语言 (DQL)</h2><p>dataview查询语言是一种简单的、类似 SQL 的语言，用于快速创建视图的语言。它支持基本的算术和比较运算，适用于基本应用程序。您使用带注释的代码块创建数据视图查询<code>dataview</code>：</p>
+<p><code>```dataview TABLE rating AS &quot;Rating&quot;, summary AS &quot;Summary&quot; FROM #games SORT rating DESC ```</code> </p>
+<h2 id="内联-DQL"><a href="#内联-DQL" class="headerlink" title="内联 DQL"></a>内联 DQL</h2><p>查询可以直接嵌入页面中</p>
+<ul>
+<li>例如，今天的日期 <code>= date(today)</code>，或来自另一个页面的字段 <code>= [[Page]].value</code></li>
+</ul>
+<p>使用内联代码块创建内联查询：<br><code>`= this.file.name`</code> </p>
+<p>内联 DQL 表达式是使用<a target="_blank" rel="noopener" href="https://blacksmithgu.github.io/obsidian-dataview/query/expressions">查询语言表达式语言</a>编写的。您可以在 Dataview 设置中配置内联查询以使用不同的前缀（如<code>dv:</code>或）。<code>~</code></p>
+<h2 id="Dataview-JS"><a href="#Dataview-JS" class="headerlink" title="Dataview JS"></a>Dataview JS</h2><p>dataview[[5.0.JavascriptAPI]]为您提供 JavaScript 的全部功能，并提供用于拉取 Dataview 数据和执行查询的 DSL，允许您创建任意复杂的查询和视图。与查询语言类似，您可以通过带注释的代码块创建 Dataview JS 块<code>dataviewjs</code>：</p>
+<p><code>```dataviewjs let pages = dv.pages(&quot;#books and -#books/finished&quot;).where(b =&gt; b.rating &gt;= 7); for (let group of pages.groupBy(b =&gt; b.genre)) &#123;    dv.header(group.key);    dv.list(group.rows.file.name); &#125; ```</code> </p>
+<p><code>dv</code> 在 JS dataview 块中，您可以通过变量访问完整的 dataview API </p>
+<h2 id="内联数据视图-JS"><a href="#内联数据视图-JS" class="headerlink" title="内联数据视图 JS"></a>内联数据视图 JS</h2><p>与查询语言类似，您可以编写 JS 内联查询，它可以让您直接嵌入计算出的 JS 值。您可以通过内联代码块创建 JS 内联查询：</p>
+<p><code>`$= dv.current().file.mtime`</code> </p>
+<p>在 inline DataviewJS 中，您可以访问<code>dv</code>变量，就像在代码块中访问<code>dataviewjs</code>，并且可以进行所有相同的调用。<br>结果应该被看作 JavaScript 值的结果，Dataview 将自动适当地呈现该值。</p>
+<h1 id="查询语言"><a href="#查询语言" class="headerlink" title="查询语言"></a>查询语言</h1><h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><h2 id="查询-1"><a href="#查询-1" class="headerlink" title="查询"></a>查询</h2><p>Dataview查询语言是一种简单的、结构化的、自定义的查询语言，用于快速创建数据的视图。支持：</p>
+<ul>
+<li>提取与标签、文件夹、链接等相关的页面。</li>
+<li>通过对字段的简单操作过滤页面&#x2F;数据，如比较、存在性检查等。</li>
+<li>根据字段对结果进行排序。</li>
+</ul>
+<p>该查询语言支持以下视图类型，描述如下：</p>
+<ol>
+<li>**表格(TABLE)**：传统的视图类型；每个数据为一行，字段数据为一列。</li>
+<li>**列表(LIST)**：匹配查询页面的列表。你可以为每个页面输出一个单一的关联值。</li>
+<li>**任务列表(TASK)**：匹配给定查询的任务列表。</li>
+</ol>
+<p><strong>一般格式</strong></p>
+<p><code>```dataview TABLE|LIST|TASK &lt;field&gt; [AS &quot;Column Name&quot;], &lt;field&gt;, ..., &lt;field&gt;  FROM &lt;source&gt; (like #tag or &quot;folder&quot;)  WHERE &lt;expression&gt; (like &#39;field = value&#39;)  SORT &lt;expression&gt;  [ASC/DESC] (like &#39;field ASC&#39;) ... other data commands  ```</code></p>
+<ul>
+<li>只有select 语句是必须的</li>
+<li>按照顺序运行</li>
+<li>允许重复多个where</li>
+<li>from可以从任何source中选择</li>
+</ul>
+<p>查询类型和数据命令请查看[[4.1.查询]]</p>
+<h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><p>表达式：能够产生值的量</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># 常规</span><br><span class="line">field               (directly refer to a field)</span><br><span class="line">simple-field        (refer to fields with spaces/punctuation in them like &quot;Simple Field!&quot;)</span><br><span class="line">a.b                 (if a is an object, retrieve field named &#x27;b&#x27;)</span><br><span class="line">a[expr]             (if a is an object or array, retrieve field with name specified by expression &#x27;expr&#x27;)</span><br><span class="line">f(a, b, ...)        (call a function called `f` on arguments a, b, ...)</span><br><span class="line"></span><br><span class="line"># 算术运算</span><br><span class="line">a + b               (addition)</span><br><span class="line">a - b               (subtraction)</span><br><span class="line">a * b               (multiplication)</span><br><span class="line">a / b               (division)</span><br><span class="line"></span><br><span class="line"># 比较运算</span><br><span class="line">a &gt; b               (check if a is greater than b)</span><br><span class="line">a &lt; b               (check if a is less than b)</span><br><span class="line">a = b               (check if a equals b)</span><br><span class="line">a != b              (check if a does not equal b)</span><br><span class="line">a &lt;= b              (check if a is less than or equal to b)</span><br><span class="line">a &gt;= b              (check if a is greater than or equal to b)</span><br><span class="line"></span><br><span class="line"># 特殊操作</span><br><span class="line">[[Link]].value      (fetch `value` from page `Link`)</span><br></pre></td></tr></table></figure>
+
+<h3 id="表达式类型"><a href="#表达式类型" class="headerlink" title="表达式类型"></a>表达式类型</h3><p>字符串型、字面值型、算数型、比较型、数组对象索引、函数调用、lambda表达式型</p>
+<p><strong>特定类型的交互和值</strong></p>
+<p>大多数dataview类型都有和运算符的特定的操作，或者有额外的能被引用的属性</p>
+<p>Date</p>
+<ul>
+<li>date.year</li>
+<li>date.month</li>
+<li>date.day</li>
+<li>date.hour</li>
+<li>date.minute</li>
+<li>date.second</li>
+<li>date.week</li>
+</ul>
+<p>Durations</p>
+<ul>
+<li>duration.years</li>
+<li>duration.months</li>
+<li>duration.days</li>
+<li>duration.hours\minutes\seconds</li>
+</ul>
+<p>Links<br><code>[[Link]].value</code></p>
+<h2 id="字面量-字面值"><a href="#字面量-字面值" class="headerlink" title="字面量(字面值)"></a>字面量(字面值)</h2><p>字面量是表示常量的表达式</p>
+<p>包括一般类型、日期类型、持续时间类型</p>
+<p>具体情况在[[4.2.字面值]]</p>
+<h2 id="source"><a href="#source" class="headerlink" title="source"></a>source</h2><p>dataview的source定义了一系列的file task 或者其他的数据对象</p>
+<p>source 被Dataview内部引用，它支持3种source类型</p>
+<ol>
+<li>tag <code>#tag</code></li>
+<li>目录 <code>&quot;folder&quot;</code></li>
+<li>特定文件 <code>&quot;folder/file.md&quot;</code></li>
+<li>同名的目录和文件、优先选择目录，可以添加md后缀</li>
+<li>进入或者连出文件的链接</li>
+<li>要引用连接到文件的链接的话，应该使用 <code>[[note]]</code>，也可以使用<code>[[]]</code> 引用本文件</li>
+<li>引用从文件中射出的链接，使用<code>outgoing([[note]])</code></li>
+</ol>
+<p>可以使用and、or链接这些过滤器</p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>函数提供了更高级的功能，具体函数查看[[4.3.函数]]</p>
+<h1 id="查询-2"><a href="#查询-2" class="headerlink" title="查询"></a>查询</h1><h2 id="查询类型"><a href="#查询类型" class="headerlink" title="查询类型"></a>查询类型</h2><h3 id="list查询"><a href="#list查询" class="headerlink" title="list查询"></a>list查询</h3><p>最简单的视图，只是呈现与查询匹配的页面列表（或自定义字段）。</p>
+<p>语法</p>
+<p><code>LIST FROM &lt;source&gt;</code> </p>
+<p>查询</p>
+<p><code>LIST FROM #games/mobas OR #games/crpg</code> </p>
+<p>除了每个匹配文件之外，您还可以通过在 之后添加一个表达式来呈现单个计算值<code>LIST</code>：</p>
+<p>语法</p>
+<p><code>LIST &lt;expression&gt; FROM &lt;source&gt;</code> </p>
+<p>查询</p>
+<p><code>LIST &quot;File Path: &quot; + file.path FROM &quot;4. Archive&quot;</code> </p>
+<h5 id="无-ID-list"><a href="#无-ID-list" class="headerlink" title="无 ID list"></a>无 ID list</h5><p>如果您不希望列表视图中包含filename&#x2F;group key，您可以使用<code>LIST WITHOUT ID</code>：</p>
+<p>语法</p>
+<p><code>LIST WITHOUT ID &lt;expression&gt; FROM &lt;source&gt;</code> </p>
+<p>查询</p>
+<p><code>LIST WITHOUT ID file.path FROM &quot;4. Archive&quot;</code> </p>
+<hr>
+<h3 id="table-查询"><a href="#table-查询" class="headerlink" title="table 查询"></a>table 查询</h3><p>表格支持页面数据的表格视图。您可以通过提供要呈现的 YAML frontmatter 字段，使用逗号分隔列表来构造一个table，如下所示：</p>
+<p><code>TABLE file.day, file.mtime FROM &lt;source&gt;</code> </p>
+<p>使用以下<code>AS</code>语法选择标题名称来呈现计算字段：</p>
+<p><code>TABLE (file.mtime + dur(1 day)) AS next_mtime, ... FROM &lt;source&gt;</code> </p>
+<p>示例：</p>
+<p><code>TABLE  time-played AS &quot;Time Played&quot;,  length AS &quot;Length&quot;,  rating AS &quot;Rating&quot; FROM #game SORT rating DESC</code> </p>
+<h5 id="无-ID-table"><a href="#无-ID-table" class="headerlink" title="无 ID table"></a>无 ID table</h5><p>如果您不想在输出中使用默认的“file”或“group”字段，可以使用 <code>TABLE WITHOUT ID</code>：</p>
+<p>询问</p>
+<p><code>TABLE WITHOUT ID  time-played AS &quot;Time Played&quot;,  length AS &quot;Length&quot;,  rating AS &quot;Rating&quot; FROM #game SORT rating DESC</code> </p>
+<hr>
+<h3 id="task-查询"><a href="#task-查询" class="headerlink" title="task 查询"></a>task 查询</h3><p>任务视图呈现其页面与给定谓词匹配的所有任务。</p>
+<p>语法</p>
+<p><code>TASK FROM &lt;source&gt;</code> </p>
+<p>查询</p>
+<p><code>TASK FROM &quot;dataview&quot;</code> </p>
+<p>您可以使用典型的数据视图语句根据需要在这些查询中过滤 ( <code>WHERE</code>)、分组 ( <code>GROUP BY</code>)、排序 ( <code>SORT</code>) </p>
+<p>语法</p>
+<p><code>TASK FROM &lt;source&gt; WHERE &lt;predicate&gt; ...</code> </p>
+<p>查询</p>
+<p><code>TASK FROM &quot;dataview&quot; WHERE !completed GROUP BY file.folder</code> </p>
+<h3 id="calendar-task-查询"><a href="#calendar-task-查询" class="headerlink" title="calendar task 查询"></a>calendar task 查询</h3><p>日历视图呈现与日历视图中的查询匹配的所有页面，使用给定的日期表达式来选择呈现页面的日期。</p>
+<p>语法</p>
+<p><code>CALENDAR &lt;date&gt; FROM &lt;source&gt;</code> </p>
+<p>查询</p>
+<p><code>CALENDAR file.mtime FROM &quot;dataview&quot;</code> </p>
+<p>输出</p>
+<p>输出将是一个日历，在 dataview 目录中每个文件显示一个点。点在文件被修改的日期。</p>
+<h2 id="数据指令"><a href="#数据指令" class="headerlink" title="数据指令"></a>数据指令</h2><p>dataview 查询可以由不同的命令组成。命令按顺序执行，命令可以重复（例如，多个<code>WHERE</code> 块或多个<code>GROUP BY</code>块）。</p>
+<h3 id="From"><a href="#From" class="headerlink" title="From"></a>From</h3><p>该<code>FROM</code>语句确定最初将收集哪些页面，并将其传递给其他命令以进一步过滤。<br>可以从任何[[4.0.查询语言#来源]]进行选择，可以按文件夹、标签或传入&#x2F;传出链接。</p>
+<ul>
+<li><strong>标签</strong>：要从标签（及其所有子标签）中进行选择，请使用<code>FROM #tag</code>.</li>
+<li><strong>文件夹</strong>：要从文件夹（及其所有子文件夹）中进行选择，请使用<code>FROM &quot;folder&quot;</code>.</li>
+<li><strong>链接</strong>：您可以选择指向文件的链接，也可以选择文件中的所有链接。</li>
+<li>要获取链接到的所有页面<code>[[note]]</code>，请使用<code>FROM [[note]]</code>.</li>
+<li>要获取链接 FROM 的所有页面<code>[[note]]</code>（即该文件中的所有链接），使用<code>FROM outgoing([[note]])</code>.</li>
+</ul>
+<p>您可以组合这些过滤器，使用<code>and</code>和<code>or</code>进一步过滤。</p>
+<ul>
+<li>例如，<code>#tag and &quot;folder&quot;</code>将返回所有页面的<code>folder</code>和<code>#tag</code>.</li>
+<li><code>[[Food]] or [[Exercise]]</code>将给出任何链接到<code>[[Food]]</code>OR的页面<code>[[Exercise]]</code>。</li>
+</ul>
+<p>您还可以使用以下方法“排除”来源以获取与来源不匹配的任何内容：</p>
+<ul>
+<li><code>-#tag</code>将排除具有给定标签的文件。</li>
+<li><code>#tag and -&quot;folder&quot;</code>将仅包括标记<code>#tag</code>为不在<code>&quot;folder&quot;</code>.</li>
+</ul>
+<h3 id="Where"><a href="#Where" class="headerlink" title="Where"></a>Where</h3><p>过滤字段上的页面。结果为<code>true</code>才会被选择</p>
+<p><code>WHERE &lt;clause&gt;</code> </p>
+<ol>
+<li><p>获取最近 24 小时内修改的所有文件：</p>
+<p><code>LIST WHERE file.mtime &gt;= date(today) - dur(1 day)</code> </p>
+</li>
+<li><p>查找所有未标记为完成且超过一个月的项目：</p>
+<p><code>LIST FROM #projects WHERE !completed AND file.ctime &lt;= date(today) - dur(1 month)</code></p>
+</li>
+</ol>
+<h3 id="Sort"><a href="#Sort" class="headerlink" title="Sort"></a>Sort</h3><p>按一个或多个字段对所有结果进行排序。</p>
+<p><code>SORT date [ASCENDING/DESCENDING/ASC/DESC]</code> </p>
+<p>您还可以提供多个字段进行排序。将根据第一个字段进行排序。然后，如果出现相等，则将使用第二个字段对相等字段进行排序。如果仍然存在平局，则第三个排序将解决它，依此类推。</p>
+<p><code>SORT field1 [ASCENDING/DESCENDING/ASC/DESC], ..., fieldN [ASC/DESC]</code> </p>
+<h3 id="group-by"><a href="#group-by" class="headerlink" title="group by"></a>group by</h3><p>将所有结果分组到一个字段中。每个唯一字段值产生一行，它有 2 个属性：一个对应于被分组的字段，一个<code>rows</code>数组字段包含所有匹配的页面。</p>
+<p><code>GROUP BY field GROUP BY (computed_field) AS name</code> </p>
+<h3 id="flatten"><a href="#flatten" class="headerlink" title="flatten"></a>flatten</h3><p>在每一行中展平一个数组，为数组中的每个条目产生一个结果行。</p>
+<p><code>FLATTEN field FLATTEN (computed_field) AS name</code> </p>
+<p>例如，将<code>authors</code>每个文献注释中的字段展平，为每位作者提供一行：</p>
+<p>查询</p>
+<p><code>TABLE authors FROM #LiteratureNote FLATTEN authors</code> </p>
+<h3 id="限制"><a href="#限制" class="headerlink" title="限制"></a>限制</h3><p>将结果限制为最多 N 个值。</p>
+<p><code>LIMIT 5</code> </p>
+<p>命令是按照它们编写的顺序处理的，所以下面对已经限制后的结果进行排序：</p>
+<p><code>LIMIT 5 SORT date ASCENDING</code></p>
+<h2 id="字面值"><a href="#字面值" class="headerlink" title="字面值"></a>字面值</h2><p>是或者运算后是常量的表达式、常量</p>
+<h3 id="一般类型"><a href="#一般类型" class="headerlink" title="一般类型"></a>一般类型</h3><table>
+<thead>
+<tr>
+<th>字面量</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>数字0</td>
+</tr>
+<tr>
+<td>123</td>
+<td>数字123</td>
+</tr>
+<tr>
+<td>-123</td>
+<td>数字-123</td>
+</tr>
+<tr>
+<td>“HelloWorld”</td>
+<td>string类型的变量</td>
+</tr>
+<tr>
+<td><code>[[Link]]</code></td>
+<td>连接到文件Link的链接</td>
+</tr>
+<tr>
+<td>[1,2,3]</td>
+<td>数组</td>
+</tr>
+<tr>
+<td>{a:1,b:2}</td>
+<td>对象</td>
+</tr>
+</tbody></table>
+<h3 id="日期类型"><a href="#日期类型" class="headerlink" title="日期类型"></a>日期类型</h3><p>date也是[[4.3.函数]]</p>
+<p>以下都是字面值：</p>
+<ul>
+<li>date(2021-11-11)</li>
+<li>date(today)</li>
+<li>date(now)</li>
+<li>date(tomorrow)</li>
+<li>date(yesterday)</li>
+<li>date(sow) &#x2F;&#x2F; start of week 本周的第一天</li>
+<li>date(eow) &#x2F;&#x2F; start of week 本周的最后一天</li>
+<li>date(som) date(eom)</li>
+<li>date(soy) date(eoy)</li>
+</ul>
+<h3 id="持续时间类型"><a href="#持续时间类型" class="headerlink" title="持续时间类型"></a>持续时间类型</h3><h4 id="综合"><a href="#综合" class="headerlink" title="综合"></a>综合</h4><p>dur(1 s, 2 m, 3 h)</p>
+<p>dur(1 s 2 m 3 h)</p>
+<p>dur(1s 2m 3h)</p>
+<p>dur(1second 2min 3h)</p>
+<h4 id="秒"><a href="#秒" class="headerlink" title="秒"></a>秒</h4><p>以下给出1秒和23秒的实例</p>
+<p>dur(1 s)<br>dur(1 sec)<br>dur(1 second)</p>
+<p>dur(23 s)<br>dur(23 secs)<br>dur(23 seconds)</p>
+<h4 id="分钟"><a href="#分钟" class="headerlink" title="分钟"></a>分钟</h4><p>m、min、minute</p>
+<p>m、mins、minutes</p>
+<h4 id="小时"><a href="#小时" class="headerlink" title="小时"></a>小时</h4><p>h、hr、hour</p>
+<p>h、hrs、hours</p>
+<h4 id="日"><a href="#日" class="headerlink" title="日"></a>日</h4><p>d、day</p>
+<p>d、days</p>
+<h4 id="周"><a href="#周" class="headerlink" title="周"></a>周</h4><p>w、wk、week</p>
+<p>w、wks、weeks</p>
+<h4 id="月"><a href="#月" class="headerlink" title="月"></a>月</h4><p>mo、month</p>
+<p>mo、months</p>
+<h4 id="年"><a href="#年" class="headerlink" title="年"></a>年</h4><p>yr、year</p>
+<p>yrs、years</p>
+<h1 id="函数-1"><a href="#函数-1" class="headerlink" title="函数"></a>函数</h1><p>Dataview 函数提供了更高级的方法来操作数据。</p>
+<h2 id="函数向量化"><a href="#函数向量化" class="headerlink" title="函数向量化"></a>函数向量化</h2><p>大多数函数既可以应用于单个值（如<code>number</code>、<code>string</code>、<code>date</code>等），也可以应用于这些值的列表。如果将函数应用于列表，则在将函数应用于列表中的每个元素后，它也会返回一个列表。例如：</p>
+<p><code>lower(&quot;YES&quot;) = &quot;yes&quot; lower(list(&quot;YES&quot;, &quot;NO&quot;)) = list(&quot;yes&quot;, &quot;no&quot;) replace(&quot;yes&quot;, &quot;e&quot;, &quot;a&quot;) = &quot;yas&quot; replace(list(&quot;yes&quot;, &quot;ree&quot;), &quot;e&quot;, &quot;a&quot;) = list(&quot;yas&quot;, &quot;raa&quot;)</code> </p>
+<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><p>创造值的构造函数。</p>
+<h3 id="object-key1-value1"><a href="#object-key1-value1" class="headerlink" title="object(key1, value1, ...)"></a><code>object(key1, value1, ...)</code></h3><p>使用给定的键和值创建一个新对象。键和值应该在调用中交替，键应该始终是字符串&#x2F;文本。</p>
+<p><code>object() =&gt; empty object object(&quot;a&quot;, 6) =&gt; object which maps &quot;a&quot; to 6 object(&quot;a&quot;, 4, &quot;c&quot;, &quot;yes&quot;) =&gt; object which maps a to 4, and c to &quot;yes&quot;</code> </p>
+<h3 id="list-value1-value2"><a href="#list-value1-value2" class="headerlink" title="list(value1, value2, ...)"></a><code>list(value1, value2, ...)</code></h3><p>创建一个包含给定值的新列表。</p>
+<p><code>list() =&gt; empty list list(1, 2, 3) =&gt; list with 1, 2, and 3 list(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;) =&gt; list with &quot;a&quot;, &quot;b&quot;, and &quot;c&quot;</code> </p>
+<h3 id="date-any"><a href="#date-any" class="headerlink" title="date(any)"></a><code>date(any)</code></h3><p>如果可能，从提供的字符串、日期或链接对象解析日期，否则返回 null。</p>
+<p><code>date(&quot;2020-04-18&quot;) = &lt;date object representing April 18th, 2020&gt; date([[2021-04-16]]) = &lt;date object for the given page, refering to file.day&gt;</code> </p>
+<h3 id="dur-any"><a href="#dur-any" class="headerlink" title="dur(any)"></a><code>dur(any)</code></h3><p>从提供的字符串或持续时间解析持续时间，失败时返回 null。</p>
+<p><code>dur(8 minutes) = &lt;8 minutes&gt; dur(&quot;8 minutes, 4 seconds&quot;) = &lt;8 minutes, 4 seconds&gt; dur(dur(8 minutes)) = dur(8 minutes) = &lt;8 minutes&gt;</code> </p>
+<h3 id="number-string"><a href="#number-string" class="headerlink" title="number(string)"></a><code>number(string)</code></h3><p>从给定字符串中解析出第一个数字，返回它。如果字符串中没有数字，则返回 null。</p>
+<p><code>number(&quot;18 years&quot;) = 18 number(34) = 34 number(&quot;hmm&quot;) = null</code> </p>
+<h3 id="string-any"><a href="#string-any" class="headerlink" title="string(any)"></a><code>string(any)</code></h3><p>将任何值转换为“合理”的字符串表示形式。与直接在查询中使用值相比，这有时会产生不那么漂亮的结果——它主要用于将日期、持续时间、数字等强制转换为字符串以进行操作。</p>
+<p><code>string(18) = &quot;18&quot; string(dur(8 hours)) = &quot;8 hours&quot; string(date(2021-08-15)) = &quot;August 15th, 2021&quot;</code> </p>
+<h3 id="link-path-display"><a href="#link-path-display" class="headerlink" title="link(path, [display])"></a><code>link(path, [display])</code></h3><p>从给定的文件路径或名称构造一个链接对象。如果提供了两个参数，则第二个参数是链接的显示名称。</p>
+<p><code>link(&quot;Hello&quot;) =&gt; link to page named &#39;Hello&#39; link(&quot;Hello&quot;, &quot;Goodbye&quot;) =&gt; link to page named &#39;Hello&#39;, displays as &#39;Goodbye&#39;</code> </p>
+<h3 id="elink-url-display"><a href="#elink-url-display" class="headerlink" title="elink(url, [display])"></a><code>elink(url, [display])</code></h3><p>构造一个指向外部 url 的链接（如<code>www.google.com</code>）。如果提供了两个参数，则第二个参数是链接的显示名称。</p>
+<p><code>elink(&quot;www.google.com&quot;) =&gt; link element to google.com elink(&quot;www.google.com&quot;, &quot;Google&quot;) =&gt; link element to google.com, displays as &quot;Google&quot;</code> </p>
+<hr>
+<h2 id="数值运算"><a href="#数值运算" class="headerlink" title="数值运算"></a>数值运算</h2><h3 id="round-number-digits"><a href="#round-number-digits" class="headerlink" title="round(number, [digits])"></a><code>round(number, [digits])</code></h3><p>将数字四舍五入到给定的位数。如果未指定第二个参数，则四舍五入到最接近的整数；否则，四舍五入到给定的位数。</p>
+<p><code>round(16.555555) = 7 round(16.555555, 2) = 16.56</code> </p>
+<p>–</p>
+<h2 id="对象、数组和字符串操作"><a href="#对象、数组和字符串操作" class="headerlink" title="对象、数组和字符串操作"></a>对象、数组和字符串操作</h2><p>操作容器对象内部的值的操作。</p>
+<h3 id="contains-object-list-string-value"><a href="#contains-object-list-string-value" class="headerlink" title="contains(object|list|string, value)"></a><code>contains(object|list|string, value)</code></h3><p>检查给定的容器类型是否具有给定的值。根据第一个参数是对象、列表还是字符串，此函数的行为略有不同。</p>
+<ul>
+<li><p>对于对象，检查对象是否具有给定名称的键。例如，</p>
+<p><code>contains(file, &quot;ctime&quot;) = true contains(file, &quot;day&quot;) = true (if file has a date in its title, false otherwise)</code> </p>
+</li>
+<li><p>对于列表，检查是否有任何数组元素等于给定值。例如，</p>
+<p><code>contains(list(1, 2, 3), 3) = true contains(list(), 1) = false</code> </p>
+</li>
+<li><p>对于字符串，检查给定值是否是字符串的子字符串（即，在字符串内部）。</p>
+<p><code>contains(&quot;hello&quot;, &quot;lo&quot;) = true contains(&quot;yes&quot;, &quot;no&quot;) = false</code></p>
+</li>
+</ul>
+<h3 id="extract-object-key1-key2"><a href="#extract-object-key1-key2" class="headerlink" title="extract(object, key1, key2, ...)"></a><code>extract(object, key1, key2, ...)</code></h3><p>从一个对象中提取多个字段，创建一个仅包含这些字段的新对象。</p>
+<p><code>extract(file, &quot;ctime&quot;, &quot;mtime&quot;) = object(&quot;ctime&quot;, file.ctime, &quot;mtime&quot;, file.mtime) extract(object(&quot;test&quot;, 1)) = object()</code> </p>
+<h3 id="sort-list"><a href="#sort-list" class="headerlink" title="sort(list)"></a><code>sort(list)</code></h3><p>对列表进行排序，按排序顺序返回一个新列表。</p>
+<p><code>sort(list(3, 2, 1)) = list(1, 2, 3) sort(list(&quot;a&quot;, &quot;b&quot;, &quot;aa&quot;)) = list(&quot;a&quot;, &quot;aa&quot;, &quot;b&quot;)</code> </p>
+<h3 id="reverse-list"><a href="#reverse-list" class="headerlink" title="reverse(list)"></a><code>reverse(list)</code></h3><p>反转一个列表，以相反的顺序返回一个新列表。</p>
+<p><code>reverse(list(1, 2, 3)) = list(3, 2, 1) reverse(list(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)) = list(&quot;c&quot;, &quot;b&quot;, &quot;a&quot;)</code> </p>
+<h3 id="length-object-array"><a href="#length-object-array" class="headerlink" title="length(object|array)"></a><code>length(object|array)</code></h3><p>返回对象中的字段数或数组中的条目数。</p>
+<p><code>length(list()) = 0 length(list(1, 2, 3)) = 3 length(object(&quot;hello&quot;, 1, &quot;goodbye&quot;, 2)) = 2</code> </p>
+<h3 id="sum-array"><a href="#sum-array" class="headerlink" title="sum(array)"></a><code>sum(array)</code></h3><p>对数组中的所有数值求和</p>
+<p><code>sum(list(1, 2, 3)) = 6</code> </p>
+<h3 id="all-array"><a href="#all-array" class="headerlink" title="all(array)"></a><code>all(array)</code></h3><p><code>true</code>仅当数组中的所有值都为真时才返回。您还可以将多个参数传递给此函数，在这种情况下，它<code>true</code>仅在所有参数都为真时才返回。</p>
+<p><code>all(list(1, 2, 3)) = true all(list(true, false)) = false all(true, false) = false all(true, true, true) = true</code> </p>
+<h3 id="any-array"><a href="#any-array" class="headerlink" title="any(array)"></a><code>any(array)</code></h3><p><code>true</code>如果数组中的任何值是真实的，则返回。您还可以将多个参数传递给此函数，在这种情况下，<code>true</code>如果任何参数为真，它就会返回。</p>
+<p><code>any(list(1, 2, 3)) = true any(list(true, false)) = true any(list(false, false, false)) = false all(true, false) = true all(false, false) = false</code> </p>
+<h3 id="none-array"><a href="#none-array" class="headerlink" title="none(array)"></a><code>none(array)</code></h3><p><code>true</code>如果数组中没有一个值是真实的，则返回。</p>
+<p><code>none([]) = true none([false, false]) = true none([false, true]) = false none([1, 2, 3]) = false</code> </p>
+<h3 id="join-array"><a href="#join-array" class="headerlink" title="join(array)"></a><code>join(array)</code></h3><p>将数组中的元素连接到单个字符串中（即，将它们全部呈现在同一行上）。如果提供了第二个参数，则每个元素将由给定的分隔符分隔。</p>
+<p><code>join(list(1, 2, 3)) = &quot;1, 2, 3&quot; join(list(1, 2, 3), &quot; &quot;) = &quot;1 2 3&quot; join(6) = &quot;6&quot; join(list()) = &quot;&quot;</code> </p>
+<h3 id="filter-array-predicate"><a href="#filter-array-predicate" class="headerlink" title="filter(array, predicate)"></a><code>filter(array, predicate)</code></h3><p>根据谓词过滤数组中的元素，返回匹配的元素的新列表。</p>
+<p><code>filter([1, 2, 3], (x) =&gt; x &gt;= 2) = [2, 3] filter([&quot;yes&quot;, &quot;no&quot;, &quot;yas&quot;], (x) =&gt; startswith(x, &quot;y&quot;)) = [&quot;yes&quot;, &quot;yas&quot;]</code> </p>
+<h3 id="map-array-func"><a href="#map-array-func" class="headerlink" title="map(array, func)"></a><code>map(array, func)</code></h3><p>将函数应用于数组中的每个元素，返回映射结果的列表。</p>
+<p><code>map([1, 2, 3], (x) =&gt; x + 2) = [3, 4, 5] map([&quot;yes&quot;, &quot;no&quot;], (x) =&gt; x + &quot;?&quot;) = [&quot;yes?&quot;, &quot;no?&quot;]</code> </p>
+<hr>
+<h2 id="字符串操作"><a href="#字符串操作" class="headerlink" title="字符串操作"></a>字符串操作</h2><h3 id="regexmatch-pattern-string"><a href="#regexmatch-pattern-string" class="headerlink" title="regexmatch(pattern, string)"></a><code>regexmatch(pattern, string)</code></h3><p>检查给定字符串是否与给定模式匹配（使用 JavaScript 正则表达式引擎）。</p>
+<p><code>regexmatch(&quot;\w+&quot;, &quot;hello&quot;) = true regexmatch(&quot;.&quot;, &quot;a&quot;) = true regexmatch(&quot;yes|no&quot;, &quot;maybe&quot;) = false</code> </p>
+<h3 id="regexreplace-string-pattern-replacement"><a href="#regexreplace-string-pattern-replacement" class="headerlink" title="regexreplace(string, pattern, replacement)"></a><code>regexreplace(string, pattern, replacement)</code></h3><p>用,替换_正则表达式_ <code>pattern</code>匹配的所有实例。这在底层使用了 JavaScript 替换方法，因此您可以使用特殊字符，例如引用第一个捕获组，依此类推。<code>string``replacement``$1</code></p>
+<p><code>regexreplace(&quot;yes&quot;, &quot;[ys]&quot;, &quot;a&quot;) = &quot;aea&quot; regexreplace(&quot;Suite 1000&quot;, &quot;\d+&quot;, &quot;-&quot;) = &quot;Suite -&quot;</code> </p>
+<h3 id="replace-string-pattern-replacement"><a href="#replace-string-pattern-replacement" class="headerlink" title="replace(string, pattern, replacement)"></a><code>replace(string, pattern, replacement)</code></h3><p><code>pattern</code>将in的所有实例替换<code>string</code>为<code>replacement</code>。</p>
+<p><code>replace(&quot;what&quot;, &quot;wh&quot;, &quot;h&quot;) = &quot;hat&quot; replace(&quot;The big dog chased the big cat.&quot;, &quot;big&quot;, &quot;small&quot;) = &quot;The small dog chased the small cat.&quot; replace(&quot;test&quot;, &quot;test&quot;, &quot;no&quot;) = &quot;no&quot;</code> </p>
+<h3 id="lower-string"><a href="#lower-string" class="headerlink" title="lower(string)"></a><code>lower(string)</code></h3><p>将字符串转换为全部小写。</p>
+<p><code>lower(&quot;Test&quot;) = &quot;test&quot; lower(&quot;TEST&quot;) = &quot;test&quot;</code> </p>
+<h3 id="upper-string"><a href="#upper-string" class="headerlink" title="upper(string)"></a><code>upper(string)</code></h3><p>将字符串转换为全部大写。</p>
+<p><code>upper(&quot;Test&quot;) = &quot;TEST&quot; upper(&quot;test&quot;) = &quot;TEST&quot;</code> </p>
+<h3 id="split-string-delimiter-limit"><a href="#split-string-delimiter-limit" class="headerlink" title="split(string, delimiter, [limit])"></a><code>split(string, delimiter, [limit])</code></h3><p>在给定的分隔符字符串上拆分字符串。如果提供了第三个参数，它会限制发生的拆分次数。分隔符字符串被解释为正则表达式。如果分隔符中有捕获组，则将匹配项拼接到结果数组中，不匹配的捕获项为空字符串。</p>
+<p><code>split(&quot;hello world&quot;, &quot; &quot;) = list(&quot;hello&quot;, &quot;world&quot;) split(&quot;hello  world&quot;, &quot;\s&quot;) = list(&quot;hello&quot;, &quot;world&quot;) split(&quot;hello there world&quot;, &quot; &quot;, 2) = list(&quot;hello&quot;, &quot;there&quot;) split(&quot;hello there world&quot;, &quot;(t?here)&quot;) = list(&quot;hello &quot;, &quot;there&quot;, &quot; world&quot;) split(&quot;hello there world&quot;, &quot;( )(x)?&quot;) = list(&quot;hello&quot;, &quot; &quot;, &quot;&quot;, &quot;there&quot;, &quot; &quot;, &quot;&quot;, &quot;world&quot;)</code> </p>
+<h3 id="startswith-string-prefix"><a href="#startswith-string-prefix" class="headerlink" title="startswith(string, prefix)"></a><code>startswith(string, prefix)</code></h3><p>检查字符串是否以给定前缀开头。</p>
+<p><code>startswith(&quot;yes&quot;, &quot;ye&quot;) = true startswith(&quot;path/to/something&quot;, &quot;path/&quot;) = true startswith(&quot;yes&quot;, &quot;no&quot;) = false</code> </p>
+<h3 id="endswith-string-suffix"><a href="#endswith-string-suffix" class="headerlink" title="endswith(string, suffix)"></a><code>endswith(string, suffix)</code></h3><p>检查字符串是否以给定的后缀结尾。</p>
+<p><code>endswith(&quot;yes&quot;, &quot;es&quot;) = true endswith(&quot;path/to/something&quot;, &quot;something&quot;) = true endswith(&quot;yes&quot;, &quot;ye&quot;) = false</code> </p>
+<h3 id="padleft-string-length-padding"><a href="#padleft-string-length-padding" class="headerlink" title="padleft(string, length, [padding])"></a><code>padleft(string, length, [padding])</code></h3><p>通过在左侧添加填充将字符串填充到所需的长度。如果省略填充字符，则默认使用空格。</p>
+<p><code>padleft(&quot;hello&quot;, 7) = &quot;  hello&quot; padleft(&quot;yes&quot;, 5, &quot;!&quot;) = &quot;!!yes&quot;</code> </p>
+<h3 id="padright-string-length-padding"><a href="#padright-string-length-padding" class="headerlink" title="padright(string, length, [padding])"></a><code>padright(string, length, [padding])</code></h3><p>等效于<code>padleft</code>，但改为向右填充。</p>
+<p><code>padright(&quot;hello&quot;, 7) = &quot;hello  &quot; padright(&quot;yes&quot;, 5, &quot;!&quot;) = &quot;yes!!&quot;</code> </p>
+<h2 id="实用功能"><a href="#实用功能" class="headerlink" title="实用功能"></a>实用功能</h2><h3 id="default-field-value"><a href="#default-field-value" class="headerlink" title="default(field, value)"></a><code>default(field, value)</code></h3><p>如果<code>field</code>为空，则返回<code>value</code>；否则返回<code>field</code>。对于用默认值替换空值很有用。例如，要显示尚未完成的项目，请使用<code>&quot;incomplete&quot;</code>它们的默认值：</p>
+<p><code>default(dateCompleted, &quot;incomplete&quot;)</code> </p>
+<p>默认值在两个参数中都是矢量化的；如果您需要在列表参数上显式使用 default ，请使用<code>ldefault</code>，它与 default 相同，但未矢量化。</p>
+<p><code>default(list(1, 2, null), 3) = list(1, 2, 3) ldefault(list(1, 2, null), 3) = list(1, 2, null)</code> </p>
+<h3 id="choice-bool-left-right"><a href="#choice-bool-left-right" class="headerlink" title="choice(bool, left, right)"></a><code>choice(bool, left, right)</code></h3><p>原始 if 语句 - 如果第一个参数为真，则返回左；否则，返回正确。</p>
+<p><code>choice(true, &quot;yes&quot;, &quot;no&quot;) = &quot;yes&quot; choice(false, &quot;yes&quot;, &quot;no&quot;) = &quot;no&quot; choice(x &gt; 4, y, z) = y if x &gt; 4, else z</code> </p>
+<h3 id="striptime-date"><a href="#striptime-date" class="headerlink" title="striptime(date)"></a><code>striptime(date)</code></h3><p>去掉日期的时间部分，只留下年、月和日。如果您不关心时间，则适合日期比较。</p>
+<p><code>striptime(file.ctime) = file.cday striptime(file.mtime) = file.mday</code> </p>
+<h3 id="localtime-date"><a href="#localtime-date" class="headerlink" title="localtime(date)"></a><code>localtime(date)</code></h3><p>将固定时区的日期转换为当前时区的日期。</p>
+<h3 id="meta-link"><a href="#meta-link" class="headerlink" title="meta(link)"></a><code>meta(link)</code></h3><p>获取包含链接元数据的对象。当您访问链接上的属性时，您得到的是链接文件中的属性值。该<code>meta</code>功能可以访问链接本身的属性。</p>
+<p>返回的对象有几个属性<code>meta</code>：</p>
+<h4 id="meta-link-display"><a href="#meta-link-display" class="headerlink" title="meta(link).display"></a><code>meta(link).display</code></h4><p>获取链接的显示文本，如果链接没有定义的显示文本，则为 null。</p>
+<p><code>meta([[2021-11-01|Displayed link text]]).display = &quot;Displayed link text&quot; meta([[2021-11-01]]).display = null</code> </p>
+<h4 id="meta-link-embed"><a href="#meta-link-embed" class="headerlink" title="meta(link).embed"></a><code>meta(link).embed</code></h4><p>真或假取决于链接是否为嵌入。这些是以感叹号开头的链接，例如 <code>![[Some Link]]</code>.</p>
+<h4 id="meta-link-path"><a href="#meta-link-path" class="headerlink" title="meta(link).path"></a><code>meta(link).path</code></h4><p>获取链接的路径部分。</p>
+<p><code>meta([[My Project]]).path = &quot;My Project&quot; meta([[My Project#Next Actions]]).path = &quot;My Project&quot; meta([[My Project#^9bcbe8]]).path = &quot;My Project&quot;</code> </p>
+<h4 id="meta-link-subpath"><a href="#meta-link-subpath" class="headerlink" title="meta(link).subpath"></a><code>meta(link).subpath</code></h4><p>获取链接的子路径。对于文件中标题的链接，子路径将是标题的文本。对于块的链接，子路径将是块 ID。如果这些情况都不适用，则子路径将为空。</p>
+<p><code>meta([[My Project#Next Actions]]).subpath = &quot;Next Actions&quot; meta([[My Project#^9bcbe8]]).subpath = &quot;9bcbe8&quot; meta([[My Project]]).subpath = null</code> </p>
+<p>这可用于选择特定标题下的任务。</p>
+<p><code>```dataview task where meta(section).subpath = &quot;Next Actions&quot; ```</code> </p>
+<h4 id="meta-link-type"><a href="#meta-link-type" class="headerlink" title="meta(link).type"></a><code>meta(link).type</code></h4><p>根据链接是链接到整个文件、文件中的标题还是文件中的块，具有值“文件”、“标题”或“块”。</p>
+<p><code>meta([[My Project]]).type = &quot;file&quot; meta([[My Project#Next Actions]]).type = &quot;header&quot; meta([[My Project#^9bcbe8]]).type = &quot;block&quot;</code></p>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2022-01-26</span>
+            
+            
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2022/03/21/SpringCloud%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/'>笔记 | SpringCloud</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2022/01/25/Obsidian-Template/">译 | Obsidian-Template文档</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+             
+
+            
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>Change And Challenge</span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>

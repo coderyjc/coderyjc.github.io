@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="笔记 | JavaScript" />
+    <meta name="hexo-theme-A4" content="v1.9.6" />
+    <link rel="alternate icon" type="image/webp" href="/img/avatar.png">
+    <title>Jingcun Yan</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+    
+    
+        <style>
+            .index-main{
+                max-width:  880px;
+            }
+        </style>
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            <div class="left-toc-container">
+                <nav id="toc" class="bs-docs-sidebar"></nav>
+            </div>
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/avatar.png" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">Jingcun Yan</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    笔记 | JavaScript
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                
+                    
+                     <span>字数总计：14.8k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：55分钟</span>
+                
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+        <div class=".article-gallery"><h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><h2 id="简介和语法基础"><a href="#简介和语法基础" class="headerlink" title="简介和语法基础"></a>简介和语法基础</h2><p>前身：liveScript</p>
+<p>起源：诞生于1995年，主要的作用是处理网页中的前端验证。</p>
+<p>最初用来做前端验证（而并不是后端服务器验证）：检查用户输入的内容是否符合一定的规则（用户名的长度，邮箱的格式）</p>
+<p>不同的浏览器对JavaScript实现的引擎是不同的。</p>
+<p>JavaScript一般包含以下三个部分：ECMAScript&#x2F;DOM&#x2F;BOM</p>
+<p>JS的特点：</p>
+<ul>
+<li>解释性语言</li>
+<li>类似于C和Java的语法结构</li>
+<li>动态语言</li>
+<li>基于原型的面向对象</li>
+</ul>
+<p>JS代码需要编写到script标签中，这个标签有一个type属性，默认为“text&#x2F;javascript”</p>
+<h3 id="输出语句"><a href="#输出语句" class="headerlink" title="输出语句"></a>输出语句</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">alert</span>(<span class="string">&quot;Hello World！&quot;</span>); <span class="comment">//发出提醒</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="string">&quot;Hello DOCUMENT&quot;</span>); <span class="comment">//作用：向body中输出内容</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Hello CONSOLE&quot;</span>); <span class="comment">//向控制台输出内容</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="js-代码编写位置"><a href="#js-代码编写位置" class="headerlink" title="js 代码编写位置"></a>js 代码编写位置</h3><ol>
+<li>将js代码编写到onclick属性中（耦合度大，不推荐）</li>
+<li>可以编写在超链接的href中（耦合度大，不推荐）</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--可以将js代码编写到onclick属性中--&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">&quot;alert(&#x27;讨厌，你点我干嘛！&#x27;);&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    点我一下</span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">&lt;!--可以写在超链接的href中--&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;javascript:alert(&#x27;让你点你就点啊？&#x27;);&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    你也点我一下</span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;javascript:;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    点我一下</span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>（推荐）将js代码写在外部的.js 文件中，然后通过script的src属性引入</li>
+</ol>
+<p>优点：降低了程序的耦合度，写到外部的文件可以在不同的页面中同时引用，也可以利用浏览器的缓存机制</p>
+<p>注意:script 标签一旦用来引入外部文件，就不能再编写代码了，即使编写了，浏览器也会忽略，只能再写一个script标签来编写内部的代码。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// Test.js</span></span><br><span class="line">	<span class="title function_">alert</span>(<span class="string">&#x27;Hello World&#x27;</span>);</span><br><span class="line"><span class="comment">// Test.html</span></span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;js/Test.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>注释：</p>
+<ul>
+<li>多行注释：&#x2F;* *&#x2F;</li>
+<li>单行注释：&#x2F;&#x2F;</li>
+</ul>
+<p>代码规则：</p>
+<ul>
+<li>Js中严格区分大小写（HTML不区分大小写）</li>
+<li>Js中每一条语句必须以英文分号 ；结尾（如果不加分号，浏览器会自动添加，但是会消耗一些系统资源， 而且有些时候，浏览器会加错分号）</li>
+<li>Js中会自动忽略多个空格和换行，所以在代码中可以通过缩进和换行进行美化</li>
+</ul>
+<h3 id="字面量和变量"><a href="#字面量和变量" class="headerlink" title="字面量和变量"></a>字面量和变量</h3><ul>
+<li>字面量<ul>
+<li>字面量都是一些不能改变的量 : 1 2 3 4 5 “hello” </li>
+<li>字面量都是可以直接使用的，但是我一般不会直接使用字面量（用起来不方便）</li>
+</ul>
+</li>
+<li>变量<ul>
+<li>用来保存字面量，可以任意改变</li>
+</ul>
+</li>
+</ul>
+<p>变量&#x2F;标识符</p>
+<p>使用var声明一个变量，可以同时赋值</p>
+<h3 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h3><ol>
+<li>可以含有字母，数字，_  , $</li>
+<li>不能以数字开头</li>
+<li>不能是ES中的关键字或者保留字</li>
+<li>驼峰命名法</li>
+<li>千万不要用中文</li>
+</ol>
+<p>js底层保存的标识符是采用Unicode，所以，理论上u8中所有的字符都能作为变量名</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">        <span class="keyword">var</span> a = <span class="number">100</span>;</span><br><span class="line">        <span class="title function_">alert</span>(a);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>在js中一共有6中数据类型</p>
+<ol>
+<li>String 字符串</li>
+<li>Number 数字</li>
+<li>Boolean 布尔值</li>
+<li>Null 空值</li>
+<li>Undefined 未定义</li>
+<li>Object 对象</li>
+</ol>
+<p>其中12345是基本数据类型，6是引用数据类型</p>
+<p>String:</p>
+<ul>
+<li>字符串可以用单引号和双引号，不要混着用</li>
+<li>单引号里面可以套双引号，双引号中可以套单引号</li>
+<li>如果要单套单或者双套双，可以使用转义字符</li>
+</ul>
+<p>Number</p>
+<ul>
+<li>js中所有数值都是Number类型，包括整数和浮点数</li>
+<li>如果表示的数字超过了最大值，则显示为Infinity</li>
+<li>如果不是一个数字，则返回 NaN （not a number）</li>
+<li>使用 typeof 检查 Infinity或者NaN 也会返回number</li>
+<li>如果进行浮点运算，可能不能得到一个精确的结果</li>
+</ul>
+<p>使用方式：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    运算符 typeof 检查一个变量类型</span></span><br><span class="line"><span class="comment">    语法： typeof 变量</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">    <span class="keyword">var</span> str1 = <span class="string">&quot;Hello&#x27;world&#x27;&quot;</span>;</span><br><span class="line">    str1 = <span class="string">&#x27;Hello&#x27;</span>;</span><br><span class="line">    <span class="comment">//------------------------------------</span></span><br><span class="line">    <span class="comment">//js中所有数值都是Number类型，包括整数和</span></span><br><span class="line">    <span class="keyword">var</span> n1 = <span class="number">123</span>;</span><br><span class="line">    <span class="keyword">var</span> n2 = <span class="number">123.456</span>;</span><br><span class="line">    <span class="comment">//如果表示的数字超过了最大值，则显示为Infinity</span></span><br><span class="line">    <span class="keyword">var</span> maxNumber = <span class="title class_">Number</span>.<span class="property">MAX_VALUE</span>; <span class="comment">//最大值</span></span><br><span class="line">    <span class="keyword">var</span> maxNumber = <span class="title class_">Number</span>.<span class="property">MIN_VALUE</span>; <span class="comment">//0以上的最小值</span></span><br><span class="line">    <span class="comment">//如果不是一个数字，则返回 NaN （not a number）</span></span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="keyword">typeof</span> maxNumber); <span class="comment">//输出n1的类型</span></span><br><span class="line">    <span class="comment">//使用 typeof 检查 Infinity或者NaN 也会返回number</span></span><br><span class="line">    <span class="comment">//如果进行浮点运算，可能不能得到一个精确的结果</span></span><br><span class="line">    <span class="comment">//---------------------------------------</span></span><br><span class="line">    <span class="comment">//布尔值只有两个, 小写的 true 和 false</span></span><br><span class="line">    <span class="keyword">var</span> bool1 = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">var</span> bool2 = <span class="literal">false</span>;</span><br><span class="line">    <span class="comment">//----------------------------------------</span></span><br><span class="line">    <span class="comment">// Null 类型的值只有一个 null， 专门用来表示一个空的对象</span></span><br><span class="line">    <span class="keyword">var</span> ob = <span class="literal">null</span>;</span><br><span class="line">    <span class="comment">//typeof 检查null值会返回object</span></span><br><span class="line">    <span class="comment">//Undefinned的值只有一个， 当我门声明了一个值，但是没有给他赋值的时候，值就是undefined</span></span><br><span class="line">    <span class="comment">//typeof 检查 undefined 值会返回 undefined</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h3><p>类型转换主要指：将其他类型转换为 String Number Boolean转换为 String 类型：</p>
+<h4 id="转换为String：方式："><a href="#转换为String：方式：" class="headerlink" title="转换为String：方式："></a>转换为String：方式：</h4><ol>
+<li>调用被转换数据类型的toString()方法（返回方法的执行结果）  注意： null 和 undefined 没有toString() 方法，调用会报错  </li>
+<li>调用 String() 函数，并将要转换的数据作为参数传入, 对于Number和Boolean，底层就是调用的toString() ，但是对于null和undefined就会直接转换为字符串。</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 法1</span></span><br><span class="line"><span class="keyword">var</span> num = <span class="number">12345</span>;</span><br><span class="line">num = num.<span class="title function_">toString</span>();</span><br><span class="line"><span class="comment">// 法2</span></span><br><span class="line"><span class="keyword">var</span> und = <span class="literal">undefined</span>;</span><br><span class="line">num = <span class="title class_">String</span>(und);</span><br></pre></td></tr></table></figure>
+
+<h4 id="转换为Number：方式："><a href="#转换为Number：方式：" class="headerlink" title="转换为Number：方式："></a>转换为Number：方式：</h4><ol>
+<li><p>使用Number()函数</p>
+<p> 1.如果是纯数字的字符串，则直接将其转换为数字</p>
+<p> 2.如果字符串中有非数字的内容，则转换为NaN</p>
+<p> 3.如果字符串是空串、全是空格的字符串、false、null，则转换为0</p>
+<p> 4.undefined 为 NaN</p>
+</li>
+<li><p>parseInt()函数和 parseFloat()函数 专门用来对付字符串</p>
+<ul>
+<li>遇到第一个不是数字的时候停止</li>
+<li>parseInt 有第二个参数，表示转换为多少进制的数字</li>
+</ul>
+</li>
+<li><p>调用Boolean()函数来将a转换为布尔值</p>
+<ul>
+<li>数字转换为布尔型，除了0和NaN，其他的都是true，字符串转换为bool，除了空串，其他都是true</li>
+<li>对象也是true</li>
+</ul>
+</li>
+</ol>
+<p>在js中，如果需要表示16进制的数字，则需要以0x开头如果需要表示8进制的数字，则需要以0开头如果要要表示2进制的数字，则需要以0b开头但是不是所有的浏览器都支持，像”070”这种字符串，有些浏览器会当成8进制解析，有些会当成10进制解析</p>
+<p>如果对非String使用parseInt()或parseFloat()它会先将其转换为String然后再操作</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">&quot;123.456px&quot;</span></span><br><span class="line"><span class="title function_">alert</span>(a); <span class="comment">// -&gt; 123.456</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h4><p>基本和java一样</p>
+<p>任何值和字符串相加都会转换为字符串，并做拼串操作。我们可以利用这一特点，来将一个任意的数据类型转换为String我们只需要为任意的数据类型 + 一个 “” 即可将其转换为String这是一种隐式的类型转换，由浏览器自动完成，实际上它也是调用String()函数</p>
+<p>任何值做- * &#x2F;运算时都会自动转换为Number我们可以利用这一特点做隐式的类型转换可以通过为一个值 -0 *1 &#x2F;1 来将其转换为Number原理和Number()函数一样，使用起来更加简单（但是不是我们的最终方式，我们还有其他的方式）。</p>
+<p>以下运算符和java一样：</p>
+<ul>
+<li>++ –</li>
+<li>！&amp;&amp; ||</li>
+<li>+&#x3D;  -&#x3D;  &#x2F;&#x3D;  *&#x3D; 等</li>
+<li>&lt; &gt; &gt;&#x3D; &lt;&#x3D; (任何值和NaN比较都是返回 false)</li>
+<li>&#x3D;&#x3D;  !&#x3D;</li>
+<li>三目运算符 ？： （不推荐使用，因为不方便阅读）</li>
+<li>注意：在比较的时候通常会进行自动类型转换</li>
+</ul>
+<p>&#x3D; &#x3D; &#x3D;  全等：在比较的时候不会进行自动类型转换，如果类型不同会直接返回false</p>
+<p>! &#x3D; &#x3D;  不全等 同理</p>
+<ul>
+<li>undefined 衍生自 null 所以这两个值用 &#x3D;&#x3D; 比较的时候是相等的</li>
+<li>NaN 不和任何值相等，包括他本身</li>
+<li>但是可以用 isNaN() 来判断一个数字是不是NaN</li>
+</ul>
+<p>比较两个字符串型的数字的时候一定一定要转型</p>
+<p>也有与或非运算符，而且我们可以对一个值取两次反（两次‘！’）来将其转换为布尔值</p>
+<h3 id="顺序-分支和循环"><a href="#顺序-分支和循环" class="headerlink" title="顺序&#x2F;分支和循环"></a>顺序&#x2F;分支和循环</h3><p>在JS中可以使用 {} 将语句括起来进行分组，（只有分组的作用，没有其他用途，代码块中的内容在外部是完全可见的）</p>
+<p>prompt函数接受一个参数作为输出，弹出一个对话框，接受用户输入，作为返回值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> score = <span class="title function_">prompt</span>(<span class="string">&quot;请输入小明的期末成绩(0-100):&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>JS中的顺序、分支和循环语句和Java中一模一样</p>
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><h3 id="对象基础知识"><a href="#对象基础知识" class="headerlink" title="对象基础知识"></a>对象基础知识</h3><p>Js中的数据类型：String, Number, Boolean, Null, Undefined</p>
+<p>只要不属于这五种数据类型，都是对象 Object</p>
+<p>对象分为内建对象（ES标准中定义的对象 Math\String\Number\Function）、宿主对象（BOM\DOM）、自定义对象（我们自己创建的对象）</p>
+<p>使用 new 关键字调用的函数时构造函数（专门用来创建对象的函数）</p>
+<p>每个对象中都有一个constructor属性，它引用了当前对象的构造函数。</p>
+<p>对对象的基本操作</p>
+<ul>
+<li><p>对象中的保存的值称为属性，属性可以是任意类型，包括对象，也可以是个函数</p>
+</li>
+<li><p>向对象中添加属性，语法：<code>对象.属性名 = 属性值；</code></p>
+</li>
+<li><p>读取对象中的属性，语法：&#96;&#96;对象.属性名<code>；（如果对象中没有这个属性，不会报错，而是返回 undefined）或者 </code>对象[属性名] &#x3D; 属性值&#96;</p>
+</li>
+<li><p>修改对象的属性，语法：<code>对象.属性名 = 新值；</code></p>
+</li>
+<li><p>删除对象的属性，语法：<code>delete 对象.属性名</code></p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="title class_">Object</span>();</span><br><span class="line">obj.<span class="property">name</span> = <span class="string">&quot;java&quot;</span>; <span class="comment">//添加属性</span></span><br><span class="line">obj.<span class="property">name</span> = <span class="string">&quot;c++++&quot;</span>; <span class="comment">//修改属性</span></span><br><span class="line">obj[<span class="string">&quot;name&quot;</span>] = <span class="string">&quot;c-&quot;</span>; <span class="comment">//修改属性</span></span><br><span class="line"><span class="title function_">alert</span>(<span class="string">&quot;I am &quot;</span> + obj.<span class="property">name</span>);<span class="comment">//调用</span></span><br><span class="line">obj.<span class="property">objAdd</span> = <span class="keyword">function</span>(<span class="params">num1, num2</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">alert</span>(obj.<span class="title function_">objAdd</span>(<span class="number">1</span>, <span class="number">90</span>));</span><br><span class="line"><span class="keyword">delete</span> obj.<span class="property">name</span>; <span class="comment">//删除属性</span></span><br></pre></td></tr></table></figure>
+
+<p>in 运算符：检查一个对象中是否含有指定的属性，有就返回true，否则返回false；语法：<code>&quot;属性名&quot; in 对象</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;name&quot;</span> <span class="keyword">in</span> obj);</span><br></pre></td></tr></table></figure>
+
+<p>js中的变量都是保存在栈中的，但是对象是保存在堆中的，保存的都是引用</p>
+<p>当比较两个基本数据类型的时候是比较值，但是在比较两个引用数据类型的时候，比较的是对象的内存地址，即使两个对象的内容都一样，只要地址不一样，还是会返回false</p>
+<p>使用对象字面量创建对象：</p>
+<p>使用对象字面量，在创建对象的时候，直接指定对象中的属性，语法：<code>&#123;属性名:属性值，属性名:属性值，...&#125;</code>对象字面量的属性名可以加上引号，也能不加，建议不加，如果要使用一些特殊的名字，就必须加上引号</p>
+<p>属性名和属性值是一组一组的名值对结构，每一组之间用，隔开，名值之间用：链接</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">		<span class="attr">name</span>:<span class="string">&quot;猪八戒&quot;</span>,</span><br><span class="line">		<span class="attr">age</span>:<span class="number">13</span>,</span><br><span class="line">		<span class="attr">gender</span>:<span class="string">&quot;男&quot;</span>,</span><br><span class="line">		<span class="attr">test</span>:&#123;<span class="attr">name</span>:<span class="string">&quot;沙僧&quot;</span>&#125;</span><br><span class="line">	&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><h4 id="函数的创建"><a href="#函数的创建" class="headerlink" title="函数的创建"></a>函数的创建</h4><p>函数也是对象，而且  <code>typeof 函数 = function</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将代码以字符串的形式传递给对象(函数表达式)</span></span><br><span class="line"><span class="keyword">var</span> fun = <span class="keyword">new</span> <span class="title class_">Function</span>(<span class="string">&quot;document.write(&#x27;Hello World!&lt;br/&gt;&#x27;);&quot;</span>);</span><br><span class="line"><span class="title function_">fun</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 以函数声明的方式创建一个函数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">HelloFunction</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="string">&quot;Hello World!&lt;br/&gt;&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title class_">HelloFunction</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建匿名函数(函数表达式)</span></span><br><span class="line"><span class="keyword">var</span> fun2 = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="string">&quot;Hello World!&lt;br/&gt;&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">fun2</span>();</span><br></pre></td></tr></table></figure>
+
+<p>含参数的函数的声明：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">a, b</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">alert</span>(<span class="title function_">sum</span>(<span class="number">234</span>, <span class="number">34</span>));</span><br></pre></td></tr></table></figure>
+
+<p>调用函数时解析器<strong>不会检查实参的类型</strong>,所以要注意，是否有可能会接收到非法的参数，如果有可能则需要对参数进行类型的检查函数的实参可以是任意的数据类型</p>
+<p>调用函数时，解析器也<strong>不会检查实参的数量</strong>, 多余实参不会被赋值如果实参的数量少于形参的数量，则没有对应实参的形参将是undefined</p>
+<p>函数中不写return，会返回undefined</p>
+<ul>
+<li>call()</li>
+<li>apply()<ul>
+<li>这两个方法都是函数对象的方法需要通过函数对象来调用</li>
+<li>通过两个方法可以直接调用函数，并且可以通过第一个实参来指定函数中this</li>
+<li>不同的是call是直接传递函数的实参而apply需要将实参封装到一个数组中传递</li>
+</ul>
+</li>
+<li>arguments<ul>
+<li>arguments和this类似，都是函数中的隐含的参数</li>
+<li>arguments是一个类数组元素，它用来封装函数执行过程中的实参<br>  所以即使不定义形参，也可以通过arguments来使用实参</li>
+<li>arguments中有一个属性callee表示当前执行的函数对象</li>
+</ul>
+</li>
+</ul>
+<p>声明完毕立即执行的函数：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">function</span>(<span class="params">a, b</span>)&#123;</span><br><span class="line">    <span class="title function_">alert</span>(<span class="string">&quot;a + b = &quot;</span> + (a + b));</span><br><span class="line">&#125;)(<span class="number">32</span>, <span class="number">48</span>);</span><br></pre></td></tr></table></figure>
+
+<p>枚举对象中的属性</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> student = &#123;</span><br><span class="line">    <span class="attr">name</span>:<span class="string">&#x27;张三&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>:<span class="number">23</span>,</span><br><span class="line">    <span class="attr">email</span>:<span class="string">&#x27;zhangsan@qq.com&#x27;</span>, </span><br><span class="line">    <span class="attr">address</span>:<span class="string">&#x27;Beijing China&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 注意: 只是枚举函数的变量的属性名，每一次遍历都会按照变量声明的顺序将变量名赋值给vars </span></span><br><span class="line"><span class="comment"> * 想要取出其中的属性，应该用[]取出</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> vars <span class="keyword">in</span> student)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(vars + student[vars]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h4><p>作用域指一个变量的作用的范围</p>
+<p>在JS中一共有两种作用域：</p>
+<p>全局作用域 和 函数作用域</p>
+<p>全局作用域：</p>
+<ul>
+<li>直接编写在script标签中的JS代码，都在全局作用域</li>
+<li>全局作用域在页面打开时创建，在页面关闭时销毁</li>
+<li>在全局作用域中有一个全局对象window，它代表的是一个浏览器的窗口，它由浏览器创建我们可以直接使用</li>
+<li>在全局作用域中：创建的变量都会作为window对象的属性保存; 创建的函数都会作为window对象的方法保存</li>
+<li>全局作用域中的变量都是全局变量，在页面的任意的部分都可以访问的到</li>
+<li>尽量不要在全局作用域中创建变量</li>
+</ul>
+<p>函数作用域：</p>
+<ul>
+<li>调用函数时创建函数作用域，函数执行完毕以后，函数作用域销毁</li>
+<li>每调用一次函数就会创建一个新的函数作用域，他们之间是互相独立的</li>
+<li>在函数作用域中可以访问到全局作用域的变量，在全局作用域中无法访问到函数作用域的变量</li>
+<li>当在函数作用域操作一个变量时，它会先在自身作用域中寻找，如果有就直接使用，如果没有则向上一级作用域中寻找，直到找到全局作用域，如果全局作用域中依然没有找到，则会报错ReferenceError</li>
+<li>在函数中要访问全局变量可以使用window对象</li>
+<li>在函数作用域也有声明提前的特性，使用var关键字声明的变量，会在函数中所有的代码执行之前被声明，函数声明也会在函数中所有的代码执行之前执行</li>
+<li>在函数中，不使用var声明的变量都会成为全局变量</li>
+</ul>
+<p>变量声明提前：</p>
+<p>变量的声明提前: 使用var关键字声明的变量，会在所有的代码执行之前被声明（但是不会赋值，如果这时候输出，会显示undefined），但是如果声明变量时不适用var关键字，则变量不会被声明提前</p>
+<p>函数的声明提前: 使用函数声明形式创建的函数 function 函数(){}它会在所有的代码执行之前就被创建，所以我们可以在函数声明前来调用函数, 使用函数表达式创建的函数，不会被声明提前，所以不能在声明前调用	</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//函数声明，会被提前创建</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fun</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;我是一个fun函数&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//函数表达式，不会被提前创建</span></span><br><span class="line"><span class="keyword">var</span> fun2 = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;我是fun2函数&quot;</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="this"><a href="#this" class="headerlink" title="this"></a>this</h4><p>解析器在调用函数每次都会向函数内部传递进一个隐含的参数,这个隐含的参数就是this，this指向的是一个对象，	这个对象我们称为函数执行的 上下文对象，根据函数的调用方式的不同，this会指向不同的对象</p>
+<p>1.以函数的形式调用时，this永远都是window</p>
+<p>2.以方法的形式调用时，this就是调用方法的那个对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">name</span> = <span class="string">&#x27;windows!!&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fun</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sun = &#123;</span><br><span class="line">    <span class="attr">name</span>:<span class="string">&#x27;sun&#x27;</span>,</span><br><span class="line">    <span class="attr">getName</span>: fun</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sun.<span class="title function_">getName</span>();</span><br><span class="line"><span class="title function_">fun</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">//控制台输出结果为 : sun windows!!</span></span><br></pre></td></tr></table></figure>
+
+<p>函数中还有一个对象arguments，这个对象是一个数组，用来保存函数的参数，并且这个对象还有一个属性callee来表示当前的函数</p>
+<h4 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h4><p>使用工厂方法创造对象：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">createPerson</span>(<span class="params">name , age ,gender</span>)&#123;</span><br><span class="line">	<span class="comment">//创建一个新的对象 </span></span><br><span class="line">	<span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="title class_">Object</span>();</span><br><span class="line">	<span class="comment">//向对象中添加属性</span></span><br><span class="line">	obj.<span class="property">name</span> = name;</span><br><span class="line">	obj.<span class="property">age</span> = age;</span><br><span class="line">	obj.<span class="property">gender</span> = gender;</span><br><span class="line">	obj.<span class="property">sayName</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">		<span class="title function_">alert</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="comment">//将新的对象返回</span></span><br><span class="line">	<span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj2 = <span class="title function_">createPerson</span>(<span class="string">&quot;猪八戒&quot;</span>,<span class="number">28</span>,<span class="string">&quot;男&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> obj3 = <span class="title function_">createPerson</span>(<span class="string">&quot;白骨精&quot;</span>,<span class="number">16</span>,<span class="string">&quot;女&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> obj4 = <span class="title function_">createPerson</span>(<span class="string">&quot;蜘蛛精&quot;</span>,<span class="number">18</span>,<span class="string">&quot;女&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>缺点：创建的对象都是Object这个类型，就导致我们无法区分出多种不同类型的对象</p>
+<p><strong>构造函数：</strong></p>
+<p>构造函数和普通函数的区别就是调用方式的不同，普通函数是直接调用，而构造函数需要使用new关键字来调用</p>
+<p>构造函数的执行流程：</p>
+<ol>
+<li>立刻创建一个新的对象</li>
+<li>将新建的对象设置为函数中this,在构造函数中可以使用this来引用新建的对象</li>
+<li>逐行执行函数中的代码</li>
+<li>将新建的对象作为返回值返回</li>
+</ol>
+<p>this的情况：</p>
+<ol>
+<li>当以函数的形式调用时，this是window</li>
+<li>当以方法的形式调用时，谁调用方法this就是谁</li>
+<li>当以构造函数的形式调用时，this就是新创建的那个对象</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name , age , gender</span>)&#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">gender</span> = gender;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">sayName</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">		<span class="title function_">alert</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> per = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;孙悟空&quot;</span>,<span class="number">18</span>,<span class="string">&quot;男&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> per2 = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;玉兔精&quot;</span>,<span class="number">16</span>,<span class="string">&quot;女&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> per3 = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;奔波霸&quot;</span>,<span class="number">38</span>,<span class="string">&quot;男&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>使用instanceof可以检查一个对象是否是一个类的实例</p>
+<p>语法：对象 instanceof 构造函数. 如果是，则返回true，否则返回false</p>
+<p>所有的对象都是Object的后代，所以任何对象和Object左instanceof检查时都会返回true</p>
+<h3 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h3><ul>
+<li><p>创建一个函数以后，解析器都会默认在函数中添加一个属性prototype，prototype属性指向的是一个对象，这个对象我们称为原型对象。如果函数作为普通函数调用prototype没有任何作用</p>
+</li>
+<li><p>当函数作为构造函数使用，它所创建的对象中都会有一个隐含的属性执行该原型对象。这个隐含的属性可以通过 <code>对象. __proto__</code>来访问。</p>
+</li>
+<li><p>原型对象就相当于一个公共的区域，凡是通过同一个构造函数创建的对象他们通常都可以访问到相同的原型对象。我们可以将对象中共有的属性和方法统一添加到原型对象中，这样我们只需要添加一次，就可以使所有的对象都可以使用。</p>
+</li>
+<li><p>当我们去访问对象的一个属性或调用对象的一个方法时，它会先自身中寻找，如果在自身中找到了，则直接使用。如果没有找到，则去原型对象中寻找，如果找到了则使用，如果没有找到，则去原型的原型中寻找，依此类推。直到找到Object的原型为止，Object的原型的原型为null，如果依然没有找到则返回undefined</p>
+</li>
+<li><p>hasOwnProperty()</p>
+<ul>
+<li><p>这个方法可以用来检查对象自身中是否含有某个属性</p>
+</li>
+<li><p>语法：对象.hasOwnProperty(“属性名”)</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>toString 方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name , age , gender</span>)&#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">gender</span> = gender;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//修改Person原型的toString</span></span><br><span class="line"><span class="title class_">Person</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">toString</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="string">&quot;Person[name=&quot;</span>+<span class="variable language_">this</span>.<span class="property">name</span>+<span class="string">&quot;,age=&quot;</span>+<span class="variable language_">this</span>.<span class="property">age</span>+<span class="string">&quot;,gender=&quot;</span>+<span class="variable language_">this</span>.<span class="property">gender</span>+<span class="string">&quot;]&quot;</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p><strong>成员变量</strong></p>
+<p>创建数组：<code>var arr = new Array();</code>  或者 <code>var arr = [1,2,3,4,5];</code> 第一种方法如果是一个参数，就代表元素的个数，如果是多个，就代表每个元素的值</p>
+<p>获取数组的长度<code>数组名称.length</code></p>
+<p>修改length的时候，如果修改的length大于原长度，则多出部分会空出来，如果修改的length小于原长度，则多出的元素会被删除</p>
+<p>向数组的最后一个位置添加元素，语法：数组[数组.length] &#x3D; 值;</p>
+<p>如果读取不存在的索引，他不会报错而是返回undefined</p>
+<p><strong>方法</strong></p>
+<ul>
+<li><p>push()</p>
+<ul>
+<li>向数组的末尾添加一个或多个元素，并返回数组新的长度</li>
+<li>语法：数组.push(元素1,元素2,元素N)</li>
+</ul>
+</li>
+<li><p>pop()</p>
+<ul>
+<li>用来删除数组的最后一个元素，并返回被删除的元素</li>
+</ul>
+</li>
+<li><p>unshift()</p>
+<ul>
+<li>向数组的前边添加一个或多个元素(参数顺序不变，添加完毕之后第一个参数是添加后数组的首元素)，并返回数组的新的长度</li>
+</ul>
+</li>
+<li><p>shift()</p>
+<ul>
+<li>删除数组的前边的一个元素，并返回被删除的元素</li>
+</ul>
+</li>
+<li><p>slice()</p>
+<ul>
+<li>可以从一个数组中截取指定的元素，封装为一个新的数组并返回</li>
+<li>参数：左闭右开<ul>
+<li>第二个参数可以省略不写，如果不写则一直截取到最后</li>
+<li>参数可以传递一个负值，如果是负值，则从后往前数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>splice()</p>
+<ul>
+<li>可以用来删除数组中指定元素，并使用新的元素替换，该方法会将删除的元素封装到新数组中返回</li>
+<li>参数：<ol>
+<li>删除开始位置的索引</li>
+<li>删除的个数</li>
+<li>三个以后，都是替换的元素，这些元素将会插入到开始位置索引的前边</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>reverse()</p>
+<ul>
+<li>反转一个数组，它会对原数组产生影响</li>
+</ul>
+</li>
+<li><p>concat()</p>
+<ul>
+<li>可以连接两个或多个数组，它不会影响原数组，而是新数组作为返回值返回</li>
+</ul>
+</li>
+<li><p>join()</p>
+<ul>
+<li>可以将一个数组转换为一个字符串</li>
+<li>参数：需要一个字符串作为参数，这个字符串将会作为连接符来连接数组中的元素如果不指定连接符则默认使用’,’</li>
+</ul>
+</li>
+<li><p>sort()</p>
+<ul>
+<li>可以对一个数组中的内容进行排序，默认是按照Unicode编码进行排序调用以后，会直接修改原数组。</li>
+<li>可以自己指定排序的规则，需要一个回调函数作为参数：  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span>(<span class="params">a,b</span>)&#123;</span><br><span class="line">			<span class="comment">//升序排列</span></span><br><span class="line">			<span class="comment">//return a-b;</span></span><br><span class="line">			<span class="comment">//降序排列</span></span><br><span class="line">			<span class="keyword">return</span> b-a;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<p>数组的遍历：</p>
+<ol>
+<li>普通的for循环</li>
+<li>forEach</li>
+</ol>
+<p>forEach()方法需要一个函数作为参数</p>
+<ul>
+<li><p>这个方法只能遍历数组，不能遍历伪数组</p>
+</li>
+<li><p>像这种函数，由我们创建但是不由我们调用的，我们称为回调函数</p>
+</li>
+<li><p>数组中有几个元素函数就会执行几次，每次执行时，浏览器会将遍历到的元素以实参的形式传递进来，我们可以来定义形参，来读取这些内容</p>
+</li>
+<li><p>浏览器会在回调函数中传递三个参数：</p>
+<ul>
+<li>第一个参数，就是当前正在遍历的元素</li>
+<li>第二个参数，就是当前正在遍历的元素的索引</li>
+<li>第三个参数，就是正在遍历的数组</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr.<span class="title function_">forEach</span>(<span class="keyword">function</span>(<span class="params">value , index , obj</span>)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(value);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="包装类和工具类"><a href="#包装类和工具类" class="headerlink" title="包装类和工具类"></a>包装类和工具类</h2><p>String() Boolean() Number()</p>
+<p>当我们去操作一个基本数据类型的属性和方法时，解析器会临时将其转换为对应的包装类，然后再去操作属性和方法，操作完成以后再将这个临时对象进行销毁。</p>
+<h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><ul>
+<li>length()<ul>
+<li>长度</li>
+</ul>
+</li>
+<li>charAt()<ul>
+<li>根据索引获取指定的字符</li>
+</ul>
+</li>
+<li>charCodeAt()<ul>
+<li>根据索引获取指定的字符编码</li>
+</ul>
+</li>
+<li>String.fromCharCode()<ul>
+<li>根据字符编码获取字符</li>
+</ul>
+</li>
+<li>indexOf()从前向后找</li>
+<li>lastIndexOf()从后向前找<ul>
+<li>从一个字符串中检索指定内容</li>
+<li>需要一个字符串作为参数，这个字符串就是要检索的内容，如果找到该内容，则会返回其第一次出现的索引，如果没有找到则返回-1。</li>
+<li>可以指定一个第二个参数，来表示开始查找的位置</li>
+</ul>
+</li>
+<li>slice()<ul>
+<li>可以从一个字符串中截取指定的内容，并将截取到内容返回，不会影响原变量</li>
+<li>参数：<br>  第一个：截取开始的位置（包括开始）<br>  第二个：截取结束的位置（不包括结束）</li>
+<li>可以省略第二个参数，如果省略则一直截取到最后</li>
+<li>可以传负数，如果是负数则从后往前数</li>
+</ul>
+</li>
+<li>substr()	<ul>
+<li>和slice()基本一致，不同的是它第二个参数不是索引，而是截取的数量</li>
+</ul>
+</li>
+<li>substring()<ul>
+<li>和slice()基本一致，不同的是它不能接受负值作为参数，如果设置一个负值，则会自动修正为0，substring()中如果第二个参数小于第一个，自动调整位置</li>
+</ul>
+</li>
+<li>toLowerCase() <ul>
+<li>将字符串转换为小写并返回</li>
+</ul>
+</li>
+<li>toUpperCase() <ul>
+<li>将字符串转换为大写并返回</li>
+</ul>
+</li>
+<li>split()<ul>
+<li>可以根据指定内容将一个字符串拆分为一个数组</li>
+<li>参数：需要一个字符串作为参数，将会根据字符串去拆分数组。可以接收一个正则表达式，此时会根据正则表达式去拆分数组</li>
+</ul>
+</li>
+<li>match() <ul>
+<li>可以将字符串中和正则表达式匹配的内容提取出来</li>
+<li>参数：正则表达式，可以根据该正则表达式将字符串中符合要求的内容提取出来，并且封装到一个数组中返回</li>
+</ul>
+</li>
+<li>replace()  <ul>
+<li>可以将字符串中指定内容替换为新的内容</li>
+<li>参数：<ul>
+<li>第一个：被替换的内容，可以是一个正则表达式</li>
+<li>第二个：替换的新内容</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>search() <ul>
+<li>可以根据正则表达式去字符串中查找指定的内容</li>
+<li>参数：正则表达式，将会根据该表达式查询内容，并且将第一个匹配到的内容的索引返回，如果没有匹配到任何内容，则返回-1。</li>
+</ul>
+</li>
+</ul>
+<h3 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h3><p>构造函数：<code>var d = new Date();</code> 默认是当前代码的执行时间。</p>
+<p>带参构造：<code>var d2 = new Date(&quot;2/18/2011 11:10:30&quot;);</code>日期的格式  月份&#x2F;日&#x2F;年 时:分:秒</p>
+<p>get相关的函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//getDate() 获取当前日期对象是几日</span></span><br><span class="line"><span class="keyword">var</span> date = d.<span class="title function_">getDate</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">//getDay() 获取当前日期对象时周几，0-6</span></span><br><span class="line"><span class="keyword">var</span> day = d.<span class="title function_">getDay</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">//getMonth()，获取当前时间对象的月份，返回一个0-11的值</span></span><br><span class="line"><span class="keyword">var</span> month = d2.<span class="title function_">getMonth</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">//getFullYear()，获取当前日期对象的年份</span></span><br><span class="line"><span class="keyword">var</span> year = d2.<span class="title function_">getFullYear</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * getTime()</span></span><br><span class="line"><span class="comment"> * 	- 获取当前日期对象的时间戳</span></span><br><span class="line"><span class="comment"> * 	- 时间戳，指的是从格林威治标准时间的1970年1月1日，0时0分0秒 到当前日期所花费的毫秒数（1秒 = 1000毫秒）</span></span><br><span class="line"><span class="comment"> * 	- 计算机底层在保存时间时使用都是时间戳</span></span><br><span class="line"><span class="comment"> *  - 时间戳可以测试代码的执行性能</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> time = d2.<span class="title function_">getTime</span>();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Math</span>.<span class="property">PI</span> <span class="comment">//表示的圆周率</span></span><br><span class="line"><span class="title function_">abs</span>()<span class="comment">// 绝对值</span></span><br><span class="line"><span class="title class_">Math</span>.<span class="title function_">ceil</span>()<span class="comment">// 向上取整</span></span><br><span class="line"><span class="title class_">Math</span>.<span class="title function_">floor</span>()	<span class="comment">//向下取整</span></span><br><span class="line"><span class="title class_">Math</span>.<span class="title function_">round</span>()	<span class="comment">//四舍五入取整</span></span><br><span class="line"><span class="title class_">Math</span>.<span class="title function_">random</span>() <span class="comment">//返回一个0-1之间的随机数</span></span><br><span class="line"><span class="title function_">max</span>()<span class="comment">// 可以获取多个数中的最大值</span></span><br><span class="line"><span class="title function_">min</span>() <span class="comment">//可以获取多个数中的最小值</span></span><br><span class="line"><span class="title class_">Math</span>.<span class="title function_">pow</span>(x,y) <span class="comment">//返回x的y次幂</span></span><br><span class="line"><span class="title class_">Math</span>.<span class="title function_">sqrt</span>() <span class="comment">//开方</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><p>创建正则表达式对象：<code>var 变量 = new RegExp(&quot;表达式&quot;, &quot;匹配模式&quot;)；</code> </p>
+<p>typeof 正则表达式 &#x3D; object</p>
+<p>在构造函数中可以传递一个匹配模式作为第二个参数，可以是i 忽略大小写 ，g 全局匹配模式</p>
+<p>test() 使用这个方法可以用来检查一个字符串是否符合正则表达式的规则，如果符合则返回true，否则返回false</p>
+<p>使用字面量来创建正则表达式语法：<code>var 变量 = /正则表达式/匹配模式</code></p>
+<p>使用字面量的方式创建更加简单，使用构造函数创建更加灵活</p>
+<p><code>var reg = /a/i;</code></p>
+<p>正则表达式的相关内容查看 <code>正则表达式.pdf</code></p>
+<h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>DOM，全称Document Object Model文档对象模型。以面向对象的方式操作网页。</p>
+<ul>
+<li><p>文档 – 文档表示的就是整个的HTML网页文档</p>
+</li>
+<li><p>对象 – 对象表示将网页中的每一个部分都转换为了一个对象。</p>
+</li>
+<li><p>模型 – 使用模型来表示对象之间的关系，这样方便我们获取对象。</p>
+</li>
+</ul>
+<p>节点：Node——构成HTML文档最基本的单元</p>
+<p>常见节点:</p>
+<ul>
+<li><p>文档节点：整个HTML文档</p>
+</li>
+<li><p>元素节点：HTML文档中的HTML标签 </p>
+</li>
+<li><p>属性节点：元素的属性</p>
+</li>
+<li><p>文本节点：HTML标签中的文本内容</p>
+</li>
+</ul>
+<p>节点的属性：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>nodeName</th>
+<th>nodeType</th>
+<th>nodeValue</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>文档节点</td>
+<td><code>#document</code></td>
+<td>9</td>
+<td>null</td>
+</tr>
+<tr>
+<td>元素节点</td>
+<td>标签名</td>
+<td>1</td>
+<td>null</td>
+</tr>
+<tr>
+<td>属性节点</td>
+<td>属性名</td>
+<td>2</td>
+<td>属性值</td>
+</tr>
+<tr>
+<td>文本节点</td>
+<td><code>#text</code></td>
+<td>3</td>
+<td>文本内容</td>
+</tr>
+</tbody></table>
+<p>document对象作为window对象的属性存在的，我们不用获取可以直接使用。通过该对象我们可以在整个文档访问内查找节 点对象，并可以通过该对象创建各种节点对象。</p>
+<p>举例：通过id获取一个元素节点的对象：<code>– document.getElementById()</code></p>
+<h3 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h3><p>事件处理有两种方法</p>
+<ol>
+<li>我们可以在事件对应的属性中设置一些js代码，比如<code>&lt;button id=&quot;btn&quot; onclick=&quot;alert(&#39;点我干嘛？&#39;);&quot;&gt;我是一个按钮&lt;/button&gt;</code>这样当事件被触发时，这些代码将会执行这种写法我们称为结构和行为耦合，不方便维护，<strong>不推荐使用</strong>。</li>
+<li>可以为按钮的对应事件绑定处理函数的形式来响应事件这样当事件被触发时，其对应的函数将会被调用</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn&quot;</span>&gt;</span>我是一个按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">	<span class="comment">//获取按钮对象</span></span></span><br><span class="line"><span class="language-javascript">	<span class="keyword">var</span> btn = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">	</span></span><br><span class="line"><span class="language-javascript">	<span class="comment">//绑定一个单击事件，像这种为单击事件绑定的函数，我们称为单击响应函数</span></span></span><br><span class="line"><span class="language-javascript">	btn.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">		<span class="title function_">alert</span>(<span class="string">&quot;你还点~~~&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">	&#125;;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<p>浏览器在加载一个页面时，是按照自上向下的顺序加载的，读取到一行就运行一行,如果将script标签写到页面的上边，在代码执行时，页面还没有加载，页面没有加载DOM对象也没有加载会导致无法获取到DOM对象</p>
+<p>如何在写到上面的同时使其在页面加载完之后执行？</p>
+<p>onload事件会在整个页面加载完成之后才触发, 为window绑定一个onload事件该事件对应的响应函数将会在页面加载完成之后执行，这样可以确保我们的代码执行时所有的DOM对象已经加载完毕了。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">onload</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="comment">//获取id为btn的按钮</span></span><br><span class="line">	<span class="keyword">var</span> btn = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn&quot;</span>);</span><br><span class="line">	<span class="comment">//为按钮绑定一个单击响应函数</span></span><br><span class="line">	btn.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">		<span class="title function_">alert</span>(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="DOM查询"><a href="#DOM查询" class="headerlink" title="DOM查询"></a>DOM查询</h3><p>获取元素节点：</p>
+<p>通过document对象调用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通过id属性获取一个元素节点对象</span></span><br><span class="line"><span class="keyword">var</span> node1 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">//通过标签名获取一组元素节点对象</span></span><br><span class="line"><span class="keyword">var</span> node2 = <span class="variable language_">document</span>.<span class="title function_">getElementsByTagName</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">//通过name属性获取一组元素节点对象</span></span><br><span class="line"><span class="keyword">var</span> node3 = <span class="variable language_">document</span>.<span class="title function_">getElementsByName</span>();</span><br></pre></td></tr></table></figure>
+
+<p>获取元素节点的子节点：</p>
+<p>通过具体的元素节点调用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方法，返回当前节点的指定标签名后代节点</span></span><br><span class="line"><span class="title function_">getElementsByTagName</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment">//属性，表示当前节点的所有子节点</span></span><br><span class="line">childNodes</span><br><span class="line"></span><br><span class="line"><span class="comment">//属性，表示当前节点的第一个子节点</span></span><br><span class="line">firstChild</span><br><span class="line"></span><br><span class="line"><span class="comment">//属性，表示当前节点的最后一个子节点</span></span><br><span class="line">lastChild</span><br></pre></td></tr></table></figure>
+
+<p>注意:</p>
+<p>childNodes属性会获取包括文本节点在内的所有节点，根据DOM标签标签间空白也会当成文本节点。注意：在IE8及以下的浏览器中，不会将空白文本当成子节点，所以该属性在IE8中会返回4个子元素而其他浏览器是9个</p>
+<p>firstElementChild不支持IE8及以下的浏览器，如果需要兼容他们尽量不要使用</p>
+<p>获取父节点和兄弟节点：</p>
+<p>通过具体节点调用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//属性，表示当前节点的父节点</span></span><br><span class="line">parentNode</span><br><span class="line"></span><br><span class="line"><span class="comment">//属性，表示当前节点的前一个兄弟节点</span></span><br><span class="line">previousSibling</span><br><span class="line"></span><br><span class="line"><span class="comment">//属性，表示当前节点的后一个兄弟节点</span></span><br><span class="line">nextSibling</span><br></pre></td></tr></table></figure>
+
+<p>元素节点的属性</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//--------------获取-----------</span></span><br><span class="line">element.<span class="property">value</span></span><br><span class="line">element.<span class="property">id</span></span><br><span class="line">element.<span class="property">className</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//--------------修改------------</span></span><br><span class="line">element.<span class="property">value</span> = “hello”</span><br><span class="line">element.<span class="property">id</span> = “id01”</span><br><span class="line">element.<span class="property">className</span> = “newClass”</span><br></pre></td></tr></table></figure>
+
+<p>文本框的value属性值，就是文本框中填写的内容</p>
+<p>文本节点可以通过nodeValue属性获取和设置文本节点的内容</p>
+<p>元素节点通过innerHTML属性获取和设置标签内部的 html代码</p>
+<p>innerText属性可以获取到元素内部的文本内容，它和innerHTML类似，不同的是它会自动将html去除</p>
+<p>为指定元素绑定单击响应函数的快捷方法：函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 定义一个函数，专门用来为指定元素绑定单击响应函数</span></span><br><span class="line"><span class="comment"> * 	参数：</span></span><br><span class="line"><span class="comment"> * 		idStr 要绑定单击响应函数的对象的id属性值</span></span><br><span class="line"><span class="comment"> * 		fun 事件的回调函数，当单击元素时，该函数将会被触发</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">myClick</span>(<span class="params">idStr , fun</span>)&#123;</span><br><span class="line">	<span class="keyword">var</span> btn = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(idStr);</span><br><span class="line">	btn.<span class="property">onclick</span> = fun;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//为id为btn07的按钮绑定一个单击响应函数</span></span><br><span class="line"><span class="title function_">myClick</span>(<span class="string">&quot;btn07&quot;</span>,<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="comment">//获取id为bj的节点</span></span><br><span class="line">	<span class="keyword">var</span> bj = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;bj&quot;</span>);</span><br><span class="line">	<span class="comment">//返回#bj的父节点</span></span><br><span class="line">	<span class="keyword">var</span> pn = bj.<span class="property">parentNode</span>;</span><br><span class="line">	<span class="title function_">alert</span>(pn.<span class="property">innerHTML</span>);	</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>多选框的选中状态是元素的属性，值为布尔类型，通过设置checked属性可以设置选中和未选中。在事件的响应函数中，响应函数是给谁绑定的this就是谁。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在document中有一个属性body，它保存的是body的引用</span></span><br><span class="line"><span class="keyword">var</span> body = <span class="variable language_">document</span>.<span class="property">body</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//document.documentElement保存的是html根标签</span></span><br><span class="line"><span class="keyword">var</span> html = <span class="variable language_">document</span>.<span class="property">documentElement</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//document.all代表页面中所有的元素</span></span><br><span class="line"><span class="keyword">var</span> all = <span class="variable language_">document</span>.<span class="property">all</span>;</span><br></pre></td></tr></table></figure>
+
+<p>class的选择</p>
+<p>根据元素的class属性值查询一组元素节点对象： getElementsByClassName()可以根据class属性值获取一组元素节点对象，但是该方法不支持IE8及以下的浏览器</p>
+<p><code>document.querySelector()</code></p>
+<ul>
+<li>需要一个选择器的字符串作为参数，可以根据一个CSS选择器来查询一个元素节点对象</li>
+<li>虽然IE8中没有getElementsByClassName()但是可以使用querySelector()代替</li>
+<li>使用该方法总会返回唯一的一个元素，如果满足条件的元素有多个，那么它只会返回第一个</li>
+<li>举例<code>var div = document.querySelector(&quot;.box1 div&quot;);</code></li>
+</ul>
+<p><code>document.querySelectorAll()</code></p>
+<ul>
+<li>该方法和querySelector()用法类似，不同的是它会将符合条件的元素封装到一个数组中返回</li>
+<li>即使符合条件的元素只有一个，它也会返回数组</li>
+<li>举例<code>box1 = document.querySelectorAll(&quot;#box2&quot;);</code></li>
+</ul>
+<h3 id="DOM对元素的增删改"><a href="#DOM对元素的增删改" class="headerlink" title="DOM对元素的增删改"></a>DOM对元素的增删改</h3><p><code>document.createElement()</code>可以用于创建一个元素节点对象，它需要一个标签名作为参数，将会根据该标签名创建元素节点对象，并将创建好的对象作为返回值返回</p>
+<p><code>document.createTextNode()</code>可以用来创建一个文本节点对象，需要一个文本内容作为参数，将会根据该内容创建文本节点，并将新的节点返回</p>
+<p><code>appendChild()</code>用于向一个父节点中添加一个新的子节点，用法：父节点.appendChild(子节点);</p>
+<p><code>insertBefore()</code>可以在指定的子节点前插入新的子节点.语法，父节点.insertBefore(新节点对象, 子节点对象);</p>
+<p><code>replaceChild()</code>可以使用指定的子节点替换已有的子节点，语法：父节点.replaceChild(新节点,旧节点);</p>
+<p><code>removeChild()</code>删除一个子节点，语法：父节点.removeChild(子节点);子节点.parentNode.removeChild(子节点);</p>
+<p>注意:使用innerHTML也可以完成DOM的增删改的相关操作，一般我们会两种方式结合使用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br></pre></td><td class="code"><pre><span class="line">&lt;!<span class="variable constant_">DOCTYPE</span> <span class="variable constant_">HTML</span> <span class="variable constant_">PUBLIC</span> <span class="string">&quot;-//W3C//DTD HTML 4.01//EN&quot;</span> <span class="string">&quot;http://www.w3.org/TR/html4/strict.dtd&quot;</span>&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;Content-Type&quot;</span> <span class="attr">content</span>=<span class="string">&quot;text/html; charset=UTF-8&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;<span class="name">title</span>&gt;</span>添加删除记录练习<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span> <span class="attr">href</span>=<span class="string">&quot;ex_2_style/css.css&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			<span class="comment">/*</span></span></span></span><br><span class="line"><span class="comment"><span class="language-javascript"><span class="language-xml">			 * 删除tr的响应函数</span></span></span></span><br><span class="line"><span class="comment"><span class="language-javascript"><span class="language-xml">			 */</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			<span class="keyword">function</span> <span class="title function_">delA</span>(<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="comment">//点击超链接以后需要删除超链接所在的那行</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="comment">//这里我们点击那个超链接this就是谁</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="comment">//获取当前tr</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="keyword">var</span> tr = <span class="variable language_">this</span>.<span class="property">parentNode</span>.<span class="property">parentNode</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="comment">//获取要删除的员工的名字</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="comment">//var name = tr.getElementsByTagName(&quot;td&quot;)[0].innerHTML;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="keyword">var</span> name = tr.<span class="property">children</span>[<span class="number">0</span>].<span class="property">innerHTML</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="comment">//删除之前弹出一个提示框</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="comment">/*</span></span></span></span><br><span class="line"><span class="comment"><span class="language-javascript"><span class="language-xml">				 * confirm()用于弹出一个带有确认和取消按钮的提示框</span></span></span></span><br><span class="line"><span class="comment"><span class="language-javascript"><span class="language-xml">				 * 	需要一个字符串作为参数，该字符串将会作为提示文字显示出来</span></span></span></span><br><span class="line"><span class="comment"><span class="language-javascript"><span class="language-xml">				 * 如果用户点击确认则会返回true，如果点击取消则返回false</span></span></span></span><br><span class="line"><span class="comment"><span class="language-javascript"><span class="language-xml">				 */</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="keyword">var</span> flag = <span class="title function_">confirm</span>(<span class="string">&quot;确认删除&quot;</span> + name + <span class="string">&quot;吗?&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="comment">//如果用户点击确认</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="keyword">if</span>(flag) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="comment">//删除tr</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					tr.<span class="property">parentNode</span>.<span class="title function_">removeChild</span>(tr);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="comment">/*</span></span></span></span><br><span class="line"><span class="comment"><span class="language-javascript"><span class="language-xml">				 * 点击超链接以后，超链接会跳转页面，这个是超链接的默认行为，</span></span></span></span><br><span class="line"><span class="comment"><span class="language-javascript"><span class="language-xml">				 * 	但是此时我们不希望出现默认行为，可以通过在响应函数的最后return false来取消默认行为</span></span></span></span><br><span class="line"><span class="comment"><span class="language-javascript"><span class="language-xml">				 */</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="keyword">return</span> <span class="literal">false</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			&#125;;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			<span class="variable language_">window</span>.<span class="property">onload</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="comment">/*</span></span></span></span><br><span class="line"><span class="comment"><span class="language-javascript"><span class="language-xml">				 * 点击超链接以后，删除一个员工的信息</span></span></span></span><br><span class="line"><span class="comment"><span class="language-javascript"><span class="language-xml">				 */</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="comment">//获取所有额超链接</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="keyword">var</span> allA = <span class="variable language_">document</span>.<span class="title function_">getElementsByTagName</span>(<span class="string">&quot;a&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="comment">//为每个超链接都绑定一个单击响应函数</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; allA.<span class="property">length</span>; i++) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					allA[i].<span class="property">onclick</span> = delA;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="comment">/*</span></span></span></span><br><span class="line"><span class="comment"><span class="language-javascript"><span class="language-xml">				 * 添加员工的功能</span></span></span></span><br><span class="line"><span class="comment"><span class="language-javascript"><span class="language-xml">				 * 	- 点击按钮以后，将员工的信息添加到表格中</span></span></span></span><br><span class="line"><span class="comment"><span class="language-javascript"><span class="language-xml">				 */</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="comment">//为提交按钮绑定一个单击响应函数</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="keyword">var</span> addEmpButton = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;addEmpButton&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				addEmpButton.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="comment">//获取用户添加的员工信息</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="comment">//获取员工的名字</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="keyword">var</span> name = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;empName&quot;</span>).<span class="property">value</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="comment">//获取员工的email和salary</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="keyword">var</span> email = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;email&quot;</span>).<span class="property">value</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="keyword">var</span> salary = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;salary&quot;</span>).<span class="property">value</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="comment">//需要将获取到的信息保存到tr中</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="comment">//创建一个tr</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="keyword">var</span> tr = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;tr&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="comment">//设置tr中的内容</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					tr.<span class="property">innerHTML</span> = <span class="string">&quot;&lt;td&gt;&quot;</span>+name+<span class="string">&quot;&lt;/td&gt;&quot;</span>+</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">									<span class="string">&quot;&lt;td&gt;&quot;</span>+email+<span class="string">&quot;&lt;/td&gt;&quot;</span>+</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">									<span class="string">&quot;&lt;td&gt;&quot;</span>+salary+<span class="string">&quot;&lt;/td&gt;&quot;</span>+</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">									<span class="string">&quot;&lt;td&gt;&lt;a href=&#x27;javascript:;&#x27;&gt;Delete&lt;/a&gt;&lt;/td&gt;&quot;</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">									</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="comment">//获取刚刚添加的a元素，并为其绑定单击响应函数				</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="keyword">var</span> a = tr.<span class="title function_">getElementsByTagName</span>(<span class="string">&quot;a&quot;</span>)[<span class="number">0</span>];</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					a.<span class="property">onclick</span> = delA;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="comment">//获取table</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="keyword">var</span> employeeTable = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;employeeTable&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="comment">//获取employeeTable中的tbody</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="keyword">var</span> tbody = employeeTable.<span class="title function_">getElementsByTagName</span>(<span class="string">&quot;tbody&quot;</span>)[<span class="number">0</span>];</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="comment">//将tr添加到tbodye中</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					tbody.<span class="title function_">appendChild</span>(tr);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				&#125;;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			&#125;;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;<span class="name">table</span> <span class="attr">id</span>=<span class="string">&quot;employeeTable&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">th</span>&gt;</span>Name<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">th</span>&gt;</span>Email<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">th</span>&gt;</span>Salary<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">th</span>&gt;</span><span class="symbol">&amp;nbsp;</span><span class="tag">&lt;/<span class="name">th</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">td</span>&gt;</span>Tom<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">td</span>&gt;</span>tom@tom.com<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">td</span>&gt;</span>5000<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">					<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;javascript:;&quot;</span>&gt;</span>Delete<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">td</span>&gt;</span>Jerry<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">td</span>&gt;</span>jerry@sohu.com<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">td</span>&gt;</span>8000<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">					<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;deleteEmp?id=002&quot;</span>&gt;</span>Delete<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">td</span>&gt;</span>Bob<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">td</span>&gt;</span>bob@tom.com<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">td</span>&gt;</span>10000<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">					<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;deleteEmp?id=003&quot;</span>&gt;</span>Delete<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;/<span class="name">table</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;formDiv&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;<span class="name">h4</span>&gt;</span>添加新员工<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;<span class="name">table</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">					<span class="tag">&lt;<span class="name">td</span> <span class="attr">class</span>=<span class="string">&quot;word&quot;</span>&gt;</span>name: <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">					<span class="tag">&lt;<span class="name">td</span> <span class="attr">class</span>=<span class="string">&quot;inp&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">						<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;empName&quot;</span> <span class="attr">id</span>=<span class="string">&quot;empName&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">					<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">					<span class="tag">&lt;<span class="name">td</span> <span class="attr">class</span>=<span class="string">&quot;word&quot;</span>&gt;</span>email: <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">					<span class="tag">&lt;<span class="name">td</span> <span class="attr">class</span>=<span class="string">&quot;inp&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">						<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;email&quot;</span> <span class="attr">id</span>=<span class="string">&quot;email&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">					<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">					<span class="tag">&lt;<span class="name">td</span> <span class="attr">class</span>=<span class="string">&quot;word&quot;</span>&gt;</span>salary: <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">					<span class="tag">&lt;<span class="name">td</span> <span class="attr">class</span>=<span class="string">&quot;inp&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">						<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;salary&quot;</span> <span class="attr">id</span>=<span class="string">&quot;salary&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">					<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">					<span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">&quot;2&quot;</span> <span class="attr">align</span>=<span class="string">&quot;center&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">						<span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;addEmpButton&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">						Submit</span></span><br><span class="line"><span class="language-xml">					<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">					<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;/<span class="name">table</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<h3 id="DOM操作CSS"><a href="#DOM操作CSS" class="headerlink" title="DOM操作CSS"></a>DOM操作CSS</h3><p><code>元素.style.样式名 = 样式值</code>, 通过JS修改元素的样式：注意：如果CSS的样式名中含有-，这种名称在JS中是不合法的比如background-color需要将这种样式名修改为驼峰命名法，也就是去掉-，然后将-后的字母大写. 我们通过style属性设置的样式都是内联样式，而内联样式有较高的优先级，所以通过JS修改的样式往往会立即显示, 但是如果在样式中写了!important，则此时样式会有最高的优先级，即使通过JS也不能覆盖该样式，此时将会导致JS修改样式失效,	所以尽量不要为样式添加!important, 通过style属性设置和读取的都是内联样式,无法读取样式表中的样式</p>
+<p><code>元素.currentStyle.样式名</code>, 获取元素的当前显示的样式。<strong>currentStyle只有IE浏览器支持</strong>，其他的浏览器都不支持。它可以用来读取当前元素正在显示的样式, 如果当前元素没有设置该样式，则获取它的默认值</p>
+<p><code>window.getComputedStyle(box1,null).backgroundColor</code>, 在其他浏览器中可以使用,getComputedStyle()这个方法来获取元素当前的样式；需要两个参数: 第一个：要获取样式的元素; 第二个：可以传递一个伪元素，一般都传null。 该方法会返回一个对象，对象中封装了当前元素对应的样式,可以通过对象.样式名来读取样式,如果获取的样式没有设置，则会获取到真实的值，而不是默认值比如：没有设置width，它不会获取到auto，而是一个长度; 但是该方法不支持IE8及以下的浏览器, 通过currentStyle和getComputedStyle()读取到的样式都是只读的，不能修改，如果要修改必须通过style属性</p>
+<p>定义一个函数，用来获取指定元素的当前的样式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//obj 要获取样式的元素</span></span><br><span class="line"><span class="comment">//name 要获取的样式名</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getStyle</span>(<span class="params">obj , name</span>)&#123;</span><br><span class="line">	<span class="comment">//正常浏览器的方式，具有getComputedStyle()方法</span></span><br><span class="line">	<span class="comment">//IE8的方式，没有getComputedStyle()方法</span></span><br><span class="line">	<span class="keyword">return</span> <span class="variable language_">window</span>.<span class="property">getComputedStyle</span> ? <span class="title function_">getComputedStyle</span>(obj , <span class="literal">null</span>)[name] : obj.<span class="property">currentStyle</span>[name];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>clientWidth&#x2F;clientHeight</p>
+<ul>
+<li>这两个属性可以获取元素的可见宽度和高度</li>
+<li>这些属性都是不带px的，返回都是一个数字，可以直接进行计算</li>
+<li>会获取元素宽度和高度，包括内容区和内边距</li>
+<li>这些属性都是只读的，不能修改</li>
+</ul>
+<p>offsetWidth&#x2F;offsetHeight</p>
+<ul>
+<li>获取元素的整个的宽度和高度，包括内容区、内边距和边框</li>
+</ul>
+<p>offsetParent</p>
+<ul>
+<li>可以用来获取当前元素的定位父元素</li>
+<li>会获取到离当前元素最近的开启了定位的祖先元素,如果所有的祖先元素都没有开启定位，则返回body</li>
+</ul>
+<p>offsetLeft</p>
+<ul>
+<li>当前元素相对于其定位父元素的水平偏移量<br>offsetTop</li>
+<li>当前元素相对于其定位父元素的垂直偏移量</li>
+</ul>
+<p>scrollWidth&#x2F;scrollHeight</p>
+<ul>
+<li>可以获取元素整个滚动区域的宽度和高度</li>
+</ul>
+<p>scrollLeft</p>
+<ul>
+<li>可以获取水平滚动条滚动的距离<br>scrollTop</li>
+<li>可以获取垂直滚动条滚动的距离</li>
+</ul>
+<p>判断滚动条是否滚动到底</p>
+<ul>
+<li>垂直滚动条		scrollHeight - scrollTop &#x3D; clientHeight</li>
+<li>水平滚动		scrollWidth - scrollLeft &#x3D; clientWidth</li>
+</ul>
+<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><h3 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h3><p>事件对象：在DOM对象上的某个事件被触发时，会产生一个事件对象Event，这个对象中包含着所有事件有关的信息。包括导致事件的元素、事件的类型以及其他与特定事件相关的信息。</p>
+<p>例如，鼠标操作导致的事件对象中，会包含鼠标位置的信息，而键盘操作导致的事件对象中，会包含与按下的键有关的信息。所有浏览器都支持 event对象，但支持方式不同。</p>
+<p>DOM标准的浏览器会将一个event对象传入到事件的处理程序当中。无论事件处理程序是什么都会传入一个event对象。Event对象包含与创建它的特定事件有关的属性和方法。触发的事件类型不一样，可用的属性和方法也不一样。</p>
+<p>事件的发生主要是由用户操作引起的。,比如mousemove这个事件就是由于用户移动鼠标引起的，在鼠标指针移动的过程中该事件会持续发生。当指定事件被触发时，浏览器就会调用对应的函数去响应事件，一般情况下事件没触发一次，函数就会执行一次。因此设置鼠标移动的事件可能会影响到鼠标的移动速度。所以设置该类事件时一定要谨慎。</p>
+<p>获取方式：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 向其中传入一个event参数</span></span><br><span class="line">btn.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params">event</span>)&#123;</span><br><span class="line">	<span class="title function_">alert</span>(event.<span class="property">type</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>当鼠标在areaDiv中移动时，在showMsg中来显示鼠标的坐标</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * onmousemove - 该事件将会在鼠标在元素中移动时被触发</span></span><br><span class="line"><span class="comment"> * 事件对象 - 当事件的响应函数被触发时，浏览器每次都会将一个事件对象作为实参传递进响应函数,在事件对象中封装了当前事件相关的一切信息，比如：鼠标的坐标键盘哪个按键被按下鼠标滚轮滚动的方向。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">areaDiv.<span class="property">onmousemove</span> = <span class="keyword">function</span>(<span class="params">event</span>)&#123;</span><br><span class="line">	<span class="comment">// 在IE8中，响应函数被触发时，浏览器不会传递事件对象，在IE8及以下的浏览器中，是将事件对象作为window对象的属性保存的</span></span><br><span class="line">	<span class="comment">//解决事件对象的兼容性问题</span></span><br><span class="line">	event = event || <span class="variable language_">window</span>.<span class="property">event</span>;</span><br><span class="line">	<span class="comment">// clientX/cilentY可以获取鼠标指针的水平和垂直坐标</span></span><br><span class="line">	<span class="keyword">var</span> x = event.<span class="property">clientX</span>;</span><br><span class="line">	<span class="keyword">var</span> y = event.<span class="property">clientY</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h3><p>事件的冒泡（Bubble）</p>
+<ul>
+<li>所谓的冒泡指的就是事件的向上传导，当后代元素上的事件被触发时，其祖先元素的相同事件也会被触发</li>
+<li>在开发中大部分情况冒泡都是有用的,如果不希望发生事件冒泡可以通过事件对象来取消冒泡</li>
+</ul>
+<p><code>event.cancelBubble = true;</code>可以将事件对象的cancelBubble设置为true，即可取消冒泡</p>
+<h4 id="事件委派"><a href="#事件委派" class="headerlink" title="事件委派"></a>事件委派</h4><p>我们希望，只绑定一次事件，即可应用到多个的元素上，即使元素是后添加的, 因此我们可以尝试将其绑定给元素的共同的祖先元素</p>
+<p>事件的委派, 指将事件统一绑定给元素的<strong>共同的祖先元素</strong>，这样当后代元素上的事件触发时，会一直冒泡到祖先元素, 从而通过祖先元素的响应函数来处理事件。事件委派是利用了冒泡，通过委派可以减少事件绑定的次数，提高程序的性能</p>
+<h4 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h4><p>使用 对象.事件 &#x3D; 函数 的形式绑定响应函数，它只能同时为一个元素的一个事件绑定一个响应函数，不能绑定多个，如果绑定了多个，则后边会覆盖掉前边的。</p>
+<p><code>addEventListener()</code> 通过这个方法也可以为元素绑定响应函数</p>
+<p>参数：</p>
+<ol>
+<li><p>事件的字符串，不要on</p>
+</li>
+<li><p>回调函数，当事件触发时该函数会被调用</p>
+</li>
+<li><p>是否在捕获阶段触发事件，需要一个布尔值，一般都传false</p>
+</li>
+</ol>
+<p>使用addEventListener()可以同时为一个元素的相同事件同时绑定多个响应函数，这样当事件被触发时，响应函数将会按照<strong>函数的绑定顺序</strong>执行,这个方法不支持IE8及以下的浏览器</p>
+<p><code>attachEvent()</code>在IE8中可以使用attachEvent()来绑定事件</p>
+<p>参数：</p>
+<ol>
+<li>事件的字符串，要on</li>
+<li>回调函数</li>
+</ol>
+<p>这个方法也可以同时为一个事件绑定多个处理函数，不同的是它是后绑定先执行，执行顺序和addEventListener()相反</p>
+<p>定义一个函数用来为指定元素绑定响应函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 参数：</span></span><br><span class="line"><span class="comment"> * 	obj 要绑定事件的对象</span></span><br><span class="line"><span class="comment"> * 	eventStr 事件的字符串(不要on)</span></span><br><span class="line"><span class="comment"> *  callback 回调函数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">bind</span>(<span class="params">obj , eventStr , callback</span>)&#123;</span><br><span class="line">	<span class="keyword">if</span>(obj.<span class="property">addEventListener</span>)&#123;</span><br><span class="line">		<span class="comment">//大部分浏览器兼容的方式</span></span><br><span class="line">		obj.<span class="title function_">addEventListener</span>(eventStr , callback , <span class="literal">false</span>);</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="comment">/*</span></span><br><span class="line"><span class="comment">		 * this是谁由调用方式决定</span></span><br><span class="line"><span class="comment">		 * callback.call(obj)</span></span><br><span class="line"><span class="comment">		 */</span></span><br><span class="line">		<span class="comment">//IE8及以下</span></span><br><span class="line">		obj.<span class="title function_">attachEvent</span>(<span class="string">&quot;on&quot;</span>+eventStr , <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">			<span class="comment">//在匿名函数中调用回调函数</span></span><br><span class="line">			callback.<span class="title function_">call</span>(obj);</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="事件的传播"><a href="#事件的传播" class="headerlink" title="事件的传播"></a>事件的传播</h4><p>关于事件的传播网景公司和微软公司有不同的理解: 微软公司认为事件应该是由内向外传播，也就是当事件触发时，应该先触发当前元素上的事件，然后再向当前元素的祖先元素上传播，也就说事件应该在冒泡阶段执行;网景公司认为事件应该是由外向内传播的，也就是当前事件触发时，应该先触发当前元素的最外层的祖先元素的事件, 然后在向内传播给后代元素</p>
+<p>W3C综合了两个公司的方案，将事件传播分成了三个阶段</p>
+<ol>
+<li>捕获阶段 - 在捕获阶段时从最外层的祖先元素，向目标元素进行事件的捕获，但是默认此时<strong>不会触发事件</strong></li>
+<li>目标阶段 - 事件捕获到目标元素，捕获结束开始在目标元素上触发事件</li>
+<li>冒泡阶段 - 事件从目标元素向他的祖先元素传递，依次<strong>触发祖先元素上的事件</strong></li>
+</ol>
+<ul>
+<li><p>如果希望在捕获阶段就触发事件，可以将addEventListener()的第三个参数设置为true, 一般情况下我们不会希望在捕获阶段触发事件，所以这个参数一般都是false</p>
+</li>
+<li><p>IE8及以下的浏览器中没有捕获阶段</p>
+</li>
+</ul>
+<p>事件的传播流程</p>
+<p>捕获阶段 – 这一阶段会从window对象开始向下一直遍历到目标对象，如果发现有对 象绑定了响应事件则做相应的处理。</p>
+<p>目标阶段 – 这一阶段已经遍历结束，则会执行目标对象上绑定的响应函数。 </p>
+<p>事件冒泡阶段 – 这一阶段，事件的传播方式和捕获阶段正好相反，会从事件目标一直向遍历，直至window对象结束，这时对象上绑定的响应函数也会执行</p>
+<p>我们可以使用event对象的两个方法完成： – stopPropagation() – stopImmediatePropagation() </p>
+<p>取消默认行为： – preventDefault()</p>
+<h4 id="事件举例"><a href="#事件举例" class="headerlink" title="事件举例"></a>事件举例</h4><p>拖拽事件, 滚轮事件, 键盘事件等略, 都是调用api, 在使用的时候查阅即可</p>
+<h2 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h2><p>BOM将浏览器中的各个部分转换成了一个一个的对象，我们通过修改这些对象的属性，调用他们的方法，从而控制浏览器的各种行为。</p>
+<h3 id="window对象"><a href="#window对象" class="headerlink" title="window对象"></a>window对象</h3><p>window对象是BOM的核心，它表示一个浏览器的实例。在浏览器中我们可以通过window对象来访问操作浏览器，同时window也是作为全局对象存在的。全局作用域： window对象是浏览器中的全局对象，因此所有在全局作用域中声明的变量、对象、函数都会变成window对象的属性和方法。</p>
+<p>窗口大小</p>
+<p>浏览器中提供了四个属性用来确定窗口的大小：</p>
+<p>– 网页窗口的大小 innerWidth &#x2F; innerHeight </p>
+<p>– 浏览器本身的尺寸 outerWidth &#x2F; outerHeight</p>
+<p>打开窗口</p>
+<p>使用 window.open() 方法既可以导航到一个特定的 URL，也可以打开一个新的浏览器窗口。 这个方法需要四个参数： </p>
+<ul>
+<li><p>需要加载的url地址 </p>
+</li>
+<li><p>窗口的目标 </p>
+</li>
+<li><p>一个特性的字符串 </p>
+</li>
+<li><p>是否创建新的历史记录</p>
+</li>
+</ul>
+<p>超时调用</p>
+<p>setTimeout() 超过一定时间以后执行指定函数 – 需要两个参数： 要执行的内容&#x2F;超过的时间 </p>
+<p>延时调用一个函数不马上执行，而是隔一段时间以后在执行，而且只会执行一次</p>
+<p>延时调用和定时调用的区别，定时调用会执行多次，而延时调用只会执行一次</p>
+<p>延时调用和定时调用实际上是可以互相代替的，在开发中可以根据自己需要去选择</p>
+<p>取消超时调用 – clearTimeout() 超时调用都是在全局作用域中执行的。</p>
+<p>间歇调用</p>
+<p>setInterval() 每隔一段时间执行指定代码 , 需要两个参数: 要执行的代码(回调函数) ; 间隔的时间,单位是毫秒; 返回一个Number类型的数据,这个数据用来作为定时器的唯一标识</p>
+<p>取消间隔调用： – clearInterval()</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> timer = <span class="built_in">setInterval</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	count.<span class="property">innerHTML</span> = num++;</span><br><span class="line">	<span class="keyword">if</span>(num == <span class="number">11</span>)&#123; <span class="comment">//关闭定时器</span></span><br><span class="line">		<span class="built_in">clearInterval</span>(timer);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;,<span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+
+<p>系统对话框</p>
+<p>浏览器通过 alert() 、 confirm() 和 prompt() 方法可以调用系统对话框向用户显示消息。它们的外观由操作系统及（或）浏览器设置决定，而不是由 CSS 决定。显示系统对话框时会导致程序终止，当关闭对话框程序会恢复执行。</p>
+<h3 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h3><p>location代表当前浏览器的地址栏信息，还提供了一些导航功能，通过Location可以获取地址栏信息，或者操作浏览器跳转页面。</p>
+<p>如果直接将location属性修改为一个完整的路径，或相对路径,则我们页面会自动跳转到该路径，并且会生成相应的历史记录</p>
+<p>href属性：</p>
+<ul>
+<li>href属性可以获取或修改当前页面的完整的URL地址，使浏览器跳转到指定页面。</li>
+</ul>
+<p>assign() 方法</p>
+<ul>
+<li>所用和href一样，使浏览器跳转页面，新地址错误参数传递到assign ()方法中，作用和直接修改location一样</li>
+</ul>
+<p>replace()方法</p>
+<ul>
+<li>功能一样，只不过使用replace方法跳转地址不会体现到历史记录中，不能使用回退按钮回退</li>
+</ul>
+<p>reload() 方法</p>
+<ul>
+<li>用于强制刷新当前页面，作用和刷新按钮一样,如果在方法中传递一个true，作为参数，则会强制清空缓存刷新页面</li>
+</ul>
+<h3 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h3><p>代表的当前浏览器的信息，通过该对象可以来识别不同的浏览器, 由于历史原因，Navigator对象中的大部分属性都已经不能帮助我们识别浏览器了, 一般我们只会使用userAgent来判断浏览器的信息，userAgent是一个字符串，这个字符串中包含有用来描述浏览器信息的内容，不同的浏览器会有不同的userAgent</p>
+<ul>
+<li><p>navigator 对象包含了浏览器的版本、浏览器所支持的插件、浏览器所使用的语言等各种与浏览器相关的信息。</p>
+</li>
+<li><p>我们有时会使用navigator的userAgent属性来检查用户浏览器的版本。</p>
+</li>
+</ul>
+<h3 id="screen对象"><a href="#screen对象" class="headerlink" title="screen对象"></a>screen对象</h3><ul>
+<li>screen 对象基本上只用来表明客户端的能力，其中包括浏览器窗口外部的显示器的信息，如像素宽度和高度等。</li>
+<li>该对象作用不大，我们一般不太使用。</li>
+</ul>
+<h3 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h3><p>history 对象保存着用户上网的历史记录，从窗口被打开的那一刻算起。由于隐私原因，该对象不能获取到具体的历史记录，只能操作浏览器向前或向后翻页而且该操作只在当次访问时有效</p>
+<p>go()</p>
+<ul>
+<li>使用 go() 方法可以在用户的历史记录中任意跳转，可以向后也可以向前。</li>
+<li>可以用来跳转到指定的页面</li>
+<li>它需要一个整数作为参数</li>
+<li>1:表示向前跳转一个页面 相当于forward()</li>
+<li>2:表示向前跳转两个页面</li>
+<li>-1:表示向后跳转一个页面</li>
+<li>-2:表示向后跳转两个页面</li>
+</ul>
+<p>back()</p>
+<ul>
+<li>向后跳转，作用和浏览器的回退按钮一样</li>
+</ul>
+<p>forward()</p>
+<ul>
+<li>向前跳转，作用和浏览器的前进按钮一样</li>
+</ul>
+<h3 id="document"><a href="#document" class="headerlink" title="document"></a>document</h3><ul>
+<li>document对象也是window的一个属性，这个对象代表的是整个网页的文档对象。</li>
+<li>我们对网页的大部分操作都需要以document对象作为起点。</li>
+<li>关于document对象的内容，我们后边还要具体讲解。</li>
+</ul>
+<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><p>JSON</p>
+<ul>
+<li>JS中的对象只有JS自己认识，其他的语言都不认识</li>
+<li>JSON就是一个特殊格式的字符串，这个字符串可以被任意的语言所识别，<br>  并且可以转换为任意语言中的对象，JSON在开发中主要用来数据的交互</li>
+<li>JSON<ul>
+<li>JavaScript Object Notation JS对象表示法</li>
+<li>JSON和JS对象的格式一样，只不过JSON字符串中的属性名必须加双引号<br>  其他的和JS语法一致<br>  JSON分类：</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>对象 {}</li>
+<li>数组 []</li>
+</ol>
+<p>JSON中允许的值:</p>
+<p>1.字符串</p>
+<p>2.数值</p>
+<p>3.布尔值</p>
+<p>4.null</p>
+<p>5.对象</p>
+<p>6.数组</p>
+<hr>
+<p>json –&gt; js对象</p>
+<p>JSON.parse()</p>
+<ul>
+<li>可以将以JSON字符串转换为js对象. 它需要一个JSON字符串作为参数，会将该字符串转换为JS对象并返回</li>
+</ul>
+<p>JS对象 —&gt; JSON</p>
+<p>JSON.stringify()</p>
+<ul>
+<li>可以将一个JS对象转换为JSON字符串. 需要一个js对象作为参数，会返回一个JSON字符串</li>
+</ul>
+<p>eval()</p>
+<ul>
+<li>这个函数可以用来执行一段字符串形式的JS代码，并将执行结果返回</li>
+<li>如果使用eval()执行的字符串中含有{},它会将{}当成是代码块, 如果不希望将其当成代码块解析，则需要在字符串前后各加一个()</li>
+<li>eval()这个函数的功能很强大，可以直接执行一个字符串中的js代码，但是在开发中尽量不要使用，首先它的执行性能比较差，然后它还具有安全隐患</li>
+</ul>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2020-11-20</span>
+            
+            
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2020/11/28/Javaweb/'>笔记 | JavaWeb</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2020/10/03/Maven/">笔记 | Maven</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+             
+
+            
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>Change And Challenge</span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>
